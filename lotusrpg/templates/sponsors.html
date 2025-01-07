@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}Sponsors and Donations - LOTUS RPG{%
+endblock %} {% block content %}
+<div class="sponsors-container">
+  <header>
+    <h1 class="heading1">Donations & Sponsors</h1>
+  </header>
+  <main>
+    <!-- Sponsors Section -->
+    <section class="sponsor-section">
+      <h2>Sponsor</h2>
+      <a href="https://lifewave.com/madeintexas"
+        ><img
+          src="{{ url_for('static', filename='images/lifewave-logo.png') }}"
+          alt="LifeWave Logo"
+          class="sponsor-logo"
+      /></a>
+      <p>
+        X39 is a true breakthrough. Lifewave's patented wellness technology
+        fosters overall wellness and an active lifestyle.
+      </p>
+      <p>
+        <strong>(Please Shop ID: <span class="shop-id">2634492</span>)</strong>
+      </p>
+    </section>
+
+    <!-- Donations Section -->
+    <section class="donations-section">
+      <h2>Donations</h2>
+      <a href="https://donate.stripe.com/fZe5oo9Ew2zE89ieUU"
+        ><img
+          src="{{ url_for('static', filename='images/donation-qr.png') }}"
+          alt="Donation QR Code"
+          class="donation-qr"
+      /></a>
+      <p>Scan the QR Code or <strong>Click QR to Donate</strong></p>
+    </section>
+  </main>
+</div>
+{% endblock %}

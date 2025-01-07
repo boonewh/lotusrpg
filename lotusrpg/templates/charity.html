@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Charity - LOTUS RPG{% endblock %}
+
+{% block content %}
+
+<div class="charity-container">
+    <main>
+        <div class="charity-content">
+            <!-- Text Section -->
+            <div class="text-content">
+                <h2 class="heading1">Helping Texas Veterans Heal</h2>
+                <h3>A Call To Action. A Critical Challenge.</h3>
+                <p><strong>Our Story:</strong> In the line of duty, our heroes face countless challenges every day, putting their lives at risk to ensure our safety. Ranging from PTSD, Exposure Cancer, Spinal Degradation and Destroyed Joints that threatens not just their careers but their very way of life.</p>
+                <p>After years of dedicated service, many have progressed to a point where surgery is no longer just an option; it's a necessity. Unfortunately, the complexity of several conditions requires a specialized procedure unavailable in the United States not approved by the Veteran's Administration due to the expense. Even more disheartening is the fact that many insurance do not cover these life-altering medical events.</p>
+                <p><strong>The Challenge:</strong> These funds provide travel, surgical costs, and recovery to help veterans get back on their feet and taking steps towards their futures so they re-immerse in their communities rather than just becoming another abandoned cause on the streets.</p>
+                <p><strong>How You Can Help:</strong> We are reaching out to people across the United States - Texas, our community, friends, family, and kind-hearted strangers - to join hands in supporting veteran journeys to recovery. Your donation can help cover the medical expenses, travel costs, and the necessary rehabilitation following the surgery.</p>
+                <ul>
+                    <li><strong>Donate:</strong> Every contribution, no matter how small, brings my brother one step closer to recovery.</li>
+                    <li><strong>Share:</strong> Help us spread the word by sharing his story on social media, with friends, and within your community.</li>
+                    <li><strong>Support:</strong> Send messages of support and encouragement to uplift their spirits during this challenging time.</li>
+                </ul>
+                <p><strong>Our Promise:</strong> Transparency and trust are the pillars of this campaign. All proceeds for Made in Texas Mfg. sponsored fundraisers are for veterans, law enforcement, firefighters, and emergency responders. Any proceeds not utilized shall be retained and utilized for improving the situation of the next in need.</p>
+                <p>Thank you for your generosity, your time, and your unwavering support. Together, we can make a difference.</p>
+            </div>
+
+            <!-- Images Section -->
+            <div class="image-content">
+                <a href="https://givebutter.com/lJIjpB"><img src="{{ url_for('static', filename='images/charity.png') }}" alt="Texas Flag" class="image"></a>
+                <a href="https://givebutter.com/lJIjpB"><img src="{{ url_for('static', filename='images/charity_qr.png') }}" alt="QR Code" class="image"></a>
+                <p>Click Any Image To Donate</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}

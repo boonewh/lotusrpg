@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}LOTUS RPG - HOME PAGE{% endblock %}</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <!-- Navigation -->
+        <nav class="nav">
+            <!-- Top Row: Login/Register and Search -->
+            <div class="nav-top">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-input">
+                </div>
+                <div class="auth-links">
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('account') }}" class="nav-link">Account</a>
+                        <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+                    {% else %}
+                        <a href="{{ url_for('register') }}" class="nav-link">Register</a>
+                        <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+    
+            <!-- Bottom Row: Main Navigation -->
+            <div class="nav-bottom">
+                <a href="{{ url_for('index') }}" class="nav-link">Main</a>
+                <a href="#" class="nav-link">Core Rules</a>
+                <a href="#" class="nav-link">Darkholme</a>
+                <a href="{{ url_for('community') }}" class="nav-link">Community</a>
+                <a href="{{ url_for('charity') }}" class="nav-link">Charity</a>
+                <a href="{{ url_for('sponsors') }}" class="nav-link">Sponsors & Donations</a>
+                <a href="#" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/lotus_logo2.png') }}" alt="DD10 Logo" class="logo">
+        </div>
+    </div>
+    
+    <!-- Hamburger Menu (Visible only for smaller screens) -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Mobile Navigation (Hidden by default) -->
+    <div id="mobile-nav" class="mobile-nav hidden">
+        <input type="text" placeholder="Search..." class="search-input">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('account') }}" class="nav-link">Account</a>
+            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+        {% else %}
+            <a href="{{ url_for('register') }}" class="nav-link">Register</a>
+            <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+        {% endif %}
+        <a href="{{ url_for('index') }}" class="nav-link">Main</a>
+        <a href="#" class="nav-link">Core Rules</a>
+        <a href="#" class="nav-link">Darkholme</a>
+        <a href="{{ url_for('community') }}" class="nav-link">Community</a>
+        <a href="{{ url_for('charity') }}" class="nav-link">Charity</a>
+        <a href="{{ url_for('sponsors') }}" class="nav-link">Sponsors</a>
+        <a href="#" class="nav-link">Contact</a>
+    </div>
+    
+    <div">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-container">
+            <div class="container mx-auto px-6 pt-16">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endwith %}
+    </div>
+    
+    <!-- Page Content -->
+    {% block content %}{% endblock %}
+    
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">About DD10</h4>
+                    <p>A revolutionary gaming system bringing together tabletop and LARP experiences since 1993.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary">Core Rules</a></li>
+                        <li><a href="#" class="hover:text-primary">Darkholme</a></li>
+                        <li><a href="#" class="hover:text-primary">Community</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary">FAQ</a></li>
+                        <li><a href="#" class="hover:text-primary">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-primary">Discord</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-primary">
+                            <span class="sr-only">Discord</span>
+                            <li><a href="#" class="mx-auto hover:text-primary">Social Icons Here</a></li>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p>&copy; 2024 DD10 Gaming System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
