@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <h1 class="heading1">Community Forums</h1>
+
+    <!-- Original Post Section -->
+    <article class="container mx-auto px-6 py-12 flex items-start">
+        <img class="forum-img w-16 h-16 rounded-full mr-4" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="Profile Picture">
+        <div>
+            <h1 class="text-3xl font-bold mb-1">{{ post.title }}</h1>
+            <p class="mb-4">Posted by <a href="#">{{ post.author.username }}</a> on {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+            {% if post.author == current_user %}
+            <div class="mb-4">
+                <a href="{{ url_for('update_post', post_id=post.id) }}" 
+                   class="inline-block py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    Edit
+                </a>
+
+                <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" class="inline-block">
+                    <button type="submit"
+                            class="py-2 px-4 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                            onclick="return confirm('Are you sure you want to delete this post? This action cannot be undone.');">
+                        Delete
+                    </button>
+                </form>
+            </div>
+            {% endif %}
+            <p class="mb-4">{{ post.content }}</p>
+            <hr>
+        </div>
+    </article>
+
+    <!-- Comments Section -->
+    <section class="container mx-auto px-6 py-6">
+        <h2 class="text-2xl font-bold mb-4">Comments</h2>
+        {% for comment in comments %}
+        <div class="mb-6 border-b pb-4">
+            <div class="flex items-start">
+                <img class="forum-img w-12 h-12 rounded-full mr-4" src="{{ url_for('static', filename='profile_pics/' + comment.user.image_file) }}" alt="Profile Picture">
+                <div>
+                    <p class="text-sm text-gray-500 mb-1">Posted by <a href="#">{{ comment.user.username }}</a> on {{ comment.date_posted.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                    <p class="text-md">{{ comment.content }}</p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <p class="text-gray-500">No comments yet. Be the first to comment!</p>
+        {% endfor %}
+    </section>
+
+        <!-- Comment Form Section -->
+        <section class="container mx-auto mb-12 px-6 py-6" style="width: 40%;">
+            <h2 class="text-2xl font-bold mb-4">Add a Comment</h2>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div>
+                    {{ form.content.label(class="block text-sm font-medium text-gray-700") }}
+                    {{ form.content(class="w-full text-black p-2 border rounded-md focus:ring-2 focus:ring-blue-500") }}
+                </div>
+                <div class="mt-4">
+                    {{ form.submit(class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600") }}
+                </div>
+            </form>
+        </section>
+{% endblock %}
+

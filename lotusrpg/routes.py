@@ -1,10 +1,10 @@
 import os
 import secrets
 from PIL import Image
-from flask import render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, redirect, request, abort
 from lotusrpg import app, db, bcrypt
-from lotusrpg.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
-from lotusrpg.models import User, Post
+from lotusrpg.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, CommentForm
+from lotusrpg.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user, login_required
 
 
@@ -67,7 +67,7 @@ def save_picture(form_picture):
     random_hex = secrets.token_hex(8) # Generating a random hex to prevent overwriting files with the same name
     _, f_ext = os.path.splitext(form_picture.filename) # Splitting the filename and extension
     picture_fn = random_hex + f_ext # Creating a new filename by combing the hex and the extension
-    picture_path = os.path.join(app.root_path, 'static/profile_pics/', picture_fn)  # Saving the picture to the filesystem
+    picture_path = os.path.join(app.root_path, 'static/profile_pics', picture_fn)  # Saving the picture to the filesystem
 
     output_size = (125, 125) # The next four lines resize the image and save it to the filesystem with Pillow package
     i = Image.open(form_picture)
@@ -84,8 +84,8 @@ def account():
     if form.validate_on_submit():
         if form.picture.data:
              # Delete the old image if it's not the default image
-            if current_user.image_file != 'default.jpg':
-                old_picture_path = os.path.join(app.root_path, 'static/profile_pics/', current_user.image_file)
+            if current_user.image_file != 'default.png':
+                old_picture_path = os.path.join(app.root_path, 'static/profile_pics', current_user.image_file)
                 if os.path.exists(old_picture_path):
                     os.remove(old_picture_path)
             # Save the new picture
@@ -108,5 +108,48 @@ def new_post():
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('forums'))
-    return render_template('create_post.html', form=form)
+    return render_template('create_post.html', form=form, legend='Create Post')
 
+@app.route('/post/<int:post_id>', methods=['GET', 'POST'])
+def post(post_id):
+    post = Post.query.get_or_404(post_id)
+    comments = Comment.query.filter_by(post_id=post_id).order_by(Comment.date_posted).all()
+    form = CommentForm()
+
+    if form.validate_on_submit():
+        comment = Comment(content=form.content.data, user_id=current_user.id, post_id=post.id)
+        db.session.add(comment)
+        db.session.commit()
+        flash('Your comment has been added!', 'success')
+        return redirect(url_for('post', post_id=post.id))
+
+    return render_template('post.html', post=post, comments=comments, form=form)
+
+
+
+@app.route('/post/<int:post_id>/update', methods=['GET', 'POST'])
+@login_required
+def update_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        db.session.commit()
+        return redirect(url_for('post', post_id=post.id))
+    elif request.method == 'GET':
+        form.title.data = post.title
+        form.content.data = post.content
+    return render_template('create_post.html', form=form, legend='Update Post')
+
+@app.route('/post/<int:post_id>/delete', methods=['POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    return redirect(url_for('forums'))

@@ -12,10 +12,11 @@
     <article class="container mx-auto px-6 py-6 flex items-start">
         <img class="forum-img w-16 h-16 rounded-full mr-4" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="Profile Picture">
         <div>
-            <h1 class="text-3xl font-bold mb-1">{{ post.title }}</h1>
+            <h1 class="text-3xl font-bold mb-1"><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h1>
             <p class="mb-4">Posted by <a href="#">{{ post.author.username }}</a> on {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
             <p class="mb-4">{{ post.content }}</p>
             <hr>
-        </article>
+        </div>
+    </article>
     {% endfor %}
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block title %}DD10{% endblock %}
 
 {% block content %}
-    <h1 class="heading1">Create Post</h1>
+    <h1 class="heading1">{{ legend }}</h1>
     <div class="max-w-md mx-auto p-6 mb-8 bg-opacity-90 bg-gray-900 backdrop-filter backdrop-blur-lg shadow-lg rounded-md">
         <form method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
