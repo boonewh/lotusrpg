@@ -3,24 +3,10 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request
 from lotusrpg import app, db, bcrypt
-from lotusrpg.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from lotusrpg.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from lotusrpg.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
-posts = [
-    {
-        'author': 'John Doe',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'April 20, 2018'
-    },
-    {
-        'author': 'Jane Doe',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'April 21, 2018'
-    }
-]
 
 @app.route('/')
 def index():
@@ -32,6 +18,7 @@ def community():
 
 @app.route('/forums')
 def forums():
+    posts = Post.query.all()
     return render_template('forums.html', posts=posts)
 
 @app.route('/charity')
@@ -80,7 +67,7 @@ def save_picture(form_picture):
     random_hex = secrets.token_hex(8) # Generating a random hex to prevent overwriting files with the same name
     _, f_ext = os.path.splitext(form_picture.filename) # Splitting the filename and extension
     picture_fn = random_hex + f_ext # Creating a new filename by combing the hex and the extension
-    picture_path = os.path.join(app.root_path, 'static/images', picture_fn)  # Saving the picture to the filesystem
+    picture_path = os.path.join(app.root_path, 'static/profile_pics/', picture_fn)  # Saving the picture to the filesystem
 
     output_size = (125, 125) # The next four lines resize the image and save it to the filesystem with Pillow package
     i = Image.open(form_picture)
@@ -98,7 +85,7 @@ def account():
         if form.picture.data:
              # Delete the old image if it's not the default image
             if current_user.image_file != 'default.jpg':
-                old_picture_path = os.path.join(app.root_path, 'static/images', current_user.image_file)
+                old_picture_path = os.path.join(app.root_path, 'static/profile_pics/', current_user.image_file)
                 if os.path.exists(old_picture_path):
                     os.remove(old_picture_path)
             # Save the new picture
@@ -106,9 +93,20 @@ def account():
             current_user.image_file = picture_file
         current_user.email = form.email.data
         db.session.commit()
-        flash('Email updated!', 'success')
         return redirect(url_for('account'))
     elif request.method == 'GET':
         form.email.data = current_user.email
-    image_file = url_for('static', filename='images/' + current_user.image_file)
+    image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', image_file=image_file, form=form)
+
+@app.route('/post/new', methods=['GET', 'POST'])
+@login_required
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('forums'))
+    return render_template('create_post.html', form=form)
+

@@ -74,10 +74,6 @@ body {
   transition: color 0.3s ease;
 }
 
-.auth-links a:hover {
-  color: #e53e3e; /* Tailwind's text-red-500 */
-}
-
 /* Bottom Row */
 .nav-bottom {
   display: flex;
@@ -92,10 +88,6 @@ body {
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #e53e3e; /* Tailwind's hover:text-red-500 */
 }
 
 /* Logo */
@@ -239,7 +231,7 @@ body {
 }
 
 .heading1 {
-  padding-top: calc(var(--nav-height) + 2rem);
+  padding-top: calc(var(--nav-height) + 4rem);
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
@@ -537,6 +529,17 @@ header h1 {
   background-color: #121212;
 }
 
+/* Forum Image */
+.forum-img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4a4a6a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #121212;
+}
+
 /* Media Body */
 .media-body {
   flex-grow: 1;
@@ -569,22 +572,6 @@ form textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-}
-
-form button {
-  align-self: flex-start;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #4a4a6a;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: #333;
 }
 
 /* General Layout Adjustments for Laptop Screens */
