@@ -2,10 +2,11 @@ import os
 import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
-from lotusrpg import app, db, bcrypt
-from lotusrpg.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, CommentForm
+from lotusrpg import app, db, bcrypt, mail
+from lotusrpg.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, CommentForm, RequestResetForm, ResetPasswordForm
 from lotusrpg.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user, login_required
+from flask_mail import Message
 
 
 @app.route('/')
@@ -18,7 +19,8 @@ def community():
 
 @app.route('/forums')
 def forums():
-    posts = Post.query.all()
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=10)
     return render_template('forums.html', posts=posts)
 
 @app.route('/charity')
@@ -113,17 +115,18 @@ def new_post():
 @app.route('/post/<int:post_id>', methods=['GET', 'POST'])
 def post(post_id):
     post = Post.query.get_or_404(post_id)
-    comments = Comment.query.filter_by(post_id=post_id).order_by(Comment.date_posted).all()
     form = CommentForm()
 
     if form.validate_on_submit():
         comment = Comment(content=form.content.data, user_id=current_user.id, post_id=post.id)
         db.session.add(comment)
         db.session.commit()
-        flash('Your comment has been added!', 'success')
         return redirect(url_for('post', post_id=post.id))
+    
+    page = request.args.get('page', 1, type=int)
+    comments = Comment.query.filter_by(post_id=post_id).order_by(Comment.date_posted).paginate(page=page, per_page=5)
 
-    return render_template('post.html', post=post, comments=comments, form=form)
+    return render_template('post.html', post=post, comments=comments.items, form=form, pagination=comments)
 
 
 
@@ -153,3 +156,78 @@ def delete_post(post_id):
     db.session.delete(post)
     db.session.commit()
     return redirect(url_for('forums'))
+
+@app.route('/comment/<int:comment_id>/delete', methods=['POST'])
+@login_required
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+    db.session.delete(comment)
+    db.session.commit()
+    return redirect(url_for('post', post_id=comment.post_id))
+
+@app.route('/comment/<int:comment_id>/edit', methods=['GET', 'POST'])
+@login_required
+def edit_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+    if comment.user_id != current_user.id:
+        abort(403)
+    form = CommentForm()
+    if form.validate_on_submit():
+        comment.content = form.content.data
+        db.session.commit()
+        flash('Your comment has been updated!', 'success')
+        return redirect(url_for('post', post_id=comment.post_id))
+    elif request.method == 'GET':
+        form.content.data = comment.content
+    return render_template('edit_comment.html', form=form, comment=comment)
+
+@app.route("/user/<string:username>")
+def user_posts(username):
+    page = request.args.get('page', 1, type=int)
+    user = User.query.filter_by(username=username).first_or_404()
+    posts = Post.query.filter_by(author=user).order_by(Post.date_posted.desc()).paginate(page=page, per_page=10)
+    return render_template('user_posts.html', posts=posts, user=user)
+
+def send_reset_email(user):
+    token = user.get_reset_token()  # Assumes your User model has a method to generate a reset token
+    msg = Message(
+        'Password Reset Request',
+        sender='boonewh@gmail.com', 
+        recipients=[user.email]
+    )
+    msg.body = f'''To reset your password, visit the following link:
+{url_for('reset_token', token=token, _external=True)}
+
+If you did not make this request, simply ignore this email and no changes will be made.
+'''
+    mail.send(msg)
+
+@app.route("/reset_password", methods=['GET', 'POST'])
+def reset_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RequestResetForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user:
+            send_reset_email(user)
+            flash('An email has been sent with instructions to reset your password.', 'info')
+            return redirect(url_for('login'))
+    return render_template('reset_request.html', form=form)
+
+@app.route("/reset_password/<token>", methods=['GET', 'POST'])
+def reset_token(token):
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    user = User.verify_reset_token(token)
+    if user is None:
+        flash('That is an invalid or expired token', 'warning')
+        return redirect(url_for('reset_request'))
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user.password = hashed_password
+        db.session.commit()
+        flash('Your password has been updated! You are now able to log in.', 'success')
+        return redirect(url_for('login'))
+    return render_template('reset_token.html', form=form)
