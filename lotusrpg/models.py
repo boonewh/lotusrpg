@@ -1,4 +1,5 @@
-from lotusrpg import db, login_manager, app
+from flask import current_app as app
+from lotusrpg import db, login_manager
 from datetime import datetime
 from flask_login import UserMixin
 from itsdangerous import URLSafeTimedSerializer as Serializer

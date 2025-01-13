@@ -4,7 +4,7 @@
 
 {% block content %}
     <h1 class="heading1">Community Forums</h1>
-    <a href="{{ url_for('new_post') }}" class="inline-block m-12 py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+    <a href="{{ url_for('forum.new_post') }}" class="inline-block m-12 py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
         New Post
     </a>
     
@@ -12,8 +12,8 @@
     <article class="container mx-auto px-6 py-6 flex items-start">
         <img class="forum-img w-16 h-16 rounded-full mr-4" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="Profile Picture">
         <div>
-            <h1 class="text-3xl font-bold mb-1"><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h1>
-            <p class="mb-4">Posted by <a href="{{ url_for('user_posts', username=post.author.username) }}" class="text-blue-500 hover:underline">{{ post.author.username }}</a> on {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+            <h1 class="text-3xl font-bold mb-1"><a href="{{ url_for('forum.post', post_id=post.id) }}">{{ post.title }}</a></h1>
+            <p class="mb-4">Posted by <a href="{{ url_for('forum.user_posts', username=post.author.username) }}" class="text-blue-500 hover:underline">{{ post.author.username }}</a> on {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
             <p class="mb-4">{{ post.content }}</p>
             <hr>
         </div>
@@ -26,7 +26,7 @@
                 {% if posts.page == page_num %}
                     <span class="px-4 py-2 mx-1 bg-blue-500 text-white font-semibold rounded-md">{{ page_num }}</span>
                 {% else %}
-                    <a href="{{ url_for('forums', page=page_num) }}" class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">{{ page_num }}</a>
+                    <a href="{{ url_for('forum.forums', page=page_num) }}" class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">{{ page_num }}</a>
                 {% endif %}
             {% else %}
                 <span class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md">...</span>
