@@ -20,8 +20,7 @@
                 </div>
                 <div class="auth-links">
                     {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('users.account') }}" class="nav-link">Account</a>
-                        <a href="{{ url_for('users.logout') }}" class="nav-link">Logout</a>
+                        <a href="{{ url_for('users.account') }}" class="nav-link">{{ current_user.username }}</a>
                     {% else %}
                         <a href="{{ url_for('users.register') }}" class="nav-link">Register</a>
                         <a href="{{ url_for('users.login') }}" class="nav-link">Login</a>
@@ -62,7 +61,7 @@
             <a href="{{ url_for('users.logout') }}" class="nav-link">Logout</a>
         {% else %}
             <a href="{{ url_for('users.register') }}" class="nav-link">Register</a>
-            <a href="{{ url_for('user.login') }}" class="nav-link">Login</a>
+            <a href="{{ url_for('users.login') }}" class="nav-link">Login</a>
         {% endif %}
         <a href="{{ url_for('main.index') }}" class="nav-link">Main</a>
         <a href="#" class="nav-link">Core Rules</a>
@@ -128,7 +127,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p>&copy; 2024 DD10 Gaming System. All rights reserved.</p>
+                <p>&copy; 2025 DD10 Gaming System. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -24,9 +24,11 @@ def create_app(config_class=Config):
     from lotusrpg.users.routes import users
     from lotusrpg.main.routes import main
     from lotusrpg.forum.routes import forum
+    from lotusrpg.errors.handlers import errors
 
     app.register_blueprint(users)
     app.register_blueprint(main)
     app.register_blueprint(forum)
+    app.register_blueprint(errors)
 
     return app

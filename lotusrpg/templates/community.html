@@ -8,30 +8,42 @@
         <h1 class="text-3xl font-bold mb-4">Community Forum</h1>
         <p class="mb-8">Welcome to the DD10 Community Forum! Here you can discuss all things DD10 with other players, ask questions, and share your experiences.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- General Discussion -->
             <div>
-                <h2 class="text-xl font-bold mb-4">General Discussion</h2>
-                <p>Discuss anything and everything related to DD10 in this forum.</p>
-                <a href="{{ url_for('forum.forums') }}" class="block mt-4 mb-8 font-bold text-primary hover:underline">View Forum</a>
+                <a href="{{ url_for('forum.forums') }}" class="block text-xl font-bold mb-4 text-blue-500 hover:underline">
+                    General Discussion
+                </a>
+                <p class="mb-12">Discuss anything and everything related to DD10 in this forum.</p>
                 <hr>
             </div>
+
+            <!-- Rules Questions -->
             <div>
-                <h2 class="text-xl font-bold mb-4">Rules Questions</h2>
-                <p>Have a question about the rules? Ask it here and get answers from other players.</p>
-                <a href="#" class="block mt-4 mb-8 text-primary hover:underline">View Forum</a>
+                <a href="#" class="block text-xl font-bold mb-4 text-blue-500 hover:underline">
+                    Rules Questions
+                </a>
+                <p class="mb-12">Have a question about the rules? Ask it here and get answers from other players.</p>
                 <hr>
             </div>
+
+            <!-- Character Builds -->
             <div>
-                <h2 class="text-xl font-bold mb-4">Character Builds</h2>
-                <p>Share your character builds, get feedback, and discuss different strategies.</p>
-                <a href="#" class="block mt-4 mb-8 text-primary hover:underline">View Forum</a>
+                <a href="#" class="block text-xl font-bold mb-4 text-blue-500 hover:underline">
+                    Character Builds
+                </a>
+                <p class="mb-12">Share your character builds, get feedback, and discuss different strategies.</p>
                 <hr>
             </div>
+
+            <!-- Events & LARP -->
             <div>
-                <h2 class="text-xl font-bold mb-4">Events & LARP</h2>
-                <p>Find out about upcoming events, LARP sessions, and other community gatherings.</p>
-                <a href="#" class="block mt-4 mb-8 text-primary hover:underline">View Forum</a>
+                <a href="#" class="block text-xl font-bold mb-4 text-blue-500 hover:underline">
+                    Events & LARP
+                </a>
+                <p class="mb-12">Find out about upcoming events, LARP sessions, and other community gatherings.</p>
                 <hr>
             </div>
         </div>
     </div>
+
 {% endblock %}

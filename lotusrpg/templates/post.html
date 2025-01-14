@@ -8,8 +8,41 @@
     <!-- Original Post Section -->
     <article class="container mx-auto px-6 py-12 flex items-start">
         <img class="forum-img w-16 h-16 rounded-full mr-4" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="Profile Picture">
-        <div>
-            <h1 class="text-3xl font-bold mb-1">{{ post.title }}</h1>
+        <div class="w-full">
+            <!-- Title and Hot Dog Menu -->
+            <div class="flex justify-between items-center">
+                <h1 class="text-3xl font-bold mb-1">{{ post.title }}</h1>
+                {% if post.author == current_user %}
+                <div class="relative">
+                    <!-- Hot Dog Menu Button -->
+                    <button 
+                        class="py-2 px-3 mr-12 rounded-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" 
+                        onclick="document.getElementById('dropdown-menu-{{ post.id }}').classList.toggle('hidden');">
+                        <span class="block w-1 h-1 bg-gray-600 rounded-full mb-0.5"></span>
+                        <span class="block w-1 h-1 bg-gray-600 rounded-full mb-0.5"></span>
+                        <span class="block w-1 h-1 bg-gray-600 rounded-full"></span>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div 
+                        id="dropdown-menu-{{ post.id }}" 
+                        class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                        <a href="{{ url_for('forum.update_post', post_id=post.id) }}" 
+                        class="block py-2 px-4 text-gray-700 hover:bg-gray-100">
+                            Edit
+                        </a>
+                        <form action="{{ url_for('forum.delete_post', post_id=post.id) }}" method="POST" class="block">
+                            <button type="submit"
+                                    class="w-full text-left py-2 px-4 text-gray-700 hover:bg-gray-100"
+                                    onclick="return confirm('Are you sure you want to delete this post? This action cannot be undone.');">
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
             <p class="mb-4">Posted by 
                 <a href="{{ url_for('forum.user_posts', username=post.author.username) }}" 
                     class="text-blue-500 hover:underline">
@@ -18,91 +51,96 @@
                 on {{ post.date_posted.strftime('%Y-%m-%d') }}
             </p>
             
-            {% if post.author == current_user %}
-            <div class="mb-4">
-                <a href="{{ url_for('forum.update_post', post_id=post.id) }}" 
-                   class="inline-block py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                    Edit
-                </a>
-
-                <form action="{{ url_for('forum.delete_post', post_id=post.id) }}" method="POST" class="inline-block">
-                    <button type="submit"
-                            class="py-2 px-4 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-                            onclick="return confirm('Are you sure you want to delete this post? This action cannot be undone.');">
-                        Delete
-                    </button>
-                </form>
-            </div>
-            {% endif %}
             <p class="mb-4">{{ post.content[:200] }}...</p>
             <hr>
         </div>
     </article>
 
-<!-- Comments Section -->
-<section class="container mx-auto px-6 py-6">
-    <h2 class="text-2xl font-bold mb-4">Comments</h2>
-    {% for comment in comments %}
-    <div class="mb-6 border-b pb-4">
-        <div class="flex items-start">
-            <img class="forum-img w-12 h-12 rounded-full mr-4" src="{{ url_for('static', filename='profile_pics/' + comment.user.image_file) }}" alt="Profile Picture">
-            <div">
-                <p class="text-sm text-gray-500 mb-1">
-                    Posted by {{ comment.user.username }} on {{ comment.date_posted.strftime('%Y-%m-%d %H:%M:%S') }}
-                </p>
-                <p class="text-md">{{ comment.content }}</p>
+
+    <!-- Comments Section -->
+    <section class="container mx-auto px-6 py-6">
+        <h2 class="text-2xl font-bold mb-4">Comments</h2>
+        {% for comment in comments %}
+        <div class="mb-6 border-b pb-4">
+            <div class="flex items-start">
+                <img class="forum-img w-12 h-12 rounded-full mr-4" src="{{ url_for('static', filename='profile_pics/' + comment.user.image_file) }}" alt="Profile Picture">
+                <div class="w-full">
+                    <div class="flex justify-between items-center">
+                        <p class="text-sm text-gray-500">
+                            Posted by {{ comment.user.username }} on {{ comment.date_posted.strftime('%Y-%m-%d %H:%M:%S') }}
+                        </p>
+                        {% if current_user.id == comment.user_id %}
+                        <div class="relative">
+                            <!-- Hot Dog Menu Button -->
+                            <button 
+                                class="py-2 px-3 mr-12 rounded-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" 
+                                onclick="document.getElementById('comment-dropdown-menu-{{ comment.id }}').classList.toggle('hidden');">
+                                <span class="block w-1 h-1 bg-gray-600 rounded-full mb-0.5"></span>
+                                <span class="block w-1 h-1 bg-gray-600 rounded-full mb-0.5"></span>
+                                <span class="block w-1 h-1 bg-gray-600 rounded-full"></span>
+                            </button>
+
+                            <!-- Dropdown Menu -->
+                            <div 
+                                id="comment-dropdown-menu-{{ comment.id }}" 
+                                class="hidden absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                                <a href="{{ url_for('forum.edit_comment', comment_id=comment.id) }}" 
+                                class="block py-2 px-4 text-gray-700 hover:bg-gray-100">
+                                    Edit
+                                </a>
+                                <form action="{{ url_for('forum.delete_comment', comment_id=comment.id) }}" method="POST" class="block">
+                                    {{ form.hidden_tag() }}
+                                    <button type="submit"
+                                            class="w-full text-left py-2 px-4 text-gray-700 hover:bg-gray-100"
+                                            onclick="return confirm('Are you sure you want to delete this comment?');">
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <p class="text-md mt-2">{{ comment.content }}</p>
+                </div>
             </div>
-            {% if current_user.id == comment.user_id %}
-            <a href="{{ url_for('forum.edit_comment', comment_id=comment.id) }}" 
-                class="py-1 px-2 bg-yellow-500 text-white text-sm font-semibold rounded-md hover:bg-yellow-600">
-                Edit
-            </a>
-            <form action="{{ url_for('forum.delete_comment', comment_id=comment.id) }}" method="POST" class="inline-block ml-4">
-                {{ form.hidden_tag() }}
-                <button type="submit"
-                        class="py-1 px-2 bg-red-500 text-white text-sm font-semibold rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-                        onclick="return confirm('Are you sure you want to delete this comment?');">
-                    Delete
-                </button>
-            </form>
+        </div>
+        {% else %}
+        <p class="text-gray-500">No comments yet. Be the first to comment!</p>
+        {% endfor %}
+    </section>
+
+
+        <!-- Pagination Section -->
+        <div class="pagination-container ml-16 my-8">
+            {% if pagination.has_prev %}
+                <a href="{{ url_for('forum.post', post_id=post.id, page=pagination.prev_num) }}" 
+                class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Previous
+                </a>
+            {% endif %}
+            
+            {% for page_num in pagination.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+                {% if page_num %}
+                    {% if page_num == pagination.page %}
+                        <span class="px-4 py-2 mx-1 bg-blue-500 text-white font-semibold rounded-md">{{ page_num }}</span>
+                    {% else %}
+                        <a href="{{ url_for('forum.post', post_id=post.id, page=page_num) }}" 
+                        class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        {{ page_num }}
+                        </a>
+                    {% endif %}
+                {% else %}
+                    <span class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md">...</span>
+                {% endif %}
+            {% endfor %}
+
+            {% if pagination.has_next %}
+                <a href="{{ url_for('forum.post', post_id=post.id, page=pagination.next_num) }}" 
+                class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Next
+                </a>
             {% endif %}
         </div>
-    </div>
-    {% else %}
-    <p class="text-gray-500">No comments yet. Be the first to comment!</p>
-    {% endfor %}
-
-    <!-- Pagination Section -->
-    <div class="pagination-container ml-16 my-8">
-        {% if pagination.has_prev %}
-            <a href="{{ url_for('forum.post', post_id=post.id, page=pagination.prev_num) }}" 
-            class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-            Previous
-            </a>
-        {% endif %}
-        
-        {% for page_num in pagination.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
-            {% if page_num %}
-                {% if page_num == pagination.page %}
-                    <span class="px-4 py-2 mx-1 bg-blue-500 text-white font-semibold rounded-md">{{ page_num }}</span>
-                {% else %}
-                    <a href="{{ url_for('forum.post', post_id=post.id, page=page_num) }}" 
-                    class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                    {{ page_num }}
-                    </a>
-                {% endif %}
-            {% else %}
-                <span class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md">...</span>
-            {% endif %}
-        {% endfor %}
-
-        {% if pagination.has_next %}
-            <a href="{{ url_for('forum.post', post_id=post.id, page=pagination.next_num) }}" 
-            class="px-4 py-2 mx-1 bg-blue-200 text-blue-500 font-semibold rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-            Next
-            </a>
-        {% endif %}
-    </div>
     </section>
 
 

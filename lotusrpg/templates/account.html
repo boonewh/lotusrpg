@@ -5,6 +5,12 @@
 {% block content %}
     <h1 class="heading1">Account Info</h1>
     <div class="max-w-md mx-auto mb-8 p-6 bg-opacity-90 bg-gray-900 backdrop-filter backdrop-blur-lg shadow-lg rounded-md">
+        <div class="flex justify-end mb-4">
+            <a href="{{ url_for('users.logout') }}" 
+               class="text-lg text-blue-500 font-semibold hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Sign Out
+            </a>
+        </div>
         <div class="media">
             <img class="account-img" src="{{ image_file }}" alt="Profile Picture">
             <div class="media-body">
