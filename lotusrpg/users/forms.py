@@ -4,6 +4,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
 from lotusrpg.models import User 
+from flask_security.forms import ConfirmRegisterForm
 
 
 class RegistrationForm(FlaskForm):
@@ -53,3 +54,6 @@ class ResetPasswordForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
+
+class ExtendedRegisterForm(ConfirmRegisterForm):
+    username = StringField('Username', [DataRequired()])
