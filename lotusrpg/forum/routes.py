@@ -1,20 +1,22 @@
 from flask import Blueprint, render_template, request, redirect, url_for, abort, flash
-from flask_login import login_required, current_user
+from flask_login import current_user
 from lotusrpg.models import Post, Comment, User
 from lotusrpg import db
 from lotusrpg.forum.forms import PostForm, CommentForm 
+from flask_security import auth_required
 
 
 forum = Blueprint('forum', __name__)
 
 @forum.route('/forums')
+@auth_required()
 def forums():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=10)
     return render_template('forums.html', posts=posts)
 
 @forum.route('/post/new', methods=['GET', 'POST'])
-@login_required
+@auth_required()
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
@@ -25,6 +27,7 @@ def new_post():
     return render_template('create_post.html', form=form, legend='Create Post')
 
 @forum.route('/post/<int:post_id>', methods=['GET', 'POST'])
+@auth_required()
 def post(post_id):
     post = Post.query.get_or_404(post_id)
     form = CommentForm()
@@ -43,7 +46,7 @@ def post(post_id):
 
 
 @forum.route('/post/<int:post_id>/update', methods=['GET', 'POST'])
-@login_required
+@auth_required()
 def update_post(post_id):
     post = Post.query.get_or_404(post_id)
     if post.author != current_user:
@@ -60,7 +63,7 @@ def update_post(post_id):
     return render_template('create_post.html', form=form, legend='Update Post')
 
 @forum.route('/post/<int:post_id>/delete', methods=['POST'])
-@login_required
+@auth_required()
 def delete_post(post_id):
     post = Post.query.get_or_404(post_id)
     if post.author != current_user:
@@ -70,7 +73,7 @@ def delete_post(post_id):
     return redirect(url_for('forums'))
 
 @forum.route('/comment/<int:comment_id>/delete', methods=['POST'])
-@login_required
+@auth_required()
 def delete_comment(comment_id):
     comment = Comment.query.get_or_404(comment_id)
     db.session.delete(comment)
@@ -78,7 +81,7 @@ def delete_comment(comment_id):
     return redirect(url_for('forum.post', post_id=comment.post_id))
 
 @forum.route('/comment/<int:comment_id>/edit', methods=['GET', 'POST'])
-@login_required
+@auth_required()
 def edit_comment(comment_id):
     comment = Comment.query.get_or_404(comment_id)
     if comment.user_id != current_user.id:
@@ -94,6 +97,7 @@ def edit_comment(comment_id):
     return render_template('edit_comment.html', form=form, comment=comment)
 
 @forum.route("/user/<string:username>")
+@auth_required()
 def user_posts(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()

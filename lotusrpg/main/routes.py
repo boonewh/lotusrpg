@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from flask_security import auth_required
 
 main = Blueprint('main', __name__)
 
@@ -7,6 +8,7 @@ def index():
     return render_template('index.html') 
 
 @main.route('/community')
+@auth_required()
 def community():
     return render_template('community.html')
 

@@ -28,8 +28,8 @@
                              alt="Profile Picture">
                     </a>
                     {% else %}
-                        <a href="{{ url_for('users.register') }}" class="nav-link">Register</a>
-                        <a href="{{ url_for('users.login') }}" class="nav-link">Login</a>
+                        <a href="{{ url_for('security.register') }}" class="nav-link">Register</a>
+                        <a href="{{ url_for('security.login') }}" class="nav-link">Login</a>
                     {% endif %}
                 </div>
             </div>
@@ -64,10 +64,10 @@
         <input type="text" placeholder="Search..." class="search-input">
         {% if current_user.is_authenticated %}
             <a href="{{ url_for('users.account') }}" class="nav-link">Account</a>
-            <a href="{{ url_for('users.logout') }}" class="nav-link">Logout</a>
+            <a href="{{ url_for('security.logout') }}" class="nav-link">Logout</a>
         {% else %}
-            <a href="{{ url_for('users.register') }}" class="nav-link">Register</a>
-            <a href="{{ url_for('users.login') }}" class="nav-link">Login</a>
+            <a href="{{ url_for('security.register') }}" class="nav-link">Register</a>
+            <a href="{{ url_for('security.login') }}" class="nav-link">Login</a>
         {% endif %}
         <a href="{{ url_for('main.index') }}" class="nav-link">Main</a>
         <a href="#" class="nav-link">Core Rules</a>
