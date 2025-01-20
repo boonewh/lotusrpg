@@ -3,7 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_security import Security, SQLAlchemyUserDatastore
 from flask_mail import Mail
 from flask_bcrypt import Bcrypt
+from flask_migrate import Migrate
 from lotusrpg.config import Config 
+
 
 db = SQLAlchemy()
 bcrypt = Bcrypt()
@@ -17,6 +19,8 @@ def create_app(config_class=Config):
     db.init_app(app)
     bcrypt.init_app(app)
     mail.init_app(app)
+
+    migrate = Migrate(app, db)
 
     from lotusrpg.models import User, Role
     from lotusrpg.users.forms import ExtendedRegisterForm
