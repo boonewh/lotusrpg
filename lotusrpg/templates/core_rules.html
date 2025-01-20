@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}DD10 Core Rules{% endblock %}
+
+{% block content %}
+    <div div class="container-aside">
+        <aside class="side-nav">
+            <h2 class="nav-heading">Character Creation</h2>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('rules.core_rules', slug='prelude') }}">Prelude</a></li>
+                <li><a href="{{ url_for('rules.core_rules', slug='approaches') }}">Approaches</a></li>
+            </ul>
+        </aside>
+        <article class="rules">
+            <h1 class="heading1">Core Rules</h1>
+            {% for content in section.contents|sort(attribute='content_order') %}
+                {% if content.content_type == 'heading' %}
+                    <h2 class="{{ content.style_class }}">{{ content.content_data }}</h2>
+                    <br>
+                {% elif content.content_type == 'paragraph' %}
+                    <p class="{{ content.style_class }}">{{ content.content_data }}</p>
+                    <br>
+                {% elif content.content_type == 'list' %}
+                    <ul class="{{ content.style_class }}">
+                        {% for item in content.content_data %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                    <br>
+                {% elif content.content_type == 'table' %}
+                    <table class="{{ content.style_class }}">
+                        {% for row in content.content_data %}
+                            <tr>
+                                {% for cell in row %}
+                                    <td>{{ cell }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <br>
+                {% elif content.content_type == 'image' %}
+                    <img 
+                        src="{{ content.content_data.file_path }}" 
+                        alt="{{ content.content_data.alt_text }}" 
+                        class="{{ content.style_class }}"
+                    />
+                {% endif %}
+            {% endfor %}
+        </article>
+    </div>
+{% endblock %}

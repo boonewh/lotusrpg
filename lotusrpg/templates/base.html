@@ -37,7 +37,7 @@
             <!-- Bottom Row: Main Navigation -->
             <div class="nav-bottom">
                 <a href="{{ url_for('main.index') }}" class="nav-link">Main</a>
-                <a href="#" class="nav-link">Core Rules</a>
+                <a href="{{ url_for('rules.core_rules', slug='prelude') }}"class="nav-link">Core Rules</a>
                 <a href="#" class="nav-link">Darkholme</a>
                 <a href="{{ url_for('main.community') }}" class="nav-link">Community</a>
                 <a href="{{ url_for('main.charity') }}" class="nav-link">Charity</a>
@@ -80,23 +80,24 @@
     
     <div">
     {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        <div class="flash-container">
-            <div class="container mx-auto px-6 pt-16">
-                {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
+        {% if messages %}
+            <div class="flash-container">
+                <div class="container mx-auto px-6 pt-16">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-    {% endif %}
-{% endwith %}
+        {% endif %}
+    {% endwith %}
     </div>
     
     <!-- Page Content -->
+    <main>
     {% block content %}{% endblock %}
-    
+    </main>
     
     <!-- Footer -->
     <footer class="bg-gray-900 py-12">

@@ -59,3 +59,26 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
 
     user = db.relationship('User', backref='comments', lazy=True)
+
+class Section(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255), nullable=False)
+    slug = db.Column(db.String(255), unique=True, nullable=False)
+    parent_id = db.Column(db.Integer, db.ForeignKey('section.id'), nullable=True)
+
+    children = db.relationship('Section', backref='parent', remote_side=[id])
+
+class Content(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    section_id = db.Column(db.Integer, db.ForeignKey('section.id'), nullable=False)
+    content_type = db.Column(db.Enum("heading", "subheading", "paragraph", "table", "list", "image", name="content_types"), nullable=False)
+    content_order = db.Column(db.Integer, nullable=False)
+    content_data = db.Column(db.JSON, nullable=False)
+    style_class = db.Column(db.String(255), nullable=True)
+
+    section = db.relationship('Section', backref='contents')
+
+class Image(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    file_path = db.Column(db.String(255), nullable=False)
+    alt_text = db.Column(db.String(255), nullable=True)

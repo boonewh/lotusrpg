@@ -237,6 +237,57 @@ body {
   text-align: center;
 }
 
+/* Rulebook Styles */
+
+.rules {
+  width: 65%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.rules h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+/* Rulebook Side Nav Styling */
+
+.container-aside {
+  display: flex;
+}
+
+.side-nav {
+  width: 20%;
+  padding: 1em;
+  background: var(--background);
+  border-right: 1px solid #ddd;
+}
+
+.nav-heading {
+  padding-top: calc(var(--nav-height) + 8rem);
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.nav-links {
+  list-style-type: none;
+  padding-left: 0.5em;
+}
+
+.nav-links li {
+  margin: 0.5em 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
 /* Base Alert Styling */
 .alert {
   padding: 1rem;
