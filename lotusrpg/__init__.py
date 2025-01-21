@@ -41,11 +41,13 @@ def create_app(config_class=Config):
     from lotusrpg.forum.routes import forum
     from lotusrpg.errors.handlers import errors
     from lotusrpg.rules.routes import rules
+    from lotusrpg.admin.routes import admin
 
     app.register_blueprint(users)
     app.register_blueprint(main)
     app.register_blueprint(forum)
     app.register_blueprint(errors)
     app.register_blueprint(rules)
+    app.register_blueprint(admin, url_prefix='/admin')
 
     return app
