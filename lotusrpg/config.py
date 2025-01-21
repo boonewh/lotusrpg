@@ -24,6 +24,7 @@ class Config:
     MAIL_USE_SSL = os.environ.get('MAIL_USE_SSL', 'true').lower() in ['true', '1', 't']
     MAIL_USERNAME = os.environ.get('EMAIL_ADDRESS', '')
     MAIL_PASSWORD = os.environ.get('EMAIL_PASSWORD', '')
+    MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER', MAIL_USERNAME)
 
     # Flask-Security settings
     SECURITY_PASSWORD_SALT = os.environ.get('SECURITY_PASSWORD_SALT', 'default-salt')
