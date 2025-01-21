@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request
-from admin.forms import RuleForm
+from lotusrpg.admin.forms import RuleForm
 from lotusrpg.models import Rule
 from lotusrpg import db
 
