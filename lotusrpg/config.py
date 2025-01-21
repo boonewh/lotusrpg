@@ -18,10 +18,10 @@ class Config:
     RECAPTCHA_OPTIONS = {'theme': 'light'}
 
     # Email configuration
-    MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
-    MAIL_PORT = int(os.environ.get('MAIL_PORT', 587))
-    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS', 'true').lower() in ['true', '1', 't']
-    MAIL_USE_SSL = os.environ.get('MAIL_USE_SSL', 'false').lower() in ['true', '1', 't']
+    MAIL_SERVER = os.environ.get('MAIL_SERVER', 'mail.gandi.net')
+    MAIL_PORT = int(os.environ.get('MAIL_PORT', 465))
+    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS', 'false').lower() in ['true', '1', 't']
+    MAIL_USE_SSL = os.environ.get('MAIL_USE_SSL', 'true').lower() in ['true', '1', 't']
     MAIL_USERNAME = os.environ.get('EMAIL_ADDRESS', '')
     MAIL_PASSWORD = os.environ.get('EMAIL_PASSWORD', '')
 
