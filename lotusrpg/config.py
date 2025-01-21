@@ -2,14 +2,18 @@ import os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'default-secret-key')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')  # Render provides this
-    SQLALCHEMY_TRACK_MODIFICATIONS = False  # Disables overhead for tracking modifications in SQLAlchemy
+    
+    # Database configuration
+    DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///site.db')  # Local default to SQLite
+    SQLALCHEMY_DATABASE_URI = DATABASE_URL
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    # Ensure SSL is used for Render's PostgreSQL
-    SQLALCHEMY_ENGINE_OPTIONS = {
-        "pool_pre_ping": True,  # Helps with database connection reliability
-        "connect_args": {"sslmode": "require"}  # Enforces SSL for database connection
-    }
+    # Use SSL options only if connecting to Render PostgreSQL
+    if 'DATABASE_URL' in os.environ:
+        SQLALCHEMY_ENGINE_OPTIONS = {
+            "pool_pre_ping": True,
+            "connect_args": {"sslmode": "require"}
+        }
 
     # reCAPTCHA configuration
     RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY', '')
@@ -28,7 +32,7 @@ class Config:
 
     # Flask-Security settings
     SECURITY_PASSWORD_SALT = os.environ.get('SECURITY_PASSWORD_SALT', 'default-salt')
-    SECURITY_PASSWORD_HASH = 'bcrypt'
+    SECURITY_PASSWORD_HASH = 'pbkdf2_sha512'
     SECURITY_REGISTERABLE = True
     SECURITY_RECOVERABLE = True
     SECURITY_TRACKABLE = True
