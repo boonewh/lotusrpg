@@ -24,6 +24,7 @@ class User(db.Model, UserMixin):
     fs_uniquifier = db.Column(db.String(255), unique=True, nullable=False)
     confirmed_at = db.Column(db.DateTime())
     image_file = db.Column(db.String(20), nullable=False, default='default.png')
+    is_banned = db.Column(db.Boolean(), default=False) 
 
         # Add these tracking columns
     last_login_at = db.Column(db.DateTime())

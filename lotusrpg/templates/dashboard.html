@@ -3,5 +3,10 @@
 {% block title %}Admin - LOTUS RPG{% endblock %}
 
 {% block content %}
-
+    <h1 class="heading1">Admin Dashboard</h1>
+    <ul class="admin-links">
+        <li><a href="{{ url_for('admin.manage_users') }}">Manage Users</a></li>
+        <li><a href="{{ url_for('admin.add_rule') }}">Add New Rule</a></li>
+        <li><a href="#">Other Admin Feature</a></li>
+    </ul>
 {% endblock %}

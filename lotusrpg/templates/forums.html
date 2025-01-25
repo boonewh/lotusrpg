@@ -14,7 +14,7 @@
         <div>
             <h1 class="text-3xl font-bold mb-1"><a href="{{ url_for('forum.post', post_id=post.id) }}">{{ post.title }}</a></h1>
             <p class="mb-4">Posted by <a href="{{ url_for('forum.user_posts', username=post.author.username) }}" class="text-blue-500 hover:underline">{{ post.author.username }}</a> on {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
-            <p class="mb-4">{{ post.content }}</p>
+            <p class="mb-4">{{ post.content[:350] }}...</p>
             <hr>
         </div>
     </article>

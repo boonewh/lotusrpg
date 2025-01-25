@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request
-from lotusrpg.models import db, Section, Content
+from lotusrpg.models import db, Section, Content, User, Role
 from lotusrpg.admin.forms import RuleForm
+from flask_security import roles_required
 
 admin = Blueprint('admin', __name__)
 
@@ -87,3 +88,46 @@ def delete_rule(section_id):
     db.session.commit()
     flash('Rule deleted successfully!', 'success')
     return redirect(url_for('admin.dashboard'))
+
+
+@admin.route('/users')
+@roles_required('admin')
+def manage_users():
+    search_query = request.args.get('search', '').strip()
+    page = request.args.get('page', 1, type=int)
+    
+    if search_query:
+        # Filter users by username or email (case insensitive)
+        users = User.query.filter(
+            User.username.ilike(f'%{search_query}%') | 
+            User.email.ilike(f'%{search_query}%')
+        ).paginate(page=page, per_page=10)
+    else:
+        # No search query, show all users
+        users = User.query.paginate(page=page, per_page=10)
+    
+    return render_template('manage_users.html', users=users)
+
+
+@admin.route('/user/<int:user_id>/ban', methods=['POST'])
+@roles_required('admin')
+def ban_user(user_id):
+    user = User.query.get_or_404(user_id)
+    user.is_banned = not user.is_banned  # Toggle ban status
+    db.session.commit()
+    flash(f"User {'banned' if user.is_banned else 'unbanned'} successfully!", 'success')
+    return redirect(url_for('admin.manage_users'))
+
+@admin.route('/user/<int:user_id>/roles', methods=['GET', 'POST'])
+@roles_required('admin')
+def edit_roles(user_id):
+    user = User.query.get_or_404(user_id)
+    if request.method == 'POST':
+        # Update user roles
+        roles = request.form.getlist('roles')  # Get selected roles from form
+        user.roles = Role.query.filter(Role.id.in_(roles)).all()
+        db.session.commit()
+        flash('Roles updated successfully!', 'success')
+        return redirect(url_for('admin.manage_users'))
+    all_roles = Role.query.all()
+    return render_template('edit_roles.html', user=user, roles=all_roles)

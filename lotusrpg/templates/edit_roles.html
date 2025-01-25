@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Roles{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-6">
+    <!-- Title -->
+    <h1 class="pt-60 text-2xl font-bold text-gray-800 mb-6">Edit Roles for {{ user.username }}</h1>
+
+    <!-- Form -->
+    <form method="POST" class="space-y-4 bg-white p-6 rounded-lg shadow-md border border-gray-300">
+        <!-- Roles Checkboxes -->
+        <div class="space-y-2">
+            {% for role in roles %}
+            <label class="flex items-center space-x-3">
+                <input 
+                    type="checkbox" 
+                    name="roles" 
+                    value="{{ role.id }}" 
+                    class="h-5 w-5 text-blue-500 border-gray-300 rounded focus:ring-blue-400"
+                    {% if role in user.roles %}checked{% endif %}
+                >
+                <span class="text-gray-700">{{ role.name }}</span>
+            </label>
+            {% endfor %}
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+            <button 
+                type="submit" 
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg">
+                Save Roles
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
