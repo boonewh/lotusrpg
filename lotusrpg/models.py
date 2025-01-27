@@ -15,6 +15,10 @@ class Role(db.Model, RoleMixin):
     name = db.Column(db.String(80), unique=True)
     description = db.Column(db.String(255))
 
+    def __repr__(self):
+        return f"Role('{self.name}', '{self.description}')"
+
+
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -26,20 +30,18 @@ class User(db.Model, UserMixin):
     image_file = db.Column(db.String(20), nullable=False, default='default.png')
     is_banned = db.Column(db.Boolean(), default=False) 
 
-        # Add these tracking columns
+    # tracking columns
     last_login_at = db.Column(db.DateTime())
     current_login_at = db.Column(db.DateTime())
     last_login_ip = db.Column(db.String(100))
     current_login_ip = db.Column(db.String(100))
     login_count = db.Column(db.Integer, default=0)
     
-    roles = db.relationship('Role', secondary=roles_users, 
-                          backref=db.backref('users', lazy='dynamic'))
+    roles = db.relationship('Role', secondary=roles_users, backref=db.backref('users', lazy='dynamic'))
     posts = db.relationship('Post', backref='author', lazy=True)
-    # Remove the duplicate comments relationship since it's defined in Comment class
 
     def __repr__(self):
-        return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+        return f"User('{self.username}', '{self.email}', '{self.active}')"
     
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -61,6 +63,10 @@ class Comment(db.Model):
 
     user = db.relationship('User', backref='comments', lazy=True)
 
+    def __repr__(self):
+        return f"Comment('{self.content}', User ID: {self.user_id}, Post ID: {self.post_id})"
+
+
 class Section(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=False)
@@ -68,6 +74,10 @@ class Section(db.Model):
     parent_id = db.Column(db.Integer, db.ForeignKey('section.id'), nullable=True)
 
     children = db.relationship('Section', backref='parent', remote_side=[id])
+
+    def __repr__(self):
+        return f"Section('{self.title}', Slug: '{self.slug}', Parent ID: {self.parent_id})"
+
 
 class Content(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -79,7 +89,15 @@ class Content(db.Model):
 
     section = db.relationship('Section', backref='contents')
 
+    def __repr__(self):
+        return f"Content('{self.content_type}', Order: {self.content_order}, Section ID: {self.section_id})"
+
+
 class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     file_path = db.Column(db.String(255), nullable=False)
     alt_text = db.Column(db.String(255), nullable=True)
+    class_name = db.Column(db.String(255), nullable=True) 
+
+    def __repr__(self):
+        return f"Image('{self.file_path}', Alt Text: '{self.alt_text}', Class: '{self.class_name}')"

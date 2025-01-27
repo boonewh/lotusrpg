@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}DD10 Core Rules{% endblock %}
+{% block title %}DD10 Rules - Darkholme{% endblock %}
 
 {% block content %}
     <div div class="container-aside">
@@ -12,7 +12,7 @@
             </ul>
         </aside>
         <article class="rules">
-            <h1 class="heading1">Core Rules</h1>
+            <h1 class="heading1">Darkholme</h1>
             {% for content in section.contents|sort(attribute='content_order') %}
                 {% if content.content_type == 'heading' %}
                     <h2 class="{{ content.style_class }}">{{ content.content_data }}</h2>

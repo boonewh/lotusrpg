@@ -34,7 +34,7 @@ def seed_rules():
                         Opting for a pre-made character is quick and ensures you're set up with a mechanically solid persona, 
                         but nothing beats the thrill of crafting your own character from scratch. This way, you develop a deeper 
                         connection as you shape their history and define their motivations.
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "paragraph",
@@ -44,7 +44,7 @@ def seed_rules():
                         Reflect on the genre and setting, then consider these intriguing questions: Who is your character? Where 
                         did they grow up? What's their occupation? Who are their friends and family? What drives them, and what 
                         are their aspirations, both immediate and long-term?
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "paragraph",
@@ -53,7 +53,7 @@ def seed_rules():
                         With their backstory in place, it's time to bring your character to life. Choose their name, height, weight, 
                         gender, age, and give us a snapshot of their appearance. Next, dive into the finer details: Is your character 
                         slim or sturdy? Are they charming or less so? Any distinctive features like tattoos or scars that make them stand out?
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "paragraph",
@@ -63,7 +63,7 @@ def seed_rules():
                         role-playing experience. Every character we create has a bit of us in them—our unique touch that shines through. As you 
                         build your character, infuse them with qualities that make them unforgettable, all while letting your own personality subtly 
                         influence their essence.
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "paragraph",
@@ -72,7 +72,7 @@ def seed_rules():
                         In the upcoming sections, we'll not only help you sculpt your character's virtues and vices 
                         but also navigate the technical aspects of bringing your character to life in the L.O.T.U.S. RPG system. 
                         Let's make your character truly memorable!
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 }
             ]
         },
@@ -91,35 +91,35 @@ def seed_rules():
                     "order": 2,
                     "data": """
                         This can be an exceedingly difficult aspect to portray without internally projecting personal values over those of the character. Founding game systems that utilize traditional “Alignments” created a system that causes conflict regarding in-character behavioral versus out-of-character cultural perception. It becomes difficult to understand that a Lawful Evil and Chaotic Good character may perform the exact same act but their reasoning behind it will be vastly different which can be very confusing to new players.
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "paragraph",
                     "order": 3,
                     "data": """
                         To elevate your experience and foster a deeper sense of character individuality in L.O.T.U.S. RPG, we’ve embraced a dynamic concept called “Living Philosophies.” This framework moves beyond the conventional binary of good versus evil, which often leads to subjective interpretations and player conflicts over character actions. Instead, Living Philosophies provide a nuanced framework to shape your character’s core reactive values, guiding you to respond not as you would personally, but as your character would, enriching the authenticity of your role-playing.
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "paragraph",
                     "order": 4,
                     "data": """
                         Living Philosophies in L.O.T.U.S. RPG encompass a diverse spectrum: Law-abiding, Pragmatic, Honorable, Righteous, Machiavellian, and Anarchistic. Each philosophy offers unique paths and potential developments for your character, allowing you to tailor their motivations and actions based on a coherent set of principles.
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "paragraph",
                     "order": 5,
                     "data": """
                         The structure of Living Philosophy is twofold, designed both to guide and to incentivize. We start with the “Approach”—where each philosophy may branch into one or two paths, offering a tailored direction for character development. To add further depth, there’s an optional layer we call “Virtue, Failings, Vice & Balance.” This mechanism isn’t just about adding complexity; it’s about enhancing your character’s narrative and unlocking potential in-game rewards for stellar role-play.
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "paragraph",
                     "order": 6,
                     "data": """
                         Game Masters have the flexibility to implement this second layer as they see fit, using it as a tool to encourage specific behaviors and enrich the gaming experience. Whether you choose to delve into these optional traits or stick with the fundamental Approach based on one of the Living Philosophies, you’re setting the stage for building a distinct and memorable character.
-                    """.strip()
+                    """.replace("\n", " ").strip()
                 },
             ]
 
