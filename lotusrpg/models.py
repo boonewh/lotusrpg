@@ -72,8 +72,11 @@ class Section(db.Model):
     title = db.Column(db.String(255), nullable=False)
     slug = db.Column(db.String(255), unique=True, nullable=False)
     parent_id = db.Column(db.Integer, db.ForeignKey('section.id'), nullable=True)
+    chapter = db.Column(db.String(255), nullable=False) 
 
     children = db.relationship('Section', backref='parent', remote_side=[id])
+    images = db.relationship('Image', back_populates='section', cascade='all, delete-orphan')
+
 
     def __repr__(self):
         return f"Section('{self.title}', Slug: '{self.slug}', Parent ID: {self.parent_id})"
@@ -98,6 +101,9 @@ class Image(db.Model):
     file_path = db.Column(db.String(255), nullable=False)
     alt_text = db.Column(db.String(255), nullable=True)
     class_name = db.Column(db.String(255), nullable=True) 
+    section_id = db.Column(db.Integer, db.ForeignKey('section.id')) 
+
+    section = db.relationship('Section', back_populates='images') 
 
     def __repr__(self):
         return f"Image('{self.file_path}', Alt Text: '{self.alt_text}', Class: '{self.class_name}')"

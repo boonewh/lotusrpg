@@ -17,6 +17,7 @@ def seed_rules():
         {
             "title": "Prelude: Character Concepts & Components",
             "slug": "prelude",
+            "chapter": "Character Creation",
             "content": [
                 {
                     "type": "heading",
@@ -79,6 +80,7 @@ def seed_rules():
         {
             "title": "Approaches: Utilizing Living Philosophies",
             "slug": "approaches",
+            "chapter": "Character Creation",
             "content": [
                 {
                     "type": "heading",
@@ -126,19 +128,18 @@ def seed_rules():
         }
     ]
 
-    # Add sections and content to the database
+    # Seed the database with sections and their content
     for section_data in sections:
-        # Debug: Print which section is being added
         print(f"Adding section: {section_data['title']}")
-        section = Section(title=section_data["title"], slug=section_data["slug"])
+        section = Section(
+            title=section_data["title"],
+            slug=section_data["slug"],
+            chapter=section_data["chapter"]  # Ensure chapter is assigned here
+        )
         db.session.add(section)
         db.session.commit()  # Commit to generate the section ID
 
-        # Debug: Print the generated section ID
-        print(f"Created section with ID: {section.id}")
-
         for content_data in section_data["content"]:
-            # Debug: Print which content is being added
             print(f"Adding content: {content_data['type']} with order {content_data['order']}")
             content = Content(
                 section_id=section.id,
@@ -151,7 +152,6 @@ def seed_rules():
 
     db.session.commit()
     print("Database seeded successfully!")
-
 
 if __name__ == "__main__":
     app = create_app()  # Create the Flask app instance
