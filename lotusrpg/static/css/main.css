@@ -258,10 +258,44 @@ body {
 }
 
 .side-nav {
-  width: 20%;
-  padding: 1em;
-  background: var(--background);
-  border-right: 1px solid #ddd;
+  width: 25%;
+  background: #1a202c;
+  padding: 1rem;
+  border-right: 1px solid #4a5568;
+}
+
+.rules {
+  flex: 1;
+  padding: 2rem;
+  background: #121212;
+  color: white;
+}
+
+#section-content {
+  width: 75%; /* Set content width to 75% */
+  margin: 0 auto; /* Center the content */
+  padding: 1rem; /* Add some padding for readability */
+  color: white; /* Ensure text remains readable */
+}
+
+#section-content p {
+  margin-bottom: 1.5rem; /* Adds space after each paragraph */
+  line-height: 1.6; /* Improves readability with better line spacing */
+}
+
+.chapter-title {
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.section-link {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.section-link:hover {
+  text-decoration: underline;
 }
 
 .nav-heading {

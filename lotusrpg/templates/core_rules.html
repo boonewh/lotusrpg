@@ -1,51 +1,99 @@
 {% extends "base.html" %}
 
-{% block title %}DD10 Core Rules{% endblock %}
+{% block title %}Core Rules{% endblock %}
 
 {% block content %}
-    <div div class="container-aside">
-        <aside class="side-nav">
-            <h2 class="nav-heading">Character Creation</h2>
-            <ul class="nav-links">
-                <li><a href="{{ url_for('rules.core_rules', slug='prelude') }}">Prelude</a></li>
-                <li><a href="{{ url_for('rules.core_rules', slug='approaches') }}">Approaches</a></li>
-            </ul>
-        </aside>
-        <article class="rules">
-            <h1 class="heading1">Core Rules</h1>
-            {% for content in section.contents|sort(attribute='content_order') %}
-                {% if content.content_type == 'heading' %}
-                    <h2 class="{{ content.style_class }}">{{ content.content_data }}</h2>
-                    <br>
-                {% elif content.content_type == 'paragraph' %}
-                    <p class="{{ content.style_class }}">{{ content.content_data }}</p>
-                    <br>
-                {% elif content.content_type == 'list' %}
-                    <ul class="{{ content.style_class }}">
-                        {% for item in content.content_data %}
-                            <li>{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                    <br>
-                {% elif content.content_type == 'table' %}
-                    <table class="{{ content.style_class }}">
-                        {% for row in content.content_data %}
-                            <tr>
-                                {% for cell in row %}
-                                    <td>{{ cell }}</td>
-                                {% endfor %}
-                            </tr>
-                        {% endfor %}
-                    </table>
-                    <br>
-                {% elif content.content_type == 'image' %}
-                    <img 
-                        src="{{ content.content_data.file_path }}" 
-                        alt="{{ content.content_data.alt_text }}" 
-                        class="{{ content.content_data.class_name }}"
-                    />
-                {% endif %}
-            {% endfor %}
-        </article>
-    </div>
+<div class="container-aside">
+    <!-- Sidebar Menu -->
+    <aside class="side-nav">
+        <h2 class="nav-heading">Chapters</h2>
+        <div id="chapter-menu"></div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <article class="rules">
+        <h1 id="section-title" class="heading1">Core Rules</h1>
+        <div id="section-content"></div>
+    </article>
+</div>
+
+<script>
+// Load chapters dynamically
+async function loadChapters() {
+    const response = await fetch('/api/chapters'); // No '/rules' prefix
+    const data = await response.json();
+
+    const chapterMenu = document.getElementById('chapter-menu');
+    chapterMenu.innerHTML = '';
+
+    data.chapters.forEach(chapter => {
+        const chapterDiv = document.createElement('div');
+        chapterDiv.classList.add('chapter');
+
+        const chapterTitle = document.createElement('h3');
+        chapterTitle.textContent = chapter.title;
+        chapterTitle.classList.add('chapter-title');
+        chapterDiv.appendChild(chapterTitle);
+
+        const sectionList = document.createElement('ul');
+        chapter.sections.forEach(section => {
+            const sectionItem = document.createElement('li');
+            const sectionLink = document.createElement('a');
+            sectionLink.textContent = section.title;
+            sectionLink.href = '#';
+            sectionLink.onclick = () => loadSection(section.slug);
+            sectionLink.classList.add('section-link');
+            sectionItem.appendChild(sectionLink);
+            sectionList.appendChild(sectionItem);
+        });
+        chapterDiv.appendChild(sectionList);
+        chapterMenu.appendChild(chapterDiv);
+    });
+}
+
+// Load a specific section dynamically
+async function loadSection(slug) {
+    const response = await fetch(`/api/section/${slug}`); // No '/rules' prefix
+    const data = await response.json();
+
+    document.getElementById('section-title').textContent = data.title;
+    const sectionContent = document.getElementById('section-content');
+    sectionContent.innerHTML = '';
+
+    data.contents.sort((a, b) => a.order - b.order).forEach(content => {
+        let element;
+
+        if (content.type === 'heading') {
+            element = document.createElement('h2');
+        } else if (content.type === 'paragraph') {
+            element = document.createElement('p');
+        } else if (content.type === 'list') {
+            element = document.createElement('ul');
+            JSON.parse(content.data).forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                element.appendChild(li);
+            });
+        } else {
+            element = document.createElement('div');
+        }
+
+        if (content.type !== 'list') {
+            element.textContent = content.data;
+        }
+
+        if (content.style_class) {
+            element.classList.add(content.style_class);
+        }
+
+        sectionContent.appendChild(element);
+    });
+}
+
+// Initialize the menu and load the first section
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadChapters();
+    await loadSection('prelude'); // Default to "Prelude"
+});
+</script>
 {% endblock %}

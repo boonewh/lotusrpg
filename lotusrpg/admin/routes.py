@@ -37,6 +37,20 @@ def ban_user(user_id):
     flash(f"User {'banned' if user.is_banned else 'unbanned'} successfully!", 'success')
     return redirect(url_for('admin.manage_users'))
 
+@admin.route('/user/<int:user_id>/roles', methods=['GET', 'POST'])
+@roles_required('admin')
+def edit_roles(user_id):
+    user = User.query.get_or_404(user_id)
+    if request.method == 'POST':
+        # Update user roles
+        roles = request.form.getlist('roles')  # Get selected roles from form
+        user.roles = Role.query.filter(Role.id.in_(roles)).all()
+        db.session.commit()
+        flash('Roles updated successfully!', 'success')
+        return redirect(url_for('admin.manage_users'))
+    all_roles = Role.query.all()
+    return render_template('edit_roles.html', user=user, roles=all_roles)
+
 @admin.route('/manage/<slug>', methods=['GET', 'POST'])
 @roles_required('admin')
 def manage_page(slug):
