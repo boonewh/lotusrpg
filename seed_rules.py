@@ -125,8 +125,75 @@ def seed_rules():
                 },
             ]
 
+        },
+        {
+            "title": "Law Abiding",
+            "slug": "law-abiding",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": """
+                        Law-abiding members of society obey the laws, traditions, customs of their chosen culture and as their affiliated organization directs them. Lawful adherents believe in a strong, well-ordered government, whether an acceptable government is a tyranny or benevolent democracy is based on their focus. The need for stable organization and regimentation outweigh any moral questions and they will seek to uphold the law regardless of whether it is considered just or not. If ethics call for a change of the practice of the government, then they must use legal means of getting those laws changed.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "image",
+                    "order": 1,
+                    "data": {
+                        "file_path": "/static/images/law_abiding.jpg",
+                        "alt_text": "Law-Abiding Philosophy Chart",
+                        "class_name": "float-right ml-4 mb-4 w-1/3"
+                    }
+                },
+                {
+                    "type": "heading",
+                    "order": 3,
+                    "data": "Disciplined",
+                    "style_class": "underline text-2xl font-semibold mt-6"
+                },
+                {
+                    "type": "list",
+                    "order": 4,
+                    "data": [
+                        "Honor - Adhere to laws, oaths, customs and their intent.",
+                        "Duplicity - Lies are unbecoming in a civilized society.",
+                        "Theft - A crime to be reported or stopped.",
+                        "Helpless - Civilians shall be protected in a legal manner.",
+                        "Torture - Performed sparingly in accordance with the law.",
+                        "Killing - Life should only be taken as a necessary resort.",
+                        "Benevolence - The system provides and assists others.",
+                        "Authority - The laws and customs provide structure and protection for all and must be upheld at all cost."
+                    ],
+                    "style_class": "grid grid-cols-2 gap-4 list-disc pl-6"
+                },
+                {
+                    "type": "heading",
+                    "order": 5,
+                    "data": "Appointed",
+                    "style_class": "underline text-2xl font-semibold mt-6"
+                },
+                {
+                    "type": "list",
+                    "order": 6,
+                    "data": [
+                        "Honor - Use or seek change to the law and act accordingly.",
+                        "Duplicity - Nuances and loopholes should be used.",
+                        "Theft - A crime, but civil forfeiture is permissible.",
+                        "Helpless - Civilian lives may be lost upholding justice.",
+                        "Torture - Interrogation may be used to pursue justice.",
+                        "Killing - Acceptable but use the law to justify your actions.",
+                        "Benevolence - The system provides and assists others.",
+                        "Authority - The law is the means to an end, work within the law regardless how far you must stretch it."
+                    ],
+                    "style_class": "grid grid-cols-2 gap-4 list-disc pl-6"
+                }
+            ]
         }
     ]
+
+    #images class for tailwind: ="float-right ml-4 mb-4 w-1/3"; // Tailwind styles
 
     # Seed the database with sections and their content
     for section_data in sections:
@@ -134,7 +201,7 @@ def seed_rules():
         section = Section(
             title=section_data["title"],
             slug=section_data["slug"],
-            chapter=section_data["chapter"]  # Ensure chapter is assigned here
+            chapter=section_data["chapter"]
         )
         db.session.add(section)
         db.session.commit()  # Commit to generate the section ID
@@ -146,7 +213,7 @@ def seed_rules():
                 content_type=content_data["type"],
                 content_order=content_data["order"],
                 content_data=content_data["data"],
-                style_class=content_data.get("class")
+                style_class=content_data.get("style_class")
             )
             db.session.add(content)
 

@@ -18,82 +18,121 @@
 </div>
 
 <script>
-// Load chapters dynamically
-async function loadChapters() {
-    const response = await fetch('/api/chapters'); // No '/rules' prefix
-    const data = await response.json();
+    // Load chapters dynamically
+    async function loadChapters() {
+        const response = await fetch('/api/chapters'); // No '/rules' prefix
+        const data = await response.json();
 
-    const chapterMenu = document.getElementById('chapter-menu');
-    chapterMenu.innerHTML = '';
+        const chapterMenu = document.getElementById('chapter-menu');
+        chapterMenu.innerHTML = '';
 
-    data.chapters.forEach(chapter => {
-        const chapterDiv = document.createElement('div');
-        chapterDiv.classList.add('chapter');
+        data.chapters.forEach(chapter => {
+            const chapterDiv = document.createElement('div');
+            chapterDiv.classList.add('chapter');
 
-        const chapterTitle = document.createElement('h3');
-        chapterTitle.textContent = chapter.title;
-        chapterTitle.classList.add('chapter-title');
-        chapterDiv.appendChild(chapterTitle);
+            const chapterTitle = document.createElement('h3');
+            chapterTitle.textContent = chapter.title;
+            chapterTitle.classList.add('chapter-title');
+            chapterDiv.appendChild(chapterTitle);
 
-        const sectionList = document.createElement('ul');
-        chapter.sections.forEach(section => {
-            const sectionItem = document.createElement('li');
-            const sectionLink = document.createElement('a');
-            sectionLink.textContent = section.title;
-            sectionLink.href = '#';
-            sectionLink.onclick = () => loadSection(section.slug);
-            sectionLink.classList.add('section-link');
-            sectionItem.appendChild(sectionLink);
-            sectionList.appendChild(sectionItem);
-        });
-        chapterDiv.appendChild(sectionList);
-        chapterMenu.appendChild(chapterDiv);
-    });
-}
-
-// Load a specific section dynamically
-async function loadSection(slug) {
-    const response = await fetch(`/api/section/${slug}`); // No '/rules' prefix
-    const data = await response.json();
-
-    document.getElementById('section-title').textContent = data.title;
-    const sectionContent = document.getElementById('section-content');
-    sectionContent.innerHTML = '';
-
-    data.contents.sort((a, b) => a.order - b.order).forEach(content => {
-        let element;
-
-        if (content.type === 'heading') {
-            element = document.createElement('h2');
-        } else if (content.type === 'paragraph') {
-            element = document.createElement('p');
-        } else if (content.type === 'list') {
-            element = document.createElement('ul');
-            JSON.parse(content.data).forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                element.appendChild(li);
+            const sectionList = document.createElement('ul');
+            chapter.sections.forEach(section => {
+                const sectionItem = document.createElement('li');
+                const sectionLink = document.createElement('a');
+                sectionLink.textContent = section.title;
+                sectionLink.href = '#';
+                sectionLink.onclick = () => loadSection(section.slug);
+                sectionLink.classList.add('section-link');
+                sectionItem.appendChild(sectionLink);
+                sectionList.appendChild(sectionItem);
             });
-        } else {
-            element = document.createElement('div');
-        }
+            chapterDiv.appendChild(sectionList);
+            chapterMenu.appendChild(chapterDiv);
+        });
+    }
 
-        if (content.type !== 'list') {
-            element.textContent = content.data;
-        }
+    // Load a specific section dynamically
+    async function loadSection(slug) {
+        const response = await fetch(`/api/section/${slug}`); // No '/rules' prefix
+        const data = await response.json();
 
-        if (content.style_class) {
-            element.classList.add(content.style_class);
-        }
+        document.getElementById('section-title').textContent = data.title;
+        const sectionContent = document.getElementById('section-content');
+        sectionContent.innerHTML = '';
 
-        sectionContent.appendChild(element);
-    });
+        let containerStack = []; // Keeps track of open containers
+
+        data.contents.sort((a, b) => a.order - b.order).forEach(content => {
+            let element;
+
+            if (content.type === 'container') {
+                if (content.data === "open") {
+                    element = document.createElement('div');
+                    if (content.style_class) {
+                        element.className = content.style_class;
+                    }
+                    containerStack.push(element); // Push to stack
+                } else if (content.data === "close" && containerStack.length > 0) {
+                    sectionContent.appendChild(containerStack.pop()); // Pop last open container
+                    return; // Skip further processing (no text, just closing div)
+                }
+            } else if (content.type === 'heading') {
+                console.log('Creating heading with:', content);  // Log the full content object
+                element = document.createElement('h2');
+                element.textContent = content.data;
+                if (content.style_class) {
+                    console.log('Heading style_class:', content.style_class);  // Log the style_class
+                }
+            } else if (content.type === 'paragraph') {
+                element = document.createElement('p');
+            } else if (content.type === 'list') {
+                element = document.createElement('ul');
+                content.data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    element.appendChild(li);
+                });
+            } else if (content.type === 'image') {
+                element = document.createElement('img');
+                element.src = content.data.file_path;
+                element.alt = content.data.alt_text;
+                if (content.data.class_name) {
+                    element.className = content.data.class_name;
+                }
+            } else {
+                element = document.createElement('div');
+            }
+
+            if (content.type !== 'list' && content.type !== 'image') {
+                element.textContent = content.data;
+            }
+
+            if (content.style_class && content.type !== 'image') {
+            // Split the class string and add each class individually
+            content.style_class.split(' ').forEach(className => {
+                if (className) {  // Only add non-empty strings
+                    element.classList.add(className.trim());
+                }
+            });
 }
 
-// Initialize the menu and load the first section
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadChapters();
-    await loadSection('prelude'); // Default to "Prelude"
-});
+            if (containerStack.length > 0) {
+                containerStack[containerStack.length - 1].appendChild(element);
+            } else {
+                sectionContent.appendChild(element);
+            }
+        });
+
+        // Ensure all open containers are closed
+        while (containerStack.length > 0) {
+            sectionContent.appendChild(containerStack.pop());
+        }
+    }
+
+    // Initialize the menu and load the first section
+    document.addEventListener('DOMContentLoaded', async () => {
+        await loadChapters();
+        await loadSection('prelude'); // Default to "Prelude"
+    });
 </script>
 {% endblock %}
