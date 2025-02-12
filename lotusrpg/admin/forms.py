@@ -32,3 +32,18 @@ class ImageForm(FlaskForm):
     alt_text = StringField('Alt Text', validators=[Optional()])
     class_name = StringField('CSS Class', validators=[Optional()])
     submit = SubmitField('Save Image')
+
+class NewRuleForm(FlaskForm):
+    """Form for adding a new rule section."""
+    title = StringField('Section Title', validators=[DataRequired()])
+    slug = StringField('Slug', validators=[DataRequired()])
+    container = StringField('Container', validators=[Optional()])
+    submit = SubmitField('Add Rule')
+
+class ContainerForm(FlaskForm):
+    """Form for adding a container (div wrapper)."""
+    content_order = IntegerField('Order', validators=[DataRequired()])
+    style_class = StringField('CSS Class', validators=[Optional()])
+    submit = SubmitField('Add Container')
+
+

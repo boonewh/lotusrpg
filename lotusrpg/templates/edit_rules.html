@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Admin - Edit {{ section.title }}{% endblock %}
+
+{% block content %}
+<main class="flex">
+    <!-- Side Navigation -->
+    <aside class="side-nav bg-gray-800 p-4 w-1/4 min-h-screen">
+        <h2 class="text-lg font-semibold text-white mb-4 pt-60">Chapters</h2>
+        {% for chapter in chapters %}
+        <div class="mb-4">
+            <h3 class="text-white font-bold text-md">{{ chapter.title }}</h3>
+            <ul class="space-y-2">
+                {% for section in chapter.sections %}
+                <li>
+                    <a href="{{ url_for('admin.edit_rules', slug=section.slug) }}" 
+                       class="text-blue-400 hover:text-blue-300">
+                       {{ section.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </aside>
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-6 flex-1">
+        <h1 class="heading1">Edit "{{ section.title }}"</h1>
+
+        <!-- Edit Section Title -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Edit Section Title</h2>
+            <form method="POST">
+                <input type="hidden" name="action" value="edit_title">
+                <div class="mb-4">
+                    <label class="block text-white font-medium mb-2">Section Title</label>
+                    <input type="text" name="title" value="{{ section.title }}" class="form-input w-full text-black">
+                </div>
+                <button type="submit" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg">
+                    Save Title
+                </button>
+            </form>
+        </div>
+
+        <!-- Manage Contents -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Contents</h2>
+            <ul class="space-y-4">
+                {% for content in contents %}
+                <li class="p-4 bg-gray-900 rounded-lg">
+                    <form method="POST">
+                        <input type="hidden" name="content_id" value="{{ content.id }}">
+                        <div class="mb-2">
+                            <label class="block text-white font-medium">Content Type</label>
+                            <input type="text" name="content_type" value="{{ content.content_type }}" class="form-input w-full text-black">
+                        </div>
+                        <div class="mb-2">
+                            <label class="block text-white font-medium">Content Data</label>
+                            <textarea name="content_data" class="form-input w-full text-black">{{ content.content_data }}</textarea>
+                        </div>
+                        <div class="mb-2">
+                            <label class="block text-white font-medium">Order</label>
+                            <input type="number" name="content_order" value="{{ content.content_order }}" class="form-input w-full text-black">
+                        </div>
+                        <div class="mb-2">
+                            <label class="block text-white font-medium">CSS Class</label>
+                            <input type="text" name="style_class" value="{{ content.style_class }}" class="form-input w-full text-black">
+                        </div>
+                        <div class="flex justify-between mt-2">
+                            <button type="submit" name="action" value="edit_content" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg">
+                                Save
+                            </button>
+                            <button type="submit" name="action" value="delete_content" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg">
+                                Delete
+                            </button>
+                        </div>
+                    </form>
+                </li>            
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Delete Section -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+            <h2 class="text-2xl font-semibold mb-4">Delete Section</h2>
+            <form method="POST">
+                <input type="hidden" name="delete_section_id" value="{{ section.id }}">
+                <button type="submit" name="action" value="delete_section" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg shadow-md">
+                    Delete Section
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+

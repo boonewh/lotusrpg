@@ -40,9 +40,15 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url_for('admin.manage_page', slug='prelude') }}"
+                <a href="{{ url_for('admin.edit_rules', slug='prelude') }}"
                    class="text-blue-400 hover:text-blue-300">
-                   Manage Pages
+                   Edit Rules
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('admin.add_rule') }}"
+                   class="text-blue-400 hover:text-blue-300">
+                   Add New Rule
                 </a>
             </li>
             <li>
@@ -68,7 +74,7 @@
                 <h3 class="text-lg">Darkholme Rules</h3>
                 <p class="text-sm text-gray-400">Edit and view Darkholme Rules.</p>
             </a>
-            <a href="{{ url_for('admin.manage_page', slug='prelude') }}"
+            <a href="{{ url_for('admin.edit_rules', slug='prelude') }}"
                class="bg-gray-700 hover:bg-gray-600 p-4 rounded-lg text-center text-white font-semibold transition">
                 <h3 class="text-lg">Manage Pages</h3>
                 <p class="text-sm text-gray-400">Update pages dynamically.</p>

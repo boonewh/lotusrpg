@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request
 from lotusrpg.models import db, Section, Content, Image, User, Role
-from lotusrpg.admin.forms import SectionForm, ContentForm, ImageForm
+from lotusrpg.admin.forms import SectionForm, ContentForm, ImageForm, NewRuleForm, ContainerForm
 from flask_security import roles_required
 
 admin = Blueprint('admin', __name__)
@@ -51,15 +51,14 @@ def edit_roles(user_id):
     all_roles = Role.query.all()
     return render_template('edit_roles.html', user=user, roles=all_roles)
 
-@admin.route('/manage/<slug>', methods=['GET', 'POST'])
+# Edit Route
+@admin.route('/edit/<slug>', methods=['GET', 'POST'])
 @roles_required('admin')
-def manage_page(slug):
-    # Fetch the current section and related data
+def edit_rules(slug):
     section = Section.query.filter_by(slug=slug).first_or_404()
     contents = section.contents
     images = Image.query.filter_by(section_id=section.id).all()
 
-    # Query all chapters and their sections dynamically
     chapters = Section.query.with_entities(Section.chapter).distinct()
     chapter_data = []
     for chapter in chapters:
@@ -69,94 +68,112 @@ def manage_page(slug):
             "sections": [{"title": s.title, "slug": s.slug} for s in sections]
         })
 
-    # Initialize forms
     section_form = SectionForm(obj=section)
-    content_form = ContentForm()
-    image_form = ImageForm()
 
-    # Handle POST requests
     if request.method == 'POST':
         action = request.form.get('action', '')
 
-        # Handle section edits
-        if action == 'edit_section' and section_form.validate_on_submit():
-            section.title = section_form.title.data
-            section.slug = section_form.slug.data
+        if action == 'edit_title':
+            new_title = request.form.get('title')
+            section.title = new_title
+            db.session.commit()
+            flash("Title updated successfully!", "success")
+            return redirect(url_for('admin.edit_rules', slug=slug))
+
+        elif action == 'edit_section':
+            section_form.populate_obj(section)
             db.session.commit()
             flash('Section updated successfully!', 'success')
-            return redirect(url_for('admin.manage_page', slug=slug))
+            return redirect(url_for('admin.edit_rules', slug=slug))
 
-        # Handle adding/editing content
-        elif action == 'add_content':
+        elif action == 'edit_content':
             content_id = request.form.get('content_id')
-            if content_id:  # Update existing content
-                content = Content.query.get_or_404(content_id)
-                content.content_data = request.form['content_data']
-                content.content_order = request.form.get('content_order', content.content_order)
-                content.style_class = request.form.get('style_class', content.style_class)
+            content = Content.query.get(content_id)
+            if content:
+                content.content_type = request.form.get('content_type')
+                content.content_data = request.form.get('content_data')
+                content.content_order = request.form.get('content_order')
+                content.style_class = request.form.get('style_class')
+                db.session.commit()
                 flash('Content updated successfully!', 'success')
-            else:  # Add new content
-                new_content = Content(
-                    section_id=section.id,
-                    content_data=request.form['content_data'],
-                    content_order=request.form.get('content_order', 0),
-                    style_class=request.form.get('style_class')
-                )
-                db.session.add(new_content)
-                flash('Content added successfully!', 'success')
-            db.session.commit()
-            return redirect(url_for('admin.manage_page', slug=slug))
+            return redirect(url_for('admin.edit_rules', slug=slug))
 
-        # Handle deleting content
         elif action == 'delete_content':
-            content_id = request.form.get('delete_content_id')
+            content_id = request.form.get('content_id')
             content = Content.query.get(content_id)
             if content:
                 db.session.delete(content)
                 db.session.commit()
                 flash('Content deleted successfully!', 'success')
-            return redirect(url_for('admin.manage_page', slug=slug))
+            return redirect(url_for('admin.edit_rules', slug=slug))
 
-        # Handle adding/editing images
-        elif action == 'add_image':
-            image_id = request.form.get('image_id')
-            if image_id:  # Update existing image
-                image = Image.query.get_or_404(image_id)
-                image.file_path = request.form['file_path']
-                image.alt_text = request.form['alt_text']
-                image.class_name = request.form['class_name']
-                flash('Image updated successfully!', 'success')
-            else:  # Add new image
-                new_image = Image(
-                    section_id=section.id,
-                    file_path=request.form['file_path'],
-                    alt_text=request.form['alt_text'],
-                    class_name=request.form['class_name']
-                )
-                db.session.add(new_image)
-                flash('Image added successfully!', 'success')
+        elif action == 'delete_section':
+            db.session.delete(section)
             db.session.commit()
-            return redirect(url_for('admin.manage_page', slug=slug))
+            flash('Section deleted successfully!', 'success')
+            return redirect(url_for('admin.dashboard'))
 
-        # Handle deleting images
-        elif action == 'delete_image':
-            image_id = request.form.get('delete_image_id')
-            image = Image.query.get(image_id)
-            if image:
-                db.session.delete(image)
-                db.session.commit()
-                flash('Image deleted successfully!', 'success')
-            return redirect(url_for('admin.manage_page', slug=slug))
-
-    # Render the page
     return render_template(
-        'manage_page.html',
+        'edit_rules.html',
         section=section,
-        chapters=chapter_data,  # Properly structured data
+        chapters=chapter_data,
         contents=contents,
         images=images,
-        section_form=section_form,
-        content_form=content_form,
-        image_form=image_form
+        section_form=section_form
     )
 
+@admin.route('/add-rule', methods=['GET', 'POST'])
+@roles_required('admin')
+def add_rule():
+    section_form = NewRuleForm()
+    content_form = ContentForm()
+    container_form = ContainerForm()  # New container form
+
+    if request.method == 'POST':
+        action = request.form.get('action', '')
+
+        if action == 'add_section' and section_form.validate_on_submit():
+            new_section = Section(
+                title=section_form.title.data,
+                slug=section_form.slug.data
+            )
+            db.session.add(new_section)
+            db.session.commit()
+            flash('New rule added successfully!', 'success')
+            return redirect(url_for('admin.edit_rules', slug=new_section.slug))
+
+        elif action == 'add_content' and content_form.validate_on_submit():
+            section = Section.query.filter_by(slug=request.form.get('slug')).first()
+            if section:
+                new_content = Content(
+                    section_id=section.id,
+                    content_type=content_form.content_type.data,
+                    content_data=content_form.content_data.data,
+                    content_order=content_form.content_order.data,
+                    style_class=content_form.style_class.data
+                )
+                db.session.add(new_content)
+                db.session.commit()
+                flash('Content added successfully!', 'success')
+                return redirect(url_for('admin.edit_rules', slug=section.slug))
+
+        elif action == 'add_container' and container_form.validate_on_submit():
+            section = Section.query.filter_by(slug=request.form.get('slug')).first()
+            if section:
+                new_container = Content(
+                    section_id=section.id,
+                    content_type="container",
+                    content_order=container_form.content_order.data,
+                    style_class=container_form.style_class.data
+                )
+                db.session.add(new_container)
+                db.session.commit()
+                flash('Container added successfully!', 'success')
+                return redirect(url_for('admin.edit_rules', slug=section.slug))
+
+    return render_template(
+        'add_rule.html',
+        section_form=section_form,
+        content_form=content_form,
+        container_form=container_form  # Pass the new form to the template
+    )
