@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Subscribe to Darkholme{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6">
+        <h1 class="heading1 pb-20">Choose Your Subscription Plan</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- $3 Tier -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+                <h2 class="text-2xl font-bold text-white mb-4">Bronze</h2>
+                <p class="text-gray-400 mb-6 text-xl">$3/month</p>
+                <ul class="text-left text-gray-300 mb-6 space-y-2">
+                    <li>✓ Access to community forums</li>
+                    <li>✓ Basic game updates</li>
+                    <li>✓ Monthly newsletter</li>
+                </ul>
+                <a href="{{ url_for('users.subscribe', tier='bronze') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
+                    Subscribe
+                </a>
+            </div>
+            <!-- $5 Tier -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+                <h2 class="text-2xl font-bold text-white mb-4">Silver</h2>
+                <p class="text-gray-400 mb-6 text-xl">$5/month</p>
+                <ul class="text-left text-gray-300 mb-6 space-y-2">
+                    <li>✓ All Bronze features</li>
+                    <li>✓ Early access to new content</li>
+                    <li>✓ Exclusive game tips & tricks</li>
+                    <li>✓ Behind-the-scenes updates</li>
+                </ul>
+                <a href="{{ url_for('users.subscribe', tier='silver') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
+                    Subscribe
+                </a>
+            </div>
+            <!-- $10 Tier -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+                <h2 class="text-2xl font-bold text-white mb-4">Gold</h2>
+                <p class="text-gray-400 mb-6 text-xl">$10/month</p>
+                <ul class="text-left text-gray-300 mb-6 space-y-2">
+                    <li>✓ All Silver features</li>
+                    <li>✓ Access to premium content and guides</li>
+                    <li>✓ Quarterly exclusive digital downloads</li>
+                    <li>✓ Invitations to special online events</li>
+                    <li>✓ Recognition on our supporter page</li>
+                </ul>
+                <a href="{{ url_for('users.subscribe', tier='gold') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
+                    Subscribe
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

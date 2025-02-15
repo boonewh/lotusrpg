@@ -9,11 +9,11 @@
             <h1 class="text-5xl md:text-7xl font-bold mb-8">Welcome to Darkholme<sup>&copy;</sup></h1>
             <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto">Enter a world of high fantasy where demonic forces emerge from the Lost Core. Experience the DD10 gaming system - where every roll shapes your destiny.</p>
             <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="#" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
-                    Get Started
+                <a href="{{ url_for('users.subscribe') }}" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
+                    Support Us
                 </a>
-                <a href="#" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
-                    Learn More
+                <a href="{{ url_for('rules.core_rules', slug='prelude') }}" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
+                    Core Rules
                 </a>
             </div>
         </div>
@@ -80,7 +80,7 @@
                     <div class="relative z-20 h-full flex flex-col justify-end p-8">
                         <h2 class="text-3xl font-bold mb-4">Core Rules</h2>
                         <p class="text-lg mb-6 text-gray-200">Discover the foundational mechanics of the DD10 system, including boons, banes, and character creation rules designed for both tabletop and live-action play.</p>
-                        <a href="#" class="inline-flex items-center px-6 py-3 border-2 border-white hover:bg-white hover:text-gray-900 text-white font-semibold rounded-lg transition duration-300 w-fit">
+                        <a href="{{ url_for('rules.core_rules', slug='prelude') }}" class="inline-flex items-center px-6 py-3 border-2 border-white hover:bg-white hover:text-gray-900 text-white font-semibold rounded-lg transition duration-300 w-fit">
                             Read More
                         </a>
                     </div>
@@ -92,7 +92,7 @@
                     <div class="relative z-20 h-full flex flex-col justify-end p-8">
                         <h2 class="text-3xl font-bold mb-4">Darkholme</h2>
                         <p class="text-lg mb-6 text-gray-200">Dive into a world plagued by demonic forces and rifts, with high-fantasy elements and anime-inspired combat styles.</p>
-                        <a href="#" class="inline-flex items-center px-6 py-3 border-2 border-white hover:bg-white hover:text-gray-900 text-white font-semibold rounded-lg transition duration-300 w-fit">
+                        <a href="{{ url_for('rules.core_rules', slug='prelude') }}" class="inline-flex items-center px-6 py-3 border-2 border-white hover:bg-white hover:text-gray-900 text-white font-semibold rounded-lg transition duration-300 w-fit">
                             Explore Darkholme
                         </a>
                     </div>
@@ -105,34 +105,75 @@
     <section class="py-20 bg-gray-800">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-16">Choose Your Path</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div class="feature-card p-8 rounded-lg">
-                    <span class="membership-badge free-content">Free Access</span>
-                    <h3 class="text-2xl font-bold my-4">Core Experience</h3>
-                    <ul class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Free Access Tier -->
+                <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-gray-700">
+                    <h2 class="text-2xl font-bold text-white mb-4">Free Access</h2>
+                    <p class="text-gray-400 mb-6 text-xl">Free</p>
+                    <ul class="text-left text-gray-300 mb-6 space-y-2">
                         <li>✓ Basic Game Mechanics</li>
                         <li>✓ Character Creation Guide</li>
                         <li>✓ Setting Introduction</li>
-                        <li>✓ Community Access</li>
+                        <li>✓ Community Access (Read-Only)</li>
                     </ul>
+                    <div class="mt-auto">
+                        <a href="{{ url_for('users.subscribe', tier='free') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Get Started
+                        </a>
+                    </div>
                 </div>
-                <div class="feature-card p-8 rounded-lg">
-                    <span class="membership-badge premium-content">Premium Access</span>
-                    <h3 class="text-2xl font-bold my-4">Full Adventure</h3>
-                    <ul class="space-y-4">
-                        <li>✓ All Free Features</li>
-                        <li>✓ Advanced Rules</li>
-                        <li>✓ Extended Content</li>
-                        <li>✓ Early Access</li>
+                <!-- Bronze Tier -->
+                <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-gray-700">
+                    <h2 class="text-2xl font-bold text-white mb-4">Bronze</h2>
+                    <p class="text-gray-400 mb-6 text-xl">$3/month</p>
+                    <ul class="text-left text-gray-300 mb-6 space-y-2">
+                        <li>✓ Access to community forums</li>
+                        <li>✓ Basic game updates</li>
+                        <li>✓ Monthly newsletter</li>
                     </ul>
-                    <div class="mt-8">
-                        <p class="text-primary font-bold mb-4">Special Beta Offer!</p>
-                        <p>Use code: 2024Beta50PercentOff</p>
+                    <div class="mt-auto">
+                        <a href="{{ url_for('users.subscribe', tier='bronze') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Subscribe
+                        </a>
+                    </div>
+                </div>
+                <!-- Silver Tier -->
+                <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-gray-700">
+                    <h2 class="text-2xl font-bold text-white mb-4">Silver</h2>
+                    <p class="text-gray-400 mb-6 text-xl">$5/month</p>
+                    <ul class="text-left text-gray-300 mb-6 space-y-2">
+                        <li>✓ All Bronze features</li>
+                        <li>✓ Early access to new content</li>
+                        <li>✓ Exclusive game tips &amp; tricks</li>
+                        <li>✓ Behind-the-scenes updates</li>
+                    </ul>
+                    <div class="mt-auto">
+                        <a href="{{ url_for('users.subscribe', tier='silver') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Subscribe
+                        </a>
+                    </div>
+                </div>
+                <!-- Gold Tier -->
+                <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-gray-700">
+                    <h2 class="text-2xl font-bold text-white mb-4">Gold</h2>
+                    <p class="text-gray-400 mb-6 text-xl">$10/month</p>
+                    <ul class="text-left text-gray-300 mb-6 space-y-2">
+                        <li>✓ All Silver features</li>
+                        <li>✓ Access to premium content and guides</li>
+                        <li>✓ Quarterly exclusive digital downloads</li>
+                        <li>✓ Invitations to special online events</li>
+                        <li>✓ Recognition on our supporter page</li>
+                    </ul>
+                    <div class="mt-auto">
+                        <a href="{{ url_for('users.subscribe', tier='gold') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Subscribe
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Call to Action -->
     <section class="py-20 bg-gray-900">
