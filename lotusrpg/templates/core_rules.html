@@ -20,7 +20,7 @@
 <script>
     // Load chapters dynamically
     async function loadChapters() {
-        const response = await fetch('/api/chapters'); // No '/rules' prefix
+        const response = await fetch('/api/chapters');
         const data = await response.json();
 
         const chapterMenu = document.getElementById('chapter-menu');
@@ -51,71 +51,101 @@
         });
     }
 
-    // Load a specific section dynamically
-    async function loadSection(slug) {
-        const response = await fetch(`/api/section/${slug}`); // No '/rules' prefix
-        const data = await response.json();
-
-        document.getElementById('section-title').textContent = data.title;
-        const sectionContent = document.getElementById('section-content');
-        sectionContent.innerHTML = '';
-
-        let containerStack = []; // Keeps track of open containers
-
-        data.contents.sort((a, b) => a.order - b.order).forEach(content => {
-            let element;
-
-            if (content.type === 'container') {
-                if (content.data === "open") {
-                    element = document.createElement('div');
-                    if (content.style_class) {
-                        element.className = content.style_class;
-                    }
-                    containerStack.push(element); // Push to stack
-                } else if (content.data === "close" && containerStack.length > 0) {
-                    sectionContent.appendChild(containerStack.pop()); // Pop last open container
-                    return; // Skip further processing (no text, just closing div)
-                }
-            } else if (content.type === 'heading') {
-                console.log('Creating heading with:', content);  // Log the full content object
+    // Helper function to create elements by type
+    function createElementByType(content) {
+        let element;
+        
+        switch (content.type) {
+            case 'heading':
                 element = document.createElement('h2');
                 element.textContent = content.data;
-                if (content.style_class) {
-                    console.log('Heading style_class:', content.style_class);  // Log the style_class
-                }
-            } else if (content.type === 'paragraph') {
+                break;
+                
+            case 'paragraph':
                 element = document.createElement('p');
-            } else if (content.type === 'list') {
+                element.textContent = content.data;
+                break;
+                
+            case 'list':
                 element = document.createElement('ul');
                 content.data.forEach(item => {
                     const li = document.createElement('li');
                     li.textContent = item;
                     element.appendChild(li);
                 });
-            } else if (content.type === 'image') {
+                break;
+                
+            case 'image':
                 element = document.createElement('img');
                 element.src = content.data.file_path;
                 element.alt = content.data.alt_text;
                 if (content.data.class_name) {
                     element.className = content.data.class_name;
                 }
-            } else {
+                break;
+                
+            default:
                 element = document.createElement('div');
-            }
+                if (content.data) element.textContent = content.data;
+        }
 
-            if (content.type !== 'list' && content.type !== 'image') {
-                element.textContent = content.data;
-            }
-
-            if (content.style_class && content.type !== 'image') {
-            // Split the class string and add each class individually
+        // Apply styles if present
+        if (content.style_class) {
             content.style_class.split(' ').forEach(className => {
-                if (className) {  // Only add non-empty strings
+                if (className.trim()) {
                     element.classList.add(className.trim());
                 }
             });
-}
+        }
 
+        return element;
+    }
+
+    // Load a specific section dynamically
+    async function loadSection(slug) {
+        console.log('Loading section:', slug);
+        const response = await fetch(`/api/section/${slug}`);
+        const data = await response.json();
+        console.log('Section data:', data);
+
+        document.getElementById('section-title').textContent = data.title;
+        const sectionContent = document.getElementById('section-content');
+        sectionContent.innerHTML = '';
+
+        let containerStack = [];
+
+        data.contents.sort((a, b) => a.order - b.order).forEach(content => {
+            console.log('Processing content:', content);
+            console.log('Container stack depth:', containerStack.length);
+
+            if (content.type === 'container') {
+                if (content.data === "open") {
+                    // Create new container
+                    const newContainer = document.createElement('div');
+                    if (content.style_class) {
+                        newContainer.className = content.style_class;
+                    }
+                    containerStack.push(newContainer);
+                    return; // Don't process further for container opens
+                } else if (content.data === "close") {
+                    if (containerStack.length > 0) {
+                        const closedContainer = containerStack.pop();
+                        if (containerStack.length > 0) {
+                            // Add to parent container
+                            containerStack[containerStack.length - 1].appendChild(closedContainer);
+                        } else {
+                            // Add to main content
+                            sectionContent.appendChild(closedContainer);
+                        }
+                    }
+                    return; // Don't process further for container closes
+                }
+            }
+
+            // Create element based on type
+            const element = createElementByType(content);
+            
+            // Add to appropriate container
             if (containerStack.length > 0) {
                 containerStack[containerStack.length - 1].appendChild(element);
             } else {
@@ -123,7 +153,7 @@
             }
         });
 
-        // Ensure all open containers are closed
+        // Clean up any remaining containers
         while (containerStack.length > 0) {
             sectionContent.appendChild(containerStack.pop());
         }

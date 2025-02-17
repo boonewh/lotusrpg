@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-20 px-6">
+  <h1 class="heading1">Get in Touch</h1>
+  <p class="text-center mb-12 text-xl text-gray-300">
+    Have questions, feedback, or need support? Fill out the form below and we’ll be in touch!
+  </p>
+  <form method="POST" action="{{ url_for('main.contact') }}" class="max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
+    {{ form.hidden_tag() }}
+    <div class="mb-4">
+      {{ form.name.label(class="block text-white mb-2") }}
+      {{ form.name(class="w-full p-2 bg-gray-700 border border-gray-600 rounded") }}
+      {% for error in form.name.errors %}
+         <span class="text-red-500 text-sm">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-4">
+      {{ form.email.label(class="block text-white mb-2") }}
+      {{ form.email(class="w-full p-2 bg-gray-700 border border-gray-600 rounded") }}
+      {% for error in form.email.errors %}
+         <span class="text-red-500 text-sm">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-4">
+      {{ form.subject.label(class="block text-white mb-2") }}
+      {{ form.subject(class="w-full p-2 bg-gray-700 border border-gray-600 rounded") }}
+      {% for error in form.subject.errors %}
+         <span class="text-red-500 text-sm">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-4">
+      {{ form.message.label(class="block text-white mb-2") }}
+      {{ form.message(class="w-full p-2 bg-gray-700 border border-gray-600 rounded", rows=5) }}
+      {% for error in form.message.errors %}
+         <span class="text-red-500 text-sm">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="text-center">
+      {{ form.submit(class="bg-primary hover:bg-primary-dark text-black font-bold py-2 px-4 rounded") }}
+    </div>
+  </form>
+</div>
+{% endblock %}

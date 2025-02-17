@@ -1,5 +1,5 @@
-from flask import Blueprint, jsonify, render_template
-from lotusrpg.models import Section
+from flask import Blueprint, jsonify, render_template, request
+from lotusrpg.models import Section, Content
 
 rules = Blueprint('rules', __name__)
 
@@ -34,3 +34,27 @@ def get_section(slug):
     section = Section.query.filter_by(slug=slug).first_or_404()
     contents = [{"type": c.content_type, "data": c.content_data, "order": c.content_order, "style_class": c.style_class} for c in section.contents]
     return jsonify(title=section.title, contents=contents)
+
+@rules.route('/search')
+def search_rules():
+    """
+    Search for rules in the core and darkholme rule sets.
+    """
+    query = request.args.get('q', '').strip()
+    if not query:
+        return render_template('search_results.html', results=[], query="")
+
+    # Search for matching content in core_rules and darkholme
+    matching_contents = Content.query.filter(Content.content_data.ilike(f"%{query}%")).all()
+
+    results = []
+    for content in matching_contents:
+        section = Section.query.get(content.section_id)
+        if section:
+            results.append({
+                "section_title": section.title,
+                "slug": section.slug,
+                "content_data": str(content.content_data)[:200] + "..."  # Ensure it's a string before slicing
+            })
+
+    return render_template('search_results.html', results=results, query=query)

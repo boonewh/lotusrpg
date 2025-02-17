@@ -16,8 +16,18 @@
             <!-- Top Row: Login/Register and Search -->
             <div class="nav-top">
                 <div class="search-container">
-                    <input type="text" placeholder="Search..." class="search-input">
-                </div>
+                    <form action="{{ url_for('rules.search_rules') }}" method="GET" class="flex items-center">
+                        <div class="relative flex items-center">
+                            <input type="text" name="q" placeholder="Search..." 
+                                   class="w-64 px-4 py-2 bg-gray-800 text-white rounded-l-md border-r-0 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <button type="submit" 
+                                    class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                </div>               
                 
                 <div class="auth-links">
                     {% if current_user.is_authenticated %}
@@ -42,7 +52,7 @@
                 <a href="{{ url_for('main.community') }}" class="nav-link">Community</a>
                 <a href="{{ url_for('main.charity') }}" class="nav-link">Charity</a>
                 <a href="{{ url_for('main.sponsors') }}" class="nav-link">Sponsors & Donations</a>
-                <a href="#" class="nav-link">Contact</a>
+                <a href="{{ url_for('main.contact') }}" class="nav-link">Contact</a>
             </div>
         </nav>
     
