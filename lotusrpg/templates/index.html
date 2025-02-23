@@ -10,7 +10,7 @@
             <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto">Enter a world of high fantasy where demonic forces emerge from the Lost Core. Experience the DD10 gaming system - where every roll shapes your destiny.</p>
             <div class="flex flex-col md:flex-row gap-6 justify-center">
                 <a href="{{ url_for('users.subscribe') }}" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
-                    Support Us
+                    Subscribe
                 </a>
                 <a href="{{ url_for('rules.core_rules', slug='prelude') }}" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
                     Core Rules
@@ -181,7 +181,7 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl font-bold mb-8">Ready to Begin Your Journey?</h2>
             <p class="text-xl mb-12 max-w-2xl mx-auto">Join our growing community of adventurers and experience the next evolution in tabletop gaming.</p>
-            <a href="#" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+            <a href="{{ url_for('users.subscribe') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition duration-300">
                 Join Now
             </a>
         </div>

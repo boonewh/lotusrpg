@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, url_for, flash, redirect, request, current_app as app
-from flask_login import current_user
-from flask_security import auth_required
+from flask_login import current_user, login_user
+from flask_security import auth_required, verify_password
 from lotusrpg import db
 from lotusrpg.models import User
 from lotusrpg.users.forms import UpdateAccountForm  # Updated import

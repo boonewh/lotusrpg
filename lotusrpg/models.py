@@ -1,6 +1,6 @@
 from flask import current_app as app
 from lotusrpg import db
-from datetime import datetime
+from datetime import datetime, timedelta
 from flask_security import UserMixin, RoleMixin
 
 # Association table for many-to-many relationship between users and roles
@@ -23,25 +23,47 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     username = db.Column(db.String(20), unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
+    password = db.Column(db.String(255), nullable=False)
     active = db.Column(db.Boolean(), default=True)
     fs_uniquifier = db.Column(db.String(255), unique=True, nullable=False)
     confirmed_at = db.Column(db.DateTime())
     image_file = db.Column(db.String(20), nullable=False, default='default.png')
-    is_banned = db.Column(db.Boolean(), default=False) 
+    is_banned = db.Column(db.Boolean(), default=False)
 
-    # tracking columns
+    # Tracking columns
     last_login_at = db.Column(db.DateTime())
     current_login_at = db.Column(db.DateTime())
     last_login_ip = db.Column(db.String(100))
     current_login_ip = db.Column(db.String(100))
     login_count = db.Column(db.Integer, default=0)
-    
+    failed_login_attempts = db.Column(db.Integer, default=0)
+    lockout_until = db.Column(db.DateTime, nullable=True)
+
     roles = db.relationship('Role', secondary=roles_users, backref=db.backref('users', lazy='dynamic'))
     posts = db.relationship('Post', backref='author', lazy=True)
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.active}')"
+
+    def is_locked(self):
+        """Check if the user account is temporarily locked"""
+        if self.lockout_until and self.lockout_until > datetime.utcnow():
+            return True
+        # Reset lockout if time has expired
+        if self.lockout_until and self.lockout_until <= datetime.utcnow():
+            self.reset_lockout()
+        return False
+
+    def reset_lockout(self):
+        """Reset failed login attempts after lockout period expires"""
+        self.failed_login_attempts = 0
+        self.lockout_until = None
+        db.session.commit()
+
+    def is_active(self):
+        """Override UserMixin is_active to check for locks and bans"""
+        return self.active and not self.is_banned and not self.is_locked()
+
     
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)

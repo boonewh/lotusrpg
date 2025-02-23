@@ -60,8 +60,11 @@
                         <span class="font-medium {{ 'text-red-600' if user.is_banned else 'text-green-600' }}">
                             {{ 'Banned' if user.is_banned else 'Active' }}
                         </span>
+                        {% if user.is_locked() %}
+                        <span class="block text-yellow-600 font-medium">Locked ({{ user.failed_login_attempts }} attempts)</span>
+                        {% endif %}
                     </td>
-                    <td class="px-4 py-2 border border-gray-300 ">
+                    <td class="px-4 py-2 border border-gray-300">
                         <form action="{{ url_for('admin.ban_user', user_id=user.id) }}" method="POST" class="inline-block">
                             <button type="submit" class="bg-red-500 hover:bg-red-600 text-white text-xs font-bold py-1 px-2 rounded">
                                 {{ 'Unban' if user.is_banned else 'Ban' }}
@@ -71,10 +74,17 @@
                            class="ml-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold py-1 px-2 rounded">
                             Edit Roles
                         </a>
+                        {% if user.is_locked() %}
+                        <form action="{{ url_for('admin.unlock_user', user_id=user.id) }}" method="POST" class="inline-block ml-2">
+                            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-1 px-2 rounded">
+                                Unlock
+                            </button>
+                        </form>
+                        {% endif %}
                     </td>
                 </tr>
                 {% endfor %}
-            </tbody>
+            </tbody>            
         </table>
     </div>
 

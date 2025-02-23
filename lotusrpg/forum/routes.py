@@ -3,7 +3,8 @@ from flask_login import current_user
 from lotusrpg.models import Post, Comment, User
 from lotusrpg import db
 from lotusrpg.forum.forms import PostForm, CommentForm 
-from flask_security import auth_required
+from flask_security import auth_required, roles_required
+
 
 
 forum = Blueprint('forum', __name__)
@@ -17,6 +18,7 @@ def forums():
 
 @forum.route('/post/new', methods=['GET', 'POST'])
 @auth_required()
+@roles_required('admin')
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
@@ -47,6 +49,7 @@ def post(post_id):
 
 @forum.route('/post/<int:post_id>/update', methods=['GET', 'POST'])
 @auth_required()
+@roles_required('admin')
 def update_post(post_id):
     post = Post.query.get_or_404(post_id)
     if post.author != current_user:
@@ -64,6 +67,7 @@ def update_post(post_id):
 
 @forum.route('/post/<int:post_id>/delete', methods=['POST'])
 @auth_required()
+@roles_required('admin')
 def delete_post(post_id):
     post = Post.query.get_or_404(post_id)
     if post.author != current_user:
@@ -74,6 +78,7 @@ def delete_post(post_id):
 
 @forum.route('/comment/<int:comment_id>/delete', methods=['POST'])
 @auth_required()
+@roles_required('admin')
 def delete_comment(comment_id):
     comment = Comment.query.get_or_404(comment_id)
     db.session.delete(comment)
@@ -82,6 +87,7 @@ def delete_comment(comment_id):
 
 @forum.route('/comment/<int:comment_id>/edit', methods=['GET', 'POST'])
 @auth_required()
+@roles_required('admin')
 def edit_comment(comment_id):
     comment = Comment.query.get_or_404(comment_id)
     if comment.user_id != current_user.id:

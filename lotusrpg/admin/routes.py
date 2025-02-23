@@ -1,11 +1,13 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request
-from lotusrpg.models import db, Section, Content, Image, User, Role
+from lotusrpg.models import Section, Content, Image, User, Role
 from lotusrpg.admin.forms import SectionForm, ContentForm, ImageForm, NewRuleForm, ContainerForm
 from flask_security import roles_required
+from lotusrpg import db
 
 admin = Blueprint('admin', __name__)
 
 @admin.route('/dashboard')
+@roles_required('admin')
 def dashboard():
     sections = Section.query.all()
     return render_template('dashboard.html', sections=sections)
@@ -121,3 +123,18 @@ def edit_rules(slug):
         images=images,
         section_form=section_form
     )
+
+@admin.route('/user/<int:user_id>/unlock', methods=['POST'])
+@roles_required('admin')  # Ensure only admins can unlock
+def unlock_user(user_id):
+    user = User.query.get_or_404(user_id)
+    try:
+        user.failed_login_attempts = 0
+        user.lockout_until = None
+        db.session.commit()
+        flash(f'Successfully unlocked {user.username}\'s account.', 'success')
+    except Exception as e:
+        db.session.rollback()
+        flash(f'Error unlocking account: {str(e)}', 'danger')
+    
+    return redirect(url_for('admin.manage_users'))
