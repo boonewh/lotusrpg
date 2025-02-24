@@ -1,5 +1,13 @@
 from lotusrpg import create_app, db
 from lotusrpg.models import Section, Content
+import re
+
+def clean_text(text):
+    """Cleans text by removing newlines, non-breaking spaces, and excessive whitespace."""
+    if not isinstance(text, str):  
+        return text  # Ensure we only process strings
+
+    return re.sub(r"\s+", " ", text.replace("\xa0", " ")).strip()
 
 def seed_rules():
     # Debug: Print a message to confirm the function starts
@@ -825,8 +833,8 @@ def seed_rules():
                 section_id=section.id,
                 content_type=content_data["type"],
                 content_order=content_data["order"],
-                content_data=content_data["data"],
-                style_class=content_data.get("style_class")
+                content_data=clean_text(content_data["data"]),  # Clean before inserting
+                style_class=clean_text(content_data.get("style_class", ""))
             )
             db.session.add(content)
 

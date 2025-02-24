@@ -4,6 +4,8 @@
   --accent: #4a90e2;
   --background: #121212;
   --nav-height: 7rem;
+  --header-bg: #1a202c;
+  --border-color: #4a5568;
 }
 
 * {
@@ -25,9 +27,9 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #1a202c; /* Tailwind's bg-gray-900 */
+  background-color: var(--header-bg);
   color: white;
-  z-index: 100; /* Lower z-index than the logo */
+  z-index: 50; /* Lower z-index than the logo */
 }
 
 /* Navigation Container */
@@ -50,11 +52,25 @@ body {
   position: relative;
 }
 
+.search-container {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
 .auth-links {
   display: flex;
-  gap: 16px; /* Space between links */
-  position: absolute;
-  right: 20px; /* Keeps it aligned to the right */
+  gap: 16px;
+  align-items: center;
 }
 
 .auth-links a {
@@ -66,32 +82,18 @@ body {
 /* Bottom Row */
 .nav-bottom {
   display: flex;
-  justify-content: flex-end; /* Align links to the right */
+  justify-content: flex-end;
   align-items: center;
   gap: 20px;
   padding: 10px 0;
 }
 
 .nav-link {
-  position: relative;
-  font-size: 1.2rem;
   color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
-}
-
-/* Logo */
-.logo-container {
-  position: fixed;
-  top: 10px;
-  left: 20px;
-  z-index: 10; /* Higher z-index to place on top of the nav background */
-}
-
-.logo {
-  width: 60%; /* Adjust size as needed */
-  padding-left: 2rem;
+  position: relative;
 }
 
 .nav-link::after {
@@ -109,6 +111,20 @@ body {
   width: 100%;
   left: 0;
 }
+
+/* Logo */
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 51;
+}
+
+.logo {
+  width: 60%;
+  padding-left: 2rem;
+}
+
 
 .hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -224,7 +240,10 @@ body {
 .rules {
   width: 65%;
   margin: 0 auto;
-  padding-bottom: 2rem;
+  flex: 1;
+  padding: 2rem;
+  background: #121212;
+  color: white;
 }
 
 .rules h2 {
@@ -244,13 +263,6 @@ body {
   background: #1a202c;
   padding: 1rem;
   border-right: 1px solid #4a5568;
-}
-
-.rules {
-  flex: 1;
-  padding: 2rem;
-  background: #121212;
-  color: white;
 }
 
 #section-content {
@@ -348,32 +360,8 @@ body {
 /* Hamburger Menu - Hidden on larger screens */
 .hamburger-menu {
   display: none; /* Hidden by default */
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 20;
 }
 
-.hamburger-menu span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  transition: all 0.3s ease;
-}
-
-.hamburger-menu {
-  display: none; /* Hidden by default */
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 20;
-  position: fixed; /* Fix it to the screen */
-  top: 20px; /* Add padding from the top */
-  right: 20px; /* Add padding from the right */
-}
-
-/* Hamburger Menu Lines */
 .hamburger-menu span {
   display: block;
   width: 25px;
@@ -384,19 +372,23 @@ body {
 
 /* Mobile Navigation */
 .mobile-nav {
+  display: none;
   position: fixed;
-  top: 50px; /* Below the hamburger menu */
-  right: 0; /* Align to the right */
-  width: 75%; /* Take a portion of the screen width */
-  height: calc(100vh - 50px); /* Full height minus the hamburger menu */
-  overflow-y: auto; /* Enable scrolling for overflowing content */
-  background-color: #1a202c; /* Tailwind's bg-gray-900 */
-  color: white;
-  z-index: 15;
-  display: flex;
-  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--header-bg);
   padding: 20px;
-  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for better visibility */
+  z-index: 49;
+}
+
+.mobile-nav.show {
+  display: block;
+}
+
+.mobile-nav.active {
+  transform: translateX(0);
 }
 
 .mobile-nav.hidden {
@@ -404,13 +396,21 @@ body {
 }
 
 /* Mobile Nav Links */
+.mobile-nav .search-container {
+  margin-bottom: 20px;
+}
+
 .mobile-nav .nav-link {
-  margin: 10px 0;
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 10px;
-  transition: background-color 0.3s ease;
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.1rem;
+}
+
+.mobile-nav .auth-links {
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
 }
 
 .mobile-nav .nav-link:hover {
@@ -679,7 +679,7 @@ form textarea {
   /* Bottom Row Adjustments */
   .nav-bottom {
     flex-wrap: wrap; /* Allow wrapping of links */
-    justify-content: center; /* Center align links */
+    justify-content: flex-end;
     gap: 15px; /* Adjust spacing between links */
     padding: 10px 0;
   }
@@ -700,29 +700,48 @@ form textarea {
   }
 }
 
-/* Show Hamburger Menu for Tablets and Mobile */
+/* Media Queries */
 @media (max-width: 1024px) {
-  .hamburger-menu {
-    display: flex; /* Show hamburger menu */
-  }
-
   .nav {
-    display: none; /* Hide current navigation */
+    display: none;
   }
 
-  #mobile-nav.hidden {
-    display: none;
+  .hamburger-menu {
+    display: block;
+  }
+
+  .hamburger-menu:hover span {
+    background-color: #4a90e2;
   }
 
   .logo {
     width: 40%;
     padding-left: 5px;
   }
+
+  .mobile-nav.hidden {
+    transform: translateX(100%);
+  }
+
+  .header {
+    position: fixed;
+    height: 60px;
+  }
+
+  .logo-container {
+    position: fixed;
+    top: 5px;
+    left: 10px;
+  }
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .logo {
+    width: 30%;
+  }
+
+  .mobile-nav {
     width: 30%;
   }
 
