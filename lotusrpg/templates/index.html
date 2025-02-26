@@ -20,48 +20,55 @@
     </header>
 
     <section class="py-20 bg-gray-900">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-white">Why Choose DD10?</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12" items-stretch>
+        <!-- No custom styles that hide content -->
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-white">Why Choose DD10?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
                 <!-- Winged Dice -->
-                <div class="feature-card group p-4 rounded-lg relative overflow-hidden text-center">
+                <div class="feature-card group p-4 rounded-lg relative overflow-hidden text-center h-96">
                     <div class="absolute inset-0 bg-blue-500/10 rotate-45 transform scale-150 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                    <div class="relative z-10">
-                        <div class="hover-content flex flex-col justify-center items-center h-full">
-                            <img class="w-80 transition-opacity duration-500" src="{{ url_for('static', filename='images/winged_dice.png') }}" alt="Large icon of dice with wings.">
-                            <h3 class="text-2xl font-bold mt-4 text-white">Portable Gaming</h3>
+                    <div class="relative z-10 h-full flex flex-col">
+                        <div class="hover-content flex flex-col justify-center items-center flex-grow">
+                            <img class="w-56 sm:w-64 lgw-72 mx-auto transition-opacity duration-500" src="{{ url_for('static', filename='images/winged_dice.png') }}" alt="Large icon of dice with wings.">
+                            <h3 class="text-xl sm:text-2xl font-bold mt-4 text-white">Portable Gaming</h3>
                         </div>
-                        <div class="hover-text opacity-0 absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-gray-300 transition-opacity duration-500 p-4">
-                            <p class="mb-4">Take your adventures anywhere. DD10's streamlined system requires minimal equipment while maintaining depth.</p>
-                            <p>Experience the freedom of a system that fits in your pocket. Two D10s and your character sheet are all you need for epic adventures. Whether you're gaming during lunch breaks or organizing full weekend sessions, DD10's elegant design keeps the focus on storytelling, not rulebooks.</p>
+                        <div class="hover-text opacity-0 group-hover:opacity-100 absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-gray-300 transition-opacity duration-500 p-8 overflow-y-auto">
+                            <div class="w-full max-h-full">
+                                <p class="mb-4 text-sm sm:text-base">Take your adventures anywhere. DD10's streamlined system requires minimal equipment while maintaining depth.</p>
+                                <p class="text-sm sm:text-base">Experience the freedom of a system that fits in your pocket. Two D10s and your character sheet are all you need for epic adventures. Whether you're gaming during lunch breaks or organizing full weekend sessions, DD10's elegant design keeps the focus on storytelling, not rulebooks.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Universal System -->
-                <div class="feature-card group p-4 rounded-lg relative overflow-hidden text-center h-[20rem]">
+                <div class="feature-card group p-4 rounded-lg relative overflow-hidden text-center h-96">
                     <div class="absolute inset-0 bg-blue-500/10 rotate-45 transform scale-150 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                    <div class="relative z-10">
-                        <div class="hover-content flex flex-col justify-center items-center h-full">
-                            <img class="w-80 transition-opacity duration-500" src="{{ url_for('static', filename='images/universal_icon.png') }}" alt="Large icon of a spinning vortex bringing two worlds together.">
-                            <h3 class="text-2xl font-bold mt-4 text-white">Universal System</h3>
+                    <div class="relative z-10 h-full flex flex-col">
+                        <div class="hover-content flex flex-col justify-center items-center flex-grow">
+                            <img class="w-56 sm:w-64 lgw-72 mx-auto transition-opacity duration-500" src="{{ url_for('static', filename='images/universal_icon.png') }}" alt="Large icon of a spinning vortex bringing two worlds together.">
+                            <h3 class="text-xl sm:text-2xl font-bold mt-4 text-white">Universal System</h3>
                         </div>
-                        <div class="hover-text opacity-0 absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-gray-300 transition-opacity duration-500 p-4 overflow-y-auto">
-                            <p class="mb-4">From tabletop to LARP, DD10 provides consistent mechanics across all play styles.</p>
-                            <p>Break free from the constraints of traditional gaming. Our innovative system seamlessly transitions between tabletop and live-action roleplay without changing core mechanics. The same rules that power your tabletop campaigns translate perfectly to immersive LARP experiences.</p>
+                        <div class="hover-text opacity-0 group-hover:opacity-100 absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-gray-300 transition-opacity duration-500 p-8 overflow-y-auto">
+                            <div class="w-full max-h-full">
+                                <p class="mb-4 text-sm sm:text-base">From tabletop to LARP, DD10 provides consistent mechanics across all play styles.</p>
+                                <p class="text-sm sm:text-base">Break free from the constraints of traditional gaming. Our innovative system seamlessly transitions between tabletop and live-action roleplay without changing core mechanics. The same rules that power your tabletop campaigns translate perfectly to immersive LARP experiences.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Rich Content -->
-                <div class="feature-card group p-4 rounded-lg relative overflow-hidden text-center">
+                <div class="feature-card group p-4 rounded-lg relative overflow-hidden text-center h-96">
                     <div class="absolute inset-0 bg-blue-500/10 rotate-45 transform scale-150 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                    <div class="relative z-10">
-                        <div class="hover-content flex flex-col justify-center items-center h-full">
-                            <img class="w-80 transition-opacity duration-500" src="{{ url_for('static', filename='images/spell_book.png') }}" alt="Large icon of a spell book.">
-                            <h3 class="text-2xl font-bold mt-4 text-white">Rich Content</h3>
+                    <div class="relative z-10 h-full flex flex-col">
+                        <div class="hover-content flex flex-col justify-center items-center flex-grow">
+                            <img class="w-56 sm:w-64 lgw-72 mx-auto transition-opacity duration-500" src="{{ url_for('static', filename='images/spell_book.png') }}" alt="Large icon of a spell book.">
+                            <h3 class="text-xl sm:text-2xl font-bold mt-4 text-white">Rich Content</h3>
                         </div>
-                        <div class="hover-text opacity-0 absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-gray-300 transition-opacity duration-500 p-4">
-                            <p class="mb-4">Explore multiple settings: from the supernatural realm of Darkholme to the gritty sci-fi of Lost Galaxies.</p>
-                            <p>Dive into meticulously crafted worlds powered by the same core system. Battle demons in Darkholme's mystical landscapes, navigate corporate intrigue in Lost Galaxies' far future, or create your own setting using our flexible framework. One system, endless possibilities.</p>
+                        <div class="hover-text opacity-0 group-hover:opacity-100 absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-gray-300 transition-opacity duration-500 p-8 overflow-y-auto">
+                            <div class="w-full max-h-full">
+                                <p class="mb-4 text-sm sm:text-base">Explore multiple settings: from the supernatural realm of Darkholme to the gritty sci-fi of Lost Galaxies.</p>
+                                <p class="text-sm sm:text-base">Dive into meticulously crafted worlds powered by the same core system. Battle demons in Darkholme's mystical landscapes, navigate corporate intrigue in Lost Galaxies' far future, or create your own setting using our flexible framework. One system, endless possibilities.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
