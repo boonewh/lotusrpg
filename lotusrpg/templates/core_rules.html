@@ -4,9 +4,25 @@
 
 {% block content %}
 <div class="container-aside">
+    <!-- Mobile Chapter Menu Toggle Button (visible only on mobile) -->
+    <div class="mobile-chapter-toggle">
+        <button onclick="toggleChapterMenu()" class="chapter-toggle-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <span>Chapters</span>
+        </button>
+    </div>
+
     <!-- Sidebar Menu -->
-    <aside class="side-nav">
-        <h2 class="nav-heading">Chapters</h2>
+    <aside class="side-nav" id="chapter-sidebar">
+        <div class="chapter-header">
+            <h2 class="nav-heading">Chapters</h2>
+            <!-- Close button (visible only on mobile) -->
+            <button class="close-chapters-btn" onclick="toggleChapterMenu()">×</button>
+        </div>
         <div id="chapter-menu"></div>
     </aside>
 
@@ -18,37 +34,58 @@
 </div>
 
 <script>
+    // Toggle chapter menu visibility on mobile
+    function toggleChapterMenu() {
+        console.log("Toggle menu clicked");
+        const sidebar = document.getElementById('chapter-sidebar');
+        sidebar.classList.toggle('mobile-sidebar-active');
+        document.body.classList.toggle('sidebar-open');
+        console.log("Sidebar classes:", sidebar.className);
+    }
+
     // Load chapters dynamically
     async function loadChapters() {
-        const response = await fetch('/api/chapters');
-        const data = await response.json();
+        try {
+            const response = await fetch('/api/chapters');
+            const data = await response.json();
 
-        const chapterMenu = document.getElementById('chapter-menu');
-        chapterMenu.innerHTML = '';
+            const chapterMenu = document.getElementById('chapter-menu');
+            chapterMenu.innerHTML = '';
 
-        data.chapters.forEach(chapter => {
-            const chapterDiv = document.createElement('div');
-            chapterDiv.classList.add('chapter');
+            data.chapters.forEach(chapter => {
+                const chapterDiv = document.createElement('div');
+                chapterDiv.classList.add('chapter');
 
-            const chapterTitle = document.createElement('h3');
-            chapterTitle.textContent = chapter.title;
-            chapterTitle.classList.add('chapter-title');
-            chapterDiv.appendChild(chapterTitle);
+                const chapterTitle = document.createElement('h3');
+                chapterTitle.textContent = chapter.title;
+                chapterTitle.classList.add('chapter-title');
+                chapterDiv.appendChild(chapterTitle);
 
-            const sectionList = document.createElement('ul');
-            chapter.sections.forEach(section => {
-                const sectionItem = document.createElement('li');
-                const sectionLink = document.createElement('a');
-                sectionLink.textContent = section.title;
-                sectionLink.href = '#';
-                sectionLink.onclick = () => loadSection(section.slug);
-                sectionLink.classList.add('section-link');
-                sectionItem.appendChild(sectionLink);
-                sectionList.appendChild(sectionItem);
+                const sectionList = document.createElement('ul');
+                chapter.sections.forEach(section => {
+                    const sectionItem = document.createElement('li');
+                    const sectionLink = document.createElement('a');
+                    sectionLink.textContent = section.title;
+                    sectionLink.href = '#';
+                    sectionLink.onclick = (e) => {
+                        e.preventDefault();
+                        loadSection(section.slug);
+                        
+                        // On mobile, close the menu after selection
+                        if (window.innerWidth < 768) {
+                            toggleChapterMenu();
+                        }
+                    };
+                    sectionLink.classList.add('section-link');
+                    sectionItem.appendChild(sectionLink);
+                    sectionList.appendChild(sectionItem);
+                });
+                chapterDiv.appendChild(sectionList);
+                chapterMenu.appendChild(chapterDiv);
             });
-            chapterDiv.appendChild(sectionList);
-            chapterMenu.appendChild(chapterDiv);
-        });
+        } catch (error) {
+            console.error("Error loading chapters:", error);
+        }
     }
 
     // Helper function to create elements by type
@@ -103,66 +140,91 @@
 
     // Load a specific section dynamically
     async function loadSection(slug) {
-        console.log('Loading section:', slug);
-        const response = await fetch(`/api/section/${slug}`);
-        const data = await response.json();
-        console.log('Section data:', data);
-
-        document.getElementById('section-title').textContent = data.title;
-        const sectionContent = document.getElementById('section-content');
-        sectionContent.innerHTML = '';
-
-        let containerStack = [];
-
-        data.contents.sort((a, b) => a.order - b.order).forEach(content => {
-            console.log('Processing content:', content);
-            console.log('Container stack depth:', containerStack.length);
-
-            if (content.type === 'container') {
-                if (content.data === "open") {
-                    // Create new container
-                    const newContainer = document.createElement('div');
-                    if (content.style_class) {
-                        newContainer.className = content.style_class;
-                    }
-                    containerStack.push(newContainer);
-                    return; // Don't process further for container opens
-                } else if (content.data === "close") {
-                    if (containerStack.length > 0) {
-                        const closedContainer = containerStack.pop();
-                        if (containerStack.length > 0) {
-                            // Add to parent container
-                            containerStack[containerStack.length - 1].appendChild(closedContainer);
-                        } else {
-                            // Add to main content
-                            sectionContent.appendChild(closedContainer);
-                        }
-                    }
-                    return; // Don't process further for container closes
-                }
-            }
-
-            // Create element based on type
-            const element = createElementByType(content);
+        try {
+            console.log('Loading section:', slug);
+            const response = await fetch(`/api/section/${slug}`);
+            const data = await response.json();
             
-            // Add to appropriate container
-            if (containerStack.length > 0) {
-                containerStack[containerStack.length - 1].appendChild(element);
-            } else {
-                sectionContent.appendChild(element);
-            }
-        });
+            document.getElementById('section-title').textContent = data.title;
+            const sectionContent = document.getElementById('section-content');
+            sectionContent.innerHTML = '';
 
-        // Clean up any remaining containers
-        while (containerStack.length > 0) {
-            sectionContent.appendChild(containerStack.pop());
+            let containerStack = [];
+
+            data.contents.sort((a, b) => a.order - b.order).forEach(content => {
+                if (content.type === 'container') {
+                    if (content.data === "open") {
+                        // Create new container
+                        const newContainer = document.createElement('div');
+                        if (content.style_class) {
+                            newContainer.className = content.style_class;
+                        }
+                        containerStack.push(newContainer);
+                        return; // Don't process further for container opens
+                    } else if (content.data === "close") {
+                        if (containerStack.length > 0) {
+                            const closedContainer = containerStack.pop();
+                            if (containerStack.length > 0) {
+                                // Add to parent container
+                                containerStack[containerStack.length - 1].appendChild(closedContainer);
+                            } else {
+                                // Add to main content
+                                sectionContent.appendChild(closedContainer);
+                            }
+                        }
+                        return; // Don't process further for container closes
+                    }
+                }
+
+                // Create element based on type
+                const element = createElementByType(content);
+                
+                // Add to appropriate container
+                if (containerStack.length > 0) {
+                    containerStack[containerStack.length - 1].appendChild(element);
+                } else {
+                    sectionContent.appendChild(element);
+                }
+            });
+
+            // Clean up any remaining containers
+            while (containerStack.length > 0) {
+                sectionContent.appendChild(containerStack.pop());
+            }
+        } catch (error) {
+            console.error("Error loading section:", error, slug);
         }
+    }
+
+    // Check if we're on mobile and initialize sidebar state
+    function initializeSidebarState() {
+        const sidebar = document.getElementById('chapter-sidebar');
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            // Hide sidebar on mobile by default
+            sidebar.classList.remove('mobile-sidebar-active');
+        } else {
+            // Always show on desktop
+            sidebar.classList.remove('mobile-sidebar-active'); // Remove mobile class on desktop
+        }
+        
+        console.log("Initialized sidebar for " + (isMobile ? "mobile" : "desktop"));
     }
 
     // Initialize the menu and load the first section
     document.addEventListener('DOMContentLoaded', async () => {
+        console.log("DOM loaded, initializing core rules page");
         await loadChapters();
         await loadSection('prelude'); // Default to "Prelude"
+        initializeSidebarState();
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            initializeSidebarState();
+        });
+        
+        console.log("Core rules initialization complete");
     });
 </script>
 {% endblock %}
