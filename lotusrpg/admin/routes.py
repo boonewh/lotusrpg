@@ -138,3 +138,17 @@ def unlock_user(user_id):
         flash(f'Error unlocking account: {str(e)}', 'danger')
     
     return redirect(url_for('admin.manage_users'))
+
+@admin.route('/user/<int:user_id>/delete', methods=['POST'])
+@roles_required('admin')
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+
+    if 'admin' in [role.name for role in user.roles]:
+        flash('Cannot delete an admin user, change their role first.', 'danger')
+        return redirect(url_for('admin.manage_users'))
+    
+    db.session.delete(user)
+    db.session.commit()
+    flash(f'{user.username} deleted successfully!', 'success')
+    return redirect(url_for('admin.manage_users'))
