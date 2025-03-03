@@ -143,7 +143,7 @@ def seed_rules():
                     "type": "container",
                     "order": 1,
                     "data": "open",
-                    "style_class": "flex items-start mb-6"
+                    "style_class": "flex flex-col items-start mb-6 lg:flex-row"
                 },
                 {
                     "type": "paragraph",
@@ -158,7 +158,7 @@ def seed_rules():
                     "data": {
                         "file_path": "/static/images/law_abiding.jpg",
                         "alt_text": "Law-Abiding Philosophy Chart",
-                        "class_name": "ml-4 mb-4 w-40 flex-shrink-0"
+                        "class_name": "mx-auto w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
                     }   
                 },
                 {
@@ -171,14 +171,14 @@ def seed_rules():
                     "type": "container",
                     "order": 3,
                     "data": "open",
-                    "style_class": "flex gap-12 max-w-screen-xl mx-auto px-8"
+                    "style_class": "flex flex-col gap-12 max-w-screen-xl mx-auto px-8 sm:flex-row"
                 },
                 # First column container
                 {
                     "type": "container",
                     "order": 4,
                     "data": "open",
-                    "style_class": "w-3/5"
+                    "style_class": "w-full sm:w-3/5"
                 },
                 {
                     "type": "heading",
@@ -212,7 +212,7 @@ def seed_rules():
                     "type": "container",
                     "order": 8,
                     "data": "open",
-                    "style_class": "w-3/5"
+                    "style_class": "w-full sm:w-3/5"
                 },
                 {
                     "type": "heading",
@@ -258,7 +258,7 @@ def seed_rules():
                     "type": "container",
                     "order": 1,
                     "data": "open",
-                    "style_class": "flex items-start mb-6"
+                    "style_class": "flex flex-col items-start mb-6 lg:flex-row"
                 },
                 {
                     "type": "paragraph",
@@ -271,7 +271,7 @@ def seed_rules():
                     "data": {
                         "file_path": "/static/images/honorable.jpg",
                         "alt_text": "Law-Abiding Philosophy Chart",
-                        "class_name": "ml-4 mb-4 pr-4 w-40 flex-shrink-0"
+                        "class_name": "mx-auto w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
                     }
                 },
                 {
@@ -283,13 +283,13 @@ def seed_rules():
                     "type": "container",
                     "order": 3,
                     "data": "open",
-                    "style_class": "flex gap-12 max-w-screen-xl mx-auto px-8"
+                    "style_class": "flex flex-col gap-12 max-w-screen-xl mx-auto px-8 sm:flex-row"
                 },
                 {
                     "type": "container",
                     "order": 4,
                     "data": "open",
-                    "style_class": "w-3/5"
+                    "style_class": "w-full sm:w-3/5"
                 },
                 {
                     "type": "heading",
@@ -321,7 +321,7 @@ def seed_rules():
                     "type": "container",
                     "order": 8,
                     "data": "open",
-                    "style_class": "w-3/5"
+                    "style_class": "w-full sm:w-3/5"
                 },
                 {
                     "type": "heading",
@@ -365,7 +365,7 @@ def seed_rules():
                     "type": "container",
                     "order": 1,
                     "data": "open",
-                    "style_class": "flex items-start mb-6"
+                    "style_class": "flex flex-col items-start mb-6 lg:flex-row"
                 },
                 {
                     "type": "paragraph",
@@ -378,7 +378,7 @@ def seed_rules():
                     "data": {
                         "file_path": "/static/images/righteous.jpg",
                         "alt_text": "Righteous Philosophy Chart",
-                        "class_name": "ml-4 mb-4 w-40 flex-shrink-0"
+                        "class_name": "mx-auto w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
                     }
                 },
                 {
@@ -390,13 +390,13 @@ def seed_rules():
                     "type": "container",
                     "order": 3,
                     "data": "open",
-                    "style_class": "flex gap-12 max-w-screen-xl mx-auto px-8"
+                    "style_class": "flex flex-col gap-12 max-w-screen-xl mx-auto px-8 sm:flex-row"
                 },
                 {
                     "type": "container",
                     "order": 4,
                     "data": "open",
-                    "style_class": "w-3/5"
+                    "style_class": "w-full sm:w-3/5"
                 },
                 {
                     "type": "heading",
@@ -428,7 +428,7 @@ def seed_rules():
                     "type": "container",
                     "order": 8,
                     "data": "open",
-                    "style_class": "w-3/5"
+                    "style_class": "w-full sm:w-3/5"
                 },
                 {
                     "type": "heading",
@@ -472,7 +472,7 @@ def seed_rules():
                     "type": "container",
                     "order": 1,
                     "data": "open",
-                    "style_class": "flex items-start mb-6"
+                    "style_class": "flex flex-col items-start mb-6 lg:flex-row"
                 },
                 {
                     "type": "paragraph",
@@ -485,7 +485,7 @@ def seed_rules():
                     "data": {
                         "file_path": "/static/images/pragmatic.jpg",
                         "alt_text": "Pragmatic Philosophy Chart",
-                        "class_name": "ml-4 mb-4 pr-4 w-40 flex-shrink-0"
+                        "class_name": "mx-auto w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
                     }
                 },
                 {
@@ -525,7 +525,7 @@ def seed_rules():
                     "type": "container",
                     "order": 1,
                     "data": "open",
-                    "style_class": "flex items-start mb-6"
+                    "style_class": "flex flex-col items-start mb-6 lg:flex-row"
                 },
                 {
                     "type": "paragraph",
@@ -538,7 +538,7 @@ def seed_rules():
                     "data": {
                         "file_path": "/static/images/machiavellian.jpg",
                         "alt_text": "Machiavellian Philosophy Chart",
-                        "class_name": "ml-4 mb-4 pr-4 w-40 flex-shrink-0"
+                        "class_name": "mx-auto w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
                     }
                 },
                 {
@@ -578,7 +578,7 @@ def seed_rules():
                     "type": "container",
                     "order": 1,
                     "data": "open",
-                    "style_class": "flex items-start mb-6"
+                    "style_class": "flex flex-col items-start mb-6 lg:flex-row"
                 },
                 {
                     "type": "paragraph",
@@ -591,7 +591,7 @@ def seed_rules():
                     "data": {
                         "file_path": "/static/images/anarchistic.jpg",
                         "alt_text": "Anarchistic Philosophy Chart",
-                        "class_name": "ml-4 mb-4 pr-4 w-40 flex-shrink-0"
+                        "class_name": "mx-auto w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
                     }
                 },
                 {
