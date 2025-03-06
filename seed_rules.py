@@ -271,7 +271,7 @@ def seed_rules():
                     "data": {
                         "file_path": "/static/images/honorable.jpg",
                         "alt_text": "Law-Abiding Philosophy Chart",
-                        "class_name": "mx-auto w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
+                        "class_name": "mx-auto pr-2 w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
                     }
                 },
                 {
@@ -485,7 +485,7 @@ def seed_rules():
                     "data": {
                         "file_path": "/static/images/pragmatic.jpg",
                         "alt_text": "Pragmatic Philosophy Chart",
-                        "class_name": "mx-auto w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
+                        "class_name": "mx-auto w-40 mb-4 pr-2 lg:mx-0 lg:ml-4 flex-shrink-0"
                     }
                 },
                 {
@@ -591,7 +591,7 @@ def seed_rules():
                     "data": {
                         "file_path": "/static/images/anarchistic.jpg",
                         "alt_text": "Anarchistic Philosophy Chart",
-                        "class_name": "mx-auto w-40 mb-4 lg:mx-0 lg:ml-4 flex-shrink-0"
+                        "class_name": "mx-auto w-40 mb-4 pr-2 lg:mx-0 lg:ml-4 flex-shrink-0"
                     }
                 },
                 {
@@ -804,6 +804,426 @@ def seed_rules():
                         "Virtue Balance -4 - Lives for the Vice and actively seeks participation in the immortality of their actions while forcing others to engage. Uncontested Very Difficult (DL: 41-50) Willpower to avoid indulging or avoid forcing others if they refuse to participate. To remove an indulgence, they must abstain from twelve Vice opportunities over the course of a game setting year-long penances"
                     ],
                     "style_class": "space-y-8 max-w-3xl mx-auto px-8 py-6 [&>*]:border-b [&>*]:border-gray-700 [&>*]:pb-6 [&>*:last-child]:border-0 font-medium text-lg"
+                }
+            ]
+        },
+        {
+            "title": "Benefits of Virtue",
+            "slug": "benefits-virtue",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "order": 1,
+                    "data": """
+                        The benefit of possessing high virtue in this game is primarily manifested through the ability to perform Virtue Checks during critical moments of the narrative. These moments are typically life-or-death situations where the objectives transcend personal ambitions. The opportunity to make a Virtue Check is at the discretion of the game master or storyteller, who determines the appropriateness based on the circumstances presented in the gameplay.
+                    """.replace("\n", " ").strip()
+                },
+                                {
+                    "type": "container",
+                    "order": 2,
+                    "data": "open",
+                    "style_class": "pl-10 w-2/3"
+                },
+                {
+                    "type": "heading",
+                    "order": 3,
+                    "data": "Rallying Cry",
+                    "style_class": "text-2xl font-semibold mt-6"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 4,
+                    "data": "When a player believes their character’s actions align with a high-tier virtue they possess, specifically Tier 4, they can request to give a Rallying Cry."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 5,
+                    "data": "To initiate a Rallying Cry, the character performs a Virtue Check by rolling (2d10 + Virtue Score) against a Moderate Difficulty Level (DL: 21-30)."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 6,
+                    "data": "If successful, all allies within hearing range benefit from the Virtue's specific bonus until the event's conclusion. Each virtue offers a unique combat bonus, enhancing the group's capabilities in strategic ways:"
+                },
+                {
+                    "type": "list",
+                    "order": 7,
+                    "data": [
+                        "Courage: +2 to Attack & Martial Arts Rolls per Tier.",
+                        "Balance: +2 to Damage & Awareness Rolls per Tier.",
+                        "Selflessness: +2 to Attack & Awareness Rolls per Tier.",
+                        "Righteous: +2 to all Damage & Power Rolls per Tier.",
+                        "Sincerity: +2 to Aggressive Combat & Power Rolls per Tier.",
+                        "Diligence: +2 to Defense & Willpower Rolls per Tier.",
+                        "Temperance: +2 to Defensive & Martial Arts Rolls per Tier."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 8,
+                    "data": "It is important to note that a character can only benefit from one Rallying Cry at a time."
+                },  
+                {
+                    "type": "heading",
+                    "order": 9,
+                    "data": "Divine Providence:",
+                    "style_class": "text-2xl font-semibold mt-6"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 15,
+                    "data": "Characters adhering to the tenets of their faith may receive blessings, known as Divine Providence. The nature of these blessings is determined collaboratively between the game master and the player, depending on the game's setting. These blessings are designed to reflect the character's devotion and the thematic elements of the game's universe."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 16,
+                    "data": "For instance, in Darkholme, a Divine Providence may be a token..."
+                },
+                {
+                    "type": "heading",
+                    "order": 17,
+                    "data": "Judicial Favor",
+                    "style_class": "text-2xl font-semibold mt-6"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 18,
+                    "data": "Across cultures within the game world, various Orders have been established, uniting individuals with similar values and objectives. These Orders are more than mere alliances; they are bound by a deep commitment to a set of shared Virtues and specific causes."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 19,
+                    "data": "Membership in an Order requires demonstrated dedication to its Virtues and adherence to its rules, which often dictate the defensive and offensive strategies during gameplay."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 20,
+                    "data": "The benefits of being part of an Order are multifaceted, potentially influencing a character's social standing, strategic abilities, and access to resources within the game."
+                },
+                                {
+                    "type": "container",
+                    "order": 21,
+                    "data": "close",
+                },
+                {
+                    "type": "paragraph",
+                    "order": 21,
+                    "data": "This structured approach to virtues and organizational affiliations in the game not only enhances character development but also enriches the interaction between players and the game master, providing a layered and immersive role-playing experience."
+                }
+            ],
+        },
+        {
+            "title": "Dangers of Losing Balance",
+            "slug": "dangers-losing-balance",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": "Balance is the quality that separates a creature and their actions from those of mindless lesser beasts. Complete loss of a Virtue or overwhelming accumulation of Vice is the first step in dehumanizing a creature causing it to revert to a more primal state. Each step into the negative of Balance causes a derangement. The trigger of the derangement is set by the presiding game master and is related to the incident that caused the negative Balance. If a character continues sliding, then for each additional loss the player must make a Willpower Sum Roll or lose control of their character forever. There is an ever-increasing chance that the creature goes irrevocably insane and either kills itself or becomes so dangerous that others must end its existence for the safety of all."
+                },
+                {
+                    "type": "list",
+                    "order": 3,
+                    "data": [
+                        "-1 Balance: Easy (DL: 15-20) Roll to Retain Character | Penalty: Associated Condition + Obsession",
+                        "-2 Balance: Moderate (DL: 21-30) Roll to Retain Character | Penalty: Associated Condition + Psychopathic",
+                        "-3 Balance: Difficult (DL: 31-40) Roll to Retain Character | Penalty: Associated Condition + Schizophrenia",
+                        "-4 Balance: Very Difficult (DL: 41-50) Roll to Retain Character | Penalty: Associated Condition + Nihilism",
+                        "-5 Balance: Heroic (DL: 51-60) Roll to Retain Character | Penalty: Associated Condition + Complete Insanity"
+                    ],
+                    "style_class": "list-none pl-10 space-y-2"
+                }
+            ]
+        },
+        {
+            "title": "Abilities, Skills & Core Mechanics",
+            "slug": "section-two",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": "When characterizing individuals in role-playing games like L.O.T.U.S. RPG, we often attribute qualities like strength, charm, or intelligence, associating them with tasks they excel in. Assigning stats to these skills and abilities serves several key purposes that enhance the role-playing experience by providing a structured framework to define characters' competencies and potential actions. Here's how this mechanism aids in the role-playing process:"
+                },
+                {
+                    "type": "list",
+                    "order": 3,
+                    "data": [
+                        "Defining Character Capabilities: Stats quantitatively define what a character can and cannot do, setting realistic expectations for their performance in various situations. For instance, a character with high intelligence but low physical strength will excel in problem-solving and possibly magical tasks but struggle in hand-to-hand combat.",
+                        "Guiding Decision-Making: Understanding their character’s skills and abilities helps players make informed decisions that align with their character’s profile, adding depth to the game and encouraging creative solutions within character constraints.",
+                        "Conflict Resolution: The stats provide a clear, unbiased method to resolve actions during gameplay. Whether attempting to climb a wall, negotiate a deal, or cast a spell, outcomes are determined by dice rolls plus relevant skill modifiers, adding suspense and chance to the game.",
+                        "Enhancing Storytelling: Characters' strengths and flaws can drive the narrative, create dramatic tension, and introduce challenges that are integral to the plot development, making the story more engaging for everyone involved."
+                    ],
+                    "style_class": "list-decimal pl-6 pb-6 space-y-2"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 4,
+                    "data": "By integrating stats into skills and abilities, L.O.T.U.S. RPG effectively merges strategic gameplay with narrative development, making each session both a game and a collaborative storytelling experience. This structured approach helps players conceptualize their characters' capabilities and limitations, providing a comprehensive framework for what a character can successfully achieve within the game."
+                }
+            ]
+        },
+        {
+            "title": "Abilities",
+            "slug": "abilities",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": "In our exploration of character capabilities within the game, we categorize abilities into three sub-groups: Physical, Mental, and Social."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": "The Physical category includes attributes such as strength, endurance, reflexes, and chakra, which govern the bodily aspects of a character. The Mental category encompasses perception and intellect, focusing on the cognitive traits. The Social category includes manipulation and control, psychological traits that influence how a character interacts with the world and manipulates their environment."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 4,
+                    "data": "To effectively quantify and understand the extent to which each character possesses these abilities, we use the Ability Benchmark system. This system assigns a numerical value, ranging from 1 to 15+, to each level of ability, with each number corresponding to a specific descriptor that illustrates the character's competency in that area."
+                },
+                {
+                    "type": "list",
+                    "order": 5,
+                    "data": [
+                        "1 - Impaired",
+                        "2 - Inept",
+                        "3 - Weak",
+                        "4 - Below Average",
+                        "5 - Average",
+                        "6 - Above Average",
+                        "7 - Remarkable",
+                        "8 - Exceptional",
+                        "9 - Outstanding",
+                        "10 - Truly Gifted",
+                        "11 - Extraordinary",
+                        "12 - Phenomenal",
+                        "13 - Legendary",
+                        "14 - Pinnacle",
+                        "15+ - Supranatural"
+                    ],
+                    "style_class": "list-none pb-6"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 6,
+                    "data": "As an example, let’s delve deeper into the Physical category using strength as our focal point to illustrate each benchmark level:"
+                },
+                {
+                    "type": "list",
+                    "order": 7,
+                    "data": [
+                        "Impaired: The character struggles with even the lightest objects and may require assistance for basic physical tasks.",
+                        "Inept: Difficulty in lifting items that most would handle easily; basic physical actions are more laborious.",
+                        "Weak: Capable of performing everyday tasks but quickly tires and is unable to manage heavy lifting or prolonged strenuous activities.",
+                        "Below Average: Slightly weaker than the average individual, facing challenges with moderately heavy loads.",
+                        "Average: Adequately manages standard physical tasks such as moving furniture or carrying groceries.",
+                        "Above Average: Displays a degree of strength greater than the norm, facilitating easier participation in physical labor or sports.",
+                        "Remarkable: Exhibits notable power, capable of lifting heavy weights that would be challenging for many.",
+                        "Exceptional: Distinguished strength that stands out, enabling the lifting and moving of significantly heavy objects.",
+                        "Outstanding: Possesses superior strength crucial in situations that demand substantial physical power; capable of handling extreme weights.",
+                        "Truly Gifted: A rare level of strength that might qualify the character for high-level competitive strength events.",
+                        "Extraordinary: Shows almost superhuman capabilities, capable of astonishing feats of strength.",
+                        "Phenomenal: Near the peak of human potential, able to perform in extraordinary ways that may set records.",
+                        "Legendary: Epic strength often celebrated in stories or capable of historical athletic feats.",
+                        "Pinnacle: Represents the highest humanly achievable level of strength, observed only in the strongest individuals throughout history.",
+                        "Supranatural: Exceeds the boundaries of human capabilities, venturing into the realms of fantasy or superhuman powers, dealing with physical challenges well beyond ordinary human capacity."
+                    ],
+                    "style_class": "list-none space-y-2"
+                },
+            ]    
+        },
+        {
+            "title": "Physical Abilities",
+            "slug": "physical-abilities",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "subheading",
+                    "order": 2,
+                    "data": "Strength (STR):",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": "Measures the capability of exerting or resisting force and power."
+                },
+                {
+                    "type": "list",
+                    "order": 4,
+                    "data": [
+                        "Damage dealt by melee or thrown attacks.",
+                        "Athletics feats such as power lifting, running, jumping, climbing, or swimming.",
+                        "Static actions such as carrying capacity."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "subheading",
+                    "order": 5,
+                    "data": "Endurance (END):",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 6,
+                    "data": "Overall physical health and resilience."
+                },
+                {
+                    "type": "list",
+                    "order": 7,
+                    "data": [
+                        "Resisting damage from melee or ranged attacks.",
+                        "Stamina feats such as long-distance running or resisting poison and disease.",
+                        "Static actions such as recovering from injury and illness."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "subheading",
+                    "order": 8,
+                    "data": "Reflexes (REF):",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 9,
+                    "data": "Coordination involving agility, speed, manual dexterity, and balance."
+                },
+                {
+                    "type": "list",
+                    "order": 10,
+                    "data": [
+                        "Striking with melee or avoiding being struck by melee and ranged attacks via parry or dodge.",
+                        "Acrobatics or Stealth feats such as minimizing falling damage, tumbling, avoiding visual detection, or losing a person in a crowd.",
+                        "Static actions such as maintaining balance or reacting quickly to avoid clumsy mishaps."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "subheading",
+                    "order": 11,
+                    "data": "Chakra (CHA):",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 12,
+                    "data": "Internally harnessed energy allowing for feats beyond the human norm."
+                },
+                {
+                    "type": "list",
+                    "order": 13,
+                    "data": [
+                        "Activating and powering unique equipment and gear.",
+                        "Bio Control feats such as slowing heart rate, controlling breathing, and other bodily control acts.",
+                        "Activation of Techniques."
+                    ],
+                    "style_class": "list-disc pl-6"
+                }
+            ]
+        },
+        {
+            "title": "Mental Abilities",
+            "slug": "mental-abilities",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "subheading",
+                    "order": 2,
+                    "data": "Perception (PER):",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": "Mental awareness and the speed at which information is processed."
+                },
+                {
+                    "type": "list",
+                    "order": 4,
+                    "data": [
+                        "Striking with ranged attacks.",
+                        "Mental aggressive challenges.",
+                        "Investigative feats such as spotting, deciphering, or damage dealt by melee or thrown attacks.",
+                        "Static actions such as initiative, spotting abnormalities, and noting how people react."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "subheading",
+                    "order": 5,
+                    "data": "Intellect (INT):",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 6,
+                    "data": "Reasoning and information retention that may be utilized to devise, formulate, or solve a scientific issue in cerebral matters. It may also be used to develop, build, or repair mechanical and technological advances."
+                },
+                {
+                    "type": "list",
+                    "order": 7,
+                    "data": [
+                        "Mental defensive challenges.",
+                        "Awareness, Artisan, Demolition feats such as spotting, deciphering, crafting, or detonating.",
+                        "Static actions such as recalling history, technical, or mechanical information."
+                    ],
+                    "style_class": "list-disc pl-6"
+                }
+            ]
+        },
+        {
+            "title": "Social Abilities",
+            "slug": "social-abilities",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "subheading",
+                    "order": 2,
+                    "data": "Manipulation (MAN):",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": "Influencing others through force of personality, leadership, and critical behaviors designed to control others."
+                },
+                {
+                    "type": "list",
+                    "order": 4,
+                    "data": [
+                        "Social aggressive challenges.",
+                        "Persuasion, Performance, or Intimidation feats such as debating, seduction, singing, dancing, interrogation, etc.",
+                        "Static actions such as remembering names or details about a person’s preferences."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "subheading",
+                    "order": 5,
+                    "data": "Control (CON):",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 6,
+                    "data": "Confidence and self-awareness that allows for the resistance to subtle or forceful manipulations of others."
+                },
+                {
+                    "type": "list",
+                    "order": 7,
+                    "data": [
+                        "Social defensive challenges.",
+                        "Willpower, Piloting, Sailing, and Vehicle Operation feats, such as resisting interrogation, intimidation, seduction, or maintaining control of vessels under adverse conditions.",
+                        "Static actions such as maintaining composure or a poised demeanor regardless of the environment."
+                    ],
+                    "style_class": "list-disc pl-6"
                 }
             ]
         }

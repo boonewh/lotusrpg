@@ -214,16 +214,17 @@
 
     // Initialize the menu and load the first section
     document.addEventListener('DOMContentLoaded', async () => {
+
+        if (window.location.pathname !== '/core') {
+            history.replaceState({}, '', '/core');  // Reset URL to /core
+        }
+
         console.log("DOM loaded, initializing core rules page");
         await loadChapters();
         
-        // Get the section slug from the URL
-        const currentPath = window.location.pathname;
-        console.log("Current path:", currentPath);
-        
-        // Extract the slug from the URL path /core/your-slug
-        const pathParts = currentPath.split('/');
-        const slug = pathParts[pathParts.length - 1] || 'prelude';
+        const slug = 'prelude';  // Always load "prelude" on initial page load
+        console.log("Loading default section:", slug);
+
         
         console.log("Loading section from URL:", slug);
         await loadSection(slug); // Load the section from the URL or default to "Prelude"
