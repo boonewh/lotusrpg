@@ -88,30 +88,41 @@
         }
     }
 
-    // Helper function to create elements by type
     function createElementByType(content) {
         let element;
-        
+
         switch (content.type) {
             case 'heading':
                 element = document.createElement('h2');
                 element.textContent = content.data;
                 break;
-                
+
             case 'paragraph':
                 element = document.createElement('p');
                 element.textContent = content.data;
                 break;
-                
+
             case 'list':
                 element = document.createElement('ul');
                 content.data.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    element.appendChild(li);
+                    if (typeof item === 'object' && item.text && item.link) {
+                        // Handle list with links
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = item.link;
+                        a.textContent = item.text;
+                        a.classList.add("text-blue-500", "hover:underline");
+                        li.appendChild(a);
+                        element.appendChild(li);
+                    } else {
+                        // Regular list items
+                        const li = document.createElement('li');
+                        li.textContent = item;
+                        element.appendChild(li);
+                    }
                 });
                 break;
-                
+
             case 'image':
                 element = document.createElement('img');
                 element.src = content.data.file_path;
@@ -120,10 +131,41 @@
                     element.className = content.data.class_name;
                 }
                 break;
-                
+
+            case 'table':
+                element = document.createElement('table');
+                element.className = "border-collapse border border-gray-600 w-full text-left";
+
+                // Create table headers
+                const thead = document.createElement('thead');
+                const headerRow = document.createElement('tr');
+                content.data.headers.forEach(headerText => {
+                    const th = document.createElement('th');
+                    th.textContent = headerText;
+                    th.className = "border border-gray-600 px-4 py-2";
+                    headerRow.appendChild(th);
+                });
+                thead.appendChild(headerRow);
+                element.appendChild(thead);
+
+                // Create table body
+                const tbody = document.createElement('tbody');
+                content.data.rows.forEach(row => {
+                    const tr = document.createElement('tr');
+                    row.forEach(cellText => {
+                        const td = document.createElement('td');
+                        td.textContent = cellText;
+                        td.className = "border border-gray-600 px-4 py-2";
+                        tr.appendChild(td);
+                    });
+                    tbody.appendChild(tr);
+                });
+                element.appendChild(tbody);
+                break;
+
             default:
                 element = document.createElement('div');
-                if (content.data) element.textContent = content.data;
+                element.textContent = content.data || "Unknown content type";
         }
 
         // Apply styles if present
@@ -137,6 +179,7 @@
 
         return element;
     }
+
 
     // Load a specific section dynamically
     async function loadSection(slug) {

@@ -23,6 +23,142 @@ def seed_rules():
 
     sections = [
         {
+            "title": "Defining Your Character",
+            "slug": "defining-character",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": "Before you begin character creation, it's important to gather a clear vision of your character. Reflect carefully on the genre and setting you'll be playing in, and consider having a 'Session Zero' with your Storyteller and fellow players. Session Zero is a fantastic opportunity to collaborate and ensure everyone is aligned, helping you craft an immersive and exciting campaign experience."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": "As you explore this process, think about who your character is within the world: their background, their moral compass, and their relationships. In the following sections, you'll find plenty of inspiring ideas and helpful tools to build out these details:"
+                },
+                {
+                    "type": "list",
+                    "order": 4,
+                    "data": [
+                        "Philosophies: These will help shape your character's morals and beliefs.",
+                        "Backgrounds: These offer a foundation for your character's place in the world, giving depth and realism to their past and present.",
+                        "Races and Bloodlines: These can define key relationships with NPCs and deepen your connection to the game world."
+                ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 5,
+                    "data": "Taking the time to define these elements early on will greatly enhance your role-playing experience, ensuring your character is both memorable and meaningful."
+                }
+            ]
+        },
+        {
+            "title": "Creating Your Character",
+            "slug": "creating-character",
+            "chapter": "Character Creation",
+            "content": [
+                {
+                    "type": "heading",
+                    "order": 1,
+                    "data": "Step-by-Step Guide",
+                    "class": "h2"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": "Follow these steps as a quick reference for character creation. Each step is explained thoroughly, with detailed examples, throughout this chapter. Additionally, visiting the L.O.T.U.S. website provides access to helpful tools like the online character creator, complete with automated calculations. Joining the website also gives you access to session zero materials, downloadable resources, and further guidance from the community."
+                },
+                {
+                    "type": "heading",
+                    "order": 3,
+                    "data": "Step 1: General Character Setup",
+                    "class": "h3"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 4,
+                    "data": "Choose Species/Subspecies. Noting maturation cost (deduct from step 7)."
+                },
+                {
+                    "type": "heading",
+                    "order": 5,
+                    "data": "Maturation Cost for Races",
+                    "class": "h2"
+                },
+                {
+                    "type": "table",
+                    "order": 6,
+                    "data": {
+                        "headers": ["Race", "Subrace", "Cost"],
+                        "rows": [
+                        ["Faeyr", "Dylithat", "40"],
+                        ["Faeyr", "Miaki", "40"],
+                        ["Faeyr", "Tiermalain", "40"],
+                        ["Human", "Akkadian", "0"],
+                        ["Human", "Midian", "0"],
+                        ["Human", "Sutherlander", "0"],
+                        ["Human", "Ennocean", "0"],
+                        ["Romling", "-", "20"],
+                        ["Svar", "Dargnan", "40"],
+                        ["Svar", "Kargathi", "40"],
+                        ["Svar", "Mordron", "40"]
+                        ]
+                    },
+                    "style_class": "table-auto border-collapse border border-gray-600 w-full text-left"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 9,
+                    "data": "*Descriptions of the core races are included on pg #*",
+                    "style_class": "text-sm italic"
+                },
+                {
+                    "type": "heading",
+                    "order": 10,
+                    "data": "Select Philosophical Approach",
+                    "class": "h3"
+                },
+                {
+                    "type": "list",
+                    "order": 11,
+                    "data": [
+                        {
+                        "text": "Law-abiding",
+                        "link": "/core/law-abiding"
+                        },
+                        {
+                        "text": "Honorable",
+                        "link": "/core/honorable"
+                        },
+                        {
+                        "text": "Righteous",
+                        "link": "/core/righteous"
+                        },
+                        {
+                        "text": "Pragmatic",
+                        "link": "/core/pragmatic"
+                        },
+                        {
+                        "text": "Malkavian",
+                        "link": "/core/machiavellian"
+                        },
+                        {
+                        "text": "Anarchist",
+                        "link": "/core/anarchist"
+                        }
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 12,
+                    "data": "These can also be chosen before or after establishing your background."
+                }
+            ]
+        },
+        {
             "title": "Prelude: Character Concepts & Components",
             "slug": "prelude",
             "chapter": "Character Creation",
@@ -82,7 +218,7 @@ def seed_rules():
                         but also navigate the technical aspects of bringing your character to life in the L.O.T.U.S. RPG system. 
                         Let's make your character truly memorable!
                     """.replace("\n", " ").strip()
-                }
+                },
             ]
         },
         {
