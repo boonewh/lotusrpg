@@ -23,23 +23,187 @@ def seed_rules():
 
     sections = [
         {
-            "title": "Defining Your Character",
-            "slug": "defining-character",
-            "chapter": "Character Creation",
-            "content": [
+            "title" : "From the Beginning",
+            "slug" : "beginning",
+            "chapter" : "Introduction",
+            "content" : [
+                {
+                    "type": "paragraph",
+                    "order": 1,
+                    "data": """
+                        L.O.T.U.S. is a project that originated in 1993 as an ideation to create a system that was portable in comparison to other tabletop game systems of that era. During its early conception, the game system was referred to as Mind Games and developed into a quick-paced RPG allowing scenes that could be run during short break intervals while carrying minimal gamer paraphernalia.
+                    """.replace("\n", " ").strip()
+                },
                 {
                     "type": "paragraph",
                     "order": 2,
-                    "data": "Before you begin character creation, it's important to gather a clear vision of your character. Reflect carefully on the genre and setting you'll be playing in, and consider having a 'Session Zero' with your Storyteller and fellow players. Session Zero is a fantastic opportunity to collaborate and ensure everyone is aligned, helping you craft an immersive and exciting campaign experience."
+                    "data": """
+                        In its original incarnation, the system was a loose-knit D20 Versus System. Unfortunately, despite the relatively simplistic game mechanics, it was found to be problematic because a d20 cannot readily be rolled on any surface. While there are now technological alternatives to this, many players still love the feel of casting the dice, and we built our system to uphold that tradition.
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "paragraph",
                     "order": 3,
-                    "data": "As you explore this process, think about who your character is within the world: their background, their moral compass, and their relationships. In the following sections, you'll find plenty of inspiring ideas and helpful tools to build out these details:"
+                    "data": """
+                        Regardless, this phase of game development was put on hold due to life events, including military service, college, and family building. For a long time, the system remained untouched but never forgotten, as one is always a gamer, and our passion for role-playing always comes full circle. After engaging in a series of LARP conventions, an interest was rekindled by a desire to refine the game mechanics to provide a solid and consistent system that overcame the fundamental shortcomings of LARP with a set of rules that was intrinsically reverse compatible with tabletop gameplay.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 4,
+                    "data": """
+                        This led to a series of successes and failures where the game development was forced to bypass a 2d6 Versus System because the Die Roll Increment Range was not varied enough for suitable gameplay. Eventually, this transitioned L.O.T.U.S. to its current format of a DD10 Versus System, providing a wider range of roll increments that could reasonably be rolled on any surface.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 5,
+                    "data": """
+                        The acronym L.O.T.U.S. was chosen for the RPG and stands for Live-action Or Tabletop Universal System. The mechanics herein are designed to provide a consistent, stable medium that does not require variance or change when crossing different styles of role-playing.
+                    """.replace("\n", " ").strip()
+                }
+            ]
+        },
+        {
+            "title": "Welcome to L.O.T.U.S.",
+            "slug": "welcome",
+            "chapter": "Introduction",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "order": 1,
+                    "data": """
+                        Welcome to L.O.T.U.S.—the Live-action Or Tabletop Universal System! If you're new to role-playing games or a seasoned gamer looking for something simple and fun, you've come to the right place. L.O.T.U.S. is designed to be played anytime, anywhere, with minimal setup and just a couple of dice. Whether you're into acting out adventures live (LARP) or sitting around a table with friends (tabletop), L.O.T.U.S. makes it easy for everyone to join the fun.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": """
+                        Think of this Core Book as your handy guide, packed with everything you need to dive into exciting stories. You'll create and play your own unique character, interacting within a world brought to life by your Storyteller. Forget about complicated rules and lengthy preparations—L.O.T.U.S. keeps things straightforward, relying on creativity, role-play, and simple dice rolls using just two ten-sided dice (2d10).
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": """
+                        For tabletop games, you can choose to use visual aids like marker boards, digital maps, or miniature figures to help visualize your adventures. These aren't mandatory, but they can add clarity and fun to the storytelling experience.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 4,
+                    "data": """
+                        If you're playing LARP, you'll be physically moving around, acting out your character’s actions and reactions in real-time. L.O.T.U.S. is designed to make this easy and accessible, letting you jump into the action without worrying about complicated setups or props.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 5,
+                    "data": """
+                        No matter how you choose to play, the Storyteller is there to guide you, responding to your character's decisions, creating exciting challenges, and narrating consequences. With just two simple dice, you'll quickly resolve any challenges, keeping the adventure flowing and the excitement high.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 6,
+                    "data": """
+                        At its heart, L.O.T.U.S. is all about creating unforgettable stories together with your friends. So gather around, roll some dice, and start your adventure—your story is waiting to be told!
+                    """.replace("\n", " ").strip()
+                }
+            ]
+        },
+        {
+            "title": "How To Use These Rules",
+            "slug": "how-to-use",
+            "chapter": "Introduction",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "order": 1,
+                    "data": """
+                        Now that you're familiar with what L.O.T.U.S. is all about, let's talk about how to use this book. This Core Mechanics book gives you everything you need to start your adventures, no matter what kind of setting you've chosen—or even if you're crafting your own unique world.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": """
+                        We've broken things down into three easy-to-follow sections:
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": """
+                        Character Genesis: This is your starting point, guiding you step-by-step through creating characters perfectly suited for the simple yet versatile 2d10 system. We recommend everyone—players and Storytellers alike—take their time with this section first. As you learn to build your characters, you'll naturally become familiar with the concepts and key terms we'll use throughout the rest of the book, setting you up for smooth gameplay later on.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 4,
+                    "data": """
+                        Playing the Game: Here’s where you'll learn how the game works in practice—from using your abilities and skills to embarking on adventures and engaging in thrilling combat. Don't worry if this is your first dice-based role-playing experience. We've made sure to keep the rules clear, easy to follow, and streamlined, so you can focus on the fun and excitement of the game.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 5,
+                    "data": """
+                        Storyteller’s Guide: Lastly, this section is dedicated to the Storytellers—the creative hearts of any role-playing game. You'll find helpful tips and extensive guidance on world-building, managing player interactions, and keeping everyone engaged and immersed in the game. Whether you've been a Game Master before or this is your very first time leading a game, our Storyteller’s Guide will help you feel confident and ready to bring your world and stories to life.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 6,
+                    "data": """
+                        Now that you know what's in store, let's dive in and start creating amazing adventures together!
+                    """.replace("\n", " ").strip()
+                }
+            ]
+        },
+        {
+            "title": "Character Creation",
+            "slug": "character-creation",
+            "chapter": "Character Genesis",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": """
+                        Ready to dive into the world of L.O.T.U.S. RPG? Let's get you started with a character that truly resonates with your style! If you're eager to jump right in, flipping to the back of any or the l.o.t.u.s setting books lets you pick from a variety of ready-made characters. Opting for a pre-made character is quick and ensures you're set up with a mechanically solid persona, but nothing beats the thrill of crafting your own character from scratch. This way, you develop a deeper connection as you shape their history and define their motivations.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": """
+                            In the upcoming sections, we'll help you sculpt your character from concept to fully playable hero. You'll find practical suggestions on building your character's identity, a step-by-step guide to character creation, and clear explanations of every aspect you'll encounter on your character sheet. We'll also introduce you to the maturation system—our approach to character growth—and guide you in discovering your character's calling, choosing relevant abilities, and picking the right skills. Let’s make your character truly memorable!
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "heading",
+                    "order": 4,
+                    "data": "Defining Your Character",
+                    "class": "h2"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 5,
+                    "data": """
+                        Before you begin character creation, it's important to gather a clear vision of your character. Reflect carefully on the genre and setting you'll be playing in, and consider having a 'Session Zero' with your Storyteller and fellow players. Session Zero is a fantastic opportunity to collaborate and ensure everyone is aligned, helping you craft an immersive and exciting campaign experience.
+                    """.replace("\n", " ").strip()
+                },
+                {
+                    "type": "paragraph",
+                    "order": 6,
+                    "data": """
+                        As you explore this process, think about who your character is within the world: their background, their moral compass, and their relationships. In the following sections, you'll find plenty of inspiring ideas and helpful tools to build out these details:
+                    """.replace("\n", " ").strip()
                 },
                 {
                     "type": "list",
-                    "order": 4,
+                    "order": 7,
                     "data": [
                         "Philosophies: These will help shape your character's morals and beliefs.",
                         "Backgrounds: These offer a foundation for your character's place in the world, giving depth and realism to their past and present.",
@@ -49,15 +213,17 @@ def seed_rules():
                 },
                 {
                     "type": "paragraph",
-                    "order": 5,
-                    "data": "Taking the time to define these elements early on will greatly enhance your role-playing experience, ensuring your character is both memorable and meaningful."
+                    "order": 8,
+                    "data": """
+                        Taking the time to define these elements early on will greatly enhance your role-playing experience, ensuring your character is both memorable and meaningful.
+                    """.replace("\n", " ").strip()
                 }
             ]
         },
         {
             "title": "Creating Your Character",
             "slug": "creating-character",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "heading",
@@ -68,7 +234,9 @@ def seed_rules():
                 {
                     "type": "paragraph",
                     "order": 2,
-                    "data": "Follow these steps as a quick reference for character creation. Each step is explained thoroughly, with detailed examples, throughout this chapter. Additionally, visiting the L.O.T.U.S. website provides access to helpful tools like the online character creator, complete with automated calculations. Joining the website also gives you access to session zero materials, downloadable resources, and further guidance from the community."
+                    "data": """
+                        Follow these steps as a quick reference for character creation. Each step is explained thoroughly, with detailed examples, throughout this chapter. Additionally, visiting the L.O.T.U.S. website provides access to helpful tools like the online character creator, complete with automated calculations. Joining the website also gives you access to session zero materials, downloadable resources, and further guidance from the community.
+                        """.replace("\n", " ").strip()
                 },
                 {
                     "type": "heading",
@@ -94,16 +262,16 @@ def seed_rules():
                         "headers": ["Race", "Subrace", "Cost"],
                         "rows": [
                         ["Faeyr", "Dylithat", "40"],
-                        ["Faeyr", "Miaki", "40"],
-                        ["Faeyr", "Tiermalain", "40"],
+                        ["", "Miaki", "40"],
+                        ["", "Tiermalain", "40"],
                         ["Human", "Akkadian", "0"],
-                        ["Human", "Midian", "0"],
-                        ["Human", "Sutherlander", "0"],
-                        ["Human", "Ennocean", "0"],
+                        ["", "Midian", "0"],
+                        ["", "Sutherlander", "0"],
+                        ["", "Ennocean", "0"],
                         ["Romling", "-", "20"],
                         ["Svar", "Dargnan", "40"],
-                        ["Svar", "Kargathi", "40"],
-                        ["Svar", "Mordron", "40"]
+                        ["", "Kargathi", "40"],
+                        ["", "Mordron", "40"]
                         ]
                     },
                     "style_class": "table-auto border-collapse border border-gray-600 w-full text-left"
@@ -154,77 +322,156 @@ def seed_rules():
                 {
                     "type": "paragraph",
                     "order": 12,
-                    "data": "These can also be chosen before or after establishing your background."
-                }
-            ]
-        },
-        {
-            "title": "Prelude: Character Concepts & Components",
-            "slug": "prelude",
-            "chapter": "Character Creation",
-            "content": [
+                    "data": """
+                        These can also be chosen before or after establishing your background.
+                    """.replace("\n", " ").strip()
+                },
+                                {
+                    "type": "list",
+                    "order": 13,
+                    "data": [
+                        "Select Calling (using L.O.T.U.S. Darkholme settings), note any Specialization and associated maturation cost (deduct from step 7).",
+                        "Choose a Culture/Bloodline (examples from Darkholme)"
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
                 {
                     "type": "heading",
-                    "order": 1,
-                    "data": "Prelude: Character Concepts & Components",
-                    "class": "h1"
+                    "order": 14,
+                    "data": "Step 2: Place Abilities",
+                    "style_class": "h3"
+                },
+                {
+                    "type": "list",
+                    "order": 15,
+                    "data": [
+                        "Distribute 12 ability tiers among Strength, Endurance, Reflexes, Chakra, Perception, Intellect, Manipulation, and Control.",
+                        "All abilities start at Tier 1 and cannot exceed Tier 5 at creation."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "heading",
+                    "order": 16,
+                    "data": "Step 3: Place Skill Traits",
+                    "style_class": "h3"
+                },
+                {
+                    "type": "list",
+                    "order": 17,
+                    "data": [
+                        "Allocate 15 skill tiers among available skills (starting at Tier 0).",
+                        "No skill may exceed Tier 6 initially.",
+                        "Skills may vary by setting; the Storyteller can adjust accordingly."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "heading",
+                    "order": 18,
+                    "data": "Step 4: Select Scholarly Knowledges",
+                    "style_class": "h3"
+                },
+                {
+                    "type": "list",
+                    "order": 19,
+                    "data": [
+                        "Choose 1 scholar at Tier 5, 1 at Tier 3, and 1 at Tier 1.",
+                        "Remaining scholar traits start at Tier 0.",
+                        "Choices should reflect your character’s background and require Storyteller approval."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "heading",
+                    "order": 20,
+                    "data": "Step 5: Place Backgrounds",
+                    "style_class": "h3"
+                },
+                {
+                    "type": "list",
+                    "order": 21,
+                    "data": [
+                        "Backgrounds include Assets, Associates (Contacts/Minions), Comeliness, Income, Legacy, and Rank.",
+                        "Select 1 background at Tier 5, 1 at Tier 3, and 1 at Tier 1.",
+                        "All others start at Tier 0."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "heading",
+                    "order": 22,
+                    "data": "Step 6: Select Banes and Boons",
+                    "style_class": "h3"
+                },
+                {
+                    "type": "list",
+                    "order": 23,
+                    "data": [
+                        "Choose up to 10 points worth of Boons (max of 6 total).",
+                        "Select up to 6 Banes to offset Boon costs.",
+                        "Unbalanced selections incur penalties: 5 maturation points or 1 misfortune per difference."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "heading",
+                    "order": 24,
+                    "data": "Step 7: Expend Maturation Points",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "list",
+                    "order": 25,
+                    "data": [
+                        "Starting Campaign: Begin with 100 Maturation XP.",
+                        "Experienced Campaign: Begin with 200 Maturation XP.",
+                        "Strong Starting Campaign: Begin with 400 Maturation XP.",
+                        "All maturation costs are cumulative (reference provided tables here)."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "heading",
+                    "order": 26,
+                    "data": "Step 8: Calculate Expendable Traits",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "list",
+                    "order": 27,
+                    "data": [
+                        "Calculate expendable traits (reference provided table here)."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "heading",
+                    "order": 28,
+                    "data": "Step 9: Fill in Cosmetic Information",
+                    "style_class": "text-xl font-semibold mt-4"
+                },
+                {
+                    "type": "list",
+                    "order": 29,
+                    "data": [
+                        "Using all the details you’ve gathered, complete your character’s cosmetic details: Age, Hair Color, Eye Color, Height, and Weight.",
+                        "Adding a picture or artwork for reference can greatly inspire your role-play and help others visualize your character."
+                    ],
+                    "style_class": "list-disc pl-6"
                 },
                 {
                     "type": "paragraph",
-                    "order": 2,
-                    "data": """
-                        Ready to dive into the world of L.O.T.U.S. RPG? Let's get you started with a 
-                        character that truly resonates with your style! If you're eager to jump right in, 
-                        flipping to the back of any genre book lets you pick from a variety of ready-made characters. 
-                        Opting for a pre-made character is quick and ensures you're set up with a mechanically solid persona, 
-                        but nothing beats the thrill of crafting your own character from scratch. This way, you develop a deeper 
-                        connection as you shape their history and define their motivations.
-                    """.replace("\n", " ").strip()
-                },
-                {
-                    "type": "paragraph",
-                    "order": 3,
-                    "data": """
-                        Before we delve into character creation mechanics, let's first envision who your character will be. 
-                        Reflect on the genre and setting, then consider these intriguing questions: Who is your character? Where 
-                        did they grow up? What's their occupation? Who are their friends and family? What drives them, and what 
-                        are their aspirations, both immediate and long-term?
-                    """.replace("\n", " ").strip()
-                },
-                {
-                    "type": "paragraph",
-                    "order": 4,
-                    "data": """
-                        With their backstory in place, it's time to bring your character to life. Choose their name, height, weight, 
-                        gender, age, and give us a snapshot of their appearance. Next, dive into the finer details: Is your character 
-                        slim or sturdy? Are they charming or less so? Any distinctive features like tattoos or scars that make them stand out?
-                    """.replace("\n", " ").strip()
-                },
-                {
-                    "type": "paragraph",
-                    "order": 5,
-                    "data": """
-                        You've now laid a solid foundation that will guide you through the mechanics of character creation and enhance your 
-                        role-playing experience. Every character we create has a bit of us in them—our unique touch that shines through. As you 
-                        build your character, infuse them with qualities that make them unforgettable, all while letting your own personality subtly 
-                        influence their essence.
-                    """.replace("\n", " ").strip()
-                },
-                {
-                    "type": "paragraph",
-                    "order": 6,
-                    "data": """
-                        In the upcoming sections, we'll not only help you sculpt your character's virtues and vices 
-                        but also navigate the technical aspects of bringing your character to life in the L.O.T.U.S. RPG system. 
-                        Let's make your character truly memorable!
-                    """.replace("\n", " ").strip()
-                },
+                    "order": 30,
+                    "data": "By following these detailed steps, you’ll create an engaging and mechanically sound character ready for your L.O.T.U.S. RPG adventure!"
+                }
+
             ]
         },
         {
             "title": "Approaches: Utilizing Living Philosophies",
             "slug": "approaches",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "heading",
@@ -273,7 +520,7 @@ def seed_rules():
         {
             "title": "Law Abiding",
             "slug": "law-abiding",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "container",
@@ -388,7 +635,7 @@ def seed_rules():
         {
             "title": "Honorable",
             "slug": "honorable",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "container",
@@ -495,7 +742,7 @@ def seed_rules():
         {
             "title": "Righteous",
             "slug": "righteous",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "container",
@@ -602,7 +849,7 @@ def seed_rules():
         {
             "title": "Pragmatic",
             "slug": "pragmatic",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "container",
@@ -655,7 +902,7 @@ def seed_rules():
         {
             "title": "Machiavellian",
             "slug": "machiavellian", 
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "container",
@@ -708,7 +955,7 @@ def seed_rules():
         {
             "title": "Anarchistic",
             "slug": "anarchistic",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "container",
@@ -761,7 +1008,7 @@ def seed_rules():
         {
             "title": "The Virtues, Failings, Vices & Balance",
             "slug": "virtues-vices", 
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "heading",
@@ -946,7 +1193,7 @@ def seed_rules():
         {
             "title": "Benefits of Virtue",
             "slug": "benefits-virtue",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "paragraph",
@@ -1053,7 +1300,7 @@ def seed_rules():
         {
             "title": "Dangers of Losing Balance",
             "slug": "dangers-losing-balance",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "paragraph",
@@ -1077,7 +1324,7 @@ def seed_rules():
         {
             "title": "Abilities, Skills & Core Mechanics",
             "slug": "section-two",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "paragraph",
@@ -1105,7 +1352,7 @@ def seed_rules():
         {
             "title": "Abilities",
             "slug": "abilities",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "paragraph",
@@ -1176,7 +1423,7 @@ def seed_rules():
         {
             "title": "Physical Abilities",
             "slug": "physical-abilities",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "subheading",
@@ -1267,7 +1514,7 @@ def seed_rules():
         {
             "title": "Mental Abilities",
             "slug": "mental-abilities",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "subheading",
@@ -1317,7 +1564,7 @@ def seed_rules():
         {
             "title": "Social Abilities",
             "slug": "social-abilities",
-            "chapter": "Character Creation",
+            "chapter": "Character Genesis",
             "content": [
                 {
                     "type": "subheading",
