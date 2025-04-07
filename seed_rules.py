@@ -4335,8 +4335,162 @@ def seed_rules():
                     "type": "paragraph",
                     "order": 22,
                     "data": "A typical cost range is expenditure of Tiers of Income for that play session and the next to repay Contacts and Minions for services rendered. Failure to repay debts not only removes availability of the Associate until the debt and interest are paid, but if the issue is grievous enough, then a powerful enemy may be made."
+                },
+                {
+                    "type": "table",
+                    "order": 23,
+                    "data": {
+                        "headers": ["Difficulty", "Tier Cost"],
+                        "rows": [
+                            ["Easy", "2 Tiers"],
+                            ["Moderate", "3 Tiers"],
+                            ["Difficult", "4 Tiers"],
+                            ["Very Difficult", "5 Tiers"],
+                            ["Heroic", "6 Tiers"],
+                            ["Legendary", "8 Tiers"]
+                        ]
+                    }
+                },
+                {
+                    "type": "paragraph",
+                    "order": 24,
+                    "data": "Debt repayment can be spaced out, but it requires that Income Tiers be consumed for three times as long. I.E., an Easy Debt not paid immediately would be three months of 1 Tier worth of payment instead of one month of 2 Tier payments, as interest-bearing accounts have their own price to pay. This debt can also be paid or offset by performing services or paying equivalent monetary value at the Game Master's discretion."
+                },
+                {
+                    "type": "heading",
+                    "order": 26,
+                    "data": "Comeliness"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 27,
+                    "data": "This Background represents social standards of physical beauty, sublime horror or attractive ruggedness and may be used in manipulation rolls when the situation is right granting a +1 to the roll per level of Comeliness."
+                },
+                {
+                    "type": "heading",
+                    "order": 28,
+                    "data": "Income"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 29,
+                    "data": "This Background represents regular income. Players should decide the source of their income such as an inheritance, owning a business, winning the lottery on a monthly payout or some other form of long-term finances. The Monthly Currency Draw amounts listed below double if the character has a Scholar Finances Skill of equal value to the Tier of Income utilized. A character has access to this income in addition to the Basic Expenses listed unless Tiers have been consumed for Associate use. They may attempt to make a monthly roll (Intellect + Income Tier) for Monthly Currency Draw, which is absorbed by the player’s investments, but any funds not utilized are automatically reinvested and lost before the next currency draw."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 30,
+                    "data": "Furthermore, at the GM’s discretion the player may purchase an item and remain in-debt to afford a very pricey item. The player may purchase an item equal to their Max Loan Rating but must pay the original amount plus an addition interest above the total. The equipment financed in this manner is only valued at 10% of its listed price until the balance is paid in full through Monthly Currency Draws or outside currency acquisitions. Furthermore, the players Income is reduced by Tiers based on the amount borrowed unless they possess the Scholar Finances Skill which reduces this penalty a single Tier. If forces are actively working against a player, then the difficulty may increase without providing additional benefit."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 31,
+                    "data": "If the player abuses creditors, they gain Bad Credit (2pt. Bane) without benefit and the property will be repossessed. Major purchases cannot be attempted more than once per month. Characters may still accumulate wealth through other means normally which may be invested to justify buying Income Background after character creation. Also, the GM is always permitted to decline to offer credit based on availability, character behavior or story disruption.",
+                    "style_class": "italic text-gray-500"
+                },
+                {
+                    "type": "table",
+                    "order": 32,
+                    "data": {
+                        "headers": ["Difficulty Rating", "Monthly Draw", "Max Loan", "Tiers Reduced", "Interest"],
+                        "rows": [
+                            ["Very Easy (DL: 10–14)", "100", "Up to 100,000", "1", "30%"],
+                            ["Easy (DL: 15–24)", "250", "Up to 250,000", "2", "25%"],
+                            ["Moderate (DL: 25–34)", "500", "Up to 500,000", "2", "25%"],
+                            ["Difficult (DL: 35–44)", "1000", "Up to 1,000,000", "3", "20%"],
+                            ["Very Difficult (DL: 45–54)", "5000", "Up to 5,000,000", "3", "20%"],
+                            ["Heroic (DL: 65–74)", "25,000", "Up to 25,000,000", "4", "15%"],
+                            ["Legendary (DL: 75+)", "50,000", "Up to 50,000,000", "4", "10%"]
+                        ]
+                    }
+                },
+                {
+                    "type": "heading",
+                    "order": 33,
+                    "data": "Legacy"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 34,
+                    "data": "Notoriety or Fame is the realm of reputation that engulfs popular movie stars, models, war heroes, professional athletes, and their ilk or even descendants. It is also a measure of their reputation within a certain society. Players must describe what they are famous or infamous for. The more points in Legacy that a character possesses, grants them more tolerance from others of their eccentricities because of their reputation. After spending five points in the Legacy Background, every additional point grants another environment that the character is accommodated within. (I.E. Legacy 6 grants acknowledgment in 2 environments at Level 5 while Legacy 7 grants acknowledgment in 3 environments at Level 5, etc.) Environments should be generally specific such as Night Club Scene, Goth, Hard Core, Aristocratic or Redneck Scene and should vaguely reflect the reason for them being famous. Such as a War Veteran might be well received amongst Rednecks, or a Movie Star would be indulged by Aristocrats."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 35,
+                    "data": "A Legacy allows a character to get into social events that they may not otherwise have been capable of getting into. In addition to social events, fans, and businesses often lavish gifts on the famous, such as free meals, rentals, etc. Additionally, a character can attempt to “Cause a Scene” in populated areas, drawing a crowd of people. Like real world fame, characters with the public Legacy background are easy to recognize, which can draw unwanted attention. A public Legacy figure receives a +1 per level of Legacy to gain access to closed social events or to “Cause a Scene.” Please note that it is VERY DIFFICULT for a person with a high Legacy to go unnoticed in public. A GM should apply penalties as they seem appropriate to any situations where the Character is attempting to move about unnoticed. All Rolls involving Legacy benefits are Performance + Legacy. A Botch on a Legacy Roll ends up in a complication in getting your “freebies” or where you get arrested for “Causing a Scene.”"
+                },
+                {
+                    "type": "list",
+                    "order": 36,
+                    "data": [
+                        "Very Easy (DL: 10–14): Getting into public events concerning your environment of recognition without waiting in line or getting a meal “on the house” in your hometown.",
+                        "Easy (DL: 15–20): Getting into public events outside your environment of recognition without waiting in line or treating you and your close friend to a meal “on the house” while on the road at a low-end establishment.",
+                        "Moderate (DL: 21–30): Getting “Face Time” at an open public event within your environment of recognition or being served complimentary drinks at establishments within your environment of recognition. You may also now “Cause a Scene” in a heavily populated area in your environment of recognition.",
+                        "Difficult (DL: 31–40): Getting access to private events composed of influential people in your environment of recognition or getting “Face Time” at events outside your environment. High class establishments now gift you with complimentary drinks and other freebies in exchange for gracing their establishment. You may also choose to “Cause a Scene” outside your environment of recognition in a highly populated area.",
+                        "Very Difficult (DL: 41–50): Getting access to private events of influential people outside your environment of recognition. Establishments provide free meals, beverages, and other accommodations merely so you will be seen dining or partying there.",
+                        "Heroic (DL: 51–60): Getting into closed events, far outside your environment of recognition. Establishments now pay not only for your meals, beverages, and several gifts but they provide personal staff to meet your needs."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "order": 37,
+                    "data": "Rank"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 38,
+                    "data": "Rank is direct power in a corporate organization, highly structured agency, or military branch. This becomes important in game settings where players need to know who outranks who. Rank is directly tied to the position a character has within the organization. This may be lost or advanced through game play and is an immensely powerful tool that designates the power of command and access to information and supplies requisitions. A player should detail what organization they have Rank in and what branch of that entity they serve under. Rank should be limited at character creation to the mid-lower rankings for ease of play and limiting player power levels. The Enlisted Chart may be bought at standard cost but the Officers Chart costs double. Rank is a fluid mechanic that may be temporarily lost, when additional rank is granted, it must be paid for, or the character passes up the opportunity for advancement."
+                },
+                {
+                    "type": "heading",
+                    "order": 39,
+                    "data": "Enlisted Chart",
+                    "style_class": "text-center"
+                },
+                {
+                    "type": "table",
+                    "order": 39,
+                    "data": {
+                        "headers": ["", "Marines / Army", "Navy / Space", "Law Enforcement Agency", "Organized Crime"],
+                        "rows": [
+                            ["E1", "Private", "Recruit", "Cadet", "Associate"],
+                            ["E2", "PVT 1st", "Apprentice", "Police Officer", "Soldiers or Assassins"],
+                            ["E3", "Lance Corporal", "Seaman / Specialist", "Detective", "Capo or Captain"],
+                            ["E4", "Corporal", "Petty Officer 3rd Class", "Sergeant", "Operative"],
+                            ["E5", "Sergeant", "Petty Officer 2nd Class", "Lieutenant", "Consigliere or Underboss"],
+                            ["E6", "Staff Sergeant", "Petty Officer 1st Class", "Captain", "Don or Boss"],
+                            ["E7", "Gunnery Sergeant", "Chief", "Commander", "Adjudicator"],
+                            ["E8", "Master Sergeant", "Senior Chief", "Deputy Chief", "The High Table"],
+                            ["E9", "Sergeant Major", "Master Chief", "Chief", "The Elder"]
+                        ]
+                    }
+                },
+                {
+                    "type": "heading",
+                    "order": 40,
+                    "data": "Officers Chart",
+                    "style_class": "text-center"
+                },
+                {
+                    "type": "table",
+                    "order": 41,
+                    "data": {
+                        "headers": ["", "Marines / Army", "Navy / Space", "Federal Agency", "Theological Institute"],
+                        "rows": [
+                            ["O1", "2nd Lieutenant", "Ensign / Ensign", "Junior Agent", "Deacon"],
+                            ["O2", "1st Lieutenant", "Lt. JG / Lt. JG", "Agent", "Priest"],
+                            ["O3", "Captain", "Lieutenant", "Senior", "Vicar Forane"],
+                            ["O4", "Major", "Lt. Commander", "Specialist / Scientist", "Monsignor"],
+                            ["O5", "Lt. Colonel", "Commander", "Field Supervisor", "Bishop"],
+                            ["O6", "Colonel", "Captain", "Ops Supervisor", "Primate"],
+                            ["O7", "Brigadier General", "Rear Admiral Lower", "Department Head", "Archbishop"],
+                            ["O8", "Major General", "Rear Admiral Upper", "Division Director", "Cardinal"],
+                            ["O9", "Lt. General", "Vice Admiral", "Branch Director", "Patriarchs/Matriarchs"],
+                            ["O10", "General", "Admiral", "Deputy Director", "Pope"],
+                            ["O11", "-", "Fleet Admiral", "Director", "-"],
+                            ["O12", "-", "Grand Admiral", "-", "-"]
+                        ]
+                    }
                 }
-
             ]
         },
         {
