@@ -4494,6 +4494,611 @@ def seed_rules():
             ]
         },
         {
+            "title": "Banes",
+            "slug": "banes",
+            "chapter": "Banes & Boons",
+            "content": [
+                {
+                    "type": "heading",
+                    "order": 1,
+                    "data": "Abusive S.O. (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": "You are aware of reality, and you are hit with it regularly. You have an abusive significant other who seems to take delight in venting their frustrations on you. The problem is that you love them and cannot seem to leave them no matter how much they hurt or force themselves upon you. You could call the law to avoid a beating, but you know it will only make things worse since restraining orders are not worth the paper they’re written on. She already taught you that once before. Remember?"
+                },
+                {
+                    "type": "subheading",
+                    "order": 4,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 5,
+                    "data": "Every game day roll 1d10. On a roll of 1-7 nothing happens, and you can go about your business as normal. On a roll of 8-9 you start the day at a -2 to all Acrobatics and Athletics Rolls due to the aches and bruises that wrack your body. On a roll of a 10 your Endurance for calculating BHP maximum is treated as if it were 2 lower in addition to other penalties."
+                },
+                {
+                    "type": "heading",
+                    "order": 6,
+                    "data": "Addiction (1pt.–3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 7,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 8,
+                    "data": "You are addicted to a substance that is dangerous to your health. The value of your addiction is based on its cost, availability, and legality.\n\n1pt. is addiction to a non-impairing legal substance such as cigarettes or coffee.\n2pt. is addiction to a moderately impairing but semi-legal substance such as opioids, alcohol, or cannabis.\n3pt. is addiction to a dangerous impairing illegal substance such as heroin, cocaine, or methamphetamines."
+                },
+                {
+                    "type": "subheading",
+                    "order": 9,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 10,
+                    "data": "Every day you must make a Difficult (DL: 40-49) Willpower Roll or partake of your addiction at some point throughout the day as determined by the GM. Select an appropriate Narcotic from the Equipment Section as appropriate per relative setting and suffer all appropriate penalties while under its influence."
+                },
+                {
+                    "type": "heading",
+                    "order": 11,
+                    "data": "Amnesia (6pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 12,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 13,
+                    "data": "You have few recollections before the past few months. Your history is a blank slate and only your GM knows who you really are and what enemies are lying in wait for your return."
+                },
+                {
+                    "type": "subheading",
+                    "order": 14,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 15,
+                    "data": "You may not purchase Culture, Demolition, Knowledge, Linguistics, Medicine, Programming, Piloting, Repair, Scholar, Security, Tech Op or Vehicles Skills during character creation and the GM may choose to keep some negative background hidden from you."
+                },
+                {
+                    "type": "heading",
+                    "order": 16,
+                    "data": "Aroma of the Crypt (Ash’dren) (2pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 17,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 18,
+                    "data": "You exude a palpable aroma of dampened earth, soil or minerals. Created with heighten sense of smell or the Sharpened Sense Merit can easily mark, identify, and track you."
+                },
+                {
+                    "type": "subheading",
+                    "order": 19,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 20,
+                    "data": "Those tracking you receive a +5 to Primal Instinct Rolls to do so. If you do not wear perfume, tinctures, or other means of concealing this odor it inflicts a -2 in social situations and you may attract flies."
+                },
+                {
+                    "type": "heading",
+                    "order": 21,
+                    "data": "Bad Credit (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 22,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 23,
+                    "data": "Somewhere down the line you let your credit slip away from you and as a result you have trouble getting loans, rentals or even new purchases."
+                },
+                {
+                    "type": "subheading",
+                    "order": 24,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 25,
+                    "data": "Basically, you are stuck on the cash for service basis and even legitimate bank transactions offer you only exceptionally high interest rates or charges when you do have to use them."
+                },
+                {
+                    "type": "heading",
+                    "order": 26,
+                    "data": "Black and White (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 27,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 28,
+                    "data": "You see all situations in black and white or good and evil, etc. There is a right and a wrong way for all things in existence. Few others understand that there is no middle ground."
+                },
+                {
+                    "type": "subheading",
+                    "order": 29,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 30,
+                    "data": "The ends do not justify the means and every action must be accounted for, your views are always the most strickly extreme interpretation of the situation without consideration of mitigating factors. Theft is theft; it doesn’t matter if they were stealing to feed their family or if they were doing it for kicks. The punishment is the same."
+                },
+                {
+                    "type": "heading",
+                    "order": 31,
+                    "data": "Black-listed (2pt. or 4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 32,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 33,
+                    "data": "You’ve been blacklisted by the government or very influential organizations. You are usually unemployable and seem to have problems taking jobs that require personal identification. This tends to leave you working for cash usually in the field of manual labor. This may have happened to you for political reasons, past crimes or merely because someone powerful just doesn't like you. In some cases, this may also bar you from entering certain establishments or events hosted by the entities you have displeased."
+                },
+                {
+                    "type": "subheading",
+                    "order": 34,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 35,
+                    "data": "2pt. Bane you’ve been banned from legitimate employment your field of expertise and many closely related fields.\n\n4pt. Bane the character is unemployable at any legit business where personal identification is required."
+                },
+                {
+                    "type": "heading",
+                    "order": 36,
+                    "data": "Blind (5pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 37,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 38,
+                    "data": "Your eyes have ceased to function."
+                },
+                {
+                    "type": "subheading",
+                    "order": 39,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 40,
+                    "data": "You automatically fail all Awareness & Analysis Rolls based purely on sight. You receive a -10 on all Short & Long Range Striking Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 41,
+                    "data": "Bloodlust (Kith Daemon) (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 42,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 43,
+                    "data": "You require the sanguine life force of other sentient intelligent living creatures to sustain yourself. You must consume blood; your Skills reflect if you have met your fill."
+                },
+                {
+                    "type": "subheading",
+                    "order": 44,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 45,
+                    "data": "If you have consumed no blood in the past five days then you suffer a -4, if you have consumed a minimum of 10 BHP of blood then you suffer a -1, if you have consumed a minimum of 20 BHP then you suffer no penalty, but if you consumed over 20 BHP and draw the last life blood of a creature, killing them you are granted a +1."
+                },
+                {
+                    "type": "heading",
+                    "order": 46,
+                    "data": "Caraca’s Verdict (Kith) (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 47,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 48,
+                    "data": "You see things not as they are but as they shall be. Your eyes have a sickly golden yellow sheen, and you see constantly a fluctuation in reality as things shift between what they are and what they shall be. Any creature that is within a century of a natural death as dying, diseased or even skeletal while creations appear to be ready to crumble and disperse into the wind. This perception of the world causes an awkwardness when socializing with other creatures."
+                },
+                {
+                    "type": "subheading",
+                    "order": 49,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 50,
+                    "data": "You suffer a -2 to all Social interactions and bonuses due to Comeliness are increased by a +3 when attempts to intimidate you are made as you find the shimmering changes of these creatures to be exceptionally disturbing."
+                },
+                {
+                    "type": "heading",
+                    "order": 51,
+                    "data": "Chronically Late (1pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 52,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 53,
+                    "data": "In contrast to those who are always on time, you are always late. Whether through poor personal habits or just an inability to track time, it seems that you are unable to show up in a timely manner. Even if your comrades start telling you an earlier time to be there to ensure your promptness it just happens that events transpire that still make you late."
+                },
+                {
+                    "type": "subheading",
+                    "order": 54,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 55,
+                    "data": "You are always at least 10 minutes late."
+                },
+                {
+                    "type": "heading",
+                    "order": 56,
+                    "data": "Color Blind (1pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 57,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 58,
+                    "data": "You can see only in varying shades of gray, which may make some Rolls more difficult and Demolitions nearly impossible. (Note: In real life color blindness makes you unable to perceive only a certain portion of the color spectrum, but this rule is designed for simplicity.)"
+                },
+                {
+                    "type": "subheading",
+                    "order": 59,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 60,
+                    "data": "You perceive Black, White normally and Blue/Purple/Green as Dark Gray while Red/Yellow/Orange appears as Light Gray."
+                },
+                {
+                    "type": "heading",
+                    "order": 61,
+                    "data": "Criminal Entanglements (2pt. Or 4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 62,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 63,
+                    "data": "You owe someone, and you owe them big. Somewhere you got in some trouble and a “friend” offered to help you out. At the time you didn’t think it was such a big deal but now you’re not certain if you made the right decision."
+                },
+                {
+                    "type": "subheading",
+                    "order": 64,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 65,
+                    "data": "2pt. Bane this means you must pay roughly 250 a month or 25% of your revenue, whichever is more and do some odd jobs to pay the interest on what you owe, just to keep the goons from shaking you down and roughing you up a little.\n\n4pt. Bane you’re someone’s bitch, at their beck and call. You’ve found that it doesn’t seem to matter how much you pay, but you’re always behind and they’re more than willing to remind you of that regardless of how many bones it takes."
+                },
+                {
+                    "type": "heading",
+                    "order": 66,
+                    "data": "Criminal Record (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 67,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 68,
+                    "data": "You have a record that states you were convicted of crimes. The truth behind this is irrelevant. The public believes that you’re a criminal and you suffer the appropriate legal restrictions. You may not possess firearm and you have trouble finding honest employment."
+                },
+                {
+                    "type": "subheading",
+                    "order": 69,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 70,
+                    "data": "You suffer a -1 penalty to all Manipulation Rolls with law enforcement once they are aware of your record."
+                },
+                {
+                    "type": "heading",
+                    "order": 71,
+                    "data": "Cripple (4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 72,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 73,
+                    "data": "Your legs have been damaged, and you require a cane to move."
+                },
+                {
+                    "type": "subheading",
+                    "order": 74,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 75,
+                    "data": "All movement costs double Action Points."
+                },
+                {
+                    "type": "heading",
+                    "order": 76,
+                    "data": "Curse of Aphasia (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 77,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 78,
+                    "data": "Once upon a time you or a member of your family drew the ire of Aphasia, and that curse was passed down to you. You are very attractive to people who you do not wish to attract, and these detestable individuals overlook any signs of rejection because they are keenly interested in your “alure”. Those who you might wish to attract treat you with a bit of contempt as they perceive you as vain and shallow. You may not be faithful to the deity Aphasia as she turns a blind eye to your ugly advances."
+                },
+                {
+                    "type": "subheading",
+                    "order": 79,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 80,
+                    "data": "You suffer a -2 on Manipulation Social interactions to persuade those whom the DM believes that you find disgusting and detestable when trying to persuade them to interact with others instead of yourself. You suffer a -4 to persuade or seduce any that the DM believes that you find attractive."
+                },
+                {
+                    "type": "heading",
+                    "order": 81,
+                    "data": "Cursed (2pt. or 4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 82,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 83,
+                    "data": "You have been cursed either by your own actions in the breaking of a Geas or by someone or something that you have inflicted grave wrongs upon. The curse is specific in nature and cannot be easily dispelled through common magic. There may be a means to atone for your sins, but the methods and the means are both up to the GM and should be a long, arduous task that reflects upon the nature that led to your affliction in the first place."
+                },
+                {
+                    "type": "subheading",
+                    "order": 84,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 85,
+                    "data": "2pt. Curse is annoying. It can moderately affects preselected Powers, Techniques, Social Interactions and worse. The effect of your curse can be problematic enough where it tends to mildly damage relationships and subtly lowers the success of your endeavors.\n\n4pt. Curse is potentially deadly. It affects Powers, Techniques, Social Interactions and worse at the Game Masters discretion as the curse is powerful enough to not be contained to a mild incovenience. The effect of your curse can be problematic enough where it tends to or end damage relationships and lowers your success as well as the prosperity of those who keep your company."
+                },
+                {
+                    "type": "heading",
+                    "order": 86,
+                    "data": "Deadly Metabolism (4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 87,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 88,
+                    "data": "Something is wrong with your body. You process nourishment at a dangerous rate. You must consume at least double the amount of food of others of your species though even this leaves you feeling slightly hungry."
+                },
+                {
+                    "type": "subheading",
+                    "order": 89,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 90,
+                    "data": "Suffer -2 to all Athletics and Power Rolls when you have not consumed enough to meet your needs."
+                },
+                {
+                    "type": "heading",
+                    "order": 91,
+                    "data": "Deaf (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 92,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 93,
+                    "data": "Your audible sense has been lost."
+                },
+                {
+                    "type": "subheading",
+                    "order": 94,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 95,
+                    "data": "You automatically fail any Rolls that rely on audible sound."
+                },
+                {
+                    "type": "heading",
+                    "order": 96,
+                    "data": "Dyslexic (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 97,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 98,
+                    "data": "You have problems with words, symbols and numbers and their correct order. This makes reading and comprehending information troublesome."
+                },
+                {
+                    "type": "subheading",
+                    "order": 99,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 100,
+                    "data": "Suffer a -2 penalty for all Technical Operation or Scholar, and it takes you a substantial while longer to learn what you’re looking for."
+                },
+                {
+                    "type": "heading",
+                    "order": 101,
+                    "data": "Easily Lost (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 102,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 103,
+                    "data": "You seem to always believe that you’re headed in the right direction but that seldom, if ever, is the result."
+                },
+                {
+                    "type": "subheading",
+                    "order": 104,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 105,
+                    "data": "Suffer a -2 to all Navigation Rolls. Once per game session, the GM may call for a Navigation check. Failure indicates you lead the party astray, or get seperated from the group."
+                },
+                {
+                    "type": "heading",
+                    "order": 106,
+                    "data": "Eclectic Subculture (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 107,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 108,
+                    "data": "Everything about you screams High Society, Goth, Punk, Hard Core or Emo. Inside your subculture everything is gravy but when dealing with those outside of your special little group."
+                },
+                {
+                    "type": "subheading",
+                    "order": 109,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 110,
+                    "data": "Suffer a -1 to Manipulation Rolls outside of your subculture."
+                },
+                {
+                    "type": "heading",
+                    "order": 111,
+                    "data": "Endless Hunt (4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 112,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 113,
+                    "data": "You live for the hunt. You may stalk and toy with your prey, but once you mark them as a target you will not cease until you have collected your trophy or they have singlehandedly bested you. In case of the latter you shall give them a year’s reprieve before resuming the hunt."
+                },
+                {
+                    "type": "subheading",
+                    "order": 114,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 115,
+                    "data": "The trigger for Endless Hunt should be discussed with the GM during character creation. Once the conditions of the hunt are triggered, each week you avoid hunting the target grants a cumulate -1 to all Skill checks until it reaches a -10.\n\nEngaging in the hunt removes the Skill modifiers at the rate of 1 per week. Traveling or seeking out your prey counts as engaging in the hunt. If your target is killed when you are not present then make a DL 35 Willpower Roll, if you fail then the one who stole your kill becomes the new focus of your hunt."
+                }
+            ]
+        },
+        {
             "title": "The Virtues, Failings, Vices & Balance",
             "slug": "virtues-vices", 
             "chapter": "Customization Options",
