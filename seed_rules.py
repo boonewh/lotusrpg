@@ -5095,7 +5095,190 @@ def seed_rules():
                     "type": "paragraph",
                     "order": 115,
                     "data": "The trigger for Endless Hunt should be discussed with the GM during character creation. Once the conditions of the hunt are triggered, each week you avoid hunting the target grants a cumulate -1 to all Skill checks until it reaches a -10.\n\nEngaging in the hunt removes the Skill modifiers at the rate of 1 per week. Traveling or seeking out your prey counts as engaging in the hunt. If your target is killed when you are not present then make a DL 35 Willpower Roll, if you fail then the one who stole your kill becomes the new focus of your hunt."
+                },
+                {
+                    "type": "heading",
+                    "order": 116,
+                    "data": "Fatigued Physique (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 117,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 118,
+                    "data": "You are painfully out of shape."
+                },
+                {
+                    "type": "subheading",
+                    "order": 119,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 120,
+                    "data": "Whenever you engage in Athletics Rolls your Endurance score is considered half of its current value rounded up."
+                },
+                {
+                    "type": "heading",
+                    "order": 121,
+                    "data": "Geas (2pt. or 4pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 122,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 123,
+                    "data": "You are bound by an oath taken either by yourself or your ancestors that has placed restrictions upon your actions. If you break these restrictions, then you are cursed with a corresponding 2pt. or 4pt. Bane."
+                },
+                {
+                    "type": "subheading",
+                    "order": 124,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 125,
+                    "data": "2pt. Bane is a restriction requiring you to not engage in something. It could be as simple as service to a cause, the inability to eat pork or celibacy. The exact restriction is determined by the Player and Game Master.\n\n4pt. Bane is a requirement to always engage in something. Every time it is proffered whether prayer to your faith, drinking, sex or seeking approval from a faction head, you must partake.\n\nBreaking the Geas results in it being transformed into a curse of the equivalent point value."
+                },
+                {
+                    "type": "heading",
+                    "order": 126,
+                    "data": "Glowing Eyes (Kith Daemonkin) (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 127,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 128,
+                    "data": "There is the night sheen of bestial eyes or other odd traits but your eyes blaze with the infernal energies that gave birth to your kind. You find it difficult to pass as a non-infernal creature and your eyes may cause situational social penalties in the presence of the fearful or superstitious."
+                },
+                {
+                    "type": "subheading",
+                    "order": 129,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 130,
+                    "data": "You suffer a -2 to all Manipulation Rolls against those who are fearful or superstitious of Daemon or their kin. It also grants a -5 to stealth within 30’ of other creatures while in darkness as their eyes are clearly visible in the distance away."
+                },
+                {
+                    "type": "heading",
+                    "order": 131,
+                    "data": "Graceless (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 132,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 133,
+                    "data": "You always look awkward, no matter what you’re doing."
+                },
+                {
+                    "type": "subheading",
+                    "order": 134,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 135,
+                    "data": "Suffer a -2 to all Acrobatics and Athletics Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 136,
+                    "data": "Hannibal's Hunger (4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 137,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 138,
+                    "data": "You desire the rarest and most forbidden of delicacies in the form of sentient intelligent creature’s flesh. The flesh is best when harvested personally the longer you go without consuming such the less steady of hand and stable of mind you become."
+                },
+                {
+                    "type": "subheading",
+                    "order": 139,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 140,
+                    "data": "Each week you avoid consumption grants a cumulate -1 to all Skill checks until it reaches a -10."
+                },
+                {
+                    "type": "heading",
+                    "order": 141,
+                    "data": "Heavy Sleeper (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 142,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 143,
+                    "data": "You sleep like the dead. Loud noises and various environmental disturbances are unlikely to arouse you from your slumber unless you have gotten a full 8 hours of sleep. Only if someone physically shakes you or you have gotten a full night’s sleep are you even remotely likely to awaken to the sound of an alarm."
+                },
+                {
+                    "type": "subheading",
+                    "order": 144,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 145,
+                    "data": "Suffer a -1 to all Perception, Dodge & Initiative Rolls for an hour after waking up or until you’ve had a chance to stimulate yourself such as a cup of coffee or a cold shower."
+                },
+                {
+                    "type": "heading",
+                    "order": 146,
+                    "data": "Hemophiliac (4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 147,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 148,
+                    "data": "Your blood is especially thin and the low platelet count in your blood stream requires that your body work harder than normal to close even the most basic of injuries."
+                },
+                {
+                    "type": "subheading",
+                    "order": 149,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 150,
+                    "data": "After you receive BHP damage you begin to bleed and will continue to do so inflicting 1 SHP Counter per round until your wounds are bound with a Moderate (DL: 30-39) Medicine Roll. If your Counters equal your SHP, then you die."
                 }
+
             ]
         },
         {
