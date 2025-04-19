@@ -4537,7 +4537,22 @@ def seed_rules():
                 {
                     "type": "paragraph",
                     "order": 8,
-                    "data": "You are addicted to a substance that is dangerous to your health. The value of your addiction is based on its cost, availability, and legality.\n\n1pt. is addiction to a non-impairing legal substance such as cigarettes or coffee.\n2pt. is addiction to a moderately impairing but semi-legal substance such as opioids, alcohol, or cannabis.\n3pt. is addiction to a dangerous impairing illegal substance such as heroin, cocaine, or methamphetamines."
+                    "data": "You are addicted to a substance that is dangerous to your health. The value of your addiction is based on its cost, availability, and legality."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 8,
+                    "data": "1pt. is addiction to a non-impairing legal substance such as cigarettes or coffee."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 8,
+                    "data": "2pt. is addiction to a moderately impairing but semi-legal substance such as opioids, alcohol, or cannabis."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 8,
+                    "data": "3pt. is addiction to a dangerous impairing illegal substance such as heroin, cocaine, or methamphetamines."
                 },
                 {
                     "type": "subheading",
@@ -4678,7 +4693,12 @@ def seed_rules():
                 {
                     "type": "paragraph",
                     "order": 35,
-                    "data": "2pt. Bane you’ve been banned from legitimate employment your field of expertise and many closely related fields.\n\n4pt. Bane the character is unemployable at any legit business where personal identification is required."
+                    "data": "2pt. Bane you’ve been banned from legitimate employment your field of expertise and many closely related fields."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 35,
+                    "data": "4pt. Bane the character is unemployable at any legit business where personal identification is required."
                 },
                 {
                     "type": "heading",
@@ -4834,7 +4854,12 @@ def seed_rules():
                 {
                     "type": "paragraph",
                     "order": 65,
-                    "data": "2pt. Bane this means you must pay roughly 250 a month or 25% of your revenue, whichever is more and do some odd jobs to pay the interest on what you owe, just to keep the goons from shaking you down and roughing you up a little.\n\n4pt. Bane you’re someone’s bitch, at their beck and call. You’ve found that it doesn’t seem to matter how much you pay, but you’re always behind and they’re more than willing to remind you of that regardless of how many bones it takes."
+                    "data": "2pt. Bane this means you must pay roughly 250 a month or 25% of your revenue, whichever is more and do some odd jobs to pay the interest on what you owe, just to keep the goons from shaking you down and roughing you up a little."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 65,
+                    "data": "4pt. Bane you’re someone’s bitch, at their beck and call. You’ve found that it doesn’t seem to matter how much you pay, but you’re always behind and they’re more than willing to remind you of that regardless of how many bones it takes."
                 },
                 {
                     "type": "heading",
@@ -4938,7 +4963,12 @@ def seed_rules():
                 {
                     "type": "paragraph",
                     "order": 85,
-                    "data": "2pt. Curse is annoying. It can moderately affects preselected Powers, Techniques, Social Interactions and worse. The effect of your curse can be problematic enough where it tends to mildly damage relationships and subtly lowers the success of your endeavors.\n\n4pt. Curse is potentially deadly. It affects Powers, Techniques, Social Interactions and worse at the Game Masters discretion as the curse is powerful enough to not be contained to a mild incovenience. The effect of your curse can be problematic enough where it tends to or end damage relationships and lowers your success as well as the prosperity of those who keep your company."
+                    "data": "2pt. Curse is annoying. It can moderately affects preselected Powers, Techniques, Social Interactions and worse. The effect of your curse can be problematic enough where it tends to mildly damage relationships and subtly lowers the success of your endeavors."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 85,
+                    "data": "4pt. Curse is potentially deadly. It affects Powers, Techniques, Social Interactions and worse at the Game Masters discretion as the curse is powerful enough to not be contained to a mild incovenience. The effect of your curse can be problematic enough where it tends to or end damage relationships and lowers your success as well as the prosperity of those who keep your company."
                 },
                 {
                     "type": "heading",
@@ -5094,7 +5124,12 @@ def seed_rules():
                 {
                     "type": "paragraph",
                     "order": 115,
-                    "data": "The trigger for Endless Hunt should be discussed with the GM during character creation. Once the conditions of the hunt are triggered, each week you avoid hunting the target grants a cumulate -1 to all Skill checks until it reaches a -10.\n\nEngaging in the hunt removes the Skill modifiers at the rate of 1 per week. Traveling or seeking out your prey counts as engaging in the hunt. If your target is killed when you are not present then make a DL 35 Willpower Roll, if you fail then the one who stole your kill becomes the new focus of your hunt."
+                    "data": "The trigger for Endless Hunt should be discussed with the GM during character creation. Once the conditions of the hunt are triggered, each week you avoid hunting the target grants a cumulate -1 to all Skill checks until it reaches a -10."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 115,
+                    "data": "Engaging in the hunt removes the Skill modifiers at the rate of 1 per week. Traveling or seeking out your prey counts as engaging in the hunt. If your target is killed when you are not present then make a DL 35 Willpower Roll, if you fail then the one who stole your kill becomes the new focus of your hunt."
                 },
                 {
                     "type": "heading",
@@ -5146,7 +5181,17 @@ def seed_rules():
                 {
                     "type": "paragraph",
                     "order": 125,
-                    "data": "2pt. Bane is a restriction requiring you to not engage in something. It could be as simple as service to a cause, the inability to eat pork or celibacy. The exact restriction is determined by the Player and Game Master.\n\n4pt. Bane is a requirement to always engage in something. Every time it is proffered whether prayer to your faith, drinking, sex or seeking approval from a faction head, you must partake.\n\nBreaking the Geas results in it being transformed into a curse of the equivalent point value."
+                    "data": "2pt. Bane is a restriction requiring you to not engage in something. It could be as simple as service to a cause, the inability to eat pork or celibacy. The exact restriction is determined by the Player and Game Master."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 125,
+                    "data": "4pt. Bane is a requirement to always engage in something. Every time it is proffered whether prayer to your faith, drinking, sex or seeking approval from a faction head, you must partake."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 125,
+                    "data": "Breaking the Geas results in it being transformed into a curse of the equivalent point value."
                 },
                 {
                     "type": "heading",
@@ -5277,10 +5322,4171 @@ def seed_rules():
                     "type": "paragraph",
                     "order": 150,
                     "data": "After you receive BHP damage you begin to bleed and will continue to do so inflicting 1 SHP Counter per round until your wounds are bound with a Moderate (DL: 30-39) Medicine Roll. If your Counters equal your SHP, then you die."
-                }
-
+                },
+                {
+                    "type": "heading",
+                    "order": 151,
+                    "data": "Hero Worship (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 152,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 153,
+                    "data": "You idolize, and we mean absolutely idolize someone. You are prone to angry or violent outbursts if someone questions the motives behind your hero’s actions."
+                },
+                {
+                    "type": "subheading",
+                    "order": 154,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 155,
+                    "data": "Disobeying them requires a Very Difficult (DL: 50-59) Willpower Roll at a -2 penalty"
+                },
+                {
+                    "type": "heading",
+                    "order": 156,
+                    "data": "Hunted Down (3pt., 4pt., 5pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 157,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 158,
+                    "data": "You have made enemies. Unfortunately, the people that you have upset are extremely dangerous and/or influential and have decided to use the resources at their disposal to see you hunted down for your sins and brought to justice. Whether they want you legally punished, broken or killed is up to the GM to decide based on your background and the point value of the Bane."
+                },
+                {
+                    "type": "subheading",
+                    "order": 159,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 160,
+                    "data": "3pt. Bane you have offended an influential person who is either connected in criminal or political circles who sees that your life is made into a living hell. Your residences will be vandalized, bounty hunters seem to appear bi-annually and people who associate with you seem to be frequently harassed. Those sent to harry you are of equal power and experience while possessing a hostile viewpoint."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 160,
+                    "data": "4pt. Bane you have made enemies with an organization with vast backing. Assassins and bounty hunters plague you every few months and you have problems settling down within any place that their fingers can reach, while those who would befriend you are always in potential danger. Those sent to harass you possess more power and experience (+25%) and possess a hostile disposition."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 160,
+                    "data": "5pt. Bane you have made governmental enemies in high places. Your funds may periodically be frozen for periods of time, assassins and bounty hunters plague you every few months and you have problems settling down within any place that their fingers can reach, while those who would befriend you are always in potential danger. Those sent to take your life possess significantly more power and experience (+50%) and possess a hostile disposition."
+                },
+                {
+                    "type": "heading",
+                    "order": 161,
+                    "data": "Hypoglycemic (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 162,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 163,
+                    "data": "Your body regularly suffers from low blood sugar, which occurs when your blood glucose (blood sugar) level drops too low to provide enough energy for your body’s activities. To prevent this, you must eat four regular meals a day and have light snacks in between or the inner fatigue begins to affect your actions."
+                },
+                {
+                    "type": "subheading",
+                    "order": 164,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 165,
+                    "data": "Suffer -1 to all Perception and Control Rolls and are more prone to angry outbursts when you haven’t managed your diet properly."
+                },
+                {
+                    "type": "heading",
+                    "order": 166,
+                    "data": "Illiterate (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 167,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 168,
+                    "data": "Normally when you speak a language you automatically read and write it. You have trouble grasping the written word."
+                },
+                {
+                    "type": "subheading",
+                    "order": 169,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 170,
+                    "data": "You must utilize a second linguistics slot to be proficient in reading and writing a language that you speak."
+                },
+                {
+                    "type": "heading",
+                    "order": 171,
+                    "data": "Inept (1pt. or 2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 172,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 173,
+                    "data": "Sometimes there are things in life that no matter how much we try, we are always just horribly bad at."
+                },
+                {
+                    "type": "subheading",
+                    "order": 174,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 175,
+                    "data": "Choose a Skill which its Base cannot be raised above a 3."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 175,
+                    "data": "1pt. Bane if it is a Non-Combat related Skill."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 175,
+                    "data": "2pt. Bane if it is a Combat related Skill."
+                },
+                {
+                    "type": "heading",
+                    "order": 176,
+                    "data": "Intolerance (2 pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 177,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 178,
+                    "data": "You hate and/or fear something so much that you seek to either avoid it or remove it at any cost."
+                },
+                {
+                    "type": "subheading",
+                    "order": 179,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 180,
+                    "data": "Remaining in the presence of your intolerance without acting requires a Very Difficult (DL: 50-59) Willpower Roll. If this roll fails, then you must either leave immediately without explanation OR burst out in tirade against that which you are fanatically against."
+                },
+                {
+                    "type": "heading",
+                    "order": 181,
+                    "data": "Kirishikk’s Kiss (Lillian) (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 182,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 183,
+                    "data": "There is no ecstasy in your Embrace - only terror and pain."
+                },
+                {
+                    "type": "subheading",
+                    "order": 184,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 185,
+                    "data": "Those whom you seek to feed upon struggle and shriek as you attempt to feed, requiring you to maintain a contested grapple with them each round that you consume their blood, even then they cry out loudly unless they are knocked unconscious."
+                },
+                {
+                    "type": "heading",
+                    "order": 186,
+                    "data": "Low Tolerance (1pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 187,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 188,
+                    "data": "You cannot seem to handle your liquor or any toxic substance to be honest. The nicest thing they say about you is that you are a lightweight. Everyone understands if you can’t take it, some girls are just born that way."
+                },
+                {
+                    "type": "subheading",
+                    "order": 189,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 190,
+                    "data": "This Bane gives you a-2 to all Rolls to resist the effects of alcohol or other toxins."
+                },
+                {
+                    "type": "heading",
+                    "order": 191,
+                    "data": "Loyalty to the Cause (3 pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 192,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 193,
+                    "data": "You have chosen an organization that you support its ideal and goals 110%. You do not act in a manner that is not in the organization’s best interests and you perceive outsiders to your organization with suspicion and distrust."
+                },
+                {
+                    "type": "subheading",
+                    "order": 194,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 195,
+                    "data": "You receive -2 to all Cultures, Persuasion and Scrounge Rolls involving those outside of your organization."
+                },
+                {
+                    "type": "heading",
+                    "order": 196,
+                    "data": "Medication Dependent (2pt. Or 4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 197,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 198,
+                    "data": "You’ve been sick for a long time, and you need your medicine to get you through the day."
+                },
+                {
+                    "type": "subheading",
+                    "order": 199,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 200,
+                    "data": "2pt. Dependency requires that you take your medicine daily. Your medicine is common and easily acquired under normal circumstances. If you fail to take your medication, then you are down 2 SHP and suffer a -1 to Athletics and Perception Rolls for the day."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 200,
+                    "data": "4pt. Dependency requires that you take your medicine daily. Your medicine is uncommon and more expensive. If you fail to take your medication, then you are down 4 SHP and suffer a -3 to Athletics and Perception Rolls for the day."
+                },
+                {
+                    "type": "heading",
+                    "order": 201,
+                    "data": "Mentally Unstable (4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 202,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 203,
+                    "data": "Ok, let’s get something clear here. Insane characters are usually poorly played and often screw up a game. Cutesy fluffy stuffed animal concepts do not apply. Sanity and its subsequent loss are scary, so it is up to you: take this Bane and do it justice! Think of Dark Knight™ with Heath Ledger’s performance as the Joker™ or Silence of the Lambs™ with Anthony Hopkin’s performance as Hannibal Lecter™. These people are scary and prone to bursts of insanity or super sanity as some may argue."
+                },
+                {
+                    "type": "subheading",
+                    "order": 204,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 205,
+                    "data": "This Bane is meant to bring sublime terror to the game and not give players permission to act like a childish idiot. Unless you continually roleplay this condition then, each game session the Game Master can instruct you to act upon your psychosis and inflict appropriate penalties based on the scenario."
+                },
+                {
+                    "type": "heading",
+                    "order": 206,
+                    "data": "Monologuing (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 207,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 208,
+                    "data": "You have a problem; you can’t seem to keep your success to yourself. Anytime you have beaten, bested or downed your foes, it seems that you must explain why they failed, why you’re better than them or what you’re going to do now that they are out of the way."
+                },
+                {
+                    "type": "subheading",
+                    "order": 209,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 210,
+                    "data": "To resist the urge to Monologue requires a Difficult (DL: 40-49) Willpower Roll."
+                },
+                {
+                    "type": "heading",
+                    "order": 211,
+                    "data": "Motion Sickness (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 212,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 213,
+                    "data": "You don’t seem to handle motion well; the nausea and disorientation makes all activities difficult for you."
+                },
+                {
+                    "type": "subheading",
+                    "order": 214,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 215,
+                    "data": "When traveling by train, ship or plane the turbulence you must make a Very Difficult (DL: 50-59) Willpower Roll to move or act. Even if this save is successful you suffer a -2 to all Rolls and -1 traits during and for the first half hour after departing this mode of transportation. You may take medication for this which negates the saving throughs, but it only reduces the penalty by 1."
+                },
+                {
+                    "type": "heading",
+                    "order": 216,
+                    "data": "Mute (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 217,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 218,
+                    "data": "Your vocal cords are either damaged or have been removed."
+                },
+                {
+                    "type": "subheading",
+                    "order": 219,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 220,
+                    "data": "You cannot speak and must use writing or sign language to communicate. This ability does not allow you to use True Magic, but Faith and Psionics are still open to you based on the setting."
+                },
+                {
+                    "type": "heading",
+                    "order": 221,
+                    "data": "Nailed It (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 222,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 223,
+                    "data": "You believe in your abilities perhaps a bit more than your abilities believe in you. Once per Scene you may seek to call upon your inner reservoir to attempt to guarantee success or at least your belief in success in a non-combat situation. Regardless of the outcome, you TRULY believe that your crafted item, performance, etc. was the greatest feat of achievement to have ever been created and you cannot be persuaded otherwise."
+                },
+                {
+                    "type": "subheading",
+                    "order": 224,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 225,
+                    "data": "Before your non-combat related action both you and the Game Master guess what the first 1d10 sum shall be. If you are correct, then you are granted an explosive success die to your roll, if the Game Master is correct then you suffer from a Critical Botch. If both of you are incorrect then you suffer a -1 to your roll."
+                },
+                {
+                    "type": "heading",
+                    "order": 226,
+                    "data": "Necrotic (Ash’dren) (4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 227,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 228,
+                    "data": "Your flesh is cool to the touch and while normal injuries may be healed normally each time you are damaged there is a chance when you are struck a serious blow or struck down that the injury required grotesquely visible injury that requires permanent stitches or artificial mechanisms to hold together."
+                },
+                {
+                    "type": "subheading",
+                    "order": 229,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 230,
+                    "data": "Anytime a single blow strikes you for more than half of your total BHP or if you are knocked below 0 BHP you suffer a garish wound of exposed bone or internal organs requiring either a Moderate Medicine rolls (DL: 25-34) to stitch and mostly conceal or the injury must be held together with artificial mechanisms such as rivets, strap, chains or other binding agents requiring an Easy Artisan roll (DL: 15-24) but this may difficult to conceal depending on the nature of the injury."
+                },
+                {
+                    "type": "heading",
+                    "order": 231,
+                    "data": "Odd Complexion (Kith) (1pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 232,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 233,
+                    "data": "Whether infernally marked, obviously elemental, metallic toned, fluffy, furry, patterned, scaled or hairlessly smooth you have a distinctive appearance that is very difficult to conceal. Unless in the company of other Kith or in an area where such are very common this tends to cause situations social issues and associated penalties, especially in smaller less exposed to the outer world communities."
+                },
+                {
+                    "type": "subheading",
+                    "order": 234,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 235,
+                    "data": "Suffer a -2 in most areas and -4 in extremely isolated ones. Each addition Bane of Permanent Fangs, Horns, Tail, Eyes, Odd Complexion or Odd Eyes increases this penalty by 1. This penalty may be reduced through exposure overtime, but the transition is slow and may take years. It requires a Performance DL: 35 and a makeup kit to conceal your fangs."
+                },
+                {
+                    "type": "heading",
+                    "order": 236,
+                    "data": "Odd Eyes (Kith) (1pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 237,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 238,
+                    "data": "Whether your pupils are infernally marked, bestial, rectangular, oval, slitted, or tapetum lucidum, you have distinctive eyes that are very difficult to conceal. Unless in the company of other Kith or in an area where such are very common this tends to cause situations social issues and associated penalties, especially in smaller less exposed to the outer world communities."
+                },
+                {
+                    "type": "subheading",
+                    "order": 239,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 240,
+                    "data": "Suffer a -2 in most areas and -4 in extremely isolated ones. Each addition Bane of Permanent Fangs, Horns, Tail, Eyes, Odd Complexion or Odd Eyes increases this penalty by 1. This penalty may be reduced through exposure overtime, but the transition is slow and may take years. It requires a Performance DL: 35 and glasses, goggles or other eye covers to conceal your eyes."
+                },
+                {
+                    "type": "heading",
+                    "order": 241,
+                    "data": "Pansexual (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 242,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 243,
+                    "data": "Pansexuality is about the heart being open to love without boundaries. Someone who is pansexual may find themselves attracted to a person's spirit and personality, regardless of that person's gender. It's a way of seeing beyond the labels to the individual within. This orientation highlights deep, meaningful connections that are not confined by traditional gender roles. In essence, for pansexual people, love knows no limits."
+                },
+                {
+                    "type": "subheading",
+                    "order": 244,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 245,
+                    "data": "All creatures are granted their comeliness bonus on social rolls against you as you find all intelligent creatures attractive."
+                },
+                {
+                    "type": "heading",
+                    "order": 246,
+                    "data": "Partially Deaf (1pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 247,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 248,
+                    "data": "Your hearing has either been damaged or was weak upon birth."
+                },
+                {
+                    "type": "subheading",
+                    "order": 249,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 250,
+                    "data": "Suffer a -2 to all Perception Rolls involving hearing."
+                },
+                {
+                    "type": "heading",
+                    "order": 251,
+                    "data": "Perception: Farsighted (1pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 252,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 253,
+                    "data": "You were born or suffered head trauma that has cursed you with imperfect vision unless corrected with either glasses or contacts you suffer one effect chosen at character creation:"
+                },
+                {
+                    "type": "subheading",
+                    "order": 254,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 255,
+                    "data": "Farsighted then you suffer a -2 to all Perception Rolls within 5ft."
+                },
+                {
+                    "type": "heading",
+                    "order": 256,
+                    "data": "Perception: Nearsighted (1pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 257,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 258,
+                    "data": "You were born or suffered head trauma that has cursed you with imperfect vision unless corrected with either glasses or contacts you suffer one effect chosen at character creation:"
+                },
+                {
+                    "type": "subheading",
+                    "order": 259,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 260,
+                    "data": "Nearsighted: Suffer a -2 to all Perception Rolls more than 5ft. Away."
+                },
+                {
+                    "type": "heading",
+                    "order": 261,
+                    "data": "Perception: One Eye (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 262,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 263,
+                    "data": "You have lost an eye which affects your field of vision."
+                },
+                {
+                    "type": "subheading",
+                    "order": 264,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 265,
+                    "data": "Anyone attacking from your bad side receives a +2 to Strike you."
+                },
+                {
+                    "type": "heading",
+                    "order": 266,
+                    "data": "Permanent Fangs (Kith Chimerian/Daemonkin) (1pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 267,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 268,
+                    "data": "Your canines are exceptionally long and are barely visible even when your mouth is closed and thus very difficult to conceal. Unless in the company of other Kith or in an area where such are very common this tends to cause situations social issues and associated penalties, especially in smaller less exposed to the outer world communities."
+                },
+                {
+                    "type": "subheading",
+                    "order": 269,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 270,
+                    "data": "Suffer a -2 in most areas and -4 in extremely isolated ones. Each additional Bane of Permanent Fangs, Horns, Tail, Eyes, Odd Complexion or Odd Eyes increases this penalty by 1. This penalty may be reduced through exposure overtime, but the transition is slow and may take years. It requires a Performance DL: 35 and a makeup kit to conceal your fangs."
+                },
+                {
+                    "type": "heading",
+                    "order": 271,
+                    "data": "Permanent Horns (Kith Chimerian/Daemonkin) (1pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 272,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 273,
+                    "data": "You have horns, whether straight or curled they are very difficult to conceal. Unless in the company of other Kith or in an area where such are very common this tends to cause situations social issues and associated penalties, especially in smaller less exposed to the outer world communities."
+                },
+                {
+                    "type": "subheading",
+                    "order": 274,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 275,
+                    "data": "Suffer a -2 in most areas and -4 in extremely isolated ones. Each addition Bane of Permanent Fangs, Horns, Tail, Eyes, Odd Complexion or Odd Eyes increases this penalty by 1. This penalty may be reduced through exposure overtime, but the transition is slow and may take years. It requires a Stealth DL: 35 to conceal your horns."
+                },
+                {
+                    "type": "heading",
+                    "order": 276,
+                    "data": "Permanent Tail (Kith Chimerian/Daemonkin) (1pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 277,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 278,
+                    "data": "Whether fluffy and furry or scaled and smooth you have a long non-prehensile tail that is very difficult to conceal. Unless in the company of other Kith or in an area where such are very common this tends to cause situations social issues and associated penalties, especially in smaller less exposed to the outer world communities."
+                },
+                {
+                    "type": "subheading",
+                    "order": 279,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 280,
+                    "data": "Suffer a -2 in most areas and -4 in extremely isolated ones. Each addition Bane of Permanent Fangs, Horns, Tail, Eyes, Odd Complexion or Odd Eyes increases this penalty by 1. This penalty may be reduced through exposure overtime, but the transition is slow and may take years. It requires a Stealth DL: 35 to conceal your tail."
+                },
+                {
+                    "type": "heading",
+                    "order": 281,
+                    "data": "Pervert (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 282,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 283,
+                    "data": "You are filled with lust and are constantly seeking exposure to all its avarices. You collect dirty pictures, constantly browse the I-NET, and tend to purchase expensive novelty items and collectibles pertaining to your interests."
+                },
+                {
+                    "type": "subheading",
+                    "order": 284,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 285,
+                    "data": "Suffer a -2 to all Rolls to resist being seduced and you must make a Very Difficult (DL: 40-49) Willpower Roll to avoid purchasing unique items that catch your attention. Furthermore, the GM may randomly subtract finances from your character to represent downtime purchases for your recreational interests."
+                },
+                {
+                    "type": "heading",
+                    "order": 286,
+                    "data": "Poor Liar (1pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 287,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 288,
+                    "data": "You’re just not good at deceiving others."
+                },
+                {
+                    "type": "subheading",
+                    "order": 289,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 290,
+                    "data": "Anytime there is any aspect of untruth is a statement that you make you suffer a -2 to all Persuasion Rolls for the rest of the scene as your presentation presents an air of unbelievably which seems to hurt your credentials."
+                },
+                {
+                    "type": "heading",
+                    "order": 291,
+                    "data": "Profiled Appearance (1pt.; 2pt.; Or 3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 292,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 293,
+                    "data": "You share characteristics with a group who is discriminated upon and normal people in the area treat you differently because of who you are. This is a very area dependent Bane."
+                },
+                {
+                    "type": "subheading",
+                    "order": 294,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 295,
+                    "data": "1pt. Bane: An openly homosexual man in a backwater rural intolerant community that may refuse service or mistreat the individual when the law isn’t around or a right-handed, heterosexual, conservative, white male in a liberal university environment that limits available federal aid, benefits or requires higher scoring accordingly, are both the same level of flaw."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 295,
+                    "data": "2pt. Bane: The “normal” people around you are constantly watching your every move, making trouble for you when they can get away with it, and otherwise causing you grief. The authorities shake you down on principle, and most 'law abiding' folks won't object to whatever they choose to do to you."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 295,
+                    "data": "3pt. Bane: A person of different pigmentation, religious preference or caste who is openly ostracized, abused and discriminated against in accordance with the law."
+                },
+                {
+                    "type": "heading",
+                    "order": 296,
+                    "data": "Property (6pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 297,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 298,
+                    "data": "You belong to someone or an agency in a nation where ownership of sentient being is still acceptable. Having undergone severe indoctrination, your conditioned behavior prevents individuality."
+                },
+                {
+                    "type": "subheading",
+                    "order": 299,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 300,
+                    "data": "Operating in a fashion that is against the best interests of your master(s) causes you to receive appropriate penalties as assigned by the GM. Hence, your actions are not your own and should you go against the desires of your owner(s) you willingly accept any punishment regardless of how harsh including corporal punishment, reconditioning or worse. This is a heavy role-playing Bane, and the GM should feel free to severely hinder abusive player."
+                },
+                {
+                    "type": "heading",
+                    "order": 301,
+                    "data": "Psychological Compulsion (2pt., 4pt. Or 6pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 302,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 303,
+                    "data": "You are afflicted with a psychological impairment that causes you to irrationally pursue a habit. You choose an obsession:"
+                },
+                {
+                    "type": "subheading",
+                    "order": 304,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 305,
+                    "data": "2pt. Bane: Leaving calling card, stealing, lying, gambling being a perfectionist or possessing a compulsive disorder. This Bane is worth an additional 2pts. If the nature or severity of your compulsion would require you to follow even through even at the risk of life or limb."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 305,
+                    "data": "4pt. Bane: Serial killing or equally dangerous acts. This Bane is worth an additional 2pts. If the nature or severity of your compulsion would require you to follow through even at the risk of life or limb."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 305,
+                    "data": "This must be approved by your storyteller. Any time that you are confronted with your psychological compulsion you must make a Very Difficult (DL: 50-59) Willpower Roll or engage in your mentally afflicted habit."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 305,
+                    "data": "You receive a penalty based on the severity of the Bane: 2pt. is -4, 4pt. is -8 and 6pt. is -12. This modifier is used in Willpower Rolls to resist engaging in your unusual activity. If a character constantly Rolls to ignore their compulsions, then the GM should force them to buy it off even forcing the player in the hole if necessary."
+                },
+                {
+                    "type": "heading",
+                    "order": 309,
+                    "data": "Psychotic Ex-Significant Other (1pt., 2pt., Or 4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 310,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 311,
+                    "data": "One of your lovers from the past has developed or already possessed an obsessive personality."
+                },
+                {
+                    "type": "subheading",
+                    "order": 312,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 313,
+                    "data": "1pt. Bane: Your Ex is someone who tends to call too often and tends to show up at the most inconvenient of times. Unfortunately, your lingering feelings for them remain, keeping you from just cutting them off completely. They are typically Friendly to Indifferent towards you depending on how you treat them, and they are slightly lesser in power and experience to you (-25%)."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 313,
+                    "data": "2pt. Bane: Your Ex is someone who tends to attempt to reconnect with you while resenting you for the relationship failing and wants to see you suffer for it. They are typically Neutral to Unfriendly towards you and they are of equal power and experience to you."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 313,
+                    "data": "4pt. Ex is dangerous and is as likely to set your car on fire in the middle of the night as she is to beg to start going out with her again. Love them or leave them but leaving might have dire consequences. They are typically Hostile towards you, and they are of greater power and experience than you (+25% XP)."
+                },
+                {
+                    "type": "heading",
+                    "order": 314,
+                    "data": "Rival (1pt., 2pt., or 4pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 315,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 316,
+                    "data": "Someone in your field of expertise likes to compete with you. While they don’t really wish you dead, they most certainly want to see you fail in a manner than ensures their success. Your Rival should be an XP based equal to your character that varies based on the strength of the rivalry though they should always be a reasonably match and challenge your character in the things you compete for. They will also work behind the scenes to provide themselves with every advantage and edge they can just to see you hang your head in shame at the end of a long day."
+                },
+                {
+                    "type": "subheading",
+                    "order": 317,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 318,
+                    "data": "1pt. Bane: Your Rival is someone who tends to exuberantly seek one-upmanship and tends to show up at the most inconvenient of times. Whether you take this Rival seriously or not changes whether they are typically Friendly to Indifferent towards you depending on how you treat them, and they are slightly lesser in power and experience to you (-25% XP)."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 318,
+                    "data": "2pt. Bane: Your Rival is someone who has been had a crossing of interests in the past and resents you for their failure in that endeavor and wants to see you suffer for it. They are typically Neutral to Unfriendly towards you and they are of equal power and experience to you."
+                },
+                                                {
+                    "type": "paragraph",
+                    "order": 318,
+                    "data": "4pt. Bane: Your Rival is dangerous and is as likely to set a bomb in your car as they are to gloat at every opportunity that they utilize to show you up. They are typically Hostile towards you, and they are of greater power and experience than you (+25% XP)."
+                },
+                {
+                    "type": "heading",
+                    "order": 319,
+                    "data": "Scar Tissue (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 320,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 321,
+                    "data": "You suffer from an old injury. This injury impairs your ability to function as smoothly as you once did."
+                },
+                {
+                    "type": "subheading",
+                    "order": 322,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 323,
+                    "data": "Suffer -2 penalty on all Athletics, Acrobatics and Dodge Rolls"
+                },
+                {
+                    "type": "heading",
+                    "order": 324,
+                    "data": "Shadowy Past (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 325,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 326,
+                    "data": "There are some gaps in your history that makes some a little uncomfortable around you. What is even worse is your tendency to not fill in those gaps. You have a hard time making friends and even your acquaintances often wonder about you."
+                },
+                {
+                    "type": "subheading",
+                    "order": 327,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 328,
+                    "data": "Suffer -1 to all Manipulation Rolls involving those who are aware of aspects of your past and you are often treated as if you were one Rank lower."
+                },
+                {
+                    "type": "heading",
+                    "order": 329,
+                    "data": "Sickly (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 330,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 331,
+                    "data": "You are always pale and often covered in a light sheen of sweat even when you lightly exert yourself."
+                },
+                {
+                    "type": "subheading",
+                    "order": 332,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 333,
+                    "data": "Suffer -2 to all Athletics & Power Rolls as your weak body often has difficulties dealing with prolonged strain."
+                },
+                {
+                    "type": "heading",
+                    "order": 334,
+                    "data": "Sleeping with the Enemy (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 335,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 336,
+                    "data": "You may have a lover, a child, a friend working on the other side of the fence, but regardless of politics you retain a friendly (or more than friendly) relationship. Your close ties to someone on the other side would be regarded as treason by your superiors, and if you are discovered, the penalty may include loss of rank, income, contacts, backers, exile, or imprisonment."
+                },
+                {
+                    "type": "subheading",
+                    "order": 337,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 338,
+                    "data": "The resulting loss is 9 points of backgrounds. For every background not sacrificed the player is exiled or imprisoned for 1 year."
+                },
+                {
+                    "type": "heading",
+                    "order": 339,
+                    "data": "Speech Impairment (1pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 340,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 341,
+                    "data": "You suffer from a speech impediment whether it is mumbling, stuttering, stammering or a lisp."
+                },
+                {
+                    "type": "subheading",
+                    "order": 342,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 343,
+                    "data": "Suffer -2 on all Persuasion Rolls and should be role-played anytime your character speaks but should not be done in a manner that is offensive to others, especially those who may suffer from real life impairments."
+                },
+                {
+                    "type": "heading",
+                    "order": 344,
+                    "data": "Sterile (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 345,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 346,
+                    "data": "Without arcane or alchemical assistance, you cannot reproduce offspring."
+                },
+                {
+                    "type": "subheading",
+                    "order": 347,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 348,
+                    "data": "You cannot conceive children through normal means, and you also suffer a -2 to Social situations due to social stigma with said condition."
+                },
+                {
+                    "type": "heading",
+                    "order": 349,
+                    "data": "Surreal (Kith) (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 350,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 351,
+                    "data": "There is something unnatural about you and it draws the attention of others. Guards may choose to question you or civilians may engage you in random conversations. If someone is randomly picked for an act of inconvenience or nefarious intent then you may rest assured that your presence will be the one that draws their attention."
+                },
+                {
+                    "type": "subheading",
+                    "order": 352,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 353,
+                    "data": "Whenever the Gamemaster wants to interject this is a free wild card to bring scrutiny to the players activities upon a whim."
+                },
+                {
+                    "type": "heading",
+                    "order": 354,
+                    "data": "Svar Traditionalist (Svar) (0pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 355,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 356,
+                    "data": "You are the dwarfiest dwarf who ever held a pick or swung a hammer. Every breath and action you take exudes the time-tested traditions, values, and stereotypes of your people."
+                },
+                {
+                    "type": "subheading",
+                    "order": 357,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 358,
+                    "data": "This grants you a +2 when dealing with another Svar and a -1 when dealing with non-Svar."
+                },
+                {
+                    "type": "heading",
+                    "order": 359,
+                    "data": "The Shakes (6pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 360,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 361,
+                    "data": "When under stress your hands tend to shake. You don’t know why but they always have."
+                },
+                {
+                    "type": "subheading",
+                    "order": 362,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 363,
+                    "data": "Suffer -2 Traits on all Archery, Firearms, Medicine, Piloting and Repair Rolls unless you’ve had a drink to calm your nerves. You need a drink every hour and suffer the potential effects of alcohol accordingly."
+                },
+                {
+                    "type": "heading",
+                    "order": 364,
+                    "data": "Twin Link (4pt Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 365,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 366,
+                    "data": "You share a psychic spiritual link with one person usually a twin sibling. This is a wonderful feeling of bonding with another person who can truly understand you. The downside to this is that you each suffer the same wounds."
+                },
+                {
+                    "type": "subheading",
+                    "order": 367,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 368,
+                    "data": "For every 5 BHP of damage after soak, your twin takes 2 BHP of un-soakable damage as well. The upside to this is that you have a heightened awareness of your twin."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 368,
+                    "data": "On a Very Difficult (DL: 50-59) Awareness Roll you may determine the general direction of your sibling from where you are and your twin has a -10 modifier on all Rolls to lie or misdirect you as you can always feel each other’s emotional state."
+                },
+                {
+                    "type": "heading",
+                    "order": 369,
+                    "data": "Twisted Heart (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 370,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 371,
+                    "data": "You lack that natural warmth that helps people accept one another. This sets you apart in the crowd as you tend to find funny what others find disturbing and you are far removed from the normal vibrant warm emotional attachments that others hold dear."
+                },
+                {
+                    "type": "subheading",
+                    "order": 372,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 373,
+                    "data": "-1 to all non-Intimidation Manipulation Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 374,
+                    "data": "Uncultured (1pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 375,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 376,
+                    "data": "Even when it comes to basic table manners, your ability to be refined seems to be lacking."
+                },
+                {
+                    "type": "subheading",
+                    "order": 377,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 378,
+                    "data": "In any Social Roll pertaining to the good use of manners you suffer a -1 penalty."
+                },
+                {
+                    "type": "heading",
+                    "order": 379,
+                    "data": "Unique Raising (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 380,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 381,
+                    "data": "You were raised in an isolated community (whether in a governmental social project or merely by strict parents who would not have their child corrupted by the outside world) that has impacted your acceptance of estranged social settings."
+                },
+                {
+                    "type": "subheading",
+                    "order": 382,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 383,
+                    "data": "You are ill at ease in any social situation that differs from your upbringing and accordingly suffer a -2 to all Social Rolls in such settings."
+                },
+                {
+                    "type": "heading",
+                    "order": 384,
+                    "data": "Unlucky (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 385,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 386,
+                    "data": "Some people struggle in life, others a simply unluck. You were born without the same occassional bursts of luck that seems to find others."
+                },
+                {
+                    "type": "subheading",
+                    "order": 387,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 388,
+                    "data": "Your Luck Expendable Trait Pool is permantly lowered by one."
+                },
+                {
+                    "type": "heading",
+                    "order": 389,
+                    "data": "Users (3pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 390,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 391,
+                    "data": "Somewhere down the line through either a desire to help or merely from being too soft hearted you picked up a few leeches. The type of people who say they’re your friend but tend to just take you for everything you’ve got one piece at a time."
+                },
+                {
+                    "type": "subheading",
+                    "order": 392,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 393,
+                    "data": "At random the GM may utilize part of your resources or basically create little nuances that severely hamper your life based on your willingness to keep supporting these moochers."
+                },
+                {
+                    "type": "heading",
+                    "order": 394,
+                    "data": "Vulgar Essence (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 395,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 396,
+                    "data": "Your magic, abilities and skills are always obvious when you utilize or maintain them. It is always noticeable regardless of other skills or abilities that might normally allow you to hide your essence use. All your powers involve loud anime style catch phrases and create majestically stylish images when you cast."
+                },
+                {
+                    "type": "subheading",
+                    "order": 397,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 398,
+                    "data": "No additional Mechanics."
+                },
+                {
+                    "type": "heading",
+                    "order": 399,
+                    "data": "Weak Stomach (2pt. Bane)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 400,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 401,
+                    "data": "You don’t handle gore very well. Anytime you must deal with blood, wounds or other ghastly injuries you suffer a -1 on all Rolls for the remainder of the scene."
+                },
+                {
+                    "type": "subheading",
+                    "order": 402,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 403,
+                    "data": "If the GM deems that the scene is disturbing enough then they may ask you to make a Difficult (DL: 40-49) Bio Control Roll to avoid spending the next few rounds retching."
+                }  
             ]
         },
+                {
+            "title": "Boons",
+            "slug": "boons",
+            "chapter": "Banes & Boons",
+            "content": [
+                {
+                    "type": "heading",
+                    "order": 1,
+                    "data": "Action Hero (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 1,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 1,
+                    "data": "You are energetic and quick to respond to any situation. You have honed your body and mind to make yourself into a true hero or villain."
+                },
+                {
+                    "type": "subheading",
+                    "order": 1,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 1,
+                    "data": "Grants +1 Combat Action Point & +1 Movement Action Point."
+                },
+                {
+                    "type": "heading",
+                    "order": 2,
+                    "data": "Additional Elemental Affinity (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 2,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 3,
+                    "data": "You are attuned to a wider array of elements than usual and treat 1 additional Element Sphere as if it were in Calling."
+                },
+                {
+                    "type": "subheading",
+                    "order": 4,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 5,
+                    "data": "This reduces the cost to normal and provides the Calling +4 benefit."
+                },
+                {
+                    "type": "heading",
+                    "order": 6,
+                    "data": "Alternate Identity (2pt. Or 3pt Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 7,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 8,
+                    "data": "You have managed to build up a solid alternate identity with verifiable backgrounds and credentials. Unlike a normal forged passport or documentation your identity will hold up through extensive background checks and investigations."
+                },
+                {
+                    "type": "subheading",
+                    "order": 9,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 10,
+                    "data": "2pt. Boon: Identity will hold up through a Very Difficult (DL: 50-59) Analyzation Roll."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 10,
+                    "data": "3pt. Boon: Identity will require a Heroic (DL: 60-69) Analyzation Roll to pierce its falsified credentials."
+                },
+                {
+                    "type": "heading",
+                    "order": 11,
+                    "data": "Ambidextrous (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 12,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 13,
+                    "data": "Most people favor one hand or the other. You may use either hand equally well."
+                },
+                {
+                    "type": "subheading",
+                    "order": 14,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 15,
+                    "data": "Negates the impairments of offhand use to complete a task and removes striking penalty to Florentine fighting."
+                },
+                {
+                    "type": "heading",
+                    "order": 16,
+                    "data": "Antecessor (2pt., 3pt. & 4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 17,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 18,
+                    "data": "You have an ancestor or deceased lover who shadows you and tends to watch over you, especially when you wander into dangerous hauntings."
+                },
+                {
+                    "type": "subheading",
+                    "order": 19,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 20,
+                    "data": "2pt. Boon: Visions. You receive flashes of insight or visions of harm that may come to your person if you enter a location of substantial danger. At this level, your spiritual guide can only provide such a warning once per game session."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 20,
+                    "data": "3pt. Boon: Voice. Your antecessor can speak a single short sentence or provide visual clues in the form of ghostly light anomalies. At this level, your spirit guide can only interact twice per game session."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 20,
+                    "data": "3pt. Boon: Voice. Your antecessor can speak a single short sentence or provide visual clues in the form of ghostly light anomalies. At this level, your spirit guide can only interact twice per game session."
+                },
+                                {
+                    "type": "paragraph",
+                    "order": 20,
+                    "data": "4pt. Boon: Commune. You can have full conversations with your spiritual guide when they are near you and feel they have enough energy to do so. They can see the other side with unique clarity and may advise accordingly. At this level your spirit guide has a 25 percent chance of being present each hour."
+
+                },
+                {
+                    "type": "heading",
+                    "order": 21,
+                    "data": "Artemis’ Grace (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 22,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 23,
+                    "data": "By some natural aptitude or gift of the powers that be you have been blessed with a keen eye and a steady hand. It often seems almost as if the winds shift in your favor and your targets almost step in the path where your arrows fly true."
+                },
+                {
+                    "type": "subheading",
+                    "order": 24,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 25,
+                    "data": "Grants +1 to all Archery Striking and Damage Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 26,
+                    "data": "Artifact of History (1-3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 27,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 28,
+                    "data": "You have come into rightful possession of an Artifact of History. This object is beyond the reach of a meager price tag as it is often entangled in history and shrouded in superstition may be of relevance or power. When taking the Artifact Boon, consult with the GM to try and work out an appropriate Artifact is for the setting based on the point value. This Background may be divided into many lesser Artifacts or one powerful Artifact. Anyone who chooses this background must create a feasible story that explains where and how this background was acquired. This background must be approved by the Game Master."
+                },
+                {
+                    "type": "subheading",
+                    "order": 29,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 30,
+                    "data": "1pt. Boon: Local Importance & Recognizable or Regional Importance & Obscure."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 30,
+                    "data": "2pt. Boon: Regional Importance & Recognizable or National Important & Obscure."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 30,
+                    "data": "3pt. Boon: National Importance & Recognizable or Global Importance & Obscure."
+                },
+                {
+                    "type": "heading",
+                    "order": 31,
+                    "data": "Asexual (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 32,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 33,
+                    "data": "Asexuality means someone doesn't really feel sexual attraction to anyone. They might still fall in love or form close relationships; they just don't have the desire to make those relationships sexual. They cherish the emotional intimacy and companionship that comes from being close to others. Essentially, it's about loving and being loved in ways that don’t involve a sexual aspect."
+                },
+                {
+                    "type": "subheading",
+                    "order": 34,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 35,
+                    "data": "Others are not granted their comeliness bonus against you."
+                },
+                {
+                    "type": "heading",
+                    "order": 36,
+                    "data": "Bestial Affinity (Chimerian)(2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 37,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 38,
+                    "data": "Blessed by Lumira and descended directly from the Baron, tou are truly attuned to your beast and may take on more bestial characteristics than most."
+                },
+                {
+                    "type": "subheading",
+                    "order": 39,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 40,
+                    "data": "You may pick an additional characteristic from Reveal the Beast. You may take this Boon repeatedly."
+                },
+                {
+                    "type": "heading",
+                    "order": 41,
+                    "data": "Berserker (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 42,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 43,
+                    "data": "A tempest of raw, unbridled fury. You are a warrior embodying the primal wrath of the storm, each howl and roar echoing the chaos of battle. With eyes aflame with the fire of unyielding rage, the berserker wields his weapons with such ferocity that it seems an extension of his very soul. Unconcerned with the finesse of the dance of blades, he plunges headlong into the fray, driven by a singular desire to crush and obliterate, his heart pounding the drumbeat of ancient wars that shall see him to victory or Valhalla."
+                },
+                {
+                    "type": "subheading",
+                    "order": 44,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 45,
+                    "data": "You can expend an Essence to enter a state of ferocious frenzy. During this moment you must specifically identify those immediately within Line of Sight around you that you are recognizing as “allies”, all other creatures are “enemies”. If these people step between you and all other targets, then they shall also be treated as enemies. Every round you must utilize MAP to engage an “enemy” and expend all CAP on them until they are downed. This process continues until all enemies are felled, the Berserker does not have an enemy within melee or distant attack range, or if the Berserker attempts to end their rage. During their enraged time, they are granted a +2 to Strength Sum, +2 to Endurance Sum. To begin “Winding Down” at the beginning of their turn the Berserker expends an Essence chooses to begin “Winding Down”, at this point they still must utilize all of their MAP and CAP to down enemies but regain control once the last CAP is expended. They also may be healed during this time period. The danger of berserking is that once they are reduced to 0 BHP they may choose to fall unconscious or to continue fighting. If they choose to continue fighting then they gamble their life and can no longer receive healing until the rage has ended. At the start of each initiative, they must expend 2 Essence and successfully make an Athletics Roll with the Difficulty equal to their current negative BHP. Compounding isses they suffer a cumulatic -1 penalty for each additional combat action they take as they continue fighting. If they run out of essence or if they fail their Athletics Roll, they complete their final round of CAP expenditures and fall dead in glorious battle. If all enemies have fallen and they have not failed their Athletics Roll then they may attempt to Wind Down. At the end of their Wind Down they make a final roll with the Difficulty being their negative BHP + Cumulative Penalties. If they pass this, they automatically fall unconscious but are stabilized. If they fail then they perish."
+                },
+                {
+                    "type": "heading",
+                    "order": 46,
+                    "data": "Blessed of Aphasia (Darkholme) (3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 47,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 48,
+                    "data": "Once upon a time you or a member of your family gained the blessing of Aphasia, and that gift was passed down to you. You are very attractive to people whom you might wish to attract the attention of. While those whose aren’t to your tastes tend to avoid seeking your attention unless they are truly determined. You may not be faithful to any deity except Aphasia as they recognize her mark and respect it."
+                },
+                {
+                    "type": "subheading",
+                    "order": 49,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 50,
+                    "data": "By spending an essence and declaring a target, you are granted a +2 on Manipulation Social interactions to persuade that individual. You may also expend an essence and declare a target; this requires them to make a Very Difficult DL 41-50 to make social advances towards you as Aphasia fills undesirables with insecurity to protect her blessed. This effect lasts for 1 Hour. You may affect a number of targets equal to your Comeliness."
+                },
+                {
+                    "type": "heading",
+                    "order": 51,
+                    "data": "Calm Soul (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 52,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 53,
+                    "data": "You have always been calm of mind and heart which allows you to easily avoid panic and engage in meditation. In situations that require you to maintain outward calmness, a lower heart rate and controlled breathing you maintain your composure quite readily."
+                },
+                {
+                    "type": "subheading",
+                    "order": 54,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 55,
+                    "data": "Grants +1 to all Bio Control."
+                },
+                {
+                    "type": "heading",
+                    "order": 56,
+                    "data": "Celestial Navigation (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 57,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 58,
+                    "data": "Guided by the stars is the maxim you use to describe your innate sense of direction, but the truth is that you have a deep sense of logical direction assisted by an intuitional pull to your desired destination."
+                },
+                {
+                    "type": "subheading",
+                    "order": 59,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 60,
+                    "data": "Grants +1 to all Navigation and Scholar Geography Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 61,
+                    "data": "Charming Rogue (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 62,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 63,
+                    "data": "You are a thief, and the lords and ladies love you for your dashing, dastardly, defiance of the law. Of course, being charming may not always be enough, so you’ve developed the skills to take you well on your way to becoming the Prince or Princess of Thieves."
+                },
+                {
+                    "type": "subheading",
+                    "order": 64,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 65,
+                    "data": "Grants +1 to Acrobatics, Persuasion, Sleight of Hand and Stealth Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 66,
+                    "data": "Child of the Baron (Chimerian) (3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 67,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 68,
+                    "data": "Your personal form is yours to command as biological sex, mass, complexion, and hair color are easily shifted in a few moments. Through expending a essence your flesh ripples and molds itself in one of three ways. Each change requires the expenditure of an essence. You may alter your biological sex between male and female. The two forms have slightly differing facial and build features as chosen at character creation but never differ afterwards. You may adjust your height by up to a foot (30 cm) allowing you to become taller or shorter. You may freely change your hair and skin coloring."
+                },
+                {
+                    "type": "subheading",
+                    "order": 69,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 70,
+                    "data": "Each of these forms is detected as your true form by normal inspection or arcane means. Though those with a Sharpened Sense of smell may note that aspects of your natural scent carry over to your new form if they have met you and sniffed you in other forms. To do this requires a contested Performance versus Primal Instinct roll."
+                },
+                {
+                    "type": "heading",
+                    "order": 71,
+                    "data": "Chills (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 72,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 73,
+                    "data": "You always seem to know when you are being watched. Anytime anyone attempts to observe you, or those whose company you are keeping then you have a chance to sense them."
+                },
+                {
+                    "type": "subheading",
+                    "order": 74,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 75,
+                    "data": "Observers must make a Contested Roll to avoid you sensing them once every 10 minutes. (2d10 + Awareness vs. 2d10 + Stealth) (Scholar: Arcane v. Stealth)"
+                },
+                {
+                    "type": "heading",
+                    "order": 76,
+                    "data": "Clearance (3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 77,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 78,
+                    "data": "You must have the Rank background to purchase this, Boon. This can be an extremely dangerous Boon and loss of classified materials can lead to man hunts and death for those who divulge some organizations secrets"
+                },
+                {
+                    "type": "subheading",
+                    "order": 79,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 80,
+                    "data": "Grants +1 per Rank to all Rolls involving the gathering of classified materials from the organization that you possess rank. A typical Roll to receive classified materials are 2d10 + Manipulation + Rank versus a Difficulty set by the GM based on the secrecy of the information."
+                },
+                {
+                    "type": "heading",
+                    "order": 81,
+                    "data": "Conviction (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 82,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 83,
+                    "data": "Some people believe they are hard to break and most of the time they are wrong. You have the determination and most likely the training to not be broken. Upon torture or interrogation, you are the reason they invented that special chamber."
+                },
+                {
+                    "type": "subheading",
+                    "order": 84,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 85,
+                    "data": "Grants +1 to all Willpower Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 86,
+                    "data": "Crack Shot (3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 87,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 88,
+                    "data": "You are inherently able to predict the movements of your target and adjust your Artillery station’s trajectory accordingly. This intuition matched with the Reflexes necessary to stay on your target allows you to readily mow through enemy targets that get in your way."
+                },
+                {
+                    "type": "subheading",
+                    "order": 89,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 90,
+                    "data": "Grants +1 to Artillery CAP, Striking and Damage Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 91,
+                    "data": "Curse of Eureka (Female Goblyn or Female Mordron) (5pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 92,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 93,
+                    "data": "You are a descendant of those chosen by the Old One Eureka when she was released into the world. This blessing also grants the ability to create and potentially build or design infernal machinery, which is a combination of elemental energy and infernal materials. *See Infernal Machinery. The downside is that you are constantly driven to explore, learn and create."
+                },
+                {
+                    "type": "subheading",
+                    "order": 94,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 95,
+                    "data": "You receive a +1 to Analyze, Artisan, Bio Control, Mechanical, Occult, Scholar, Scrounge, and Willpower. Immediately upon exposure to something new or unexplored in the realms of scientific curiosity, you must make a Difficult Willpower Roll to not investigate. You are bound by the need to improve the world or create those who will. Every week that passes that you spend not inventing, building, or producing the next generation of inventors deteriorates your mind causing you to make a cumulative DC 10 Willpower as you slowly devolve into insanity. Each failure grants you a -1 to Chakra, when your Chakra reaches zero, then you perish as your life force is consumed into the spiraling void of your lost genius. Every week spent inventing, building or produce offspring returns one lost Chakra."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 96,
+                    "data": "Furthermore, you are held to the Code of the First Inventor, which is biologically imprinted on each inventor and prevents their violation, willful or otherwise. The reason is allegedly known only to the first and they refused to discuss the topic:"
+                },
+                {
+                    "type": "list",
+                    "order": 97,
+                    "data": [
+                        "No invention may cause mass destruction or be combined to cause mass destruction.",
+                        "No invention can exceed the destructive output of normal handheld weapons.",
+                        "No invention may be used to seduce another against their will.",
+                        "Inventions shall be as ethically humane as possible to elementals and preference shall be given to operate in a manner under a premise of consent and/or that minimizes suffering of the entity."
+                    ],   
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "heading",
+                    "order": 98,
+                    "data": "Dangerous When Cornered (Chimerian) (3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 99,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 100,
+                    "data": "An animal is most dangerous when cornered or injured. You reflect that idiom in the most literal of senses."
+                },
+                {
+                    "type": "subheading",
+                    "order": 101,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 102,
+                    "data": "When flanked, cornered, or reduced to half of your BHP you receive a +2 to Strike and a +2 to Damage."
+                },
+                {
+                    "type": "heading",
+                    "order": 103,
+                    "data": "Dark Covenant (Dylithar or Daemonkin) (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 104,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 105,
+                    "data": "Due to strong ancestral ties to Demons and Devils invocations of ancient, profane, and often obscene associations may be used to sway cooperation with such creatures."
+                },
+                {
+                    "type": "subheading",
+                    "order": 106,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 107,
+                    "data": "Those with this bonus are granted a +2 to all rolls involving occult summoning or social interactions with such creatures and the cost of doing business with such beings is significantly reduced."
+                },
+                {
+                    "type": "heading",
+                    "order": 108,
+                    "data": "Deadly Aim (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 109,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 110,
+                    "data": "You understand where to shoot someone to really make it hurt. You understand enough about anatomy and pressure points to inflict insidiously painful wounds on your victims."
+                },
+                {
+                    "type": "subheading",
+                    "order": 111,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 112,
+                    "data": "Grants +1 to all Archery, Firearms and Thrown (Athletics) Damage Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 113,
+                    "data": "Defensive Nature (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 114,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 115,
+                    "data": "You are always on guard and prepared for the next incoming attack. You observe and analyze your opponents and deem their most likely method of harming you and react accordingly."
+                },
+                {
+                    "type": "subheading",
+                    "order": 116,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 117,
+                    "data": "Grants +1 to all Dodge and Parry Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 118,
+                    "data": "Deft Hands (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 119,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 120,
+                    "data": "You have always been rather smooth at taking things without others noticing. A bit of practice and hard work has made you capable of making items disappear even as they watch."
+                },
+                {
+                    "type": "subheading",
+                    "order": 121,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 122,
+                    "data": "Grants +1 to all Sleight of Hand Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 123,
+                    "data": "Degree (1pt., 2pt. or 3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 124,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 125,
+                    "data": "You have attended formal academic training and received a degree of esteem. This Boon allows you to choose the Officer column of the Rank Background without paying double the cost."
+                },
+                {
+                    "type": "subheading",
+                    "order": 126,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 127,
+                    "data": "1pt. Boon Bachelors: This grants you +1 on all Scholar Rolls."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 128,
+                    "data": "2pt. Boon Masters: This grants you +1 on all Scholar Rolls and +1 on a selected Skill that represents your area of study at the University."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 129,
+                    "data": "3pt. Boon Doctorate: This grants you +2 on all Scholar Rolls and +2 on a selected Skill that represents your area of study at the University."
+                },
+                {
+                    "type": "heading",
+                    "order": 130,
+                    "data": "Discreet Nature (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 131,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 132,
+                    "data": "You have a talent, regardless of your size, of being able to step back and blend into the background. You know how to remain unnoticed even while others are actively searching for you."
+                },
+                {
+                    "type": "subheading",
+                    "order": 133,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 134,
+                    "data": "Grants +1 to all Stealth and Sleight of Hand Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 135,
+                    "data": "Divine Aura (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 136,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 137,
+                    "data": "You must be Faith Sensitive to possess this power. You have been blessed by a healing touch and while this does not let you perform miracles such as curing blindness, disease, and paralysis it does allow you to save lives."
+                },
+                {
+                    "type": "subheading",
+                    "order": 138,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 139,
+                    "data": "Spend 1 Essence per Target to Activate your aura allowing you to heal those you choose within 10’ for 5 BHP every round for 10 Rounds."
+                },
+                {
+                    "type": "heading",
+                    "order": 140,
+                    "data": "Double Jointed (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 141,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 142,
+                    "data": "You may pop your joints in and out of place at will allowing you a great degree of suppleness."
+                },
+                {
+                    "type": "subheading",
+                    "order": 143,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 144,
+                    "data": "Grants +2 to all Non-Contested Rolls to escape any form of confinement."
+                },
+                {
+                    "type": "heading",
+                    "order": 145,
+                    "data": "Faint Aura (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 146,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 147,
+                    "data": "Your aura is rather indistinct."
+                },
+                {
+                    "type": "subheading",
+                    "order": 148,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 149,
+                    "data": "Attempts to read your aura or track you through arcane means suffer a -2 to all their Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 150,
+                    "data": "Fast Healer (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 151,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 152,
+                    "data": "Those around you seem to recover faster than most. Whether it’s a minor bruise or a life-threatening injury your chances of recovering quickly and safely are much higher than others."
+                },
+                {
+                    "type": "subheading",
+                    "order": 153,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 154,
+                    "data": "Grants +2 to all Rolls that involve healing whether naturally recuperating, mystical regenerating through medical assistance."
+                },
+                {
+                    "type": "heading",
+                    "order": 155,
+                    "data": "Fast Learner (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 156,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 157,
+                    "data": "You are naturally adept and pick up on things faster than most people. When you apply yourself, you quickly learn faster than your peers and training is often more an act of tedium than a learning experience for you."
+                },
+                {
+                    "type": "subheading",
+                    "order": 158,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 159,
+                    "data": "The training time required for learning things is cut in half and allows you to train while pursuing other activities."
+                },
+                {
+                    "type": "heading",
+                    "order": 160,
+                    "data": "Firearms Permit (1pt. Or 2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 161,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 162,
+                    "data": "You are licensed within certain jurisdictions to always carry a firearm on your person."
+                },
+                {
+                    "type": "subheading",
+                    "order": 163,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 164,
+                    "data": "1pt. Boon: Permit allows you to carry a small, concealed handgun for personal protection."
+                },
+                {
+                    "type": "paragraph",
+                    "order": 165,
+                    "data": "2pt. Boon: Permit grants you the authority to carry a firearm in open display while in pursuit of your duties and is most often possessed by law enforcement, bounty hunter, security and private bodyguards. The jurisdiction applies accordingly."
+                },
+                {
+                    "type": "heading",
+                    "order": 166,
+                    "data": "Firebug (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 167,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 168,
+                    "data": "Whether it is sheer random destruction or precision demolition, the art of explosives and all that goes boom has always fascinated you. This has led to your choice to (legally or illegally) expand your knowledge in the field of demolition. You are familiar with all basic and many exotic forms of explosives and their associated detonators. You require no roll to identify such components."
+                },
+                {
+                    "type": "subheading",
+                    "order": 169,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 170,
+                    "data": "Grants +1 to all Demolition Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 171,
+                    "data": "Flirtatious (1pt Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 172,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 173,
+                    "data": "You are naturally good at imposing your provocative whims upon others. You know when to speak, when to stay quiet and even when to walk away, merely to wrap someone a little tighter around your finger."
+                },
+                {
+                    "type": "subheading",
+                    "order": 174,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 175,
+                    "data": "Grants +1 to any Social Roll involving those who might potentially find you attractive."
+                },
+                {
+                    "type": "heading",
+                    "order": 176,
+                    "data": "Flower Child (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 177,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 178,
+                    "data": "You were raised in a communal home and often exposed to “better living through chemicals.” While you don’t necessarily advocate such a lifestyle, today it has made your body more tolerant of chemicals."
+                },
+                {
+                    "type": "subheading",
+                    "order": 179,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 180,
+                    "data": "Grants+1 to all Rolls to resist the effects of toxins and +1 to Scholar Narcotics or Flora/Fauna Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 181,
+                    "data": "Focused Mind (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 182,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 183,
+                    "data": "You possess the ability to concentrate on arduous tasks and may automatically ignore all negative action modifiers based on outside distractions."
+                },
+                {
+                    "type": "subheading",
+                    "order": 184,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 185,
+                    "data": "Grants +2 to all Rolls to resist task or spell interruption including counter spells."
+                },
+                {
+                    "type": "heading",
+                    "order": 186,
+                    "data": "Friends on the Other Side (Daemonkin or Elementalkin (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 187,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 188,
+                    "data": "Your Contacts and Minions Backgrounds are supernatural in nature. They may be contacted, regardless of your location, by performing a short and concise ritual, unless you are in an areas that specifically prevents this communication."
+                },
+                {
+                    "type": "subheading",
+                    "order": 189,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 190,
+                    "data": "Perform the brief one-minute ritual and make a Moderate Occult Roll on the Prime Material Plane (DL: 25-34) or a Very Difficult Occult Roll on other Planes of Existence (DL: 35-44). If you succeed you may pass one minutes worth of information to your Contacts and Minions. This may be attempted once per day per category of Contact and Minion."
+                },
+                {
+                    "type": "heading",
+                    "order": 191,
+                    "data": "Game Master (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 192,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 193,
+                    "data": "You are the master. You readily perceive and notice trends and mechanics behind all games whether old fashioned card and dice games or MMORPGs. You understand the system well enough where it is often perceived that you either \"must be cheating\" or you are just \"damn lucky\"; in reality you’re simply playing the odds."
+                },
+                {
+                    "type": "subheading",
+                    "order": 194,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 195,
+                    "data": "Grants +1 to all Gambling and Lying Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 196,
+                    "data": "Hair Trigger (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 197,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 198,
+                    "data": "Few people understand how to maintain both speed and accuracy. You understand the principles behind speed shooting and how to apply them effectively."
+                },
+                {
+                    "type": "subheading",
+                    "order": 199,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 200,
+                    "data": "Grants +1 CAP for any actions that require Archery or Firearms Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 201,
+                    "data": "Hand of the Master Mason (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 202,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 203,
+                    "data": "You have an affinity when it comes to the craft of the artisan. Your sharp eye for detail and artistic sense of balance allows you to create works of wondrous beauty that few craftsmen would willingly compare their work against. Leonardo da Vinci, Claude Monet, Yoshio Okiyama, Salvador Dali, Goro Nyudo Masamune, Phidias, and their peers are those whose works may be compared to that which you craft."
+                },
+                {
+                    "type": "subheading",
+                    "order": 204,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 205,
+                    "data": "Grants +1 to all Artisan or Scholar: Engineering Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 206,
+                    "data": "Iaijutsu Focus (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 207,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 208,
+                    "data": "You mind is no longer conscious of the movements of your body. Your ability to Quick Strike is legendary and often feared."
+                },
+                {
+                    "type": "subheading",
+                    "order": 209,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 210,
+                    "data": "Grants +1 to Initiative Rolls and +1 CAP each round."
+                },
+                {
+                    "type": "heading",
+                    "order": 211,
+                    "data": "Inquisitor (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 212,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 213,
+                    "data": "You understand the human spirit and exactly what it takes to break it. Through physical torture or threatening innuendo your victims quickly fall prey to your psychological predations."
+                },
+                {
+                    "type": "subheading",
+                    "order": 214,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 215,
+                    "data": "Grants +1 to all Intimidation & Scholar: Law Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 216,
+                    "data": "Irish Descent (1pt. Boons)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 217,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 218,
+                    "data": "Some can drink but others can really drink. You can kill another man who tries to keep up with you at the boozing table."
+                },
+                {
+                    "type": "subheading",
+                    "order": 219,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 220,
+                    "data": "Grants +1 to all Endurance Rolls to resist the effects of toxins."
+                },
+                {
+                    "type": "heading",
+                    "order": 221,
+                    "data": "Jack of All Trades (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 222,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 223,
+                    "data": "You are a Jack of All Trades yet Master of None."
+                },
+                {
+                    "type": "subheading",
+                    "order": 224,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 225,
+                    "data": "Grants +2 to all Skill Rolls that you do not already possess a 5 Base Score or higher."
+                },
+                {
+                    "type": "heading",
+                    "order": 226,
+                    "data": "Kensai (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 227,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 228,
+                    "data": "Sword Saint is the true meaning of Kensai, though this title may be shared by any who possess mastery over the weapons of their choosing."
+                },
+                {
+                    "type": "subheading",
+                    "order": 229,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 230,
+                    "data": "Grants +2 to both Striking and Damage to a specific weapon-type (Crushing, Energy, Piercing, Slashing) chosen by the Kensai and grants a +1 to other weapons."
+                },
+                {
+                    "type": "heading",
+                    "order": 231,
+                    "data": "Kiss of Ashia (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 232,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 233,
+                    "data": "You age less quickly than others of your species. Whether through genetic manipulation, arcane intervention or ancestral blessing."
+                },
+                {
+                    "type": "subheading",
+                    "order": 234,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 235,
+                    "data": "The window of time for each of your species' natural age groups of Child, Adult, Middle Aged and Elder is doubled."
+                },
+                {
+                    "type": "heading",
+                    "order": 236,
+                    "data": "Leaf Upon the Wind (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 237,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 238,
+                    "data": "You fly by skill, intuition, and the grace of God. There are few turbulent or unusual circumstances that you cannot at the very least bring the craft to a reasonably safe and secure landing."
+                },
+                {
+                    "type": "subheading",
+                    "order": 239,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 240,
+                    "data": "Grants +1 to all Piloting Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 241,
+                    "data": "Licensed to Kill (6pt. Boon)"
+                  },
+                  {
+                    "type": "paragraph",
+                    "order": 242,
+                    "data": "Setting: Core"
+                  },
+                  {
+                    "type": "paragraph",
+                    "order": 243,
+                    "data": "You are sanctioned by an agency whose clearance will allow you to eliminate those whose interests run against your agency and is endorsed within reason by the government. This permission comes with a cost. While oft times you are granted a deal of discretion in eliminating threats, you will be periodically called upon to eliminate targets of the agency itself. Few governmental positions grant this power and they monitor its trustees well. They tend to cover up all sanctioned hits and assist in removing evidence in discretionary kills, if the licensee is not exceptionally sloppy. You can still be held accountable by the law for the murder of innocent civilians."
+                  },
+                  {
+                    "type": "subheading",
+                    "order": 244,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                  },
+                  {
+                    "type": "paragraph",
+                    "order": 245,
+                    "data": "Those who alienate themselves from the agency lose the benefits of sanctioned murder within hours of their termination or resignation."
+                  },
+                  {
+                    "type": "heading",
+                    "order": 246,
+                    "data": "Lightning Fast (4pt. Boon)"
+                  },
+                  {
+                    "type": "paragraph",
+                    "order": 247,
+                    "data": "Setting: Core"
+                  },
+                  {
+                    "type": "paragraph",
+                    "order": 248,
+                    "data": "You are quick and light on your feet. Few people escape you in games of pursuit and fewer still can keep up with you. This Boon allows advanced movement speeds."
+                  },
+                  {
+                    "type": "subheading",
+                    "order": 249,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                  },
+                  {
+                    "type": "paragraph",
+                    "order": 250,
+                    "data": "Receive an additional 1 MAP per 2 Mastery Levels."
+                  },
+                  {
+                    "type": "heading",
+                    "order": 251,
+                    "data": "Lila’s Blessing (Lillian) (6pt. Boon)"
+                  },
+                  {
+                    "type": "paragraph",
+                    "order": 252,
+                    "data": "Setting: Darkholme"
+                  },
+                  {
+                    "type": "paragraph",
+                    "order": 253,
+                    "data": "By expending a single essence your flesh ripples and molds itself to your will. You may create several alternate forms limited only by the types of humanoids that you have consumed and your dedication to mastery of the path of Lila. These forms are not divinable as anything but your true form through normal inspection or arcane means."
+                },
+                {
+                    "type": "subheading",
+                    "order": 254,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 255,
+                    "data": "You may create a number of alternate forms equal to your Performance Sum. You must have consumed the essence of a specific creature type to be able to assume their species' form. I.e. to create a Faeyr form you must have fed off of a Faeyr. Those with a Sharpened Sense of smell may note that aspects of your natural scent carry over to your new form, if they have met you and sniffed you in other forms. To do this requires a contested Performance versus Primal Instinct roll. A player may select their forms at creation, or during play, but doing so during play requires the expenditure of 10 Action Points and the character must have fed upon the target species during that game. The player should keep a log of all of their forms and how they have been used. These selected forms are generally permanent but by expending 2 experience points a form may be discarded to create room for a new form."
+                },
+                {
+                    "type": "heading",
+                    "order": 256,
+                    "data": "Longevity (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 257,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 258,
+                    "data": "Some people are genetically prone to live long lives beyond the swiftly ageing mien of others of their species. You are one such being."
+                },
+                {
+                    "type": "subheading",
+                    "order": 259,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 260,
+                    "data": "Your lifespan is now 1.5 times that of others of your species and you are always treated as one age category younger right until your death."
+                },
+                {
+                    "type": "heading",
+                    "order": 261,
+                    "data": "Lucky (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 262,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 263,
+                    "data": "The stars aligned when you were born and you were fated to more readily avoid a series of misfortunate events than others."
+                },
+                {
+                    "type": "subheading",
+                    "order": 264,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 265,
+                    "data": "You Luck Pool is 1 higher than its normal maximum."
+                },
+                {
+                    "type": "heading",
+                    "order": 266,
+                    "data": "Lumira's Gift (Kith Chimerian) (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 267,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 268,
+                    "data": "A bestial figure, endowed with a formidable physique and animalistic instincts, prowls through the urban and wilds with unrivaled ferocity. Natural weapons hint at your predatory nature. Marked by a rugged feral visage, your eyes gleam with a savage intelligence, constantly on the hunt, always ready to pounce on any threat or prey that crosses you. Your presence alone commands respect and fear."
+                },
+                {
+                    "type": "subheading",
+                    "order": 269,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 270,
+                    "data": "You receive all the bonuses of your beast form without having to shift to it. You possess naturally feral features and you’re granted +1 to all Awareness, Initiative, Power, Intimidation rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 271,
+                    "data": "Master of Anatomy (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 272,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 273,
+                    "data": "You have spent years studying the human body and the physiological aspects of all living things. This has led to a greater understanding of the body and how to both heal and harm it."
+                },
+                {
+                    "type": "subheading",
+                    "order": 274,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 275,
+                    "data": "Grants +2 to all Medicine and Damage Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 276,
+                    "data": "Master Operator (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 277,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 278,
+                    "data": "You speak the language of machines, literally or figuratively. Whether operating a Mecha or a computer terminal, you find performing tasks with technology to be easier than most."
+                },
+                {
+                    "type": "subheading",
+                    "order": 279,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 280,
+                    "data": "Grants +1 to all Technical Repair and Tech Operation Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 281,
+                    "data": "Matchstick Man (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 282,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 283,
+                    "data": "Even as a child you had a way with words and convincing others to do as you wish. Much like Tom Sawyer, you can make the most tedious of tasks seem interesting and persuade others to perform them even against their best interests."
+                },
+                {
+                    "type": "subheading",
+                    "order": 284,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 285,
+                    "data": "Grants +1 to all Persuasion Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 286,
+                    "data": "Mr. Fixit (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 287,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 288,
+                    "data": "Some people think they are special or elite because they can operate a machine, but only someone who truly understand machinery can fix the problems and not the symptoms. You are one of those people."
+                },
+                {
+                    "type": "subheading",
+                    "order": 289,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 290,
+                    "data": "Grants +2 to all Mechanical rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 291,
+                    "data": "Mystic Knowledge (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 292,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 293,
+                    "data": "You were either reared with a strong foundation of hearth lore and belief in the occult or some drastic moment in your life drove you to seek out and research that which cannot be understood. Regardless, you now possess a practical working occult knowledge base that assists you in seeking out the universe’s mystic little secrets."
+                },
+                {
+                    "type": "subheading",
+                    "order": 294,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 295,
+                    "data": "Grants +2 to all Occult Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 296,
+                    "data": "Natural Athlete (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 297,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 298,
+                    "data": "Whether through rare genetics or refined breeding you possess the body of a natural athlete. You are quick, graceful, and strong in the areas of tumbling, running, climbing, jumping and swimming."
+                },
+                {
+                    "type": "subheading",
+                    "order": 299,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 300,
+                    "data": "Grants +1 to all Acrobatic and Athletics Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 301,
+                    "data": "Natural Cartographer (3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 302,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 303,
+                    "data": "You can always seem to find your way back to someplace you have been before. Also, you are astute at giving directions on how to get somewhere."
+                },
+                {
+                    "type": "subheading",
+                    "order": 304,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 305,
+                    "data": "Regardless of how twisted the path may become you can always trace your way back to some place you have already been unless it has physically moved."
+                },
+                {
+                    "type": "heading",
+                    "order": 306,
+                    "data": "Natural Linguist (3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 307,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 308,
+                    "data": "You have come to recognize the universal traits of language. You claim a strong familiarity with more languages than most and are able to readily adapt and translate languages that you are unfamiliar with."
+                },
+                {
+                    "type": "subheading",
+                    "order": 309,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 310,
+                    "data": "Grants +1 to all Linguistic Rolls and doubles the number of languages naturally spoken."
+                },
+                {
+                    "type": "heading",
+                    "order": 324,
+                    "data": "Natural Predator (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 325,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 326,
+                    "data": "You are in touch with your inner beast. Animals understand your place in the natural order of things and more readily submit to your dominance."
+                },
+                {
+                    "type": "subheading",
+                    "order": 327,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 328,
+                    "data": "Grants +1 to all Primal Instinct and Intimidation Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 329,
+                    "data": "Not Completely Inhuman (Devourer) (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 330,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 331,
+                    "data": "You have adapted, and your tentacles no longer cover or surround your mouth. Instead, the tentacles rest upon your scalp almost like a medusa’s serpents. They may be easily stylized, concealed, or hidden. You have a normal human mouth, though you still do not have a traditional human nose."
+                },
+                {
+                    "type": "subheading",
+                    "order": 332,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 333,
+                    "data": "It takes a Very Difficult (DL: 45) Analyze roll to determine that you are a Devourer and not an Elemental Kith."
+                },
+                {
+                    "type": "heading",
+                    "order": 334,
+                    "data": "Oathsworn (Templar/Dark Templar) (4 pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 335,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 336,
+                    "data": "You have sworn an oath and forces either divine or infernal have taken heed. In exchange you are granted additional power for as long as you uphold your oath. Those who are oath sworn are known as Paladins. Each Oath has four tenets that must be upheld, those who break their tenets are cast out and known as an Oathbreaker."
+                },
+                {
+                    "type": "subheading",
+                    "order": 337,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 338,
+                    "data": "Varies per Oath."
+                },
+                {
+                    "type": "heading",
+                    "order": 339,
+                    "data": "Oath: Chivalry"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 340,
+                    "data": "An oath that binds one to higher standards of conduct and appearance. Courtly etiquette binds your behavior as you shall act with honor in pursuit of noblesse oblige while seeking to hold the rest of the world to that standard."
+                },
+                {
+                    "type": "list",
+                    "order": 341,
+                    "data": [
+                        "Prowess: You do not shy from conflict and show bravery, strength, skill and the wisdom to know when to engage.",
+                        "Compassion: You defend the innocent, respect the opposite sex, exemplify generosity and loyalty to your friends, family and liege.",
+                        "Mercy: You accept sincere surrender and will take them into custody.",
+                        "Fearless: Your life is less than the greater good and you shall not forsake it for your own preservation."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "subheading",
+                    "order": 342,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 343,
+                    "data": "You receive a +1 to Cultures, Melee, Riding and Athletics. Against Fear you receive a +10 to avoid the repercussions."
+                },
+                {
+                    "type": "heading",
+                    "order": 344,
+                    "data": "Oath: Divine"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 345,
+                    "data": "You have an oath with a specific deity, infernal, celestial, or old one whom you represent their path. You seek to expand their dominion and obtain their desires. Mortal needs matter little because you are fueled by a higher purpose."
+                },
+                {
+                    "type": "list",
+                    "order": 346,
+                    "data": [
+                        "Vigilance: You are ever on the lookout for opposition that needs crushed or support that needs nurtured to expand the domain of your benefactor.",
+                        "Fearless: Your life is less than the greater good and you shall not forsake it for your own preservation.",
+                        "Prowess: You do not shy from conflict and show bravery, strength, skill and the wisdom to know when to engage.",
+                        "Loyalty: You serve and unwaveringly carry out their commands."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "subheading",
+                    "order": 347,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 348,
+                    "data": "You receive a +1 to Bio Control, Melee, Parry and Scholar: Theology Religion. Furthermore, you are blessed with a +1 to an Ability Score of your choosing as you are favored by the powers that be."
+                },
+                {
+                    "type": "heading",
+                    "order": 349,
+                    "data": "Oath: Fealty"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 350,
+                    "data": "Fealty and seeking to uphold the interests of that allegiance is the core principle of your path. You are their knight, and you behave accordingly as you represent both them and their decrees. Some may not see the nobility of such a path but everyone who shines in the light must have a hand that is willing to reach into the muck for them."
+                },
+                {
+                    "type": "list",
+                    "order": 351,
+                    "data": [
+                        "Loyalty: You choose a regent with higher Legacy and Rank than your own to serve and unwaveringly carry out their commands.",
+                        "Duty: You deal with the consequences and fallout of the commands you follow.",
+                        "Respect: You command respect for your regent and will guard their honor from being besmirched.",
+                        "Discipline: You are your regent’s shield, and your blade must be forever sharp and ready to act in their name."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "subheading",
+                    "order": 352,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 353,
+                    "data": "You receive a +1 to Intimidation, Persuasion, Melee, and Willpower. Additionally, you receive +2 modifier to CAP, MAP and CHP."
+                },
+                {
+                    "type": "heading",
+                    "order": 354,
+                    "data": "Oath: Revenge"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 355,
+                    "data": "A solemn oath to punish those whose existence is a grievous sin. Whether this is a nation, organization, culture, guild or more ambiguous classifications such as celestials, chimeric, curses, draconic, elemental, faeyr, humans, infernal, monsters, old ones, romlings, svar or undying creatures you shall not rest until they are scourged from the realm."
+                },
+                {
+                    "type": "list",
+                    "order": 356,
+                    "data": [
+                        "Fight the Good Fight: You always seek to destroy those you’ve sworn vengeance against before all other enemies.",
+                        "No Mercy: You do not accept the surrender of those you’ve sworn vengeance against.",
+                        "Dirty Tactics: Use any means at your disposal to destroy your sworn enemies without remorse or regret.",
+                        "Right the Wrong: Pay for damages caused by your sworn foes that were caused by your tactics."
+                    ],
+                    "style_class": "list-disc pl-6"
+                },
+                {
+                    "type": "subheading",
+                    "order": 357,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 358,
+                    "data": "You receive a +1 to Archery, Melee, Martial Arts and Power. Also, you inflict 5 additional BHP of damage against those you have a sworn enmity with."
+                },
+                {
+                    "type": "heading",
+                    "order": 359,
+                    "data": "Oathbroken"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 360,
+                    "data": "You have broken your oath and lost part of the blessings associated with it."
+                },
+                {
+                    "type": "subheading",
+                    "order": 361,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 362,
+                    "data": "You no longer are bound by tenets, but you now only receive the skill bonus of your previous oath and receive a -2 on all Social Rolls involving Oathsworn. It is possible to redeem yourself or take up a new oath, but this should be an arduous path as few trusts an Oathbreaker."
+                },
+                {
+                    "type": "heading",
+                    "order": 363,
+                    "data": "Oh! So You Know… (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 364,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 365,
+                    "data": "You know people and if you don’t know people then you know people they know and you do love to name drop and share stories to ensure your acceptance in society."
+                },
+                {
+                    "type": "subheading",
+                    "order": 366,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 367,
+                    "data": "Once per Session you may reroll a failed social roll with a NPC as you bring up a mutual acquaintance and a short tale to establish a moment of fellowship with the individual."
+                },
+                {
+                    "type": "heading",
+                    "order": 368,
+                    "data": "Ornery Sumnabitch (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 369,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 370,
+                    "data": "You tend to have a coarse side that is built upon a solid set of convictions and beliefs. You know what is right and what is wrong, and you have no problems acting rude, crude, cruel and unsophisticated to any asinine individual who deserves it."
+                },
+                {
+                    "type": "subheading",
+                    "order": 371,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 372,
+                    "data": "Grants +1 all Intimidation, Firearms or Melee, Martial Arts, Power, Primal Instincts and Athletics Rolls. In contrast though this belligerent nature which allows you to carry on when others would have failed also give you a -1 to all Persuasion and Cultures Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 373,
+                    "data": "Powerhouse (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 374,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 375,
+                    "data": "You are insanely strong and often accidentally break things when angered. Whether through good genetics or a great workout ethic you have the strength to make others step back and take notice."
+                },
+                {
+                    "type": "subheading",
+                    "order": 376,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 377,
+                    "data": "Grants +1 to all Power and Intimidation Rolls. You are also granted +1 to all Melee or Martial Arts Damage Rolls. If your Strength is above a 5 then you may wield a 2-Handed Weapon in 1 Hand."
+                },
+                {
+                    "type": "heading",
+                    "order": 378,
+                    "data": "Prehensile Tail (Requires a Tail) (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 379,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 380,
+                    "data": "You can control your tail with a great degree of accuracy. In many ways it functions like a third hand, allowing you to pick up and manipulate small objects."
+                },
+                {
+                    "type": "subheading",
+                    "order": 381,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 382,
+                    "data": "In general, it may be utilized for any non-combat associated Skill."
+                },
+                {
+                    "type": "heading",
+                    "order": 383,
+                    "data": "Punctual (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 384,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 385,
+                    "data": "You are obsessed with being on time. Your punctuality is a great boon in maintaining both your professional and adventurous life."
+                },
+                {
+                    "type": "subheading",
+                    "order": 386,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 387,
+                    "data": "Basically, this Boon ensures that you will arrive on time at all pre-planned meetings and appointments. The only exception to this guideline is if the player chooses to engage in activities that are highly likely to prevent their attendance or if they choose not to attend their pre-arranged plans."
+                },
+                {
+                    "type": "heading",
+                    "order": 388,
+                    "data": "Ranger (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 389,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 390,
+                    "data": "You are at home in the wild and you understand it almost as well as it understands you."
+                },
+                {
+                    "type": "subheading",
+                    "order": 391,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 392,
+                    "data": "Grants+1 to all Archery Striking, Archery Damage, Awareness, and Primal Instinct Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 393,
+                    "data": "Riding Sense (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 394,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 395,
+                    "data": "You are sharply attuned to animals, surrounding landscape and the subtle changes in your mount’s gait, allowing you to shift your position to avoid being thrown. You inherently know the desires and condition of your mount and adjust your riding style accordingly. This allows you to work well under almost any circumstance and any environment; these skills may even be used with a motorcycle."
+                },
+                {
+                    "type": "subheading",
+                    "order": 396,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 397,
+                    "data": "Grants +1 to all Riding Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 398,
+                    "data": "Scientific Mind (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 399,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 400,
+                    "data": "The realms of science and understanding it comes easily to you. Whereas many stumble over basic principles, the complexes inner workings of the scientific community form the cornerstones of your thought processes."
+                },
+                {
+                    "type": "subheading",
+                    "order": 401,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 402,
+                    "data": "Grants +1 to two selected Science Scholars Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 403,
+                    "data": "Seasoned Street Rat (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 404,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 405,
+                    "data": "You have been there and done that and probably in several different countries. You understand how the streets generally work and where to go to acquire necessary survival tools of the trade."
+                },
+                {
+                    "type": "subheading",
+                    "order": 406,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 407,
+                    "data": "Grants +1 to all Culture & Scholar: Guild or Criminal Organizations."
+                },
+                {
+                    "type": "heading",
+                    "order": 408,
+                    "data": "Scout (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 409,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 410,
+                    "data": "You have made a lifetime career out of surveying and running messages between cut off destinations. These skills make you an asset and an often highly paid individual."
+                },
+                {
+                    "type": "subheading",
+                    "order": 411,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 412,
+                    "data": "Grants +1 to all Bio Control, Navigation, Athletics and Stealth Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 413,
+                    "data": "Sharpened Sense (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 414,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 415,
+                    "data": "One of your senses is exceptionally sharp. You choose one of the basic senses of touch, sight, smell, hearing or taste."
+                },
+                {
+                    "type": "subheading",
+                    "order": 416,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 417,
+                    "data": "Grants +1 to all Rolls involving your selected sense. This Boon may be purchased multiple times."
+                },
+                {
+                    "type": "heading",
+                    "order": 418,
+                    "data": "Sharpshooter (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 419,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 420,
+                    "data": "Pipping the ace. It’s what you do, and your accuracy is unquestionable. Whether through a naturally sharp eye or regular practice you have honed your ranged combat skills with a firearm."
+                },
+                {
+                    "type": "subheading",
+                    "order": 421,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 422,
+                    "data": "Grants +1 to all Firearms & Firearms (Energy) Striking and Damage Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 423,
+                    "data": "Silent Killer (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 424,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 425,
+                    "data": "You are well versed in the skills of assassination. Killing comes as naturally as breathing and some nights mayhap a little more so."
+                },
+                {
+                    "type": "subheading",
+                    "order": 426,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 427,
+                    "data": "Grants +2 to all Stealth Rolls. Spend 1 Essence: Declare technique or regular attack and add 10 BHP damage to an attack."
+                },
+                {
+                    "type": "heading",
+                    "order": 428,
+                    "data": "Silent Running (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 429,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 430,
+                    "data": "Some must move very slowly to avoid being detected. You have mastered the art of swiftly but silently crossing the rice paper without making your passage noticeable."
+                },
+                {
+                    "type": "subheading",
+                    "order": 431,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 432,
+                    "data": "You may move at your normal speed while stealthed."
+                },
+                {
+                    "type": "heading",
+                    "order": 433,
+                    "data": "Sixth Sense (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 434,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 435,
+                    "data": "To many, it seems as if you possess a 6th sense that allows you to see the futur, as you are often aware of things before they occur. In truth you have honed your naturally sharp senses to the point where, through casual observations, you notice minute details that often elude others. Simply by looking around, listening, smelling, or touching your environment, you become difficult to surprise or hide things from."
+                },
+                {
+                    "type": "subheading",
+                    "order": 436,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 437,
+                    "data": "Grants +1 to all Awareness & Primal Instinct Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 438,
+                    "data": "Slayer (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 439,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 440,
+                    "data": "You don’t go hunting, you go killing. Your entire life has been spent dedicated towards the extermination of others. You have mastered several skills that help prevent your prey from escaping and several more to ensure that you can finish the job once they’re cornered."
+                },
+                {
+                    "type": "subheading",
+                    "order": 441,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 442,
+                    "data": "Grants +1 to all Awareness, Athletics, Melee Striking and Melee Damage Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 443,
+                    "data": "Sleuth (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 444,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 445,
+                    "data": "Your attention to detail is keen and you quickly note that which does not belong somewhere. This enables you to quickly shift through the facts and arrive at a conclusion."
+                },
+                {
+                    "type": "subheading",
+                    "order": 446,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 447,
+                    "data": "Grants +1 to all Awareness & Analyze Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 448,
+                    "data": "Species Similarity (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 449,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 450,
+                    "data": "You can “pass” for a member of another similar species chosen at character creation. Under any circumstance but the deepest of up-close scrutiny as you are generally indistinguishable from normal members of that species."
+                },
+                {
+                    "type": "subheading",
+                    "order": 451,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 452,
+                    "data": "It requires a DL 40 Analysis Roll within 5 ft. to determine something is amiss. If you have makeup or surgery, then you may add your Performance sum to this DL to prevent detection."
+                },
+                {
+                    "type": "heading",
+                    "order": 453,
+                    "data": "Stone Gaze (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 454,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 455,
+                    "data": "The intensity of your gaze often makes others uneasy as if their secrets are being peeled away layer by layer."
+                },
+                {
+                    "type": "subheading",
+                    "order": 456,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 457,
+                    "data": "All rolls to deceive you suffer a -2 penalty and the Credibility of a Lie now requires the Roll to be greater than 30 for there to be behavior as they are more prone to exhibit nervous behavior under your steely gaze."
+                },
+                {
+                    "type": "heading",
+                    "order": 458,
+                    "data": "Stonewall (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 459,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 460,
+                    "data": "Some describe you as a mountain. You are difficult to move and even more difficult to hurt. The only time someone makes you get out of their way if when you’re ready to move."
+                },
+                {
+                    "type": "subheading",
+                    "order": 461,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 462,
+                    "data": "This Boon doubles your weight for any attempts of others to move you. If someone can throw you it also grants you +1 to any Strength related Rolls that involve being thrown or throwing others. Finally, it grants you +5 to all Soak & +3 to Unsoakable Damage Absorbtion."
+                },
+                {
+                    "type": "heading",
+                    "order": 463,
+                    "data": "Strange Luck (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 464,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 465,
+                    "data": "It seems as if luck is on your side, strange coincidence seems to aid you in avoiding inherent disasters. You may slip just in time to avoid a bullet, or the doorway may jam delaying your exit just long enough to keep you outside of the blast radius of an explosive device."
+                },
+                {
+                    "type": "subheading",
+                    "order": 466,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 467,
+                    "data": "Grants +1 to all Dodge & Parry Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 468,
+                    "data": "Sugar Daddy/Momma (3pt Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 469,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 470,
+                    "data": "You have someone who looks out for your best interests. This is not an endless stream of wealth or fortune, instead it is a series of small gifts to aid one in their endeavours."
+                },
+                {
+                    "type": "subheading",
+                    "order": 471,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 472,
+                    "data": "Periodic supplies, money, safe haven or other small gifts seem to come when most needed. The terms of the relationship with your beneficiary are strictly up to you, but if the provider is constantly neglected, then the benefits tend to dry up accordingly."
+                },
+                {
+                    "type": "heading",
+                    "order": 473,
+                    "data": "Third Eye (4pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 474,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 475,
+                    "data": "You possess an acute natural insight to supernatural deception. You may attempt to pierce any deceptive powers of illusion or trickery."
+                },
+                {
+                    "type": "subheading",
+                    "order": 476,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 477,
+                    "data": "You merely declare your intent and engage your surroundings with an Awareness Sum versus the Difficulty set by the GM. If you are successful, then you are freed from the misdirection placed upon you. If you possess a supernatural ability that lets you pierce such trickery, then you receive a +2 to that Power’s Roll."
+                },
+                {
+                    "type": "heading",
+                    "order": 478,
+                    "data": "Tireless Resolves (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 479,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 480,
+                    "data": "You have built a great degree of cardio-stamina in your life. While others are dropping like flies your breathing is barely elevated and you’re just hitting your second wind."
+                },
+                {
+                    "type": "subheading",
+                    "order": 481,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 482,
+                    "data": "Grants +1 to all Athletics Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 483,
+                    "data": "Toxin Training (6pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 484,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 485,
+                    "data": "You are blessed with the ability to shake off mind controlling drugs and powers of mental command."
+                },
+                {
+                    "type": "subheading",
+                    "order": 486,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 487,
+                    "data": "By spending an Essence Trait you automatically ignore one mind controlling power or influencing substance and receive a +10 to resist any further powers or influencing substances for the rest of the scene. This may only be used once per scene and effects cannot be stacked. This includes pheromones, drugs, powers but not normal Skills such as Persuasion."
+                },
+                {
+                    "type": "heading",
+                    "order": 488,
+                    "data": "Transporter (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 489,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 490,
+                    "data": "If it moves you can drive it. It doesn’t matter if its land, sea or exotic mode of transportation, it will get you there and the cargo will be intact and on time."
+                },
+                {
+                    "type": "subheading",
+                    "order": 491,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 492,
+                    "data": "Grants +1 to all Vehicle & Piloting Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 493,
+                    "data": "Trash n Treasure (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 494,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 495,
+                    "data": "As they say, “One man’s trash is another man’s treasure.” You epitomize this concept. You are very adept at noting items of intrinsic value amidst piles of junk. You utilize this to meet your needs without necessarily exceeding your budget."
+                },
+                {
+                    "type": "subheading",
+                    "order": 496,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 497,
+                    "data": "Grants +1 to all Scrounge Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 498,
+                    "data": "Tree Speaking (Tiermalain) (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 499,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 500,
+                    "data": "Tree speaking is considered a blessing amongst the Tiermalain as it demonstrates ones connection with the ancient heritage trees of the Faeyr. This ability allows for the exchange of rudimentary information through a subtle, intuitive connection formed by touching the tree. This communication manifests as a gentle whisper of the senses rather than clear verbal or visual messages. Individuals with this ability may sense the general health, needs, or distress signals of trees, receiving impressions and feelings rather than detailed information, enabling a basic understanding of their immediate environment, living entities within it or creatures that have passed through it."
+                },
+                {
+                    "type": "subheading",
+                    "order": 501,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 502,
+                    "data": "The larger and older the tree, the bigger area that it is attuned to as its roots spread deep into the earth and across it. Roll Primal Instinct, the higher the roll the more detailed the information but regardless the information is always vague. It may note that gentle two-legged creatures that took care to not harm the land passed by or that a behemoth creature that knocked over lesser foliage in its path came through. It will also share damage caused to it as if expecting assistance from those that can understand it."
+                },
+                {
+                    "type": "heading",
+                    "order": 503,
+                    "data": "Velvet Voice (3pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 504,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 505,
+                    "data": "Your voice is soft, sensual and appeals to the senses of others."
+                },
+                {
+                    "type": "subheading",
+                    "order": 506,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 507,
+                    "data": "Grants +1 to all Performance, Persuasion and Scrounge Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 508,
+                    "data": "Virtuoso (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 509,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 510,
+                    "data": "You understand what is artistic and entertaining to others and you prey upon this knowledge to enhance your own performance. Catering to the needs and desires of the audience allows you to enrapture and thoroughly captivate them."
+                },
+                {
+                    "type": "subheading",
+                    "order": 511,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 512,
+                    "data": "Grants +1 to all Performance Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 513,
+                    "data": "Way of the Warrior (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 514,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 515,
+                    "data": "You have spent a large part of your life studying the way of the unarmed warrior. This sense of inner strength has provided you with a spiritual calm that exists at your core regardless of the façade which you choose to expose to others. In addition to this benefit the intense training that you underwent as well as your understanding of anatomy and the proper way to apply pain allows you to truly punish your opponents."
+                },
+                {
+                    "type": "subheading",
+                    "order": 516,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 517,
+                    "data": "Grants +1 to all Martial Arts Striking and Damage Rolls."
+                },
+                {
+                    "type": "heading",
+                    "order": 518,
+                    "data": "Weird Confessions (Core) (1pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 519,
+                    "data": "Setting: Darkholme"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 520,
+                    "data": "People are at ease with you, and sometimes this causes them to share details that perhaps they shouldn’t have shared. Sometimes this is a good thing, but sometimes they realize that they slipped up."
+                },
+                {
+                    "type": "subheading",
+                    "order": 521,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 522,
+                    "data": "Once per day or at any time per the Game Master’s discretion when you are alone with a NPC and engage in a brief conversation then you roll 1d10. On a roll of 1 they reveal something truly odd and personal about themselves which immediately changes their demeanor into a defensive mindset as they realize you have learned something that could be used against them. On a roll of 2-9 they reveal something usual about the area that most of the locals are aware of. On a roll of a 10 they reveal something potentially odd but personal but fail to notice their slip of the tongue unless you use this information against them."
+                },
+                {
+                    "type": "heading",
+                    "order": 523,
+                    "data": "Well Rounded Individual (2pt. Boon)"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 524,
+                    "data": "Setting: Core"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 525,
+                    "data": "As a child you thoroughly enjoyed reading and that tradition has continued unto this day. Hence your understanding of Basic Studies such as Reading, Writing, Arithmetic, History, Mythology, Cultures, Traditions, General Trivia, and their ilk far exceeds the average person."
+                },
+                {
+                    "type": "subheading",
+                    "order": 526,
+                    "data": "Mechanics",
+                    "style_class": "text-xl italic mt-2 text-gray-400"
+                },
+                {
+                    "type": "paragraph",
+                    "order": 527,
+                    "data": "Grants +2 to all Scholar Rolls."
+                }   
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {
             "title": "The Virtues, Failings, Vices & Balance",
             "slug": "virtues-vices", 
