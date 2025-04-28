@@ -107,7 +107,7 @@ class Section(db.Model):
 class Content(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     section_id = db.Column(db.Integer, db.ForeignKey('section.id'), nullable=False)
-    content_type = db.Column(db.Enum("heading", "subheading", "paragraph", "table", "list", "image", "container", name="content_types"), nullable=False)
+    content_type = db.Column(db.Enum("heading", "subheading", "paragraph", "table", "list", "image", "container", "link", name="content_types"), nullable=False)
     content_order = db.Column(db.Integer, nullable=False)
     content_data = db.Column(db.JSON, nullable=False)
     style_class = db.Column(db.String(255), nullable=True)

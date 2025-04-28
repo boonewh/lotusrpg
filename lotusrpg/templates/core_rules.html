@@ -110,17 +110,20 @@
             case 'list':
                 element = document.createElement('ul');
                 content.data.forEach(item => {
-                    if (typeof item === 'object' && item.text && item.link) {
-                        // Handle list with links
+                    if (typeof item === 'object' && item.text && item.url) {
                         const li = document.createElement('li');
                         const a = document.createElement('a');
-                        a.href = item.link;
+                        const slug = item.url.split("/core/")[1];
+                        a.href = "#" + slug;
                         a.textContent = item.text;
-                        a.classList.add("text-blue-500", "hover:underline");
+                        a.classList.add("text-blue-400", "hover:underline");
+                        a.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            loadSection(slug);
+                        });
                         li.appendChild(a);
                         element.appendChild(li);
                     } else {
-                        // Regular list items
                         const li = document.createElement('li');
                         li.textContent = item;
                         element.appendChild(li);
@@ -130,10 +133,12 @@
 
             case 'image':
                 element = document.createElement('img');
-                element.src = content.data.file_path;
-                element.alt = content.data.alt_text;
-                if (content.data.class_name) {
-                    element.className = content.data.class_name;
+                if (content.data && typeof content.data === 'object') {
+                    element.src = content.data.file_path;
+                    element.alt = content.data.alt_text || "Image";
+                    if (content.data.class_name) {
+                        element.className = content.data.class_name;
+                    }
                 }
                 break;
 
@@ -157,12 +162,29 @@
                 const tbody = document.createElement('tbody');
                 content.data.rows.forEach(row => {
                     const tr = document.createElement('tr');
-                    row.forEach(cellText => {
+                    row.forEach(cell => {
                         const td = document.createElement('td');
-                        td.textContent = cellText;
                         td.className = "border border-gray-600 px-4 py-2";
+
+                        if (typeof cell === 'object' && cell.text && cell.url) {
+                            const link = document.createElement('a');
+                            const slug = cell.url.split("/core/")[1];
+                            link.href = "#" + slug;
+                            link.textContent = cell.text;
+                            link.classList.add("text-blue-400", "hover:underline");
+                            link.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                loadSection(slug);
+                            });
+                            td.appendChild(link);
+                        } else {
+                            td.textContent = cell;
+                        }
+
                         tr.appendChild(td);
                     });
+
+
                     tbody.appendChild(tr);
                 });
                 element.appendChild(tbody);

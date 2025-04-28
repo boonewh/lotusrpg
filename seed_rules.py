@@ -2,26 +2,21 @@ from lotusrpg import create_app, db
 from lotusrpg.models import Section, Content
 import re
 
-def clean_text(text): """Cleans text by removing newlines, non-breaking spaces, and excessive whitespace."""
+def clean_text(text): 
     if not isinstance(text, str):  
-        return text  # Ensure we only process strings
-
+        return text
     return re.sub(r"\s+",
 " ", text.replace("\xa0",
 " ")).strip()
 
 def seed_rules():
-    # Debug: Print a message to confirm the function starts
     print("Seeding rules...")
 
-    # Clear existing data (optional for a clean reset)
-    print("Clearing existing data...")
     db.session.query(Content).delete()
     db.session.query(Section).delete()
     db.session.commit()
 
     # Define sections and rules
-
     sections = [
     {
         "title": "From the Beginning",
@@ -32,36 +27,36 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 1,
                 "data": """
-                        L.O.T.U.S. is a project that originated in 1993 as an ideation to create a system that was portable in comparison to other tabletop game systems of that era. During its early conception, the game system was referred to as Mind Games and developed into a quick-paced RPG allowing scenes that could be run during short break intervals while carrying minimal gamer paraphernalia.
-                    """.replace("\n", " ").strip()
+                                L.O.T.U.S. is a project that originated in 1993 as an ideation to create a system that was portable in comparison to other tabletop game systems of that era. During its early conception, the game system was referred to as Mind Games and developed into a quick-paced RPG allowing scenes that could be run during short break intervals while carrying minimal gamer paraphernalia.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 2,
                 "data": """
-                        In its original incarnation, the system was a loose-knit D20 Versus System. Unfortunately, despite the relatively simplistic game mechanics, it was found to be problematic because a d20 cannot readily be rolled on any surface. While there are now technological alternatives to this, many players still love the feel of casting the dice, and we built our system to uphold that tradition.
-                    """.replace("\n", " ").strip()
+                                In its original incarnation, the system was a loose-knit D20 Versus System. Unfortunately, despite the relatively simplistic game mechanics, it was found to be problematic because a d20 cannot readily be rolled on any surface. While there are now technological alternatives to this, many players still love the feel of casting the dice, and we built our system to uphold that tradition.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 3,
                 "data": """
-                        Regardless, this phase of game development was put on hold due to life events, including military service, college, and family building. For a long time, the system remained untouched but never forgotten, as one is always a gamer, and our passion for role-playing always comes full circle. After engaging in a series of LARP conventions, an interest was rekindled by a desire to refine the game mechanics to provide a solid and consistent system that overcame the fundamental shortcomings of LARP with a set of rules that was intrinsically reverse compatible with tabletop gameplay.
-                    """.replace("\n", " ").strip()
+                                Regardless, this phase of game development was put on hold due to life events, including military service, college, and family building. For a long time, the system remained untouched but never forgotten, as one is always a gamer, and our passion for role-playing always comes full circle. After engaging in a series of LARP conventions, an interest was rekindled by a desire to refine the game mechanics to provide a solid and consistent system that overcame the fundamental shortcomings of LARP with a set of rules that was intrinsically reverse compatible with tabletop gameplay.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 4,
                 "data": """
-                        This led to a series of successes and failures where the game development was forced to bypass a 2d6 Versus System because the Die Roll Increment Range was not varied enough for suitable gameplay. Eventually, this transitioned L.O.T.U.S. to its current format of a DD10 Versus System, providing a wider range of roll increments that could reasonably be rolled on any surface.
-                    """.replace("\n", " ").strip()
+                                This led to a series of successes and failures where the game development was forced to bypass a 2d6 Versus System because the Die Roll Increment Range was not varied enough for suitable gameplay. Eventually, this transitioned L.O.T.U.S. to its current format of a DD10 Versus System, providing a wider range of roll increments that could reasonably be rolled on any surface.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 5,
                 "data": """
-                        The acronym L.O.T.U.S. was chosen for the RPG and stands for Live-action Or Tabletop Universal System. The mechanics herein are designed to provide a consistent, stable medium that does not require variance or change when crossing different styles of role-playing.
-                    """.replace("\n", " ").strip()
+                                The acronym L.O.T.U.S. was chosen for the RPG and stands for Live-action Or Tabletop Universal System. The mechanics herein are designed to provide a consistent, stable medium that does not require variance or change when crossing different styles of role-playing.
+                            """.replace("\n", " ").strip()
             }
         ]
     },
@@ -74,43 +69,43 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 1,
                 "data": """
-                        Welcome to L.O.T.U.S.—the Live-action Or Tabletop Universal System! If you're new to role-playing games or a seasoned gamer looking for something simple and fun, you've come to the right place. L.O.T.U.S. is designed to be played anytime, anywhere, with minimal setup and just a couple of dice. Whether you're into acting out adventures live (LARP) or sitting around a table with friends (tabletop), L.O.T.U.S. makes it easy for everyone to join the fun.
-                    """.replace("\n", " ").strip()
+                                Welcome to L.O.T.U.S.—the Live-action Or Tabletop Universal System! If you're new to role-playing games or a seasoned gamer looking for something simple and fun, you've come to the right place. L.O.T.U.S. is designed to be played anytime, anywhere, with minimal setup and just a couple of dice. Whether you're into acting out adventures live (LARP) or sitting around a table with friends (tabletop), L.O.T.U.S. makes it easy for everyone to join the fun.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 2,
                 "data": """
-                        Think of this Core Book as your handy guide, packed with everything you need to dive into exciting stories. You'll create and play your own unique character, interacting within a world brought to life by your Storyteller. Forget about complicated rules and lengthy preparations—L.O.T.U.S. keeps things straightforward, relying on creativity, role-play, and simple dice rolls using just two ten-sided dice (2d10).
-                    """.replace("\n", " ").strip()
+                                Think of this Core Book as your handy guide, packed with everything you need to dive into exciting stories. You'll create and play your own unique character, interacting within a world brought to life by your Storyteller. Forget about complicated rules and lengthy preparations—L.O.T.U.S. keeps things straightforward, relying on creativity, role-play, and simple dice rolls using just two ten-sided dice (2d10).
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 3,
                 "data": """
-                        For tabletop games, you can choose to use visual aids like marker boards, digital maps, or miniature figures to help visualize your adventures. These aren't mandatory, but they can add clarity and fun to the storytelling experience.
-                    """.replace("\n", " ").strip()
+                                For tabletop games, you can choose to use visual aids like marker boards, digital maps, or miniature figures to help visualize your adventures. These aren't mandatory, but they can add clarity and fun to the storytelling experience.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 4,
                 "data": """
-                        If you're playing LARP, you'll be physically moving around, acting out your character’s actions and reactions in real-time. L.O.T.U.S. is designed to make this easy and accessible, letting you jump into the action without worrying about complicated setups or props.
-                    """.replace("\n", " ").strip()
+                                If you're playing LARP, you'll be physically moving around, acting out your character’s actions and reactions in real-time. L.O.T.U.S. is designed to make this easy and accessible, letting you jump into the action without worrying about complicated setups or props.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 5,
                 "data": """
-                        No matter how you choose to play, the Storyteller is there to guide you, responding to your character's decisions, creating exciting challenges, and narrating consequences. With just two simple dice, you'll quickly resolve any challenges, keeping the adventure flowing and the excitement high.
-                    """.replace("\n", " ").strip()
+                                No matter how you choose to play, the Storyteller is there to guide you, responding to your character's decisions, creating exciting challenges, and narrating consequences. With just two simple dice, you'll quickly resolve any challenges, keeping the adventure flowing and the excitement high.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 6,
                 "data": """
-                        At its heart, L.O.T.U.S. is all about creating unforgettable stories together with your friends. So gather around, roll some dice, and start your adventure—your story is waiting to be told!
-                    """.replace("\n", " ").strip()
+                                At its heart, L.O.T.U.S. is all about creating unforgettable stories together with your friends. So gather around, roll some dice, and start your adventure—your story is waiting to be told!
+                            """.replace("\n", " ").strip()
             }
         ]
     },
@@ -123,42 +118,42 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 1,
                 "data": """
-                        Now that you're familiar with what L.O.T.U.S. is all about, let's talk about how to use this book. This Core Mechanics book gives you everything you need to start your adventures, no matter what kind of setting you've chosen—or even if you're crafting your own unique world.
-                    """.replace("\n", " ").strip()
+                                Now that you're familiar with what L.O.T.U.S. is all about, let's talk about how to use this book. This Core Mechanics book gives you everything you need to start your adventures, no matter what kind of setting you've chosen—or even if you're crafting your own unique world.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 2,
                 "data": """
-                        We've broken things down into three easy-to-follow sections: """.replace("\n", " ").strip()
+                                We've broken things down into three easy-to-follow sections: """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 3,
                 "data": """
-                        Character Genesis: This is your starting point, guiding you step-by-step through creating characters perfectly suited for the simple yet versatile 2d10 system. We recommend everyone—players and Storytellers alike—take their time with this section first. As you learn to build your characters, you'll naturally become familiar with the concepts and key terms we'll use throughout the rest of the book, setting you up for smooth gameplay later on.
-                    """.replace("\n", " ").strip()
+                                Character Genesis: This is your starting point, guiding you step-by-step through creating characters perfectly suited for the simple yet versatile 2d10 system. We recommend everyone—players and Storytellers alike—take their time with this section first. As you learn to build your characters, you'll naturally become familiar with the concepts and key terms we'll use throughout the rest of the book, setting you up for smooth gameplay later on.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 4,
                 "data": """
-                        Playing the Game: Here’s where you'll learn how the game works in practice—from using your abilities and skills to embarking on adventures and engaging in thrilling combat. Don't worry if this is your first dice-based role-playing experience. We've made sure to keep the rules clear, easy to follow, and streamlined, so you can focus on the fun and excitement of the game.
-                    """.replace("\n", " ").strip()
+                                Playing the Game: Here’s where you'll learn how the game works in practice—from using your abilities and skills to embarking on adventures and engaging in thrilling combat. Don't worry if this is your first dice-based role-playing experience. We've made sure to keep the rules clear, easy to follow, and streamlined, so you can focus on the fun and excitement of the game.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 5,
                 "data": """
-                        Storyteller’s Guide: Lastly, this section is dedicated to the Storytellers—the creative hearts of any role-playing game. You'll find helpful tips and extensive guidance on world-building, managing player interactions, and keeping everyone engaged and immersed in the game. Whether you've been a Game Master before or this is your very first time leading a game, our Storyteller’s Guide will help you feel confident and ready to bring your world and stories to life.
-                    """.replace("\n", " ").strip()
+                                Storyteller’s Guide: Lastly, this section is dedicated to the Storytellers—the creative hearts of any role-playing game. You'll find helpful tips and extensive guidance on world-building, managing player interactions, and keeping everyone engaged and immersed in the game. Whether you've been a Game Master before or this is your very first time leading a game, our Storyteller’s Guide will help you feel confident and ready to bring your world and stories to life.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 6,
                 "data": """
-                        Now that you know what's in store, let's dive in and start creating amazing adventures together!
-                    """.replace("\n", " ").strip()
+                                Now that you know what's in store, let's dive in and start creating amazing adventures together!
+                            """.replace("\n", " ").strip()
             }
         ]
     },
@@ -171,15 +166,15 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 2,
                 "data": """
-                        Ready to dive into the world of L.O.T.U.S. RPG? Let's get you started with a character that truly resonates with your style! If you're eager to jump right in, flipping to the back of any or the l.o.t.u.s setting books lets you pick from a variety of ready-made characters. Opting for a pre-made character is quick and ensures you're set up with a mechanically solid persona, but nothing beats the thrill of crafting your own character from scratch. This way, you develop a deeper connection as you shape their history and define their motivations.
-                    """.replace("\n", " ").strip()
+                                Ready to dive into the world of L.O.T.U.S. RPG? Let's get you started with a character that truly resonates with your style! If you're eager to jump right in, flipping to the back of any or the l.o.t.u.s setting books lets you pick from a variety of ready-made characters. Opting for a pre-made character is quick and ensures you're set up with a mechanically solid persona, but nothing beats the thrill of crafting your own character from scratch. This way, you develop a deeper connection as you shape their history and define their motivations.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 3,
                 "data": """
-                            In the upcoming sections, we'll help you sculpt your character from concept to fully playable hero. You'll find practical suggestions on building your character's identity, a step-by-step guide to character creation, and clear explanations of every aspect you'll encounter on your character sheet. We'll also introduce you to the maturation system—our approach to character growth—and guide you in discovering your character's calling, choosing relevant abilities, and picking the right skills. Let’s make your character truly memorable!
-                    """.replace("\n", " ").strip()
+                                    In the upcoming sections, we'll help you sculpt your character from concept to fully playable hero. You'll find practical suggestions on building your character's identity, a step-by-step guide to character creation, and clear explanations of every aspect you'll encounter on your character sheet. We'll also introduce you to the maturation system—our approach to character growth—and guide you in discovering your character's calling, choosing relevant abilities, and picking the right skills. Let’s make your character truly memorable!
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "heading",
@@ -191,14 +186,14 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 5,
                 "data": """
-                        Before you begin character creation, it's important to gather a clear vision of your character. Reflect carefully on the genre and setting you'll be playing in, and consider having a 'Session Zero' with your Storyteller and fellow players. Session Zero is a fantastic opportunity to collaborate and ensure everyone is aligned, helping you craft an immersive and exciting campaign experience.
-                    """.replace("\n", " ").strip()
+                                Before you begin character creation, it's important to gather a clear vision of your character. Reflect carefully on the genre and setting you'll be playing in, and consider having a 'Session Zero' with your Storyteller and fellow players. Session Zero is a fantastic opportunity to collaborate and ensure everyone is aligned, helping you craft an immersive and exciting campaign experience.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 6,
                 "data": """
-                        As you explore this process, think about who your character is within the world: their background, their moral compass, and their relationships. In the following sections, you'll find plenty of inspiring ideas and helpful tools to build out these details: """.replace("\n", " ").strip()
+                                As you explore this process, think about who your character is within the world: their background, their moral compass, and their relationships. In the following sections, you'll find plenty of inspiring ideas and helpful tools to build out these details: """.replace("\n", " ").strip()
             },
             {
                 "type": "list",
@@ -214,8 +209,8 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 8,
                 "data": """
-                        Taking the time to define these elements early on will greatly enhance your role-playing experience, ensuring your character is both memorable and meaningful.
-                    """.replace("\n", " ").strip()
+                                Taking the time to define these elements early on will greatly enhance your role-playing experience, ensuring your character is both memorable and meaningful.
+                            """.replace("\n", " ").strip()
             }
         ]
     },
@@ -234,8 +229,8 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 2,
                 "data": """
-                        Follow these steps as a quick reference for character creation. Each step is explained thoroughly, with detailed examples, throughout this chapter. Additionally, visiting the L.O.T.U.S. website provides access to helpful tools like the online character creator, complete with automated calculations. Joining the website also gives you access to session zero materials, downloadable resources, and further guidance from the community.
-                        """.replace("\n", " ").strip()
+                                Follow these steps as a quick reference for character creation. Each step is explained thoroughly, with detailed examples, throughout this chapter. Additionally, visiting the L.O.T.U.S. website provides access to helpful tools like the online character creator, complete with automated calculations. Joining the website also gives you access to session zero materials, downloadable resources, and further guidance from the community.
+                                """.replace("\n", " ").strip()
             },
             {
                 "type": "heading",
@@ -266,57 +261,90 @@ def seed_rules():
                     "rows": [
                         [
                             "Faeyr",
-                            "Dylithat",
+                            {
+                                "text": "Dylithar",
+                                "url": "/core/dylithar"
+                            },
                             "40"
                         ],
                         [
                             "",
-                            "Miaki",
+                            {
+                                "text": "Miaki",
+                                "url": "/core/miaki"
+                            },
                             "40"
                         ],
                         [
                             "",
-                            "Tiermalain",
+                            {
+                                "text": "Tiermalain",
+                                "url": "/core/tiermalain"
+                            },
                             "40"
                         ],
                         [
                             "Human",
-                            "Akkadian",
+                            {
+                                "text": "Akkadian",
+                                "url": "/core/akkadian"
+                            },
                             "0"
                         ],
                         [
                             "",
-                            "Midian",
+                            {
+                                "text": "Midian",
+                                "url": "/core/midian"
+                            },
                             "0"
                         ],
                         [
                             "",
-                            "Sutherlander",
+                            {
+                                "text": "Sutherlander",
+                                "url": "/core/sutherlander"
+                            },
                             "0"
                         ],
                         [
                             "",
-                            "Ennocean",
+                            {
+                                "text": "Ennocean",
+                                "url": "/core/ennocean"
+                            },
                             "0"
                         ],
                         [
-                            "Romling",
+                            {
+                                "text": "Romling",
+                                "url": "/core/romling"
+                            },
                             "-",
                             "20"
                         ],
                         [
                             "Svar",
-                            "Dargnan",
+                            {
+                                "text": "Dargnan",
+                                "url": "/core/dargnan"
+                            },
                             "40"
                         ],
                         [
                             "",
-                            "Kargathi",
+                            {
+                                "text": "Kargathi",
+                                "url": "/core/kargathi"
+                            },
                             "40"
                         ],
                         [
                             "",
-                            "Mordron",
+                            {
+                                "text": "Mordron",
+                                "url": "/core/mordron"
+                            },
                             "40"
                         ]
                     ]
@@ -341,27 +369,27 @@ def seed_rules():
                 "data": [
                     {
                         "text": "Law-abiding",
-                        "link": "/core/law-abiding"
+                        "url": "/core/law-abiding"
                     },
                     {
                         "text": "Honorable",
-                        "link": "/core/honorable"
+                        "url": "/core/honorable"
                     },
                     {
                         "text": "Righteous",
-                        "link": "/core/righteous"
+                        "url": "/core/righteous"
                     },
                     {
                         "text": "Pragmatic",
-                        "link": "/core/pragmatic"
+                        "url": "/core/pragmatic"
                     },
                     {
                         "text": "Malkavian",
-                        "link": "/core/machiavellian"
+                        "url": "/core/machiavellian"
                     },
                     {
-                        "text": "Anarchist",
-                        "link": "/core/anarchist"
+                        "text": "Anarchistic",
+                        "url": "/core/anarchistic"
                     }
                 ],
                 "style_class": "list-disc pl-6"
@@ -370,8 +398,8 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 12,
                 "data": """
-                        These can also be chosen before or after establishing your background.
-                    """.replace("\n", " ").strip()
+                                These can also be chosen before or after establishing your background.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "list",
@@ -529,36 +557,36 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 2,
                 "data": """
-                        This can be an exceedingly difficult aspect to portray without internally projecting personal values over those of the character. Founding game systems that utilize traditional “Alignments” created a system that causes conflict regarding in-character behavioral versus out-of-character cultural perception. It becomes difficult to understand that a Lawful Evil and Chaotic Good character may perform the exact same act but their reasoning behind it will be vastly different which can be very confusing to new players.
-                    """.replace("\n", " ").strip()
+                                This can be an exceedingly difficult aspect to portray without internally projecting personal values over those of the character. Founding game systems that utilize traditional “Alignments” created a system that causes conflict regarding in-character behavioral versus out-of-character cultural perception. It becomes difficult to understand that a Lawful Evil and Chaotic Good character may perform the exact same act but their reasoning behind it will be vastly different which can be very confusing to new players.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 3,
                 "data": """
-                        To elevate your experience and foster a deeper sense of character individuality in L.O.T.U.S. RPG, we’ve embraced a dynamic concept called “Living Philosophies.” This framework moves beyond the conventional binary of good versus evil, which often leads to subjective interpretations and player conflicts over character actions. Instead, Living Philosophies provide a nuanced framework to shape your character’s core reactive values, guiding you to respond not as you would personally, but as your character would, enriching the authenticity of your role-playing.
-                    """.replace("\n", " ").strip()
+                                To elevate your experience and foster a deeper sense of character individuality in L.O.T.U.S. RPG, we’ve embraced a dynamic concept called “Living Philosophies.” This framework moves beyond the conventional binary of good versus evil, which often leads to subjective interpretations and player conflicts over character actions. Instead, Living Philosophies provide a nuanced framework to shape your character’s core reactive values, guiding you to respond not as you would personally, but as your character would, enriching the authenticity of your role-playing.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 4,
                 "data": """
-                        Living Philosophies in L.O.T.U.S. RPG encompass a diverse spectrum: Law-abiding, Pragmatic, Honorable, Righteous, Machiavellian, and Anarchistic. Each philosophy offers unique paths and potential developments for your character, allowing you to tailor their motivations and actions based on a coherent set of principles.
-                    """.replace("\n", " ").strip()
+                                Living Philosophies in L.O.T.U.S. RPG encompass a diverse spectrum: Law-abiding, Pragmatic, Honorable, Righteous, Machiavellian, and Anarchistic. Each philosophy offers unique paths and potential developments for your character, allowing you to tailor their motivations and actions based on a coherent set of principles.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 5,
                 "data": """
-                        The structure of Living Philosophy is twofold, designed both to guide and to incentivize. We start with the “Approach”—where each philosophy may branch into one or two paths, offering a tailored direction for character development. To add further depth, there’s an optional layer we call “Virtue, Failings, Vice & Balance.” This mechanism isn’t just about adding complexity; it’s about enhancing your character’s narrative and unlocking potential in-game rewards for stellar role-play.
-                    """.replace("\n", " ").strip()
+                                The structure of Living Philosophy is twofold, designed both to guide and to incentivize. We start with the “Approach”—where each philosophy may branch into one or two paths, offering a tailored direction for character development. To add further depth, there’s an optional layer we call “Virtue, Failings, Vice & Balance.” This mechanism isn’t just about adding complexity; it’s about enhancing your character’s narrative and unlocking potential in-game rewards for stellar role-play.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "paragraph",
                 "order": 6,
                 "data": """
-                        Game Masters have the flexibility to implement this second layer as they see fit, using it as a tool to encourage specific behaviors and enrich the gaming experience. Whether you choose to delve into these optional traits or stick with the fundamental Approach based on one of the Living Philosophies, you’re setting the stage for building a distinct and memorable character.
-                    """.replace("\n", " ").strip()
+                                Game Masters have the flexibility to implement this second layer as they see fit, using it as a tool to encourage specific behaviors and enrich the gaming experience. Whether you choose to delve into these optional traits or stick with the fundamental Approach based on one of the Living Philosophies, you’re setting the stage for building a distinct and memorable character.
+                            """.replace("\n", " ").strip()
             },
         ]
     },
@@ -577,8 +605,8 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 1,
                 "data": """
-                        Law-abiding members of society obey the laws, traditions, customs of their chosen culture and as their affiliated organization directs them. Lawful adherents believe in a strong, well-ordered government, whether an acceptable government is a tyranny or benevolent democracy is based on their focus. The need for stable organization and regimentation outweigh any moral questions and they will seek to uphold the law regardless of whether it is considered just or not. If ethics call for a change of the practice of the government, then they must use legal means of getting those laws changed.
-                    """.replace("\n", " ").strip()
+                                Law-abiding members of society obey the laws, traditions, customs of their chosen culture and as their affiliated organization directs them. Lawful adherents believe in a strong, well-ordered government, whether an acceptable government is a tyranny or benevolent democracy is based on their focus. The need for stable organization and regimentation outweigh any moral questions and they will seek to uphold the law regardless of whether it is considered just or not. If ethics call for a change of the practice of the government, then they must use legal means of getting those laws changed.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "image",
@@ -594,15 +622,15 @@ def seed_rules():
                 "order": 2,
                 "data": "close"
             },
-                # Parent flex container for lists
-                {
+                        # Parent flex container for lists
+                        {
                 "type": "container",
                 "order": 3,
                 "data": "open",
                 "style_class": "flex flex-col gap-12 max-w-screen-xl mx-auto px-8 sm:flex-row"
             },
-                # First column container
-                {
+                        # First column container
+                        {
                 "type": "container",
                 "order": 4,
                 "data": "open",
@@ -629,14 +657,14 @@ def seed_rules():
                 ],
                 "style_class": "list-disc pl-6"
             },
-                # Close first column
-                {
+                        # Close first column
+                        {
                 "type": "container",
                 "order": 7,
                 "data": "close"
             },
-                # Second column container
-                {
+                        # Second column container
+                        {
                 "type": "container",
                 "order": 8,
                 "data": "open",
@@ -663,14 +691,14 @@ def seed_rules():
                 ],
                 "style_class": "list-disc pl-6"
             },
-                # Close second column
-                {
+                        # Close second column
+                        {
                 "type": "container",
                 "order": 11,
                 "data": "close"
             },
-                # Close parent flex container
-                {
+                        # Close parent flex container
+                        {
                 "type": "container",
                 "order": 12,
                 "data": "close"
@@ -6225,7 +6253,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 4,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6266,7 +6294,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 9,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6292,7 +6320,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 14,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6318,7 +6346,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 19,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6344,7 +6372,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 24,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6370,7 +6398,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 29,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6396,7 +6424,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 34,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6427,7 +6455,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 39,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6453,7 +6481,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 44,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6479,7 +6507,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 49,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6505,7 +6533,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 54,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6531,7 +6559,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 59,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6557,7 +6585,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 64,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6588,7 +6616,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 69,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6614,7 +6642,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 74,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6640,7 +6668,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 79,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6666,7 +6694,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 84,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6697,7 +6725,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 89,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6723,7 +6751,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 94,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6749,7 +6777,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 99,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6775,7 +6803,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 104,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6801,7 +6829,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 109,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6827,7 +6855,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 114,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6858,7 +6886,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 119,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6884,7 +6912,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 124,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6920,7 +6948,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 129,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6946,7 +6974,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 134,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6972,7 +7000,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 139,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -6998,7 +7026,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 144,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7024,7 +7052,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 149,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7050,7 +7078,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 154,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7076,7 +7104,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 159,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7112,7 +7140,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 164,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7138,7 +7166,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 169,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7164,7 +7192,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 174,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7200,7 +7228,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 179,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7226,7 +7254,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 184,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7252,7 +7280,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 189,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7278,7 +7306,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 194,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7304,7 +7332,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 199,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7335,7 +7363,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 204,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7361,7 +7389,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 209,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7387,7 +7415,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 214,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7413,7 +7441,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 219,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7439,7 +7467,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 224,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7465,7 +7493,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 229,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7491,7 +7519,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 234,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7517,7 +7545,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 239,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7543,7 +7571,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 244,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7569,7 +7597,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 249,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7595,7 +7623,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 254,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7621,7 +7649,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 259,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7647,7 +7675,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 264,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7673,7 +7701,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 269,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7699,7 +7727,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 274,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7725,7 +7753,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 279,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7751,7 +7779,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 284,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7777,7 +7805,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 289,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7803,7 +7831,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 294,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7839,7 +7867,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 299,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7865,7 +7893,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 304,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7906,7 +7934,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 312,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7942,7 +7970,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 317,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -7978,7 +8006,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 322,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8004,7 +8032,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 327,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8030,7 +8058,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 332,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8056,7 +8084,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 337,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8082,7 +8110,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 342,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8108,7 +8136,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 347,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8134,7 +8162,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 352,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8160,7 +8188,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 357,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8186,7 +8214,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 362,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8212,7 +8240,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 367,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8243,7 +8271,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 372,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8269,7 +8297,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 377,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8295,7 +8323,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 382,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8321,7 +8349,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 387,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8347,7 +8375,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 392,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8373,7 +8401,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 397,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8399,7 +8427,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 402,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8432,7 +8460,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 1,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8458,7 +8486,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 4,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8484,7 +8512,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 9,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8515,7 +8543,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 14,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8541,7 +8569,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 19,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8582,7 +8610,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 24,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8608,7 +8636,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 29,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8644,7 +8672,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 34,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8670,7 +8698,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 39,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8696,7 +8724,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 44,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8722,7 +8750,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 49,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8748,7 +8776,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 54,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8774,7 +8802,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 59,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8800,7 +8828,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 64,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8826,7 +8854,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 69,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8852,7 +8880,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 74,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8878,7 +8906,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 79,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8904,7 +8932,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 84,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8930,7 +8958,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 89,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8956,7 +8984,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 94,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -8998,7 +9026,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 101,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9024,7 +9052,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 106,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9050,7 +9078,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 111,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9076,7 +9104,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 116,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9102,7 +9130,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 121,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9128,7 +9156,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 126,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9164,7 +9192,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 133,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9190,7 +9218,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 138,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9216,7 +9244,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 143,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9242,7 +9270,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 148,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9268,7 +9296,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 153,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9294,7 +9322,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 158,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9320,7 +9348,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 163,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9351,7 +9379,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 169,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9377,7 +9405,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 174,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9403,7 +9431,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 179,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9429,7 +9457,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 184,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9455,7 +9483,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 189,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9481,7 +9509,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 194,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9507,7 +9535,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 199,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9533,7 +9561,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 204,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9559,7 +9587,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 209,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9585,7 +9613,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 214,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9611,7 +9639,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 219,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9637,7 +9665,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 224,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9663,7 +9691,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 229,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9689,7 +9717,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 234,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9715,7 +9743,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 239,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9741,7 +9769,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 244,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9767,7 +9795,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 249,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9793,7 +9821,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 254,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9819,7 +9847,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 259,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9845,7 +9873,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 264,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9871,7 +9899,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 269,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9897,7 +9925,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 274,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9923,7 +9951,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 279,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9949,7 +9977,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 284,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -9975,7 +10003,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 289,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10001,7 +10029,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 294,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10027,7 +10055,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 299,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10053,7 +10081,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 304,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10079,7 +10107,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 309,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10105,7 +10133,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 327,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10131,7 +10159,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 332,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10157,7 +10185,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 337,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10189,7 +10217,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 342,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10221,7 +10249,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 347,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10253,7 +10281,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 352,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10285,7 +10313,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 357,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10306,7 +10334,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 361,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10332,7 +10360,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 366,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10358,7 +10386,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 371,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10384,7 +10412,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 376,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10410,7 +10438,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 381,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10436,7 +10464,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 386,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10462,7 +10490,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 391,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10488,7 +10516,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 396,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10514,7 +10542,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 401,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10540,7 +10568,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 406,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10566,7 +10594,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 411,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10592,7 +10620,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 416,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10618,7 +10646,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 421,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10644,7 +10672,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 426,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10670,7 +10698,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 431,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10696,7 +10724,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 436,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10722,7 +10750,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 441,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10748,7 +10776,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 446,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10774,7 +10802,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 451,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10800,7 +10828,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 456,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10826,7 +10854,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 461,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10852,7 +10880,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 466,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10878,7 +10906,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 471,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10904,7 +10932,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 476,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10930,7 +10958,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 481,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10956,7 +10984,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 486,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -10982,7 +11010,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 491,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11008,7 +11036,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 496,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11034,7 +11062,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 501,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11060,7 +11088,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 506,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11086,7 +11114,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 511,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11112,7 +11140,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 516,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11138,7 +11166,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 521,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11164,7 +11192,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 526,
                 "data": "Mechanics",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11192,7 +11220,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 3,
                 "data": "Surprise",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11203,7 +11231,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 5,
                 "data": "Snipe",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11214,7 +11242,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 7,
                 "data": "Waylay",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11235,7 +11263,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 11,
                 "data": "Standard Target Practice",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "list",
@@ -11253,7 +11281,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 13,
                 "data": "Primary Zones",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "list",
@@ -11270,7 +11298,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 15,
                 "data": "Secondary Zones",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "list",
@@ -11301,7 +11329,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 19,
                 "data": "Overrun",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11312,7 +11340,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 21,
                 "data": "Rush",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11323,7 +11351,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 23,
                 "data": "Ram",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11359,7 +11387,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 30,
                 "data": "Ambush",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11370,7 +11398,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 32,
                 "data": "Area of Effect",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11381,7 +11409,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 34,
                 "data": "Combatant Limiter (LARP ONLY)",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "list",
@@ -11432,7 +11460,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 41,
                 "data": "Ability Damaged",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11443,7 +11471,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 43,
                 "data": "Blinded",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11454,7 +11482,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 45,
                 "data": "Dazed",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11465,7 +11493,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 47,
                 "data": "Dead",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11476,7 +11504,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 49,
                 "data": "Deafened",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11487,7 +11515,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 51,
                 "data": "Debilitated",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11498,7 +11526,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 53,
                 "data": "Disabled",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11509,7 +11537,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 55,
                 "data": "Dying",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11520,7 +11548,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 57,
                 "data": "Entangled",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11531,7 +11559,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 59,
                 "data": "Exhausted",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11542,7 +11570,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 61,
                 "data": "Fascinated",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11553,7 +11581,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 63,
                 "data": "Fatigued",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11564,7 +11592,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 65,
                 "data": "Frightened",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11575,7 +11603,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 67,
                 "data": "Grappled",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11586,7 +11614,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 69,
                 "data": "Helpless",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11597,7 +11625,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 71,
                 "data": "Incorporeal",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11608,7 +11636,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 73,
                 "data": "Invisible",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11619,7 +11647,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 75,
                 "data": "Nauseated",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11630,7 +11658,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 77,
                 "data": "Normal",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11641,7 +11669,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 79,
                 "data": "Paralyzed",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11652,7 +11680,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 81,
                 "data": "Prone",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11663,7 +11691,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 83,
                 "data": "Sickened",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11674,7 +11702,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 85,
                 "data": "Stable",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11685,7 +11713,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 87,
                 "data": "Stunned",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11696,7 +11724,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 89,
                 "data": "Unconscious",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -11889,7 +11917,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 121,
                 "data": "Creature Size",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "list",
@@ -11910,7 +11938,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 123,
                 "data": "Grappling Effects",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "list",
@@ -11970,7 +11998,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 132,
                 "data": "Alternative Expedited Initiative",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12001,7 +12029,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 138,
                 "data": "EXAMPLE",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "list",
@@ -12036,7 +12064,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 144,
                 "data": "Athletic Weapons",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "list",
@@ -12469,7 +12497,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 5,
                 "data": "Escape",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12480,7 +12508,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 7,
                 "data": "Reversal",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12491,31 +12519,30 @@ def seed_rules():
                 "type": "subheading",
                 "order": 9,
                 "data": "Redirect",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
                 "order": 10,
                 "data": "Pre-Requisites: Escape & Reflexes 6 | Cost: 30 XP | Spend 8 CAP. Any Melee or Martial Arts attack directed at you until your next turn may be affected. If your Defensive Roll exceeds the attacker’s Strike by 15 or more, their weapon may fly from their hand or they may be thrown. Direction is determined by 1d10:"
-              },
-              {
+            },
+            {
                 "type": "list",
                 "order": 10,
                 "data": [
-                  "1–2: Behind You",
-                  "3–4: In Front of You",
-                  "5–6: To Your Left",
-                  "7–8: To Your Right",
-                  "9–10: At Your Feet"
+                    "1–2: Behind You",
+                    "3–4: In Front of You",
+                    "5–6: To Your Left",
+                    "7–8: To Your Right",
+                    "9–10: At Your Feet"
                 ],
                 "style_class": "list-disc pl-6"
-              }
-              
+            },
             {
                 "type": "subheading",
                 "order": 11,
                 "data": "Precise Manipulation",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12531,7 +12558,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 14,
                 "data": "Battojutsu",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12542,7 +12569,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 16,
                 "data": "Battojutsu Mastery",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12553,7 +12580,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 18,
                 "data": "Battojutsu Mastery (Greater)",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12564,7 +12591,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 20,
                 "data": "Battojutsu Mastery (Grand)",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12580,7 +12607,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 23,
                 "data": "Blind Sense",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12591,7 +12618,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 25,
                 "data": "Blind Sense Mastery",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12602,7 +12629,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 27,
                 "data": "Blind Sense Mastery (Greater)",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12613,7 +12640,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 29,
                 "data": "Blind Sense Mastery (Grand)",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12660,7 +12687,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 32,
                 "data": "Disarm",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12671,7 +12698,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 34,
                 "data": "Deflection",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12682,7 +12709,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 36,
                 "data": "Disarm & Deflection Mastery",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12693,7 +12720,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 38,
                 "data": "Disarm & Deflection Grand Mastery",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12709,7 +12736,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 41,
                 "data": "Dynamic Combat",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12720,7 +12747,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 43,
                 "data": "Dynamic Mastery",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12731,7 +12758,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 45,
                 "data": "Dynamic Mastery (Greater)",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12742,7 +12769,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 47,
                 "data": "Dynamic Mastery (Grand)",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12763,7 +12790,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 51,
                 "data": "Florentine",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12774,7 +12801,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 53,
                 "data": "Florentine Mastery",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12785,7 +12812,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 55,
                 "data": "Florentine Mastery (Greater)",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12796,7 +12823,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 57,
                 "data": "Florentine Mastery (Grand)",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12812,7 +12839,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 60,
                 "data": "Pinpoint Weakness",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12823,7 +12850,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 62,
                 "data": "Penetrating Strike",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12834,7 +12861,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 64,
                 "data": "Flowing Strike",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12845,7 +12872,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 66,
                 "data": "Grand Master’s Flowing Strike",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12861,7 +12888,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 69,
                 "data": "Improvised Combat",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12872,7 +12899,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 71,
                 "data": "Discombobulating Attacks",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12883,7 +12910,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 73,
                 "data": "Flanked Not Flanked",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12894,7 +12921,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 75,
                 "data": "Shifting Surfaces",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12910,7 +12937,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 78,
                 "data": "Powerful Blow",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12921,7 +12948,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 80,
                 "data": "Focused Blow",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12932,7 +12959,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 82,
                 "data": "Devastating Strike",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12943,7 +12970,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 84,
                 "data": "Ikken Hissatsu",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12959,7 +12986,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 87,
                 "data": "Nimble Footing",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12970,7 +12997,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 89,
                 "data": "Enhancing the Edge",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12981,7 +13008,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 91,
                 "data": "Engaging Step",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -12992,7 +13019,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 93,
                 "data": "Departing Blow",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -13008,7 +13035,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 96,
                 "data": "Speed Load",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -13019,7 +13046,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 98,
                 "data": "Point Blank Shot",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -13030,7 +13057,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 100,
                 "data": "Critical Spot",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -13041,7 +13068,7 @@ def seed_rules():
                 "type": "subheading",
                 "order": 102,
                 "data": "The Distance",
-                "style_class": "text-xl italic mt-2 text-gray-400"
+                "style_class": "text-xl italic mt-2 text-blue-400"
             },
             {
                 "type": "paragraph",
@@ -13050,14 +13077,1651 @@ def seed_rules():
             }
         ]
     },
-
-
-
-
-
-
-
-
+    {
+        "title": "Currency",
+        "slug": "currency",
+        "chapter": "Setting Currencies",
+        "content": [
+            {
+                "type": "paragraph",
+                "order": 2,
+                "data": "Every setting has a series of currencies, but they may generally be broken down into the following baselines:"
+            },
+            {
+                "type": "subheading",
+                "order": 3,
+                "data": "Fantasy or Steam Punk",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 4,
+                "data": "Silver is the standard currency of trade."
+            },
+            {
+                "type": "list",
+                "order": 5,
+                "data": [
+                    "CP = Copper Penny",
+                    "SD = Silver Denar",
+                    "GC = Gold Crest",
+                    "PC = Platinum Crown"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "list",
+                "order": 6,
+                "data": [
+                    "10 CP = 1 SD",
+                    "100 SD = 1 GC",
+                    "10 GC = 1 PC",
+                    "1 PC = 1 Jade Plate",
+                    "1 Rod = 10 Coins of Same Material"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "subheading",
+                "order": 7,
+                "data": "Modern or Near Future",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 8,
+                "data": "Dollar is the standard currency of trade."
+            },
+            {
+                "type": "subheading",
+                "order": 9,
+                "data": "Cyber Punk or Space Faring",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 10,
+                "data": "Credits are the standard currency of trade."
+            }
+        ]
+    },
+    {
+        "title": "Gear",
+        "slug": "gear",
+        "chapter": "Equipment",
+        "content": [
+            {
+                "type": "paragraph",
+                "order": 2,
+                "data": "Equipment has limitations to availability and legality that may vary from setting to setting as well as area to area within a setting. There is also the ability to conceal gear and how much space it takes to do so as well as how many hands are required to utilize a piece of equipment. Limitations to how many storage devices a character can carry as well as the max number and/or weight that can be stowed in a device. Finally there is quality which affects both the cost and has mechanical influences."
+            },
+            {
+                "type": "heading",
+                "order": 3,
+                "data": "Availability"
+            },
+            {
+                "type": "list",
+                "order": 4,
+                "data": [
+                    "1 - Available Anywhere. (Mundane)",
+                    "2 - Occasionally Available in Large Towns. (Common)",
+                    "3 - Occasionally Available in Large Cities. (Uncommon)",
+                    "4 - Only Available in Designated Areas. (Rare)"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "heading",
+                "order": 5,
+                "data": "Legality"
+            },
+            {
+                "type": "list",
+                "order": 6,
+                "data": [
+                    "L - (Legal)",
+                    "R - (Restricted) Requires a Permit or it is considered an illegal item and is subject to Confiscation and/or a Fines or Short-Term Incarceration.",
+                    "X - (Highly Illegal) Subjects to Confiscation, Fines and Long-Term Incarceration."
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "heading",
+                "order": 7,
+                "data": "Conceal Carry"
+            },
+            {
+                "type": "list",
+                "order": 8,
+                "data": [
+                    "CC0 (DC 5 to Conceal) - Can easily be Carried or Concealed.",
+                    "CC1 (DC 10 to Conceal) - Can be Concealed in a Pocket or under a Shirt.",
+                    "CC2 (DC 20 to Conceal) - Can be Concealed in a Jacket.",
+                    "CC3 (DC 30 to Conceal) - Can be Concealed in a Trench Coat, Cloak or Duster.",
+                    "CC4 (DC 40 to Conceal) - Can be Concealed in a 5’ x 3’ x 1’ Space.",
+                    "CC5 (DC 50 to Conceal) - Can be Concealed by being built into an openly carried object."
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "heading",
+                "order": 9,
+                "data": "Number of Hands Required"
+            },
+            {
+                "type": "list",
+                "order": 10,
+                "data": [
+                    "1H - 1 Handed Item",
+                    "2H - 2 Handed Item"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "heading",
+                "order": 11,
+                "data": "Max Items Worn"
+            },
+            {
+                "type": "list",
+                "order": 12,
+                "data": [
+                    "1 - Head - Bonnet, Hat, Helm, Tiara or Crown",
+                    "2 - Head Overlay",
+                    "1 - Neck - Necklace, Choker or Collar",
+                    "1 - Shoulder - Cloak, Overcoat, Trench Coat",
+                    "3 - Back - 1 Backpack & 2 Holster(s), Scabbard(s) or Quiver(s)",
+                    "1 - Chest - Armor/Corset + Bandolier, Shirt, Undershirt & Vest",
+                    "1 - Chest Overlay & Underlay",
+                    "1 - Wristwear - Bracelet, Bracer, Kote",
+                    "1 - Handwear Set - Pair of Gloves",
+                    "4 - Finger - Rings",
+                    "1 - Waist - Belt, Girdle or Suspenders",
+                    "3 - Waist Accessories - Holster, Pouch, Purse, Scabbard or Quiver",
+                    "2 - Girding - Groin, Hip, Under Arm Pieces, Holster, Sheath",
+                    "1 - Leggings - Kilt, Hakama, Skirt, Pants, Shorts, etc.",
+                    "1 - Legging Underlay",
+                    "2 - Ankle - Boot Sheath or Holster",
+                    "1 - Footwear Set - Boots, Shoes, Slippers, etc."
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "heading",
+                "order": 13,
+                "data": "Max Gear Stowage"
+            },
+            {
+                "type": "list",
+                "order": 14,
+                "data": [
+                    "Ankle Sheath/Holster: Holds 1 Weapon of the type it was designed for.",
+                    "Back Scabbard/Holster: Holds 1 Weapon of the type it was designed for.",
+                    "Bandolier (Ammunition): Holds 30 Rounds of Ammunition of the type it was designed for.",
+                    "Bandolier (Weapon): Holds 5 Weapons of the type it was designed for.",
+                    "Boot Sheath/Holster: Holds 1 Weapon of the type it was designed for.",
+                    "Hip Scabbard/Holster: Holds 1 Weapon of the type it was designed for.",
+                    "Mid Back Sheath/Holster: Holds 1 Weapon of the type it was designed for.",
+                    "Quiver: Holds 30 Arrows or Bolts.",
+                    "Saddle Bags: May contain 2 CC Items & Up to 80 lbs.",
+                    "Pack Scabbard/Holster: Holds 1 Weapon of the type it was designed for.",
+                    "Messenger Bag: May contain 2 CC Items & 15 lbs.",
+                    "Purse: May contain 0.5 CC Items & 15 lbs.",
+                    "Waist Pouches: May contain 1 CC Item & 10 lbs.",
+                    "Briefcase/Laptop Case/Satchel: May contain 2 CC Items & 30 lbs.",
+                    "Small Backpack: May contain 3 CC Items & 60 lbs.",
+                    "Full Backpack: May contain 4 CC Items & 120 lbs.",
+                    "Chest/Suitcase (Small): May contain 3 CC Items & 200 lbs.",
+                    "Chest/Suitcase (Medium): May contain 4 CC Items & 300 lbs.",
+                    "Barrel: May contain 5 CC Items & 400 lbs.",
+                    "Trunk: May contain 10 CC Items & 500 lbs."
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "heading",
+                "order": 15,
+                "data": "Quality"
+            },
+            {
+                "type": "subheading",
+                "order": 16,
+                "data": "Poor Quality",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 17,
+                "data": "Reduces Availability Rating by 1 | Reduces Cost | Typically Invokes Penalties"
+            },
+            {
+                "type": "paragraph",
+                "order": 17,
+                "data": "Provides a -2 Penalty to all associated Rolls unless begging."
+            },
+            {
+                "type": "subheading",
+                "order": 18,
+                "data": "Average Quality",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 19,
+                "data": "Standard Availability Rating | Standard Cost | No Modifiers"
+            },
+            {
+                "type": "paragraph",
+                "order": 19,
+                "data": "There is no modifier for wearing or using standard clothing, equipment, or transportation unless at a gathering where High Quality or Masterwork Quality clothing is expected or considered the norm in which case a -2 Situational Penalty is applied to Social Rolls when dealing with anyone dressed in higher quality clothing than they themselves."
+            },
+            {
+                "type": "subheading",
+                "order": 20,
+                "data": "High Quality",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 21,
+                "data": "Increases Availability Rating by 1 | Doubles Cost | Provides Bonuses"
+            },
+            {
+                "type": "paragraph",
+                "order": 21,
+                "data": "If all clothing, equipment, and transportation used by a character is of High Quality, then they receive a minimum of a +2 Situational Bonus on Social Rolls in circumstances where an imposing, official or professional appearance would be of assistance (at the GM’s discretion) unless the target they are attempting to impress is likewise dressed. Equipment and Transportation provides a +1 to all Rolls involving its use."
+            },
+            {
+                "type": "subheading",
+                "order": 22,
+                "data": "Exceptional Quality",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 23,
+                "data": "Increases Availability Rating by 2 | Further increases Cost | Provides Bonuses"
+            },
+            {
+                "type": "paragraph",
+                "order": 24,
+                "data": "If all clothing, equipment, and transportation used by a character is of Exceptional Quality then they receive a +4 Situational Bonus on Social Rolls in circumstances where a regal, imposing, official or professional appearance are expected or would be of assistance (at the GM’s discretion) unless the target they are attempting to impress is likewise dressed. Equipment and Transportation provides a +2 Bonus to all associated use Rolls."
+            },
+            {
+                "type": "heading",
+                "order": 24,
+                "data": "Used Items"
+            },
+            {
+                "type": "paragraph",
+                "order": 25,
+                "data": "Sell Value to a Merchant is 20% of the item's listed value."
+            },
+            {
+                "type": "paragraph",
+                "order": 26,
+                "data": "Used merchandise or non-regulated goods brought in from the outside are considered high-risk products and their value is significantly less to the merchant community, who will in turn attempt to sell the used product for 75% of its original value."
+            }
+        ]
+    },
+    {
+        "title": "Weapons & Armor",
+        "slug": "weapons-armor",
+        "chapter": "Equipment",
+        "content": [
+            {
+                "type": "heading",
+                "order": 1,
+                "data": "Archaic Weapons & Armor"
+            },
+            {
+                "type": "subheading",
+                "order": 2,
+                "data": "Archery",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 3,
+                "data": {
+                    "headers": [
+                        "Archery",
+                        "Dmg. Type",
+                        "Speed Mod.",
+                        "Strike Mod.",
+                        "Dmg. Mod.",
+                        "CAP",
+                        "Range",
+                        "Slots",
+                        "Equip & Reload AP",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Bolt",
+                            "P",
+                            "--",
+                            "--",
+                            "--",
+                            "--",
+                            "--",
+                            "1",
+                            "1",
+                            ""
+                        ],
+                        [
+                            "Arrow",
+                            "P",
+                            "--",
+                            "--",
+                            "--",
+                            "--",
+                            "--",
+                            "1",
+                            "1",
+                            ""
+                        ],
+                        [
+                            "Crossbow, Hand",
+                            "P",
+                            "+4",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-25' (0-8 m)",
+                            "2",
+                            "1",
+                            "Handheld/Pistol Crossbow."
+                        ],
+                        [
+                            "Crossbow, Light",
+                            "P",
+                            "+2",
+                            "+4",
+                            "+18",
+                            "6",
+                            "10-50' (3-15 m)",
+                            "2",
+                            "1",
+                            "Pull/Push Lever or Stirrup."
+                        ],
+                        [
+                            "Crossbow, Heavy",
+                            "P",
+                            "0",
+                            "+3",
+                            "+21",
+                            "7",
+                            "10-75' (3-23 m)",
+                            "2",
+                            "3",
+                            "Compound, Cranequin or Windlass."
+                        ],
+                        [
+                            "Bow, Short",
+                            "P",
+                            "+2",
+                            "+6",
+                            "+12",
+                            "5",
+                            "10-50' (3-15 m)",
+                            "2",
+                            "1",
+                            ""
+                        ],
+                        [
+                            "Bow, Long",
+                            "P",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "10-75' (3-23 m)",
+                            "2",
+                            "1",
+                            "Long or Recurve."
+                        ],
+                        [
+                            "Bow, Heavy",
+                            "P",
+                            "+2",
+                            "+4",
+                            "+18",
+                            "6",
+                            "10-100' (3-30 m)",
+                            "2",
+                            "2",
+                            "Compound or Daikyu."
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 4,
+                "data": "Athletics",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 5,
+                "data": {
+                    "headers": [
+                        "Athletics",
+                        "Dmg. Type",
+                        "Speed Mod.",
+                        "Strike Mod.",
+                        "Dmg. Mod.",
+                        "CAP",
+                        "Range",
+                        "Slots",
+                        "Equip & Reload AP",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Grenade",
+                            "E",
+                            "+2",
+                            "+4",
+                            "+18",
+                            "6",
+                            "0-50' (0-15 m)",
+                            "1",
+                            "1",
+                            "Explosive Flask, Sticky Grenade or Hand Grenade."
+                        ],
+                        [
+                            "Javelin",
+                            "P",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "6",
+                            "10-75' (3-23 m)",
+                            "1",
+                            "2",
+                            "Harpoon or Thrown Spear."
+                        ],
+                        [
+                            "Net",
+                            "--",
+                            "+4",
+                            "+6",
+                            "--",
+                            "6",
+                            "5-20' (1-6 m)",
+                            "1",
+                            "1",
+                            "Gladiatorial Net"
+                        ],
+                        [
+                            "Sling",
+                            "C",
+                            "+2",
+                            "+6",
+                            "+12",
+                            "4",
+                            "5-40' (1.5-6 m)",
+                            "1",
+                            "1",
+                            ""
+                        ],
+                        [
+                            "Sling Staff",
+                            "C",
+                            "+2",
+                            "+6",
+                            "+12",
+                            "4",
+                            "5-50' (1.5-15 m)",
+                            "1",
+                            "1",
+                            ""
+                        ],
+                        [
+                            "Throwing, Crushing",
+                            "C",
+                            "+4",
+                            "+6",
+                            "+12",
+                            "4",
+                            "5-30' (1.5-9 m)",
+                            "1",
+                            "1",
+                            "Bolas, Boomerang, or Shotput"
+                        ],
+                        [
+                            "Throwing, Edged",
+                            "S",
+                            "+4",
+                            "+6",
+                            "+12",
+                            "4",
+                            "5-30' (1.5-9 m)",
+                            "1",
+                            "1",
+                            "Chakram, Throwing Axe or Tomahawk."
+                        ],
+                        [
+                            "Throwing, Piercing",
+                            "P",
+                            "+4",
+                            "+6",
+                            "+12",
+                            "4",
+                            "5-30' (1.5-9 m)",
+                            "1",
+                            "1",
+                            "Blow Dart, Dart, Stiletto, Throwing Spikes or Shuriken."
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 6,
+                "data": "Melee, Crushing",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 7,
+                "data": {
+                    "headers": [
+                        "Melee, Crushing",
+                        "Dmg. Type",
+                        "Speed Mod.",
+                        "Strike Mod.",
+                        "Dmg. Mod.",
+                        "CAP",
+                        "Range",
+                        "Slots",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Chain",
+                            "C",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-15' (0-4.5 m)",
+                            "1",
+                            "2",
+                            "Chain, Chained Kama, Flying Blade, Kusarigama, Kyoketsu Shoge or Spiked Chain."
+                        ],
+                        [
+                            "Flail, Small",
+                            "C",
+                            "+4",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "1",
+                            "1",
+                            "Footman's Flail or Nunchaku."
+                        ],
+                        [
+                            "Flail, Large",
+                            "C",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-10' (0-3 m)",
+                            "2",
+                            "2",
+                            "Horseman's Flail or Sansetsukon."
+                        ],
+                        [
+                            "Mace, Small",
+                            "C",
+                            "+4",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "2",
+                            "1",
+                            "Baton, Club, Footman's Mace or Tonfa."
+                        ],
+                        [
+                            "Mace, Large",
+                            "C",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-10' (0-3 m)",
+                            "2",
+                            "2",
+                            "Horseman's Mace, Maul, Morning Star, Tetsubo or Warhammer."
+                        ],
+                        [
+                            "Staves, Short",
+                            "C",
+                            "+4",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "1",
+                            "1",
+                            "Jo Staff or Short Staff."
+                        ],
+                        [
+                            "Staves, Long",
+                            "C",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-10' (0-3 m)",
+                            "2",
+                            "1",
+                            "Bo Staff, Quarterstaff."
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 8,
+                "data": "Melee, Piercing",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 9,
+                "data": {
+                    "headers": [
+                        "Melee, Piercing",
+                        "Dmg. Type",
+                        "Speed Mod.",
+                        "Strike Mod.",
+                        "Dmg. Mod.",
+                        "CAP",
+                        "Range",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Awl",
+                            "P",
+                            "0",
+                            "+4",
+                            "+18",
+                            "6",
+                            "5-15' (1.5-4.5 m)",
+                            "2",
+                            "Lucerne Hammer, Mancatcher, Military Fork, Ranseur, Spetum or Trident."
+                        ],
+                        [
+                            "Lance",
+                            "P",
+                            "+4",
+                            "+4",
+                            "+18",
+                            "6",
+                            "5-10' (1.5-3 m)",
+                            "2",
+                            "Riding Lance. Requires Being Mounted or 2 Hands. Concealment: None"
+                        ],
+                        [
+                            "Pick, Small",
+                            "P",
+                            "+2",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "1",
+                            "Footman’s Pick or Gaff Hook."
+                        ],
+                        [
+                            "Pick, Large",
+                            "P",
+                            "0",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-5' (0-1.5 m)",
+                            "2",
+                            ""
+                        ],
+                        [
+                            "Fencing",
+                            "P",
+                            "+4",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "1",
+                            "Rapier, Saber or Sword Cane."
+                        ],
+                        [
+                            "Spear",
+                            "P",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-10' (0-3 m)",
+                            "2",
+                            "Long Spear, Naginata or Spear."
+                        ],
+                        [
+                            "Spike",
+                            "P",
+                            "+4",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "1",
+                            "Iron Brush, Jutte or Spike."
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 10,
+                "data": "Melee, Slashing",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 11,
+                "data": {
+                    "headers": [
+                        "Melee, Slashing",
+                        "Dmg. Type",
+                        "Speed Mod.",
+                        "Strike Mod.",
+                        "Dmg. Mod.",
+                        "CAP",
+                        "Range",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Axe, Small",
+                            "S",
+                            "+2",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "1",
+                            "Hatchet or Tomahawk."
+                        ],
+                        [
+                            "Axe, Large",
+                            "S",
+                            "0",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-5' (0-1.5 m)",
+                            "2",
+                            "Great Axe or Hooked Axe."
+                        ],
+                        [
+                            "Blade, Short",
+                            "S",
+                            "+4",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "1",
+                            "Fighting Fan, Gladius, Kukri, Sickle, Short Sword, Stiletto or Wakizashi."
+                        ],
+                        [
+                            "Blade, Long",
+                            "S",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-5' (0-1.5 m)",
+                            "1",
+                            "Cutlass, Khopesh, Long Sword, Nine-Ring Sword or Scimitar."
+                        ],
+                        [
+                            "Blade, Huge",
+                            "S",
+                            "0",
+                            "+4",
+                            "+18",
+                            "6",
+                            "0-10' (0-3 m)",
+                            "2",
+                            "Bastard Sword, Claymore, Great Sword, Nodache or Scythe."
+                        ],
+                        [
+                            "Glaive",
+                            "S",
+                            "0",
+                            "+4",
+                            "+18",
+                            "6",
+                            "5-15' (1.5-4.5 m)",
+                            "2",
+                            "Bardiche, Fauchard, Guisarme, Halberd, Partisan or Voulge."
+                        ],
+                        [
+                            "Whip",
+                            "S",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "5-15' (1.5-4.5 m)",
+                            "1",
+                            "Bull Whip, Nine-Section Whip, Rope Dart or Scourge."
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 12,
+                "data": "Traditional Armor",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 13,
+                "data": {
+                    "headers": [
+                        "Traditional Armor",
+                        "Soak (C)",
+                        "Soak (S)",
+                        "Soak (P)",
+                        "Soak (E)",
+                        "CAP Mod.",
+                        "MAP Mod.",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Concealed, Armor",
+                            "9",
+                            "9",
+                            "9",
+                            "5",
+                            "0",
+                            "0",
+                            "10",
+                            "Hide, Leather or Wood Armor"
+                        ],
+                        [
+                            "Light, Armor",
+                            "9",
+                            "11",
+                            "11",
+                            "5",
+                            "0",
+                            "0",
+                            "20",
+                            "Brigandine Mail or Studded Leather"
+                        ],
+                        [
+                            "Medium, Armor",
+                            "11",
+                            "13",
+                            "13",
+                            "7",
+                            "0",
+                            "0",
+                            "15",
+                            "Chainmail or Scale Mail"
+                        ],
+                        [
+                            "Heavy, Armor",
+                            "16",
+                            "16",
+                            "14",
+                            "10",
+                            "0",
+                            "-1",
+                            "20",
+                            "Banded Mail or Breast Plate"
+                        ],
+                        [
+                            "Cumbersome",
+                            "18",
+                            "20",
+                            "20",
+                            "14",
+                            "-1",
+                            "-2",
+                            "50",
+                            "Full Plate"
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 14,
+                "data": "Traditional Shields",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 15,
+                "data": {
+                    "headers": [
+                        "Traditional Shields",
+                        "Soak (C)",
+                        "Soak (S)",
+                        "Soak (P)",
+                        "Soak (E)",
+                        "CAP Mod.",
+                        "MAP Mod.",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Shield, Forearm Strap",
+                            "2",
+                            "2",
+                            "2",
+                            "2",
+                            "0",
+                            "0",
+                            "3",
+                            "Kote, Forearm & Bracers"
+                        ],
+                        [
+                            "Shield, Medium",
+                            "4",
+                            "4",
+                            "4",
+                            "4",
+                            "0",
+                            "0",
+                            "1",
+                            "Buckler, Round Shield & Heater"
+                        ],
+                        [
+                            "Shield, Large",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "0",
+                            "-1",
+                            "2",
+                            "Tower Shield, Scutum & War Door"
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "heading",
+                "order": 16,
+                "data": "Modern & Future Tech Weapons & Armor"
+            },
+            {
+                "type": "subheading",
+                "order": 17,
+                "data": "Firearms, Ballistic",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 18,
+                "data": {
+                    "headers": [
+                        "Firearms, Ballistic",
+                        "Dmg. Type",
+                        "Speed Mod.",
+                        "Strike Mod.",
+                        "Dmg. Mod.",
+                        "CAP",
+                        "Range",
+                        "Slots",
+                        "Equip & Reload AP",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Ammo",
+                            "P/C/E",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "-"
+                        ],
+                        [
+                            "Pistol, Compact",
+                            "P",
+                            "+1",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-50' (0-15 m)",
+                            "1",
+                            "1 AP",
+                            "10 Round Magazine: Springfield XDS, Kel-Tec PF-9 & Nano"
+                        ],
+                        [
+                            "Pistol, Standard",
+                            "P",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-50' (0-15 m)",
+                            "2",
+                            "1 AP",
+                            "20 Round Magazine: Kimber, Taurus 9mm & Sphinx 10mm."
+                        ],
+                        [
+                            "Full Auto Rifle",
+                            "P",
+                            "+4",
+                            "+4",
+                            "+18",
+                            "6",
+                            "5-100' (1.5-20 m)",
+                            "1",
+                            "2 AP",
+                            "30 Round Magazine: AK Models, Beretta ARX 160 & M-16"
+                        ],
+                        [
+                            "Full Auto Combo",
+                            "P",
+                            "+2",
+                            "+4",
+                            "+18",
+                            "6",
+                            "5-100' (1.5-20 m)",
+                            "2",
+                            "2 AP",
+                            "30 Round Magazine & 1 Launcher Shot"
+                        ],
+                        [
+                            "Launcher",
+                            "E",
+                            "0",
+                            "+3",
+                            "+21",
+                            "7",
+                            "10-150' (3-45 m)",
+                            "3",
+                            "3 AP",
+                            "Connects to Full Auto Combo"
+                        ],
+                        [
+                            "Mini Gun",
+                            "P",
+                            "0",
+                            "+3",
+                            "+21",
+                            "7",
+                            "10-150' (3-45 m)",
+                            "3",
+                            "5 AP",
+                            "10 Attack Bursts"
+                        ],
+                        [
+                            "Rifle, Semi-Auto",
+                            "P",
+                            "+2",
+                            "+4",
+                            "+18",
+                            "6",
+                            "5-200' (1.5-60 m)",
+                            "2",
+                            "2 AP",
+                            "30 Round Magazine: AR-10, AR-15, Saiga, & M4 Carbine."
+                        ],
+                        [
+                            "Rifle, Standard",
+                            "P",
+                            "+2",
+                            "+5",
+                            "+18",
+                            "6",
+                            "5-250' (1.5-75 m)",
+                            "2",
+                            "2 AP",
+                            "20 Round Magazine: Varmint, Marlin 336XLR, & Henry Big Boy."
+                        ],
+                        [
+                            "Rifle, Sniper",
+                            "P",
+                            "0",
+                            "+3",
+                            "+21",
+                            "7",
+                            "5-300' (1.5-90 m)",
+                            "3",
+                            "2 AP",
+                            "5 Round Magazine: M110, Satevari MSWP & XM2010"
+                        ],
+                        [
+                            "Shotgun, Standard",
+                            "C",
+                            "+4",
+                            "+4",
+                            "+14",
+                            "5",
+                            "0-25' (0-7.5 m)",
+                            "3",
+                            "3 AP",
+                            "10 Shell Tube: Winchester 1887, Remington 870 & Browning Pump"
+                        ],
+                        [
+                            "Shotgun, Tactical",
+                            "C",
+                            "+4",
+                            "+4",
+                            "+14",
+                            "5",
+                            "0-25' (0-7.5 m)",
+                            "1",
+                            "2 AP",
+                            "20 Shell Magazine: Mossberg 500 Persuader, Benelli M4 & Saiga 12"
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 19,
+                "data": "Firearms, Energy",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 20,
+                "data": {
+                    "headers": [
+                        "Firearms, Energy",
+                        "Dmg. Type",
+                        "Speed Mod.",
+                        "Strike Mod.",
+                        "Dmg. Mod.",
+                        "CAP",
+                        "Range",
+                        "Slots",
+                        "Equip & Reload AP",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Accelerator, Rifle",
+                            "E",
+                            "+2",
+                            "+4",
+                            "+18",
+                            "6",
+                            "5-50' (1.5-10 m)",
+                            "2",
+                            "2 AP",
+                            "30 Round Magazine"
+                        ],
+                        [
+                            "Disruptor, Rifle",
+                            "E",
+                            "+2",
+                            "+4",
+                            "+18",
+                            "6",
+                            "5-50' (1.5-10 m)",
+                            "2",
+                            "2 AP",
+                            "100 Shot Cartridge"
+                        ],
+                        [
+                            "AperCoil, Small",
+                            "E",
+                            "+2",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-25' (0-7.5 m)",
+                            "2",
+                            "1 AP",
+                            "5 Shot Cartridge"
+                        ],
+                        [
+                            "AperCoil, Hand",
+                            "E",
+                            "+2",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-50' (0-15 m)",
+                            "2",
+                            "1 AP",
+                            "20 Shot Cartridge"
+                        ],
+                        [
+                            "AperCoil, Rifle",
+                            "E",
+                            "+2",
+                            "+4",
+                            "+18",
+                            "6",
+                            "5-100' (1.5-20 m)",
+                            "2",
+                            "2 AP",
+                            "50 Shot Cartridge"
+                        ],
+                        [
+                            "Plasma, Launcher",
+                            "E",
+                            "0",
+                            "+3",
+                            "+21",
+                            "7",
+                            "25-75 (7.5-22.5)",
+                            "3",
+                            "3 AP",
+                            "5 Shot Cartridge"
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 21,
+                "data": "Melee, Energy",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 22,
+                "data": {
+                    "headers": [
+                        "Melee, Energy",
+                        "Dmg. Type",
+                        "Speed Mod.",
+                        "Strike Mod.",
+                        "Dmg. Mod.",
+                        "CAP",
+                        "Range",
+                        "Slots",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Darkblade",
+                            "E",
+                            "+2",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "2",
+                            "-",
+                            "-"
+                        ],
+                        [
+                            "Monofil Lash",
+                            "E",
+                            "+1",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-10' (0-3 m)",
+                            "4",
+                            "-",
+                            "-"
+                        ],
+                        [
+                            "Tri-Pulse, Claws",
+                            "E",
+                            "+2",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "2",
+                            "-",
+                            "-"
+                        ],
+                        [
+                            "Tri-Pulse, Kukri",
+                            "E",
+                            "+2",
+                            "+6",
+                            "+12",
+                            "4",
+                            "0-5' (0-1.5 m)",
+                            "2",
+                            "-",
+                            "-"
+                        ],
+                        [
+                            "Tri-Pulse, Pike",
+                            "E",
+                            "+1",
+                            "+5",
+                            "+15",
+                            "5",
+                            "0-10' (0-3 m)",
+                            "4",
+                            "-",
+                            "-"
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 23,
+                "data": "Modern Armor",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 24,
+                "data": {
+                    "headers": [
+                        "Modern Armor",
+                        "Soak (C)",
+                        "Soak (S)",
+                        "Soak (P)",
+                        "Soak (E)",
+                        "CAP Mod.",
+                        "MAP Mod.",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Concealed, Armor",
+                            "5",
+                            "11",
+                            "11",
+                            "5",
+                            "0",
+                            "0",
+                            "10",
+                            "Concealed Kevlar"
+                        ],
+                        [
+                            "Light, Armor",
+                            "7",
+                            "13",
+                            "13",
+                            "7",
+                            "0",
+                            "0",
+                            "20",
+                            "Concealed Kevlar with Vital Plates"
+                        ],
+                        [
+                            "Medium, Armor",
+                            "11",
+                            "15",
+                            "15",
+                            "9",
+                            "0",
+                            "0",
+                            "15",
+                            "Tactical Vest"
+                        ],
+                        [
+                            "Heavy, Armor",
+                            "16",
+                            "18",
+                            "18",
+                            "12",
+                            "0",
+                            "-1",
+                            "20",
+                            "Tactical Vest with Vital Plates"
+                        ],
+                        [
+                            "Cumbersome",
+                            "22",
+                            "20",
+                            "20",
+                            "16",
+                            "-1",
+                            "-2",
+                            "50",
+                            "Riot Gear"
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 25,
+                "data": "Modern Shields",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 26,
+                "data": {
+                    "headers": [
+                        "Modern Shields",
+                        "Soak (C)",
+                        "Soak (S)",
+                        "Soak (P)",
+                        "Soak (E)",
+                        "CAP Mod.",
+                        "MAP Mod.",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Shield, Forearm Strap",
+                            "3",
+                            "3",
+                            "3",
+                            "3",
+                            "0",
+                            "0",
+                            "3",
+                            "Kote, Arm Shield & Bracers"
+                        ],
+                        [
+                            "Shield, Medium",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "0",
+                            "0",
+                            "1",
+                            "Ballistic Shield, Round Shield & 4 Point"
+                        ],
+                        [
+                            "Shield, Large",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "0",
+                            "-1",
+                            "2",
+                            "Ballistic Wall Shield & Riot Shield"
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 27,
+                "data": "Future Tech Armor",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 28,
+                "data": {
+                    "headers": [
+                        "Future Tech Armor",
+                        "Soak (C)",
+                        "Soak (S)",
+                        "Soak (P)",
+                        "Soak (E)",
+                        "CAP Mod.",
+                        "MAP Mod.",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Concealed, Armor",
+                            "9",
+                            "9",
+                            "9",
+                            "9",
+                            "0",
+                            "0",
+                            "10",
+                            "Skin Mesh Body Suit"
+                        ],
+                        [
+                            "Light, Armor",
+                            "9",
+                            "13",
+                            "13",
+                            "9",
+                            "0",
+                            "0",
+                            "20",
+                            "Kote Mesh Fiber"
+                        ],
+                        [
+                            "Medium, Armor",
+                            "13",
+                            "15",
+                            "15",
+                            "11",
+                            "0",
+                            "0",
+                            "15",
+                            "Spacer Vest"
+                        ],
+                        [
+                            "Heavy, Armor",
+                            "18",
+                            "18",
+                            "18",
+                            "14",
+                            "0",
+                            "-1",
+                            "20",
+                            "Plexiclear Combat Armor"
+                        ],
+                        [
+                            "Cumbersome",
+                            "24",
+                            "20",
+                            "20",
+                            "18",
+                            "-1",
+                            "-2",
+                            "50",
+                            "Tactical Assault Armor"
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+            {
+                "type": "subheading",
+                "order": 29,
+                "data": "Future Tech Shields",
+                "style_class": "text-xl italic mt-8 text-blue-400"
+            },
+            {
+                "type": "table",
+                "order": 30,
+                "data": {
+                    "headers": [
+                        "Future Tech Shields",
+                        "Soak (C)",
+                        "Soak (S)",
+                        "Soak (P)",
+                        "Soak (E)",
+                        "CAP Mod.",
+                        "MAP Mod.",
+                        "AP to Equip",
+                        "Examples"
+                    ],
+                    "rows": [
+                        [
+                            "Shield, Forearm Strap",
+                            "6",
+                            "6",
+                            "6",
+                            "6",
+                            "0",
+                            "0",
+                            "3",
+                            "Arm Energy Deflector"
+                        ],
+                        [
+                            "Shield, Medium",
+                            "9",
+                            "9",
+                            "9",
+                            "9",
+                            "0",
+                            "0",
+                            "1",
+                            "Single Side Expanding Energy Deflector"
+                        ],
+                        [
+                            "Shield, Large",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "-1",
+                            "2",
+                            "360 Expanding Energy Deflector"
+                        ]
+                    ]
+                },
+                "style_class": "table-auto border-collapse border border-gray-300"
+            },
+        ]
+    },
     {
         "title": "The Virtues, Failings, Vices & Balance",
         "slug": "virtues-vices",
@@ -13073,8 +14737,8 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 2,
                 "data": """
-                        Virtues are the best part of human nature. Each person has a virtue that is inherent to their core. Those who epitomize their inner strength develops the ability to bring out greater potential in others while a person who fails to maintain balance loses contact with their inner self devolves into degrees of insanity. Losing contact with oneself occurs through failings or overindulgence in vices. Failings are actions that detract from one’s virtues and vices are enjoyable acts, but constant indulgence causes one to grow further detached from the more noble aspects of their nature.
-                    """.replace("\n", " ").strip()
+                                Virtues are the best part of human nature. Each person has a virtue that is inherent to their core. Those who epitomize their inner strength develops the ability to bring out greater potential in others while a person who fails to maintain balance loses contact with their inner self devolves into degrees of insanity. Losing contact with oneself occurs through failings or overindulgence in vices. Failings are actions that detract from one’s virtues and vices are enjoyable acts, but constant indulgence causes one to grow further detached from the more noble aspects of their nature.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "container",
@@ -13196,8 +14860,8 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 20,
                 "data": """
-                        To advance a Tier in a virtue the character must constantly act in accordance with a higher standard as role-playing opportunities present themselves. If a character maintains these standards consistently, then they are advanced a single step in the appropriate Virtue at the Game Masters discretion.
-                    """.replace("\n", " ").strip()
+                                To advance a Tier in a virtue the character must constantly act in accordance with a higher standard as role-playing opportunities present themselves. If a character maintains these standards consistently, then they are advanced a single step in the appropriate Virtue at the Game Masters discretion.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "heading",
@@ -13209,8 +14873,8 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 22,
                 "data": """
-                        If a failing or vice has occurred, then it takes significantly more effort to advance ones Balance. This is representative of the internal struggles of the character over abdicating their conscious. To avoid players mathematically working the system it merely takes one significant failing or a gross gorging indulgence to automatically gain a Step or even a Tier of a Failing or Vice. This same rule can be inversely applied to Virtues if the actions are grievous enough. The benefit of being virtuous are hard to obtain and even more difficult to maintain and this should always be considered.
-                    """.replace("\n", " ").strip()
+                                If a failing or vice has occurred, then it takes significantly more effort to advance ones Balance. This is representative of the internal struggles of the character over abdicating their conscious. To avoid players mathematically working the system it merely takes one significant failing or a gross gorging indulgence to automatically gain a Step or even a Tier of a Failing or Vice. This same rule can be inversely applied to Virtues if the actions are grievous enough. The benefit of being virtuous are hard to obtain and even more difficult to maintain and this should always be considered.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "heading",
@@ -13222,8 +14886,8 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 24,
                 "data": """
-                        Even as a virtue-less person is indifferent to their own shortcomings, those that seek to cultivate and grow in their virtue it becomes easier to fall short of the expectations that one sets for themself. but the more one engages in their Vice the harder it becomes to resist which causes one to lose focus on their better aspects.
-                    """.replace("\n", " ").strip()
+                                Even as a virtue-less person is indifferent to their own shortcomings, those that seek to cultivate and grow in their virtue it becomes easier to fall short of the expectations that one sets for themself. but the more one engages in their Vice the harder it becomes to resist which causes one to lose focus on their better aspects.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "list",
@@ -13252,8 +14916,8 @@ def seed_rules():
                 "type": "paragraph",
                 "order": 1,
                 "data": """
-                        The benefit of possessing high virtue in this game is primarily manifested through the ability to perform Virtue Checks during critical moments of the narrative. These moments are typically life-or-death situations where the objectives transcend personal ambitions. The opportunity to make a Virtue Check is at the discretion of the game master or storyteller, who determines the appropriateness based on the circumstances presented in the gameplay.
-                    """.replace("\n", " ").strip()
+                                The benefit of possessing high virtue in this game is primarily manifested through the ability to perform Virtue Checks during critical moments of the narrative. These moments are typically life-or-death situations where the objectives transcend personal ambitions. The opportunity to make a Virtue Check is at the discretion of the game master or storyteller, who determines the appropriateness based on the circumstances presented in the gameplay.
+                            """.replace("\n", " ").strip()
             },
             {
                 "type": "container",
@@ -13373,19 +15037,577 @@ def seed_rules():
                 "style_class": "list-none pl-10 space-y-2"
             }
         ]
+    },
+    {
+        "title": "Species Creation",
+        "slug": "species-creation",
+        "chapter": "Customization Options",
+        "content": [
+            {
+                "type": "heading",
+                "order": 1,
+                "data": "Creation Guidelines"
+            },
+            {
+                "type": "subheading",
+                "order": 2,
+                "data": "Select Species Name",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "subheading",
+                "order": 3,
+                "data": "Describe Species",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "subheading",
+                "order": 4,
+                "data": "Select Weight Multiplier: 1 to 4",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 5,
+                "data": "A species Weight Multiplier (WM) is based on how dense a creature's skeletal structure and muscle mass is."
+            },
+            {
+                "type": "paragraph",
+                "order": 6,
+                "data": "This base number is their Fit Weight Multiplier (FWM)."
+            },
+            {
+                "type": "list",
+                "order": 7,
+                "data": [
+                    "FWM - .25 = Slim WM",
+                    "FWM - .50 = Emaciated WM",
+                    "FWM + .25 = Heavy WM",
+                    "FWM + .50 = Muscular WM",
+                    "FWM + .75 = Burly WM",
+                    "FWM + 1.00 = Obese WM"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "paragraph",
+                "order": 8,
+                "data": "Height in 1\" (2.54cm) * Weight Multiplier = Weight"
+            },
+            {
+                "type": "subheading",
+                "order": 9,
+                "data": "Creation Maturation Point Exchange Rate",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "subheading",
+                "order": 10,
+                "data": "Life Span:",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "list",
+                "order": 11,
+                "data": [
+                    "50 Years = -10",
+                    "75 Years = 0",
+                    "250 Years = 5",
+                    "500 Years = 10"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "subheading",
+                "order": 12,
+                "data": "Attributes Bonus:",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "list",
+                "order": 13,
+                "data": [
+                    "Two +1 Attribute Bonus are Free",
+                    "Each Additional +1 Attribute Bonus = 5",
+                    "(No more than +4 can be placed in a single Attribute)"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "subheading",
+                "order": 14,
+                "data": "Skill Bonus:",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "list",
+                "order": 15,
+                "data": [
+                    "Four +1 to Non-Combat Skills are Free",
+                    "Two +1 to Non-Combat Skills = 5",
+                    "(No more than +2 can be placed in a single skill.)"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "subheading",
+                "order": 16,
+                "data": "Dark Vision:",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "list",
+                "order": 17,
+                "data": [
+                    "No Dark Vision = -15",
+                    "No Low Light Vision = -15",
+                    "Darkvision 50' = 0",
+                    "Darkvision 75' = 5",
+                    "Darkvision 100' = 10",
+                    "Darkvision 125' = 15"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "subheading",
+                "order": 18,
+                "data": "Special Powers:",
+                "style_class": "text-xl italic mt-2 text-blue-400"
+            },
+            {
+                "type": "list",
+                "order": 19,
+                "data": [
+                    "Charmed Feeding = 5",
+                    "Elemental Resistance = 5",
+                    "Keen Perception = 10",
+                    "Kin",
+                    "Airkin = 10",
+                    "Earthkin = 10",
+                    "Firekin = 10",
+                    "Naturekin = 10",
+                    "Waterkin = 10",
+                    "Natural Retractable Claws = 5",
+                    "Stone Talking = 10",
+                    "Lesser Stone Talking = 5"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+        ]
+    },
+    {
+        "title": "Dylithar",
+        "slug": "dylithar",
+        "chapter": "Races",
+        "content": [
+            {
+                "type": "paragraph",
+                "order": 2,
+                "data": "Core, Faeyr | Cost: 40 Maturation | SHP: 4"
+            },
+            {
+                "type": "subheading",
+                "order": 3,
+                "data": "Attributes Rolls Bonus",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "list",
+                "order": 4,
+                "data": [
+                    "+2 Perception",
+                    "+2 Reflexes",
+                    "+1 Strength"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "subheading",
+                "order": 5,
+                "data": "Skills Rolls Bonus",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "list",
+                "order": 6,
+                "data": [
+                    "+2 Power",
+                    "-2 Cultures",
+                    "-2 Riding"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "list",
+                "order": 7,
+                "data": [
+                    "Males: +2 Persuasion",
+                    "Females: +2 Occult"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "list",
+                "order": 8,
+                "data": [
+                    "Low Light Vision: 75'",
+                    "Darkvision: 125’",
+                    "Keen Perception"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "paragraph",
+                "order": 9,
+                "data": "Typical Male Height: D10+59\" | Typical Female Height: D10+55\""
+            },
+            {
+                "type": "paragraph",
+                "order": 10,
+                "data": "System of Government: Federalist Meritocracy-based Anocracy | Native Language(s): Faeyr | Life Span: 500 Years | Age of Adulthood: 20"
+            },
+            {
+                "type": "subheading",
+                "order": 11,
+                "data": "Backstory",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 12,
+                "data": "The Dylithar are descended from an enigmatic otherworldly bloodline of Faeyr, whose turbulent past spans across several planes of existence. Long ago, they suffered under the cruel manipulation of demonic forces until an uprising led by four courageous siblings changed the destiny of the entire species. Their journey brought them to Darkholme, where they seized refuge but ignited wars among immortals and pseudo-immortals. After the intervention of the Weaver, the Dylithar secured their place, reshaping the Isles of Isk'laketh. Today, Dylithar move through realms as navigators, spies, scholars, and wielders of ancient power."
+            },
+            {
+                "type": "subheading",
+                "order": 13,
+                "data": "Description",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 14,
+                "data": "Dylithar possess dark skin ranging from deep ebony to soft violet. Their bodies are adorned with tattoos that react to their emotions and powers. Males are notably agile, excelling in sailing and acrobatics, while females show a slightly stronger frame with a deeper connection to arcane energies, often reflected in gemstone-decorated attire and intricate tattoos."
+            },
+            {
+                "type": "subheading",
+                "order": 15,
+                "data": "Complexion, Hair, and Eyes",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 16,
+                "data": "Skin tones range from night-sky ebony to twilight violet. Hair flows in colors from black and silver to fiery red. Their irises glow in mesmerizing shades of magenta, lavender, or sapphire blue against dark sclera, marking their profound heritage."
+            },
+            {
+                "type": "subheading",
+                "order": 17,
+                "data": "Accentuations",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 18,
+                "data": "Males favor agile, practical clothing; females often wear garments woven with gemstones and arcane embroidery. Each Dylithar wears their lineage like a second skin, blending strength, mysticism, and beauty into a graceful, enigmatic presence."
+            },
+            {
+                "type": "subheading",
+                "order": 19,
+                "data": "Culture",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 20,
+                "data": "Dylithar culture prizes ambition, individuality, and adaptability. Their fluid hierarchies reward influence and arcane prowess over pure birthright, although old bloodlines still weave newcomers into their folds. They are skilled scholars, spies, and masters of illusion, bound by webs of trust and shared secrets."
+            },
+            {
+                "type": "subheading",
+                "order": 21,
+                "data": "Quirky Fact",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 22,
+                "data": "Dylithar cherish facial hair as a rare trait among Faeyr, grooming it with pride. Their skin shifts with the day, lightening under the sun and darkening at night, allowing them to blend effortlessly with their surroundings."
+            }
+        ]
+    },
+    {
+        "title": "Miaki",
+        "slug": "miaki",
+        "chapter": "Races",
+        "content": [
+            {
+                "type": "heading",
+                "order": 1,
+                "data": "Miaki"
+            },
+            {
+                "type": "paragraph",
+                "order": 2,
+                "data": "Core, Faeyr | Cost: 40 Maturation | SHP: 4"
+            },
+            {
+                "type": "subheading",
+                "order": 25,
+                "data": "Attributes Rolls Bonus",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "list",
+                "order": 26,
+                "data": [
+                    "+2 Perception",
+                    "Males: +2 Reflexes & +4 Strength",
+                    "Females: +4 Reflexes & +2 Strength"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "subheading",
+                "order": 27,
+                "data": "Skills Rolls Bonus",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "list",
+                "order": 28,
+                "data": [
+                    "+2 Performance",
+                    "+2 Sleight of Hand",
+                    "+2 Stealth",
+                    "-2 Artisan",
+                    "-2 Willpower"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "list",
+                "order": 29,
+                "data": [
+                    "Low Light Vision: 100'",
+                    "Darkvision: 100’",
+                    "Enslaved",
+                    "Keen Perception"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "paragraph",
+                "order": 30,
+                "data": "Typical Male Height: D10+57\" | Typical Female Height: D10+53\""
+            },
+            {
+                "type": "paragraph",
+                "order": 31,
+                "data": "System of Government: Feudalistic Divine Monarchy Under the Empress | Native Language(s): Xi | Life Span: 500 Years | Age of Adulthood: 20"
+            },
+            {
+                "type": "subheading",
+                "order": 32,
+                "data": "Backstory",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 33,
+                "data": "The Miaki were once the wildest and most nature-attuned Faeyr before being subjugated by the Xi through brutal cultural genocide, eugenics, and magical binding rituals. Bound Miaki serve nobility as fiercely loyal protectors, escorts, and spies. Unbound Miaki are a rare and coveted resource. The Miaki see their servitude as a sacred honor, woven deeply into their sense of duty and identity."
+            },
+            {
+                "type": "subheading",
+                "order": 34,
+                "data": "Description",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 35,
+                "data": "Miaki exhibit a harmonious balance of strength and agility. Males are nimble and alert, while females are even more dexterous, though slightly less physically strong. Their movements are deliberate and graceful, a reflection of their bond with nature and their conditioned roles within noble houses."
+            },
+            {
+                "type": "subheading",
+                "order": 36,
+                "data": "Complexion, Hair, and Eyes",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 37,
+                "data": "Their skin tones mirror the earth and changing seasons, ranging from fertile soil brown to autumnal golds and reds. Hair varies from deep earthen hues to fiery autumn tones, while their almond-shaped eyes shimmer in shades of green, blue, and woodland hazel."
+            },
+            {
+                "type": "subheading",
+                "order": 38,
+                "data": "Accentuations",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 39,
+                "data": "Wild Miaki attire blends naturally into their environment for camouflage, while bound Miaki wear garments dictated by the noble houses they serve, often reflecting their master’s wealth and status but always retaining elegance and grace."
+            },
+            {
+                "type": "subheading",
+                "order": 40,
+                "data": "Culture",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 41,
+                "data": "Miaki society is deeply tied to service and loyalty. A Miaki's bond to their noble house is sacred, and they are trained from birth to protect, serve, and uphold the house's honor. Unbound Miaki are seen as a vital resource and must be carefully protected and ceremonially bonded, or risk cultural and personal catastrophe."
+            },
+            {
+                "type": "subheading",
+                "order": 42,
+                "data": "Quirky Fact",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 43,
+                "data": "Miaki cannot be properly bound without the destruction of their Birth Scroll. Loss of the scroll without binding results in death. If left unbound beyond their 18th year, Miaki are doomed to descend into agonizing madness, ultimately leading to suicide unless the binding ritual is completed."
+            }
+        ]
+    },
+    {
+        "title": "Tiermalain",
+        "slug": "tiermalain",
+        "chapter": "Races",
+        "content": [
+            {
+                "type": "paragraph",
+                "order": 45,
+                "data": "Core, Faeyr | Cost: 40 Maturation | SHP: 4"
+            },
+            {
+                "type": "subheading",
+                "order": 46,
+                "data": "Attributes Rolls Bonus",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "list",
+                "order": 47,
+                "data": [
+                    "+3 Perception",
+                    "+2 Reflexes"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "subheading",
+                "order": 48,
+                "data": "Skills Rolls Bonus",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "list",
+                "order": 49,
+                "data": [
+                    "+2 Athletics",
+                    "+2 Awareness",
+                    "+1 Occult",
+                    "+1 Stealth",
+                    "-2 Sailing"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "list",
+                "order": 50,
+                "data": [
+                    "Low Light Vision: 125'",
+                    "Darkvision: 75’",
+                    "Keen Perception"
+                ],
+                "style_class": "list-disc pl-6"
+            },
+            {
+                "type": "paragraph",
+                "order": 51,
+                "data": "Typical Male Height: D10+60\" | Typical Female Height: D10+56\""
+            },
+            {
+                "type": "paragraph",
+                "order": 52,
+                "data": "System of Government: Nepotistic Anocracy under Nobility Purview | Native Language(s): Faeyr | Life Span: 500 Years | Age of Adulthood: 20"
+            },
+            {
+                "type": "subheading",
+                "order": 53,
+                "data": "Backstory",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 54,
+                "data": "Tiermalain are the last noble Faeyr of Darkholme, deeply entwined with the wilderness and its magic. After the Sundering, which sealed much of Darkholme’s arcane potential and shortened their lives, the Tiermalain became guardians of the old ways. They built libraries, pursued philosophy, and engaged in worldly affairs to protect their heritage against invaders, while some youths sought knowledge, adventure, and artifacts beyond their ancestral lands."
+            },
+            {
+                "type": "subheading",
+                "order": 55,
+                "data": "Description",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 56,
+                "data": "Tiermalain display a versatile athleticism, with robust, well-tanned bodies shaped by their bond to nature. Agile and resilient, both males and females share a balanced physique that blends grace with capability, well-suited to traversing Darkholme's rugged terrains and magical forests."
+            },
+            {
+                "type": "subheading",
+                "order": 57,
+                "data": "Complexion, Hair, and Eyes",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 58,
+                "data": "Their skin ranges from sun-kissed bronze to cool vanilla hues. Hair flows in metallic shades of bronze, gold, or coppery red. Their eyes gleam in hazel, blue, or green tones, reflecting ancient wisdom and their affinity with the magic of Darkholme."
+            },
+            {
+                "type": "subheading",
+                "order": 59,
+                "data": "Accentuations",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 60,
+                "data": "Tiermalain attire harmonizes with nature, featuring earth-toned fabrics adorned with motifs of leaves and vines. Their tattoos tell stories of lineage and deeds, while jewelry of rare Darkholme gemstones ties them spiritually to the land’s deep magic."
+            },
+            {
+                "type": "subheading",
+                "order": 61,
+                "data": "Culture",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 62,
+                "data": "Tiermalain culture reveres the balance between civilization and nature. They are scholars, magisters, and adventurers who seek to defend Darkholme’s sanctity. Education and philosophical reflection are paramount, and journeys into the wider world are rites of passage before returning to serve and protect their ancestral home."
+            },
+            {
+                "type": "subheading",
+                "order": 63,
+                "data": "Quirky Fact",
+                "style_class": "text-xl italic mt-2 text-gray-400"
+            },
+            {
+                "type": "paragraph",
+                "order": 64,
+                "data": "Some Tiermalain can communicate with Darkholme’s ancient trees through tree-speech, sharing thoughts and gathering wisdom. In times of danger, these sentient trees may awaken ancient magic to assist their Tiermalain kin by binding invaders or bestowing ancient secrets hidden within their roots."
+            }
+        ]
     }
 ]
 
 
-
-
-
-
-    #images class for tailwind: ="float-right ml-4 mb-4 w-1/3"; // Tailwind styles
-
-    # Seed the database with sections and their content
+    # Now seed sections and contents
     for section_data in sections:
-        print(f"Adding section: {section_data['title']}")
         section = Section(
             title=section_data[
     "title"
@@ -13398,12 +15620,22 @@ def seed_rules():
 ]
         )
         db.session.add(section)
-        db.session.commit()  # Commit to generate the section ID
+        db.session.commit()
 
         for content_data in section_data[
     "content"
 ]:
-            print(f"Adding content: {content_data['type']} with order {content_data['order']}")
+            if isinstance(content_data[
+    "data"
+], str):
+                cleaned_data = clean_text(content_data[
+    "data"
+])
+            else:
+                cleaned_data = content_data[
+    "data"
+]
+
             content = Content(
                 section_id=section.id,
                 content_type=content_data[
@@ -13412,9 +15644,7 @@ def seed_rules():
                 content_order=content_data[
     "order"
 ],
-                content_data=clean_text(content_data[
-    "data"
-]),  # Clean before inserting
+                content_data=cleaned_data,
                 style_class=clean_text(content_data.get("style_class",
 ""))
             )
@@ -13424,9 +15654,8 @@ def seed_rules():
     print("Database seeded successfully!")
 
 if __name__ == "__main__":
-    app = create_app()  # Create the Flask app instance
+    app = create_app()
 
-    # Activate application context
     with app.app_context():
         print("Application context is active.")
         seed_rules()
