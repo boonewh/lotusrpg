@@ -72,6 +72,7 @@ def create_app():
     from lotusrpg.errors.handlers import errors
     from lotusrpg.rules.routes import rules
     from lotusrpg.admin.routes import admin
+    from lotusrpg.dice.routes import dice
 
     app.register_blueprint(users)
     app.register_blueprint(main)
@@ -79,6 +80,7 @@ def create_app():
     app.register_blueprint(errors)
     app.register_blueprint(rules)
     app.register_blueprint(admin, url_prefix='/admin')
+    app.register_blueprint(dice)
 
     # Add error handler for rate limit exceeded
     @app.errorhandler(429)
