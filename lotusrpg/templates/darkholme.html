@@ -1,51 +1,225 @@
 {% extends "base.html" %}
 
-{% block title %}DD10 Rules - Darkholme{% endblock %}
+{% block title %}Darkholme Rules{% endblock %}
 
 {% block content %}
-    <div div class="container-aside">
-        <aside class="side-nav">
-            <h2 class="nav-heading">Character Creation</h2>
-            <ul class="nav-links">
-                <li><a href="{{ url_for('rules.core_rules', slug='prelude') }}">Prelude</a></li>
-                <li><a href="{{ url_for('rules.core_rules', slug='approaches') }}">Approaches</a></li>
-            </ul>
-        </aside>
-        <article class="rules">
-            <h1 class="heading1">Darkholme</h1>
-            {% for content in section.contents|sort(attribute='content_order') %}
-                {% if content.content_type == 'heading' %}
-                    <h2 class="{{ content.style_class }}">{{ content.content_data }}</h2>
-                    <br>
-                {% elif content.content_type == 'paragraph' %}
-                    <p class="{{ content.style_class }}">{{ content.content_data }}</p>
-                    <br>
-                {% elif content.content_type == 'list' %}
-                    <ul class="{{ content.style_class }}">
-                        {% for item in content.content_data %}
-                            <li>{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                    <br>
-                {% elif content.content_type == 'table' %}
-                    <table class="{{ content.style_class }}">
-                        {% for row in content.content_data %}
-                            <tr>
-                                {% for cell in row %}
-                                    <td>{{ cell }}</td>
-                                {% endfor %}
-                            </tr>
-                        {% endfor %}
-                    </table>
-                    <br>
-                {% elif content.content_type == 'image' %}
-                    <img 
-                        src="{{ content.content_data.file_path }}" 
-                        alt="{{ content.content_data.alt_text }}" 
-                        class="{{ content.content_data.class_name }}"
-                    />
-                {% endif %}
-            {% endfor %}
-        </article>
+<div class="container-aside">
+    <!-- Mobile Chapter Menu Toggle Button -->
+    <div class="mobile-chapter-toggle">
+        <button onclick="toggleChapterMenu()" class="chapter-toggle-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+            <span>Chapters</span>
+        </button>
     </div>
+
+    <!-- Sidebar Menu -->
+    <aside class="side-nav" id="chapter-sidebar">
+        <div class="chapter-header">
+            <h2 class="nav-heading">Darkholme Chapters</h2>
+            <button class="close-chapters-btn" onclick="toggleChapterMenu()">×</button>
+        </div>
+        <div id="chapter-menu"></div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="rules">
+        <h1 id="section-title" class="heading1">Darkholme Rules</h1>
+        <div id="section-content"></div>
+    </article>
+</div>
+
+<script>
+    function toggleChapterMenu() {
+        const sidebar = document.getElementById('chapter-sidebar');
+        sidebar.classList.toggle('mobile-sidebar-active');
+        document.body.classList.toggle('sidebar-open');
+    }
+
+    async function loadChapters() {
+        try {
+            const response = await fetch('/api/chapters/darkholme');
+            const data = await response.json();
+            const chapterMenu = document.getElementById('chapter-menu');
+            chapterMenu.innerHTML = '';
+
+            data.chapters.forEach(chapter => {
+                const chapterDiv = document.createElement('div');
+                chapterDiv.classList.add('chapter');
+
+                const chapterTitle = document.createElement('h3');
+                chapterTitle.textContent = chapter.title;
+                chapterTitle.classList.add('chapter-title');
+                chapterDiv.appendChild(chapterTitle);
+
+                const sectionList = document.createElement('ul');
+                chapter.sections.forEach(section => {
+                    const sectionItem = document.createElement('li');
+                    const sectionLink = document.createElement('a');
+                    sectionLink.textContent = section.title;
+                    sectionLink.href = '#';
+                    sectionLink.onclick = (e) => {
+                        e.preventDefault();
+                        loadSection(section.slug);
+                        if (window.innerWidth < 768) {
+                            toggleChapterMenu();
+                        }
+                    };
+                    sectionLink.classList.add('section-link');
+                    sectionItem.appendChild(sectionLink);
+                    sectionList.appendChild(sectionItem);
+                });
+
+                chapterDiv.appendChild(sectionList);
+                chapterMenu.appendChild(chapterDiv);
+            });
+        } catch (error) {
+            console.error("Error loading chapters:", error);
+        }
+    }
+
+    function createElementByType(content) {
+        let element;
+
+        switch (content.type) {
+            case 'heading':
+                element = document.createElement('h2');
+                element.textContent = content.data;
+                break;
+            case 'subheading':
+                element = document.createElement('h3');
+                element.textContent = content.data;
+                break;
+            case 'paragraph':
+                element = document.createElement('p');
+                element.textContent = content.data;
+                break;
+            case 'list':
+                element = document.createElement('ul');
+                content.data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    element.appendChild(li);
+                });
+                break;
+            case 'image':
+                element = document.createElement('img');
+                if (typeof content.data === 'object') {
+                    element.src = content.data.file_path;
+                    element.alt = content.data.alt_text || "Image";
+                    if (content.data.class_name) {
+                        element.className = content.data.class_name;
+                    }
+                }
+                break;
+            case 'table':
+                element = document.createElement('table');
+                element.className = "border-collapse border border-gray-600 w-full text-left";
+
+                const thead = document.createElement('thead');
+                const headerRow = document.createElement('tr');
+                content.data.headers.forEach(headerText => {
+                    const th = document.createElement('th');
+                    th.textContent = headerText;
+                    th.className = "border border-gray-600 px-4 py-2";
+                    headerRow.appendChild(th);
+                });
+                thead.appendChild(headerRow);
+                element.appendChild(thead);
+
+                const tbody = document.createElement('tbody');
+                content.data.rows.forEach(row => {
+                    const tr = document.createElement('tr');
+                    row.forEach(cell => {
+                        const td = document.createElement('td');
+                        td.className = "border border-gray-600 px-4 py-2";
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    });
+                    tbody.appendChild(tr);
+                });
+
+                element.appendChild(tbody);
+                break;
+            default:
+                element = document.createElement('div');
+                element.textContent = content.data || "Unknown content type";
+        }
+
+        if (content.style_class) {
+            content.style_class.split(' ').forEach(cls => {
+                if (cls.trim()) element.classList.add(cls.trim());
+            });
+        }
+
+        return element;
+    }
+
+    async function loadSection(slug) {
+        try {
+            const response = await fetch(`/api/section/${slug}`);
+            const data = await response.json();
+
+            document.getElementById('section-title').textContent = data.title;
+            const sectionContent = document.getElementById('section-content');
+            sectionContent.innerHTML = '';
+
+            let containerStack = [];
+
+            data.contents.sort((a, b) => a.order - b.order).forEach(content => {
+                if (content.type === 'container') {
+                    if (content.data === 'open') {
+                        const newContainer = document.createElement('div');
+                        if (content.style_class) newContainer.className = content.style_class;
+                        containerStack.push(newContainer);
+                        return;
+                    } else if (content.data === 'close') {
+                        const closed = containerStack.pop();
+                        if (containerStack.length > 0) {
+                            containerStack[containerStack.length - 1].appendChild(closed);
+                        } else {
+                            sectionContent.appendChild(closed);
+                        }
+                        return;
+                    }
+                }
+
+                const el = createElementByType(content);
+                if (containerStack.length > 0) {
+                    containerStack[containerStack.length - 1].appendChild(el);
+                } else {
+                    sectionContent.appendChild(el);
+                }
+            });
+
+            while (containerStack.length > 0) {
+                sectionContent.appendChild(containerStack.pop());
+            }
+        } catch (error) {
+            console.error("Error loading section:", error);
+        }
+    }
+
+    function initializeSidebarState() {
+        const sidebar = document.getElementById('chapter-sidebar');
+        const isMobile = window.innerWidth <= 768;
+
+        sidebar.classList.remove('mobile-sidebar-active');
+        if (isMobile) {
+            document.body.classList.remove('sidebar-open');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        history.replaceState({}, '', '/darkholme');
+        await loadChapters();
+        await loadSection('darkholme-world');
+        initializeSidebarState();
+
+        window.addEventListener('resize', initializeSidebarState);
+    });
+</script>
 {% endblock %}

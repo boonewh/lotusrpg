@@ -46,7 +46,7 @@
     // Load chapters dynamically
     async function loadChapters() {
         try {
-            const response = await fetch('/api/chapters');
+            const response = await fetch('/api/chapters/core');
             const data = await response.json();
 
             const chapterMenu = document.getElementById('chapter-menu');

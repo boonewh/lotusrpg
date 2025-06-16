@@ -95,6 +95,7 @@ class Section(db.Model):
     slug = db.Column(db.String(255), unique=True, nullable=False)
     parent_id = db.Column(db.Integer, db.ForeignKey('section.id'), nullable=True)
     chapter = db.Column(db.String(255), nullable=False) 
+    rulebook = db.Column(db.String(50), nullable=False, default='core')  # 'core' or 'darkholme'
 
     children = db.relationship('Section', backref='parent', remote_side=[id])
     images = db.relationship('Image', back_populates='section', cascade='all, delete-orphan')

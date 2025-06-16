@@ -10,7 +10,7 @@
         <ul class="mt-6 space-y-4">
             {% for result in results %}
                 <li class="p-4 bg-gray-800 rounded-lg">
-                    <a href="{{ url_for('rules.core_rules', slug=result.slug) }}" class="text-blue-400 hover:text-blue-300">
+                    <a href="{{ url_for('rules.core_rules' if result.rulebook == 'core' else 'rules.darkholme_rules', slug=result.slug) }}" class="text-blue-400 hover:text-blue-300">
                         <h2 class="text-lg font-semibold">{{ result.section_title }}</h2>
                         <p class="text-sm text-gray-400">{{ result.content_data }}</p>
                     </a>

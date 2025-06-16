@@ -4,20 +4,92 @@
 
 {% block content %}
     <!-- Hero Section -->
-    <header class="hero-section flex items-center justify-center">
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h1 class="text-5xl md:text-7xl font-bold mb-8">Welcome to Darkholme<sup>&copy;</sup></h1>
-            <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto">Enter a world of high fantasy where demonic forces emerge from the Lost Core. Experience the DD10 gaming system - where every roll shapes your destiny.</p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="{{ url_for('users.subscribe') }}" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
-                    Subscribe
-                </a>
-                <a href="{{ url_for('rules.core_rules', slug='prelude') }}" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
-                    Core Rules
-                </a>
-            </div>
+    <header 
+    class="relative min-h-screen w-full overflow-hidden text-white"
+    x-data="{
+        images: [
+        '{{ url_for('static', filename='images/lotus_hero.jpg') }}',
+        '{{ url_for('static', filename='images/lost_galaxies_hero.jpg') }}',
+        '{{ url_for('static', filename='images/hero.jpg') }}'
+        ],
+        currentIndex: 0,
+        next() {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        },
+        init() {
+        setInterval(() => this.next(), 5000);
+        }
+    }"
+    x-init="init()"
+    >
+
+    <!-- Image Rotation Layer -->
+    <template x-for="(image, index) in images" :key="index">
+    <img
+        :src="image"
+        :alt="`Image ${index}`"
+        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+        :class="{
+        'opacity-100 z-10': index === currentIndex,
+        'opacity-0 z-0 hidden': index !== currentIndex
+        }"
+    />
+    </template>
+
+    <div
+    class="absolute inset-0 z-10 transition-opacity duration-300"
+    :style="currentIndex === 2 ? 'background-color: rgba(0,0,0,0.75)' : 'background-color: rgba(0,0,0,0.25)'"
+    ></div>
+
+
+    <!-- Text Content Layer -->
+    <div class="absolute inset-0 flex items-center justify-center z-20">
+    <div class="flex flex-col items-center text-center px-6">
+
+        <!-- Slide 0: No text -->
+        <div x-show="currentIndex === 0" class="h-0 mb-4"></div>
+
+        <!-- Slide 1: Darkholme -->
+        <div
+        x-show="currentIndex === 2"
+        x-transition.opacity
+        class="transition-opacity duration-1000ms"
+        >
+        <h1 class="text-5xl md:text-7xl font-bold mb-8">Welcome to Darkholme<sup>&copy;</sup></h1>
+        <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto">
+            Enter a world of high fantasy where demonic forces emerge from the Lost Core. Experience the DD10 gaming system - where every roll shapes your destiny.
+        </p>
         </div>
+
+        <!-- Slide 2: Lost Galaxies -->
+        <div
+        x-show="currentIndex === 1"
+        x-transition.opacity
+        class="transition-opacity duration-1000ms"
+        >
+        <h1 class="text-5xl md:text-7xl font-bold mb-8">Lost Galaxies<sup>&copy;</sup> Coming Soon!</h1>
+        <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto">
+            Navigate a brutal galaxy of genetic outcasts, synthetic minds, and corporate conquest. From shadow ports to sabotage ops, every roll is survival.
+        </p>
+        </div>
+
+        <!-- Shared button block -->
+        <div
+        :class="currentIndex === 0 ? 'mt-4' : 'mt-12'"
+        class="flex flex-col md:flex-row gap-6 justify-center transition-all duration-300"
+        >
+        <a href="{{ url_for('users.subscribe') }}" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
+            Subscribe
+        </a>
+        <a href="{{ url_for('rules.core_rules', slug='prelude') }}" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-16 rounded-lg transition duration-300">
+            Core Rules
+        </a>
+        </div>
+
+    </div>
+    </div>
     </header>
+
 
     <section class="py-20 bg-gray-900">
         <!-- No custom styles that hide content -->
@@ -99,7 +171,7 @@
                     <div class="relative z-20 h-full flex flex-col justify-end p-8">
                         <h2 class="text-3xl font-bold mb-4">Darkholme</h2>
                         <p class="text-lg mb-6 text-gray-200">Dive into a world plagued by demonic forces and rifts, with high-fantasy elements and anime-inspired combat styles.</p>
-                        <a href="{{ url_for('rules.core_rules', slug='prelude') }}" class="inline-flex items-center px-6 py-3 border-2 border-white hover:bg-white hover:text-gray-900 text-white font-semibold rounded-lg transition duration-300 w-fit">
+                        <a href="{{ url_for('rules.darkholme_rules', slug='darkholme-world') }}" class="inline-flex items-center px-6 py-3 border-2 border-white hover:bg-white hover:text-gray-900 text-white font-semibold rounded-lg transition duration-300 w-fit">
                             Explore Darkholme
                         </a>
                     </div>
@@ -111,87 +183,99 @@
     <!-- Membership Section -->
     <section class="py-20 bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">Choose Your Path</h2>
+            <h2 class="text-4xl font-bold text-center mb-16 text-white">Choose Your Path</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <!-- Free Access Tier -->
-                <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-gray-700">
-                    <h2 class="text-2xl font-bold text-white mb-4">Free Access</h2>
-                    <p class="text-gray-400 mb-6 text-xl">Free</p>
-                    <ul class="text-left text-gray-300 mb-6 space-y-2">
-                        <li>✓ Basic Game Mechanics</li>
-                        <li>✓ Character Creation Guide</li>
-                        <li>✓ Setting Introduction</li>
-                        <li>✓ Community Access (Read-Only)</li>
-                    </ul>
-                    <div class="mt-auto">
-                        <a href="{{ url_for('users.subscribe', tier='free') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
-                            Get Started
-                        </a>
-                    </div>
-                </div>
-                <!-- Bronze Tier -->
-                <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-gray-700">
-                    <h2 class="text-2xl font-bold text-white mb-4">Bronze</h2>
-                    <p class="text-gray-400 mb-6 text-xl">$3/month</p>
-                    <ul class="text-left text-gray-300 mb-6 space-y-2">
-                        <li>✓ Write access to community forums</li>
-                        <li>✓ Basic game updates</li>
-                        <li>✓ Monthly newsletter</li>
-                        <li>✓ Access to Adventure Quests</li>
-                    </ul>
-                    <div class="mt-auto">
-                        <a href="{{ url_for('users.subscribe', tier='bronze') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
-                            Subscriptions coming soon
-                        </a>
-                    </div>
-                </div>
-                <!-- Silver Tier -->
-                <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-gray-700">
-                    <h2 class="text-2xl font-bold text-white mb-4">Silver</h2>
-                    <p class="text-gray-400 mb-6 text-xl">$5/month</p>
-                    <ul class="text-left text-gray-300 mb-6 space-y-2">
-                        <li>✓ All Bronze features</li>
-                        <li>✓ Early access to new content</li>
-                        <li>✓ Exclusive game tips &amp; tricks</li>
-                        <li>✓ Behind-the-scenes updates</li>
-                    </ul>
-                    <div class="mt-auto">
-                        <a href="{{ url_for('users.subscribe', tier='silver') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
-                            Subscriptions coming soon
-                        </a>
-                    </div>
-                </div>
-                <!-- Gold Tier -->
-                <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-gray-700">
-                    <h2 class="text-2xl font-bold text-white mb-4">Gold</h2>
-                    <p class="text-gray-400 mb-6 text-xl">$10/month</p>
-                    <ul class="text-left text-gray-300 mb-6 space-y-2">
-                        <li>✓ All Silver features</li>
-                        <li>✓ Access to premium content and guides</li>
-                        <li>✓ Quarterly exclusive digital downloads</li>
-                        <li>✓ All contributions count toward future Kickstarter</li>
-                        <li>✓ Recognition on our supporter page</li>
-                    </ul>
-                    <div class="mt-auto">
-                        <a href="{{ url_for('users.subscribe', tier='gold') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
-                            Subscriptions coming soon
-                        </a>
-                    </div>
+
+            <!-- Bronze Tier -->
+            <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-amber-600">
+                <h2 class="text-2xl font-bold text-white mb-4">Bronze</h2>
+                <p class="text-amber-400 mb-6 text-xl">Actually Free</p>
+                <ul class="text-left text-gray-300 mb-6 space-y-2">
+                <li>✓ Core Game Mechanics</li>
+                <li>✓ Character Creation Guide</li>
+                <li>✓ Setting Introduction</li>
+                <li>✓ Community Read Access</li>
+                </ul>
+                <div class="mt-auto">
+                <a href="{{ url_for('users.subscribe', tier='bronze') }}" class="inline-block bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold px-4 py-1 rounded-full transition">
+                    Get Started
+                </a>
                 </div>
             </div>
-        </div>
-    </section>
-    
 
-    <!-- Call to Action -->
-    <section class="py-20 bg-gray-900">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-8">Ready to Begin Your Journey?</h2>
-            <p class="text-xl mb-12 max-w-2xl mx-auto">Join our growing community of adventurers and experience the next evolution in tabletop gaming.</p>
-            <a href="{{ url_for('users.subscribe') }}" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition duration-300">
-                Join Now
-            </a>
+            <!-- Silver Tier -->
+            <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-gray-400">
+                <h2 class="text-2xl font-bold text-white mb-4">Silver</h2>
+                <p class="text-gray-300 mb-6 text-xl">$3/Month</p>
+                <ul class="text-left text-gray-300 mb-6 space-y-2">
+                <li>✓ Bronze +</li>
+                <li>✓ Monthly Newsletter</li>
+                <li>✓ Adventure Modules Access</li>
+                <li>✓ Map Access</li>
+                <li>✓ Discord Access</li>
+                <li>✓ Arcane Trinkets Suggestions</li>
+                <li>✓ Rank Suggestions</li>
+                <li>✓ Scholar Suggestions</li>
+                <li>✓ Legacy Suggestions</li>
+                <li>✓ Community Write Access</li>
+                <li>✓ Full Settings Access</li>
+                <li>✓ Quarterly Rules Update Access</li>
+                </ul>
+                <div class="mt-auto">
+                <span class="inline-block bg-gray-700 text-white text-sm font-semibold px-4 py-1 rounded-full mt-2">
+                    Subscriptions coming soon
+                </span>
+                </div>
+            </div>
+
+            <!-- Gold Tier -->
+            <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-yellow-500">
+                <h2 class="text-2xl font-bold text-white mb-4">Gold</h2>
+                <p class="text-yellow-400 mb-6 text-xl">$5/Month</p>
+                <ul class="text-left text-gray-300 mb-6 space-y-2">
+                <li>✓ Silver +</li>
+                <li>✓ Discord Voice Channel Access</li>
+                <li>✓ Arcane Treasure Suggestions</li>
+                <li>✓ Banes Suggestions</li>
+                <li>✓ Boons Suggestions</li>
+                <li>✓ Commodities Suggestions</li>
+                <li>✓ Species Suggestions</li>
+                <li>✓ Pre-Release Rules Update & Input</li>
+                <li>✓ Exclusive Digital Content</li>
+                <li>✓ Gold Member Wall Designator</li>
+                </ul>
+                <div class="mt-auto">
+                <span class="inline-block bg-yellow-500 text-black text-sm font-semibold px-4 py-1 rounded-full mt-2">
+                    Subscriptions coming soon
+                </span>
+                </div>
+            </div>
+
+            <!-- Diamond Tier -->
+            <div class="bg-gray-800 flex flex-col h-full rounded-lg shadow-lg p-8 text-center border border-blue-400">
+                <h2 class="text-2xl font-bold text-white mb-4">Diamond</h2>
+                <p class="text-blue-300 mb-6 text-xl">$10/Month</p>
+                <ul class="text-left text-gray-300 mb-6 space-y-2">
+                <li>✓ Gold +</li>
+                <li>✓ Calling & Specialization Suggestion</li>
+                <li>✓ More Arcane Treasure Suggestions</li>
+                <li>✓ Item Suggestion Submission</li>
+                <li>✓ Species Abilities Suggestion</li>
+                <li>✓ Techniques & Arcana Suggestions</li>
+                <li>✓ Rules Suggestions</li>
+                <li>✓ Diamond Member Wall Designator</li>
+                <li>✓ 1 Year Anniversary Gift</li>
+                </ul>
+                <div class="mt-auto">
+                <span class="inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-full mt-2">
+                    Subscriptions coming soon
+                </span>
+                </div>
+            </div>
+
+            </div>
         </div>
-    </section>
+        </section>
+
 
 {% endblock %}

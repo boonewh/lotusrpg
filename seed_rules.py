@@ -12,8 +12,11 @@ def clean_text(text):
 def seed_rules():
     print("Seeding rules...")
 
-    db.session.query(Content).delete()
-    db.session.query(Section).delete()
+    db.session.query(Content).filter(Content.section_id.in_(
+        db.session.query(Section.id).filter_by(rulebook='core')
+    )).delete(synchronize_session=False)
+
+    db.session.query(Section).filter_by(rulebook='core').delete()
     db.session.commit()
 
     # Define sections and rules
