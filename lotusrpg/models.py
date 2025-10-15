@@ -87,19 +87,51 @@ class Comment(db.Model):
 
     def __repr__(self):
         return f"Comment('{self.content}', User ID: {self.user_id}, Post ID: {self.post_id})"
+    
 
+class Chapter(db.Model):
+    __tablename__ = "chapter"
 
-class Section(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=False)
     slug = db.Column(db.String(255), unique=True, nullable=False)
-    parent_id = db.Column(db.Integer, db.ForeignKey('section.id'), nullable=True)
-    chapter = db.Column(db.String(255), nullable=False) 
-    rulebook = db.Column(db.String(50), nullable=False, default='core')  # 'core' or 'darkholme'
+    parent_id = db.Column(db.Integer, db.ForeignKey("chapter.id"), nullable=True)  # self-referential
+    rulebook = db.Column(db.String(50), nullable=False, default="core")
+    chapter_order = db.Column(db.Integer, nullable=True)
 
-    children = db.relationship('Section', backref='parent', remote_side=[id])
+    # Self-referential relationship (chapters inside chapters)
+    parent = db.relationship(
+        "Chapter",
+        remote_side=[id],
+        backref=db.backref("children", cascade="all, delete-orphan"),
+    )
+
+    # One-to-many with Section
+    sections = db.relationship("Section", backref="chapter_obj", lazy=True)
+
+    def __repr__(self):
+        return f"Chapter('{self.title}', Rulebook: '{self.rulebook}', Order: {self.chapter_order})"
+
+
+class Section(db.Model):
+    __tablename__ = "section"
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255), nullable=False)
+    slug = db.Column(db.String(255), unique=True, nullable=False)
+    parent_id = db.Column(db.Integer, db.ForeignKey("section.id"), nullable=True)
+    chapter_id = db.Column(db.Integer, db.ForeignKey("chapter.id"), nullable=False)
+    rulebook = db.Column(db.String(50), nullable=False, default="core")
+    section_order = db.Column(db.Integer, nullable=True)
     images = db.relationship('Image', back_populates='section', cascade='all, delete-orphan')
 
+
+    # Self-referential relationship (sections inside sections)
+    parent = db.relationship(
+        "Section",
+        remote_side=[id],
+        backref=db.backref("children", cascade="all, delete-orphan"),
+    )
 
     def __repr__(self):
         return f"Section('{self.title}', Slug: '{self.slug}', Parent ID: {self.parent_id})"
@@ -108,7 +140,7 @@ class Section(db.Model):
 class Content(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     section_id = db.Column(db.Integer, db.ForeignKey('section.id'), nullable=False)
-    content_type = db.Column(db.Enum("heading", "subheading", "paragraph", "table", "list", "image", "container", "link", name="content_types"), nullable=False)
+    content_type = db.Column(db.Enum("heading", "subheading", "paragraph", "table", "list", "image", "container", "link", "tiptap", name="content_types"), nullable=False)
     content_order = db.Column(db.Integer, nullable=False)
     content_data = db.Column(db.JSON, nullable=False)
     style_class = db.Column(db.String(255), nullable=True)

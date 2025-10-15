@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}Darkholme Rules{% endblock %}
+{% block second_style %}<link rel="stylesheet" href="{{ url_for('static', filename='css/tiptap.css') }}">{% endblock %}
 
 {% block content %}
 <div class="container-aside">
@@ -32,194 +33,348 @@
     </article>
 </div>
 
+<style>
+/* Spell Block Styles */
+.spell-block-container {
+  background: #1a1a2e;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  position: relative;
+}
+
+.spell-field {
+  display: flex;
+  margin-bottom: 8px;
+  align-items: baseline;
+}
+
+.spell-label {
+  color: #22d3ee; /* cyan-400 */
+  font-weight: 600;
+  min-width: 80px;
+  margin-right: 8px;
+}
+
+.spell-value {
+  color: #e5e5e5;
+  flex: 1;
+}
+</style>
+
 <script>
-    function toggleChapterMenu() {
-        const sidebar = document.getElementById('chapter-sidebar');
-        sidebar.classList.toggle('mobile-sidebar-active');
-        document.body.classList.toggle('sidebar-open');
+  async function loadChapters() {
+    try {
+      const response = await fetch('/api/chapters/darkholme');
+      const data = await response.json();
+      const chapterMenu = document.getElementById('chapter-menu');
+      chapterMenu.innerHTML = '';
+
+      data.chapters.forEach(chapter => {
+        const chapterDiv = document.createElement('div');
+        chapterDiv.classList.add('chapter');
+
+        const chapterTitle = document.createElement('h3');
+        chapterTitle.textContent = chapter.title;
+        chapterTitle.classList.add('chapter-title');
+        chapterDiv.appendChild(chapterTitle);
+
+        const sectionList = document.createElement('ul');
+        chapter.sections.forEach(section => {
+          const sectionItem = document.createElement('li');
+          const sectionLink = document.createElement('a');
+          sectionLink.textContent = section.title;
+          sectionLink.href = '#';
+          sectionLink.onclick = (e) => {
+            e.preventDefault();
+            loadSection(section.slug);
+            if (window.innerWidth < 768) toggleChapterMenu();
+          };
+          sectionLink.classList.add('section-link');
+          sectionItem.appendChild(sectionLink);
+          sectionList.appendChild(sectionItem);
+        });
+
+        chapterDiv.appendChild(sectionList);
+        chapterMenu.appendChild(chapterDiv);
+      });
+    } catch (error) {
+      console.error("Error loading chapters:", error);
+    }
+  }
+
+  async function loadSection(slug) {
+    try {
+      const response = await fetch(`/api/section/${slug}`);
+      const data = await response.json();
+
+      document.getElementById('section-title').textContent = data.title;
+      const sectionContent = document.getElementById('section-content');
+      sectionContent.innerHTML = '';
+
+      const tiptapBlock = data.contents.find(c => c.type === 'tiptap');
+      if (!tiptapBlock) {
+        sectionContent.innerHTML = '<p class="text-red-500">No TipTap content found.</p>';
+        return;
+      }
+
+      const rendered = renderTiptapDoc(tiptapBlock.data);
+      if (tiptapBlock.style_class) {
+        rendered.className += ' ' + tiptapBlock.style_class;
+      }
+      sectionContent.appendChild(rendered);
+    } catch (error) {
+      console.error("Error loading section:", error);
+    }
+  }
+
+  function renderTiptapDoc(doc) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'tiptap-content prose dark:prose-invert';
+
+    if (!doc || doc.type !== 'doc' || !Array.isArray(doc.content)) {
+      console.warn('Invalid TipTap document structure:', doc);
+      return wrapper;
     }
 
-    async function loadChapters() {
-        try {
-            const response = await fetch('/api/chapters/darkholme');
-            const data = await response.json();
-            const chapterMenu = document.getElementById('chapter-menu');
-            chapterMenu.innerHTML = '';
+    doc.content.forEach(node => {
+      const el = renderTiptapNode(node);
+      if (el) wrapper.appendChild(el);
+    });
 
-            data.chapters.forEach(chapter => {
-                const chapterDiv = document.createElement('div');
-                chapterDiv.classList.add('chapter');
+    return wrapper;
+  }
 
-                const chapterTitle = document.createElement('h3');
-                chapterTitle.textContent = chapter.title;
-                chapterTitle.classList.add('chapter-title');
-                chapterDiv.appendChild(chapterTitle);
-
-                const sectionList = document.createElement('ul');
-                chapter.sections.forEach(section => {
-                    const sectionItem = document.createElement('li');
-                    const sectionLink = document.createElement('a');
-                    sectionLink.textContent = section.title;
-                    sectionLink.href = '#';
-                    sectionLink.onclick = (e) => {
-                        e.preventDefault();
-                        loadSection(section.slug);
-                        if (window.innerWidth < 768) {
-                            toggleChapterMenu();
-                        }
-                    };
-                    sectionLink.classList.add('section-link');
-                    sectionItem.appendChild(sectionLink);
-                    sectionList.appendChild(sectionItem);
-                });
-
-                chapterDiv.appendChild(sectionList);
-                chapterMenu.appendChild(chapterDiv);
-            });
-        } catch (error) {
-            console.error("Error loading chapters:", error);
-        }
+  function renderTiptapNode(node) {
+    if (!node || !node.type) {
+        console.warn('Invalid node:', node);
+        return null;
     }
 
-    function createElementByType(content) {
-        let element;
-
-        switch (content.type) {
-            case 'heading':
-                element = document.createElement('h2');
-                element.textContent = content.data;
-                break;
-            case 'subheading':
-                element = document.createElement('h3');
-                element.textContent = content.data;
-                break;
-            case 'paragraph':
-                element = document.createElement('p');
-                element.textContent = content.data;
-                break;
-            case 'list':
-                element = document.createElement('ul');
-                content.data.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    element.appendChild(li);
-                });
-                break;
-            case 'image':
-                element = document.createElement('img');
-                if (typeof content.data === 'object') {
-                    element.src = content.data.file_path;
-                    element.alt = content.data.alt_text || "Image";
-                    if (content.data.class_name) {
-                        element.className = content.data.class_name;
-                    }
+    // Handle text nodes
+    if (node.type === 'text') {
+        let textNode = document.createTextNode(node.text || '');
+        
+        // Apply marks (formatting) to text
+        if (node.marks && node.marks.length > 0) {
+        let wrapper = textNode;
+        
+        // Apply marks in reverse order to nest them properly
+        node.marks.reverse().forEach(mark => {
+            let markEl;
+            
+            switch (mark.type) {
+            case 'textStyle':
+                markEl = document.createElement('span');
+                if (mark.attrs) {
+                if (mark.attrs.color) markEl.style.color = mark.attrs.color;
                 }
                 break;
-            case 'table':
-                element = document.createElement('table');
-                element.className = "border-collapse border border-gray-600 w-full text-left";
-
-                const thead = document.createElement('thead');
-                const headerRow = document.createElement('tr');
-                content.data.headers.forEach(headerText => {
-                    const th = document.createElement('th');
-                    th.textContent = headerText;
-                    th.className = "border border-gray-600 px-4 py-2";
-                    headerRow.appendChild(th);
-                });
-                thead.appendChild(headerRow);
-                element.appendChild(thead);
-
-                const tbody = document.createElement('tbody');
-                content.data.rows.forEach(row => {
-                    const tr = document.createElement('tr');
-                    row.forEach(cell => {
-                        const td = document.createElement('td');
-                        td.className = "border border-gray-600 px-4 py-2";
-                        td.textContent = cell;
-                        tr.appendChild(td);
-                    });
-                    tbody.appendChild(tr);
-                });
-
-                element.appendChild(tbody);
+            case 'highlight':
+                markEl = document.createElement('mark');
+                if (mark.attrs && mark.attrs.color) {
+                markEl.style.backgroundColor = mark.attrs.color;
+                }
+                break;
+            case 'link':
+                markEl = document.createElement('a');
+                if (mark.attrs && mark.attrs.href) {
+                markEl.href = mark.attrs.href;
+                markEl.target = mark.attrs.target || '_blank';
+                }
+                break;
+            case 'bold':
+                markEl = document.createElement('strong');
+                break;
+            case 'italic':
+                markEl = document.createElement('em');
+                break;
+            case 'underline':
+                markEl = document.createElement('u');
+                break;
+            case 'strike':
+                markEl = document.createElement('s');
+                break;
+            case 'code':
+                markEl = document.createElement('code');
+                break;
+            case 'superscript':
+                markEl = document.createElement('sup');
+                break;
+            case 'subscript':
+                markEl = document.createElement('sub');
                 break;
             default:
-                element = document.createElement('div');
-                element.textContent = content.data || "Unknown content type";
-        }
-
-        if (content.style_class) {
-            content.style_class.split(' ').forEach(cls => {
-                if (cls.trim()) element.classList.add(cls.trim());
-            });
-        }
-
-        return element;
-    }
-
-    async function loadSection(slug) {
-        try {
-            const response = await fetch(`/api/section/${slug}`);
-            const data = await response.json();
-
-            document.getElementById('section-title').textContent = data.title;
-            const sectionContent = document.getElementById('section-content');
-            sectionContent.innerHTML = '';
-
-            let containerStack = [];
-
-            data.contents.sort((a, b) => a.order - b.order).forEach(content => {
-                if (content.type === 'container') {
-                    if (content.data === 'open') {
-                        const newContainer = document.createElement('div');
-                        if (content.style_class) newContainer.className = content.style_class;
-                        containerStack.push(newContainer);
-                        return;
-                    } else if (content.data === 'close') {
-                        const closed = containerStack.pop();
-                        if (containerStack.length > 0) {
-                            containerStack[containerStack.length - 1].appendChild(closed);
-                        } else {
-                            sectionContent.appendChild(closed);
-                        }
-                        return;
-                    }
-                }
-
-                const el = createElementByType(content);
-                if (containerStack.length > 0) {
-                    containerStack[containerStack.length - 1].appendChild(el);
-                } else {
-                    sectionContent.appendChild(el);
-                }
-            });
-
-            while (containerStack.length > 0) {
-                sectionContent.appendChild(containerStack.pop());
+                markEl = document.createElement('span');
+                markEl.setAttribute('data-mark-type', mark.type);
             }
-        } catch (error) {
-            console.error("Error loading section:", error);
+            
+            if (wrapper.nodeType === Node.TEXT_NODE) {
+            markEl.appendChild(wrapper);
+            } else {
+            markEl.appendChild(wrapper);
+            }
+            wrapper = markEl;
+        });
+        
+        return wrapper;
         }
+        
+        return textNode;
     }
 
-    function initializeSidebarState() {
-        const sidebar = document.getElementById('chapter-sidebar');
-        const isMobile = window.innerWidth <= 768;
-
-        sidebar.classList.remove('mobile-sidebar-active');
-        if (isMobile) {
-            document.body.classList.remove('sidebar-open');
+    // Handle block and inline elements
+    let el;
+    
+    switch (node.type) {
+        case 'paragraph':
+        el = document.createElement('p');
+        break;
+        case 'heading':
+        const level = Math.min(Math.max(node.attrs?.level || 1, 1), 6);
+        el = document.createElement(`h${level}`);
+        break;
+        case 'bulletList':
+        el = document.createElement('ul');
+        break;
+        case 'orderedList':
+        el = document.createElement('ol');
+        if (node.attrs?.start && node.attrs.start !== 1) {
+            el.setAttribute('start', node.attrs.start);
         }
+        break;
+        case 'listItem':
+        el = document.createElement('li');
+        break;
+        case 'blockquote':
+        el = document.createElement('blockquote');
+        break;
+        case 'codeBlock':
+        el = document.createElement('pre');
+        const codeEl = document.createElement('code');
+        if (node.attrs?.language) {
+            codeEl.className = `language-${node.attrs.language}`;
+        }
+        el.appendChild(codeEl);
+        // For code blocks, add content to the code element
+        if (Array.isArray(node.content)) {
+            node.content.forEach(child => {
+            const childEl = renderTiptapNode(child);
+            if (childEl) codeEl.appendChild(childEl);
+            });
+        }
+        return el;
+        case 'image':
+        el = document.createElement('img');
+        if (node.attrs) {
+            if (node.attrs.src) el.src = node.attrs.src;
+            if (node.attrs.alt) el.alt = node.attrs.alt;
+            if (node.attrs.title) el.title = node.attrs.title;
+        }
+        return el;
+        case 'horizontalRule':
+        return document.createElement('hr');
+        case 'hardBreak':
+        return document.createElement('br');
+        case 'spellBlock':
+        el = document.createElement('div');
+        el.className = 'spell-block-container';
+        
+        // Get spell attributes
+        const spellAttrs = node.attrs || {};
+        
+        // Create the two-column layout
+        const flexContainer = document.createElement('div');
+        flexContainer.className = 'flex flex-col gap-8 max-w-screen-xl mx-auto px-8 sm:flex-row';
+        
+        // Left column
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'w-full sm:w-1/2';
+        
+        // Helper function to create spell field
+        function createSpellField(label, value) {
+            const field = document.createElement('div');
+            field.className = 'spell-field';
+            
+            const labelSpan = document.createElement('span');
+            labelSpan.className = 'spell-label';
+            labelSpan.textContent = label + ':';
+            
+            const valueSpan = document.createElement('span');
+            valueSpan.className = 'spell-value';
+            valueSpan.textContent = value || '';
+            
+            field.appendChild(labelSpan);
+            field.appendChild(valueSpan);
+            
+            return field;
+        }
+        
+        // Add left column fields
+        leftColumn.appendChild(createSpellField('Spell', spellAttrs.spell));
+        leftColumn.appendChild(createSpellField('PREQs', spellAttrs.preqs));
+        leftColumn.appendChild(createSpellField('Range', spellAttrs.range));
+        leftColumn.appendChild(createSpellField('AoE', spellAttrs.aoe));
+        
+        // Right column
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'w-full sm:w-1/2';
+        
+        // Add right column fields
+        rightColumn.appendChild(createSpellField('Essence', spellAttrs.essence));
+        rightColumn.appendChild(createSpellField('CAP', spellAttrs.cap));
+        rightColumn.appendChild(createSpellField('Duration', spellAttrs.duration));
+        
+        // Assemble the spell block
+        flexContainer.appendChild(leftColumn);
+        flexContainer.appendChild(rightColumn);
+        el.appendChild(flexContainer);
+        
+        return el;
+        default:
+        console.warn('Unknown node type:', node.type);
+        el = document.createElement('div');
+        el.setAttribute('data-unknown-type', node.type);
+        break;
     }
 
-    document.addEventListener('DOMContentLoaded', async () => {
-        history.replaceState({}, '', '/darkholme');
-        await loadChapters();
-        await loadSection('darkholme-world');
-        initializeSidebarState();
+    // Add text alignment
+    if (node.attrs && node.attrs.textAlign) {
+        el.style.textAlign = node.attrs.textAlign;
+    }
 
-        window.addEventListener('resize', initializeSidebarState);
-    });
+    // Add content to the element (except for codeBlock, image, and spellBlock which we handled above)
+    if (Array.isArray(node.content) && !['codeBlock', 'image', 'spellBlock'].includes(node.type)) {
+        node.content.forEach(child => {
+        const childEl = renderTiptapNode(child);
+        if (childEl) el.appendChild(childEl);
+        });
+    }
+
+    return el;
+  }
+
+  function toggleChapterMenu() {
+    const sidebar = document.getElementById('chapter-sidebar');
+    sidebar.classList.toggle('mobile-sidebar-active');
+    document.body.classList.toggle('sidebar-open');
+  }
+
+  function initializeSidebarState() {
+    const sidebar = document.getElementById('chapter-sidebar');
+    const isMobile = window.innerWidth <= 768;
+    sidebar.classList.remove('mobile-sidebar-active');
+    if (isMobile) document.body.classList.remove('sidebar-open');
+  }
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    history.replaceState({}, '', '/darkholme');
+    await loadChapters();
+    await loadSection('darkholme-world');
+    initializeSidebarState();
+    window.addEventListener('resize', initializeSidebarState);
+  });
 </script>
+
 {% endblock %}
